@@ -24,7 +24,7 @@
 ### 색인
 * 색인할 파일 생성
   * 예제에서는 data/documents.json 이름으로 생성했음.
-  ```
+  ``` json
   [
     {
       "action": "add",
