@@ -3,19 +3,19 @@
 
 ### 도메인 생성
 * 도메인 생성 절차
-<img src="http://static.toastoven.net/prod_search/domain_create_procedure.png?">
+![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
   1. "도메인 생성" 버튼을 클릭합니다.
   2. 도메인 이름을 입력합니다.
   3. "저장" 버튼을 클릭합니다.
 <br>
 * 도메인 생성 결과
-<img src="http://static.toastoven.net/prod_search/domain_create_result.png?">
+![](http://static.toastoven.net/prod_search/domain_create_result.png)
   1. 생성된 도메인(test)를 클릭합니다.
 
 
 ### 필드 생성
 * 필드 생성 절차
-<img src="http://static.toastoven.net/prod_search/field_create_procedure.png?">
+![](http://static.toastoven.net/prod_search/field_create_procedure.png)
   1. "필드 설정" 탭을 클릭한다.
   2. "필드 추가" 버튼을 클릭한다.
   3. 필드 이름을 입력한다.
@@ -53,18 +53,18 @@
   ]
   ```
 * 색인 절차
-<img src="http://static.toastoven.net/prod_search/indexing_procedure_01.png?">
+![](http://static.toastoven.net/prod_search/indexing_procedure_01.png)
   1. "색인" 탭을 클릭한다.
   2. "파일 선택" 버튼을 클릭한다.
   3. 색인할 파일을 선택한다.
   4. "열기" 버튼을 클릭한다.
-<img src="http://static.toastoven.net/prod_search/indexing_procedure_02.png">  
+![](http://static.toastoven.net/prod_search/indexing_procedure_02.png)
   5. 색인 명령어가 Rest API 로 출력된다.
   6. "색인" 버튼을 클릭한다.
 
 ### 검색
 * 검색 절차
-<img src="http://static.toastoven.net/prod_search/search_procedure.png?">
+![](http://static.toastoven.net/prod_search/search_procedure.png)
   1. "검색" 버튼을 클릭한다.
   2. 검색할 필드명을 체크한다.
   3. 검색할 필드별 가중치를 설정한다.
@@ -82,7 +82,7 @@
   11. 검색 결과가 출력된다.   
 
 ### ACL
-<img src="http://static.toastoven.net/prod_search/acl_procedure.png??">
+![](http://static.toastoven.net/prod_search/acl_procedure.png)
   1. "ACL" 탭을 클릭한다.
   2. "관리" 는 현재 사용하지 않음
   3. 색인 요청 IP 주소가 133.186.133.112 인 경우만 색인이 가능하도록 설정한 예제임.
