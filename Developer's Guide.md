@@ -2,7 +2,7 @@
 ## 기본 사용법
 
 ### 도메인 생성
-* 도메인 생성 절차
+* 도메인 생성 방법
 ![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
   1. "도메인 생성" 버튼을 클릭합니다.
   2. 도메인 이름을 입력합니다.
@@ -11,10 +11,12 @@
 * 도메인 생성 결과
 ![](http://static.toastoven.net/prod_search/domain_create_result.png)
   1. 생성된 도메인(test)를 클릭합니다.
-
+<br>
+* 제약 사항
+  * 하나의 appKey(사용자) 당 도메인은 최대 32개 까지 생성 가능합니다.
 
 ### 필드 설정
-* 필드 설정 절차
+* 필드 설정 방법
 ![](http://static.toastoven.net/prod_search/field_create_procedure.png)
   1. "필드 설정" 탭을 클릭합니다.
   2. "필드 추가" 버튼을 클릭합니다.
@@ -52,20 +54,20 @@
     }
   ]
   ```
-* 색인 절차
-![](http://static.toastoven.net/prod_search/indexing_procedure_01.png)
+* 색인 방법
+![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?????)
+![](http://static.toastoven.net/prod_search/indexing_procedure_02.png????????)
   1. "색인" 탭을 클릭합니다.
   2. "파일 선택" 버튼을 클릭합니다.
   3. 색인할 파일을 선택합니다.
-  4. "열기" 버튼을 클릭합니다.
-![](http://static.toastoven.net/prod_search/indexing_procedure_02.png)
+  4. "열기" 버튼을 클릭합니다.  
   5. 색인 명령어가 Rest API 로 출력됩니다.
   6. "색인" 버튼을 클릭합니다.
 
 ### 검색
-* 검색 절차
+* 검색 방법
 ![](http://static.toastoven.net/prod_search/search_procedure.png)
-  1. "검색" 버튼을 클릭합니다.
+  1. "검색" 탭을 클릭합니다.
   2. 검색할 필드명을 체크합니다.
   3. 검색할 필드별 가중치를 설정합니다.
      * 0.0 ~ 1.0 값을 설정합니다.
@@ -73,7 +75,7 @@
   5. 검색 연산자를 선택합니다.
   6. 검색할 단어를 입력합니다.
   7. 검색결과에서 출력할 시작 순위를 지정합니다.
-     * "1"로 설정하면 1등부터 출력되고, "10"으로 설정하면 10등부터 출력된다.
+     * "1"로 설정하면 1등부터 출력되고, "10"으로 설정하면 10등부터 출력됩니다.
   8. 검색결과 개수를 지정합니다.
      * "5"로 설정하면 5개 출력되고, "10"으로 설정하면 10개 출력됩니다.
   9. 검색 아이콘을 클릭합니다.
@@ -82,6 +84,7 @@
   11. 검색 결과가 출력됩니다.   
 
 ### ACL
+* ACL 설정 방법
 ![](http://static.toastoven.net/prod_search/acl_procedure.png)
   1. "ACL" 탭을 클릭합니다.
   2. "관리" 는 현재 사용하지 않습니다.
@@ -95,16 +98,18 @@
 
 ### 도메인 삭제
 * 기존에 "test" 도메인이 존재하면 삭제합니다.
-![](http://static.toastoven.net/prod_search/domain_delete_procedure.png)
+  ![](http://static.toastoven.net/prod_search/domain_delete_procedure.png)
   1. "삭제" 버튼을 클릭합니다.
 
 ### 도메인 생성
-![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
-  1. "도메인 생성" 버튼을 클릭합니다.
-  2. 도메인 이름을 입력합니다.
-  3. "저장" 버튼을 클릭합니다.
+* 도메인 생성 방법
+  ![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
+    1. "도메인 생성" 버튼을 클릭합니다.
+    2. 도메인 이름을 입력합니다.
+    3. "저장" 버튼을 클릭합니다.
 
 ### 필드 설정
+* 필드 설정 방법
 ![](http://static.toastoven.net/prod_search/field_3_function.png?)
   1. 필터링, 정렬, 요약 기능을 사용할 필드는 타입을 "keyword", "integer", "date" 중에 하나를 선택해야 합니다.
      * category 필드는 integer, update 필드는 date 를 선택합니다.
@@ -146,13 +151,18 @@
     }
   ]
   ```
+  * date 타입 지원 형식
+    * yyyy-MM-dd'T'HH:mm:ss
+
+  <br>
 * "색인탭"에서 생성한 json 파일을 선택해서 "색인" 버튼을 클릭합니다.
 
 ### 필터링 기능
-![](http://static.toastoven.net/prod_search/search_filtering_function.png)
-  1. 필터링할 필드를 체크하고 필터링할 값을 입력합니다.
-  2. 검색 아이콘을 클릭합니다.
-
+* 필터링 방법
+ ![](http://static.toastoven.net/prod_search/search_filtering_function.png)
+    1. 필터링할 필드를 체크하고 필터링할 값을 입력합니다.
+    2. 검색 아이콘을 클릭합니다.
+<br>
 * 검색결과
   ``` json
   "item": [
@@ -179,56 +189,58 @@
   * "category" 가 1인 문서만 필터링 됩니다.
 
 ### 정렬 기능
-![](http://static.toastoven.net/prod_search/search_sorting_function.png?)
-  1. 소팅할 필드를 체크하고 소팅 Order(asc or desc) 를 선택합니다.
-  2. 검색 아이콘을 클릭합니다.
-
+* 정렬 방법
+  ![](http://static.toastoven.net/prod_search/search_sorting_function.png?)
+    1. 소팅할 필드를 체크하고 소팅 Order(asc or desc) 를 선택합니다.
+    2. 검색 아이콘을 클릭합니다.
+<br>
 * 검색 결과
-``` json
-[
-  {
-    "rank": 1,
-    "update": "2017-09-20T23:58:12",
-    "id": "610408574",
-    "body": "[아디다스슈즈모음♥] 무/료/배/송 [아디다스]신상슬리퍼 /슈퍼스타 스탠스미스 /튜블라외 114종 득템기회!",
-    "category": "2",
-    "title": "[아디다스]신상운동화/슬리퍼 114종",
-    "relevance": "NaN"
-  },
-  {
-    "rank": 2,
-    "update": "2017-09-20T13:23:38",
-    "id": "685165462",
-    "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~",
-    "category": "1",
-    "title": "[슈퍼특가]나이키 운동화 109종",
-    "relevance": "NaN"
-  },
-  {
-    "rank": 3,
-    "update": "2017-09-19T12:34:28",
-    "id": "633800446",
-    "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??",
-    "category": "1",
-    "title": "[무료배송]나이키 슈즈 195종!!",
-    "relevance": "NaN"
-  }
-]
-```    
-* "update" 내림차순(desc)으로 정렬됩니다.
+  ``` json
+  [
+    {
+      "rank": 1,
+      "update": "2017-09-20T23:58:12",
+      "id": "610408574",
+      "body": "[아디다스슈즈모음♥] 무/료/배/송 [아디다스]신상슬리퍼 /슈퍼스타 스탠스미스 /튜블라외 114종 득템기회!",
+      "category": "2",
+      "title": "[아디다스]신상운동화/슬리퍼 114종",
+      "relevance": "NaN"
+    },
+    {
+      "rank": 2,
+      "update": "2017-09-20T13:23:38",
+      "id": "685165462",
+      "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~",
+      "category": "1",
+      "title": "[슈퍼특가]나이키 운동화 109종",
+      "relevance": "NaN"
+    },
+    {
+      "rank": 3,
+      "update": "2017-09-19T12:34:28",
+      "id": "633800446",
+      "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??",
+      "category": "1",
+      "title": "[무료배송]나이키 슈즈 195종!!",
+      "relevance": "NaN"
+    }
+  ]
+  ```    
+  * "update" 내림차순(desc)으로 정렬됩니다.
 
 ### 요약 기능
+* 요약 방법
 ![](http://static.toastoven.net/prod_search/search_summary_function.png???)
   1. 요약할 필드를 체크합니다.
   2. 검색 아이콘을 클릭합니다.
-
+<br>
 * 검색 결과
-``` json
-{
-  "category": {
-    "1": 2,
-    "2": 1
+  ``` json
+  {
+    "category": {
+      "1": 2,
+      "2": 1
+    }
   }
-}
-```
-* category 별 문서 개수가 출력됩니다.
+  ```
+  * category 별 문서 개수가 출력됩니다.
