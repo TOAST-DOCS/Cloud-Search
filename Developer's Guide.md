@@ -17,7 +17,7 @@
 * 필드 설정 절차
 ![](http://static.toastoven.net/prod_search/field_create_procedure.png)
   1. "필드 설정" 탭을 클릭합니다.
-  2. "필드 추가" 버튼을 클릭합니다..
+  2. "필드 추가" 버튼을 클릭합니다.
   3. 필드 이름을 입력합니다.
   4. "저장" 버튼을 클릭합니다.
 
