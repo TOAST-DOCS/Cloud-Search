@@ -89,42 +89,42 @@
 
 ### ACL
 * ACL 설정 방법
-![](http://static.toastoven.net/prod_search/acl_procedure.png)
+![](http://static.toastoven.net/prod_search/acl_procedure.png?)
   1. "ACL" 탭을 클릭합니다.
-  2. "관리" 는 현재 사용하지 않습니다.
-  3. 색인 요청 IP 주소가 133.186.133.112 인 경우만 색인이 가능하도록 설정한 예제입니다.
+  2. 색인 요청 IP 주소가 133.186.133.112 인 경우만 색인이 가능하도록 설정한 예제입니다.
      * 133.186.133.112, 133.186.133.113 형식으로 IP 를 여러개 지정 가능합니다.
      * 133.186.133.0/24 와 같이 CIDR 형식으로 지정 가능합니다.
-  4. 검색 요청은 모든 IP 에서 가능하도록 설정한 예제입니다.
-  5. "저장" 버튼을 클릭합니다.
+  3. 검색 요청은 모든 IP 에서 가능하도록 설정한 예제입니다.
+  4. "저장" 버튼을 클릭합니다.
 
-## 필터링, 정렬, 요약 기능
+## 기능 설명
 
-### 도메인 삭제
-* 기존에 "test" 도메인이 존재하면 삭제합니다.
+### 사전 준비
+* 도메인 삭제
+  * 기존에 "test" 도메인이 존재하면 삭제합니다.
   ![](http://static.toastoven.net/prod_search/domain_delete_procedure.png)
-  1. "삭제" 버튼을 클릭합니다.
+    1. "삭제" 버튼을 클릭합니다.
 
-### 도메인 생성
-* 도메인 생성 방법
+* 도메인 생성
+  * 도메인 생성 방법
   ![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
     1. "도메인 생성" 버튼을 클릭합니다.
     2. 도메인 이름을 입력합니다.
     3. "저장" 버튼을 클릭합니다.
 
-### 필드 설정
-* 필드 설정 방법
-![](http://static.toastoven.net/prod_search/field_create_procedure-3_function.png?????)
-  1. "필드 설정" 탭을 클릭합니다.
-  2. "필드 추가" 버튼을 클릭합니다.
-  3. "필드명"을 입력합니다.
-  4. "category" 필드는 "integer" 타입을 선택합니다.
-  5. "dealer" 필드는 "keyword" 타입을 선택합니다.
-  6. "update" 필드는 "date" 타입을 선택합니다.
-  7. "저장" 버튼을 클릭합니다.
+* 필드 설정
+  * 필드 설정 방법
+  ![](http://static.toastoven.net/prod_search/field_create_procedure-3_function.png?????)
+    1. "필드 설정" 탭을 클릭합니다.
+    2. "필드 추가" 버튼을 클릭합니다.
+    3. "필드명"을 입력합니다.
+    4. "category" 필드는 "integer" 타입을 선택합니다.
+    5. "dealer" 필드는 "keyword" 타입을 선택합니다.
+    6. "update" 필드는 "date" 타입을 선택합니다.
+    7. "저장" 버튼을 클릭합니다.
 
-### 색인  
-* 필터링, 정렬, 요약 기능 테스트를 위해 아래와 같은 데이터를 생성합니다.
+* 색인  
+  * 필터링, 정렬, 요약 기능 테스트를 위해 아래와 같은 데이터를 생성합니다.
   ``` json
   [
     {
@@ -162,19 +162,16 @@
     }
   ]
   ```
-  * date 타입 지원 형식
-    * yyyy-MM-dd'T'HH:mm:ss
-
   <br>
-* 색인
-![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?????)
-![](http://static.toastoven.net/prod_search/indexing_procedure_02.png????????)
-  1. "색인" 탭을 클릭합니다.
-  2. "파일 선택" 버튼을 클릭합니다.
-  3. 색인할 파일을 선택합니다.
-  4. "열기" 버튼을 클릭합니다.  
-  5. 색인 명령어가 Rest API 로 출력됩니다.
-  6. "색인" 버튼을 클릭합니다.
+  * 색인
+  ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?????)
+  ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png????????)
+    1. "색인" 탭을 클릭합니다.
+    2. "파일 선택" 버튼을 클릭합니다.
+    3. 색인할 파일을 선택합니다.
+    4. "열기" 버튼을 클릭합니다.  
+    5. 색인 명령어가 Rest API 로 출력됩니다.
+    6. "색인" 버튼을 클릭합니다.
 
 ### 필터링 기능
 * 필터링 방법
@@ -280,3 +277,28 @@
   2. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
   3. "저장" 버튼을 클릭합니다.
   4. "지금 수행" 버튼을 클릭합니다.
+
+## 상세 설명
+
+### 필드 타입
+![](http://static.toastoven.net/prod_search/detail-field_type.png?)
+* text
+  * 필드값이 문자열인 경우 선택합니다.
+  * 형태소 분석 방법을 지정할 수 있습니다.
+* keyword
+  * 필드값을 형태소 분석 할 필요가 없는 경우 선택합니다.
+  * 예를 들어 카테고리, 우편 번호, 테그 등과 같은 데이터에 사용합니다.
+  * 필터링, 정렬, 요약 기능을 사용할 수 있습니다.
+* integer
+  * 필드 값이 숫자인 경우 선택합니다.
+* date
+  * 필드 값이 날짜인 경우 선택합니다.
+  * 지원하는 날짜 형식
+    * yyyy-MM-dd
+      * 예제) 2017-09-22
+    * yyyy-MM-dd’T’HH:mm:ss
+      * 예제) 2017-09-22T15:39:28
+    * yyyy-MM-dd'T'HH:mm:ss.SSS
+      * 예제) 2017-09-22T15:39:28.248
+    * yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+      * 예제) 2017-09-22T15:39:28.248+09:00
