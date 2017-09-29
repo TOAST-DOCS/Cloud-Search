@@ -89,7 +89,7 @@
 
 ### ACL
 * ACL 설정 방법
-![](http://static.toastoven.net/prod_search/acl_procedure.png???)
+![](http://static.toastoven.net/prod_search/acl_procedure.png?)
   1. "ACL" 탭을 클릭합니다.
   2. 색인 요청은 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
   3. 검색 요청은 모든 IP 에서 가능하도록 설정한 예제입니다.
@@ -335,7 +335,7 @@
         * category !=1 or category == 2
 
 ### ACL
-![](http://static.toastoven.net/prod_search/detail-acl.png)
+![](http://static.toastoven.net/prod_search/detail-acl.png?)
 * 입력형식
   * IP 형식으로 입력 가능합니다.
     * 예제) 202.179.177.21
