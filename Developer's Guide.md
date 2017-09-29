@@ -89,11 +89,9 @@
 
 ### ACL
 * ACL 설정 방법
-![](http://static.toastoven.net/prod_search/acl_procedure.png?)
+![](http://static.toastoven.net/prod_search/acl_procedure.png???)
   1. "ACL" 탭을 클릭합니다.
-  2. 색인 요청 IP 주소가 133.186.133.112 인 경우만 색인이 가능하도록 설정한 예제입니다.
-     * 133.186.133.112, 133.186.133.113 형식으로 IP 를 여러개 지정 가능합니다.
-     * 133.186.133.0/24 와 같이 CIDR 형식으로 지정 가능합니다.
+  2. 색인 요청은 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
   3. 검색 요청은 모든 IP 에서 가능하도록 설정한 예제입니다.
   4. "저장" 버튼을 클릭합니다.
 
@@ -302,3 +300,50 @@
       * 예제) 2017-09-22T15:39:28.248
     * yyyy-MM-dd'T'HH:mm:ss.SSSXXX
       * 예제) 2017-09-22T15:39:28.248+09:00
+
+### 형태소 분석
+![](http://static.toastoven.net/prod_search/detail-analysis.png)
+* default
+  * 형태소 분석기를 이용해 토큰을 분리한다.
+  * 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
+* whitespace
+  * whitespace 를 구분자로 토큰을 분리한다.
+  * 예제) "운동화 신상슈즈" -> "나이키" "신상슈즈"
+
+### 필터링
+![](http://static.toastoven.net/prod_search/detail-filter.png)
+  * 단일값 필터링
+    * 예제) 1
+      * category == 1
+  * or 필터링
+    * 예제) 1|2
+      * category == 1 or category == 2
+  * and 필터링
+      * 예제) 1&2
+        * category == 1 and category == 2      
+  * 범위 지정 필터링
+    * 예제) [1,2]
+      * 1 <= category <= 2
+    * 예제) {1,2]      
+      * 1 < category <= 2
+    * 예제) {,2]      
+      * category <= 2
+  * not 필터링
+      * 예제) !1
+        * category != 1
+      * 예제) !1|2
+        * category !=1 or category == 2
+
+### ACL
+![](http://static.toastoven.net/prod_search/detail-acl.png)
+* 입력형식
+  * IP 형식으로 입력 가능합니다.
+    * 예제) 202.179.177.21
+  * CIDR 형식으로 입력가능합니다.
+    * 예제) 202.179.177.0/24
+  * IP 또는 CIDR 을 여러개 입력 가능합니다.
+    * 예제) 202.179.177.21, 202.179.177.0/24
+  * all 일 경우 모두 매칭됩니다.
+  * 값이 비어 있을 경우 모두 매칭안됩니다.  
+* Allow, Deny 둘다에 매칭이 될 경우 Deny 됩니다.
+* Allow, Deny 둘다에 매칭이 안될 경우 Deny 됩니다.
