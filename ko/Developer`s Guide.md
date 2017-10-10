@@ -4,22 +4,6 @@
 
 ### 도메인 생성
 * 도메인 생성 방법
-  ![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
-    1. "도메인 생성" 버튼을 클릭합니다.
-    2. 도메인 이름을 입력합니다.
-      * 영문, 숫자 및 특수문자만 가능합니다.
-      * 사용 불가 문자 : "\\", "/", "*", "?", "\"", "<", ">", "|", " ", ",", "#", "^", "!"
-    3. "저장" 버튼을 클릭합니다.
-<br>
-* 도메인 생성 방법
-  ![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
-    1. "도메인 생성" 버튼을 클릭합니다.
-    2. 도메인 이름을 입력합니다.
-        * 영문, 숫자 및 특수문자만 가능합니다.
-        * 사용 불가 문자 : "\\", "/", "*", "?", "\"", "<", ">", "|", " ", ",", "#", "^", "!"
-    3. "저장" 버튼을 클릭합니다.
-<br>
-* 도메인 생성 방법
     ![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
     1. "도메인 생성" 버튼을 클릭합니다.
     2. 도메인 이름을 입력합니다.
@@ -27,25 +11,22 @@
         * 사용 불가 문자 : "\\", "/", "*", "?", "\"", "<", ">", "|", " ", ",", "#", "^", "!"
     3. "저장" 버튼을 클릭합니다.
 <br>
-
-
-
 * 도메인 생성 결과
-![](http://static.toastoven.net/prod_search/domain_create_result.png)
-  1. 생성된 도메인(test)를 클릭합니다.
+    ![](http://static.toastoven.net/prod_search/domain_create_result.png)
+    1. 생성된 도메인(test)를 클릭합니다.
 <br>
 * 제약 사항
-  * 하나의 appKey(사용자) 당 도메인은 최대 32개 까지 생성 가능합니다.
+    * 하나의 appKey(사용자) 당 도메인은 최대 32개 까지 생성 가능합니다.
 
 ### 필드 설정
 * 필드 설정 방법
-![](http://static.toastoven.net/prod_search/field_create_procedure.png???????)
-  1. "필드 설정" 탭을 클릭합니다.
-  2. "필드 추가" 버튼을 클릭합니다.
-  3. 필드 이름을 입력합니다.
-     * 필드명은 \_ (underscore)로 시작할 수 없습니다.
-  4. "저장" 버튼을 클릭합니다.
-  <br>
+    ![](http://static.toastoven.net/prod_search/field_create_procedure.png???????)
+    1. "필드 설정" 탭을 클릭합니다.
+    2. "필드 추가" 버튼을 클릭합니다.
+    3. 필드 이름을 입력합니다.
+        * 필드명은 \_ (underscore)로 시작할 수 없습니다.
+    4. "저장" 버튼을 클릭합니다.
+<br>
 
 ### 색인
 * 색인할 파일 생성
