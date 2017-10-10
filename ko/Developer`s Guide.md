@@ -4,7 +4,7 @@
 
 ### 도메인 생성
 * 도메인 생성 방법
-![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
+  ![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
   1. "도메인 생성" 버튼을 클릭합니다.
   2. 도메인 이름을 입력합니다.
      * 영문, 숫자 및 특수문자만 가능합니다.
