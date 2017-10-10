@@ -31,7 +31,7 @@
 ### 색인
 * 색인할 파일 생성
     * 예제에서는 data/documents.json 이름으로 생성했습니다.
-    ``` json
+    ```json
     [
       {
         "action": "add",
@@ -125,7 +125,7 @@
 <br>
 * 색인 파일 생성
     * 필터링, 정렬, 요약 기능 테스트를 위해 아래와 같은 데이터를 생성합니다.
-    ``` json
+    ```json
     [
       {
         "action": "add",
@@ -181,7 +181,7 @@
     3. 검색 아이콘을 클릭합니다.
 <br>
 * 검색결과
-    ``` json
+    ```json
     [
       {
         "dealer": "롯데아이몰",
@@ -215,7 +215,7 @@
     3. 검색 아이콘을 클릭합니다.
 <br>
 * 검색 결과
-    ``` json
+    ```json
     [
       {
         "dealer": "신세계몰",
@@ -259,7 +259,7 @@
     3. 검색 아이콘을 클릭합니다.
 <br>
 * 검색 결과
-    ``` json
+    ```json
     {
       "dealer": {
         "롯데아이몰": 2,
@@ -282,6 +282,7 @@
 
 ### 필드 타입
 ![](http://static.toastoven.net/prod_search/detail-field_type.png???)
+
 * text
     * 필드값이 문자열인 경우 선택합니다.
     * 형태소 분석 방법을 지정할 수 있습니다.
@@ -305,6 +306,7 @@
 
 ### 형태소 분석
 ![](http://static.toastoven.net/prod_search/detail-analysis.png)
+
 * default
     * 형태소 분석기를 이용해 토큰을 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
@@ -314,6 +316,7 @@
 
 ### 필터링
 ![](http://static.toastoven.net/prod_search/detail-filter.png)
+
 * 단일값 필터링
     * 예제) 1
         * category == 1
@@ -338,6 +341,7 @@
 
 ### ACL
 ![](http://static.toastoven.net/prod_search/detail-acl.png?)
+
 * 입력형식
     * IP 형식으로 입력 가능합니다.
         * 예제) 202.179.177.21
