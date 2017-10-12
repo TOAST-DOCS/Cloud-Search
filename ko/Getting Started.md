@@ -124,10 +124,19 @@ Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] 
 
     ```
     [admin@NHNEnt:data]$ curl -i -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing'
+    
+    {
+      "result" : "success",
+      "code" : 1
+    }
     ```
 
     ```
-    [admin@NHNEnt:data]$ curl -i -XPOST \'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing\'
+    [admin@NHNEnt:data]$ curl -i -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing'
+    {
+      "result" : "success",
+      "code" : 1
+    }
     ```
 
     ```
