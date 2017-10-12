@@ -72,6 +72,8 @@ Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] 
       }
     ]
     ```
+    * 최대 파일 사이즈는 128Mb 입니다.
+        * 128Mb 이상의 데이터는 여러개로 나누어서 색인해야 합니다.
 <br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?????)
