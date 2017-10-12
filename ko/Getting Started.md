@@ -113,6 +113,8 @@ Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] 
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
     ```
+    [admin@NHNEnt:data]$ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+
     {
       "result" : "success",
       "code" : 1
