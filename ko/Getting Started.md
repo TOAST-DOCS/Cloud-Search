@@ -112,36 +112,8 @@ Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] 
     ```
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
-
-    ```
-    admin
-
-    {
-      "result" : "success",
-      "code" : 1
-    }
-    ```
-
-    ```
-    [admin@NHNEnt:data]$ curl -i -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing'
-    
-    {
-      "result" : "success",
-      "code" : 1
-    }
-    ```
-
-    ```
-    [admin@NHNEnt:data]$ curl -i -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing'
-    {
-      "result" : "success",
-      "code" : 1
-    }
-    ```
-
     ```
     [admin@NHNEnt:data]$ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-
     {
       "result" : "success",
       "code" : 1
@@ -169,37 +141,37 @@ Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] 
 <br>
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
-        ```
-        [admin@NHNEnt:~]$ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
-        {
-          "message" : {
-            "meta" : {
-              "timezone" : "+09:00"
-            },
-            "result" : {
-              "status" : {
-                "code" : 200,
-                "message" : "OK"
-              },
-              "query" : "나이키 운동화",
-              "start" : 1,
-              "itemCount" : 1,
-              "total" : 1,
-              "itemList" : {
-                "item" : [
-                {
-                  "_RELEVANCE" : 0.2369668,
-                  "_RANK" : 1,
-                  "_ID" : "685165462",
-                  "body" : "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~",
-                  "title" : "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
-                }
-                ]
-              }
+    ```
+    [admin@NHNEnt:~]$ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
+    {
+      "message" : {
+        "meta" : {
+          "timezone" : "+09:00"
+        },
+        "result" : {
+          "status" : {
+            "code" : 200,
+            "message" : "OK"
+          },
+          "query" : "나이키 운동화",
+          "start" : 1,
+          "itemCount" : 1,
+          "total" : 1,
+          "itemList" : {
+            "item" : [
+            {
+              "_RELEVANCE" : 0.2369668,
+              "_RANK" : 1,
+              "_ID" : "685165462",
+              "body" : "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
+              "title" : "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
             }
+            ]
           }
         }
-        ```
+      }
+    }
+    ```
 
 ### ACL
 * ACL 설정 방법
