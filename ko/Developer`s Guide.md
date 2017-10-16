@@ -215,7 +215,7 @@
       * 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
 * whitespace
     * whitespace 를 구분자로 토큰을 분리한다.
-      * 예제) "운동화 신상슈즈" -> "나이키" "신상슈즈"
+      * 예제) "나이키 신상슈즈" -> "나이키" "신상슈즈"
 
 ### 필터링
 ![](http://static.toastoven.net/prod_search/detail-filter.png)
