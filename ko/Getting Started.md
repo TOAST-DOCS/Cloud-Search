@@ -92,8 +92,12 @@ Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] 
 <br>    
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
+    * Request
     ```
-    [admin@NHNEnt:data]$ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+    $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+    ```
+    * Response
+    ```
     {
       "result" : "success",
       "code" : 1
@@ -121,8 +125,12 @@ Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] 
 <br>
 * Rest API
     * 아래와 같이 Rest API를 사용 가능합니다.
+    * Request
     ```
-    [admin@NHNEnt:~]$ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
+    $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
+    ```
+    * Response
+    ```
     {
       "message" : {
         "meta" : {
