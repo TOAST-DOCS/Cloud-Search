@@ -68,7 +68,7 @@
 <br>
 * 색인
     ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?????)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png????????)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png???????)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
