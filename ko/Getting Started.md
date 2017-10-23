@@ -82,27 +82,49 @@ Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] 
 <br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?????)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png????????)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png??)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
     4. "열기" 버튼을 클릭합니다.  
     5. 색인 명령어가 Rest API 로 출력됩니다.
     6. "색인" 버튼을 클릭합니다.
+    7. 색인 결과를 확인할 수 있습니다.
 <br>    
 * Rest API
-    * 아래와 같이 Rest API를 사용 가능합니다.
-    * Request
-    ```
-    $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-    ```
-    * Response
-    ```
-    {
-      "result" : "success",
-      "code" : 1
-    }
-    ```
+    * 색인 API
+        * Request
+            ```
+            $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            ```
+        * Response
+            ```
+            {
+              "result" : "success",
+              "code" : 1,
+              "id" : 7
+            }
+            ```
+    * 색인 결과 확인 API
+        * Request
+            ```
+            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/ytlee/indexing/status?id=7'
+            ```
+            * id 7은 위의 색인 API Response 의 id 입니다.
+        * Response
+            ```
+            {
+              "request_time" : "2017-10-23T12:36:43",
+              "file_name" : "documents.json",
+              "file_size" : "1185",
+              "status" : "2"
+            }
+            ```
+            * status
+                * 0 : 대기
+                * 1 : 진행중
+                * 2 : 성공
+                * 3 : 실패
 
 ### 검색
 * 검색 방법
