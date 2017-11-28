@@ -2,7 +2,7 @@
 
 ## 서비스 활성화
 Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] > [Search] 을 선택한 후 [상품이용] 버튼을 클릭하여 서비스를 활성화시킵니다.
-![](http://static.toastoven.net/prod_search/product-use-01.png)
+![](http://static.toastoven.net/prod_search/product-use-01.png?)
 ![](http://static.toastoven.net/prod_search/product-use-02.png)
 
 1. "Upcoming Proucts"를 클릭합니다.
@@ -28,8 +28,6 @@ Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] 
     ![](http://static.toastoven.net/prod_search/domain_create_result.png)
     1. 생성된 도메인(test)를 클릭합니다.
 <br>
-* 제약 사항
-    * 하나의 appKey(사용자) 당 도메인은 최대 32개 까지 생성 가능합니다.
 
 ### 필드 설정
 * 필드 설정 방법
