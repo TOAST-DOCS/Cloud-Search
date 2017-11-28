@@ -75,6 +75,11 @@ Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] 
       }
     ]
     ```
+    * action
+      * add : 문서 추가 또는 기존 문서 수정시 "add"로 지정합니다.
+      * delete : 문서 삭제시 "delete"로 지정합니다.
+    * id
+      * 문서의 고유한 ID 입니다.
     * 최대 파일 사이즈는 128Mb 입니다.
         * 128Mb 이상의 데이터는 여러개로 나누어서 색인해야 합니다.
 <br>
