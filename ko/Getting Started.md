@@ -1,11 +1,11 @@
 ## Upcomming Products > Search > Getting Started
 
 ## 서비스 활성화
-Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] > [Search] 을 선택한 후 [상품이용] 버튼을 클릭하여 서비스를 활성화시킵니다.
+Cloud Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] > [Cloud Search] 을 선택한 후 [상품이용] 버튼을 클릭하여 서비스를 활성화시킵니다.
 ![](http://static.toastoven.net/prod_search/product-use-02.png?)
 
 1. "Upcoming Proucts"를 클릭합니다.
-2. "Search"를 클릭합니다.
+2. "Cloud Search"를 클릭합니다.
 3. "상품이용" 버튼을 클릭합니다.
 <br>
 
@@ -104,32 +104,30 @@ Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] 
         * Response
             ```
             {
-              "result" : "success",
-              "code" : 1,
-              "id" : 7
+              "id" : 1
             }
             ```
     * 색인 결과 확인 API
         * Request
             ```
-            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/ytlee/indexing/status?id=7'
+            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/ytlee/indexing_log?id=1'
             ```
-            * id 7은 위의 색인 API Response 의 id 입니다.
+            * id 1은 위의 색인 API Response 의 id 입니다.
         * Response
             ```
             {
               "request_time" : "2017-10-23T12:36:43",
               "file_name" : "documents.json",
               "file_size" : "1185",
-              "status" : "2"
+              "status" : "4"
             }
             ```
             * status
-                * 0 : 준비중
-                * 1 : 무시됨 (필드 설정 변경 이전의 색인 요청은 무시됨, 색인 요청 이후에 필드 설정 변경을 했어도 시스템 내부 스케쥴링에 의해 필드 설정 변경 이후에 색인 요청이 수행될 수 있음)
-                * 2 : 진행중
-                * 3 : 성공
-                * 4 : 실패
+                * 1 : 준비중
+                * 2 : 무시됨 (필드 설정 변경 이전의 색인 요청은 무시됨, 색인 요청 이후에 필드 설정 변경을 했어도 시스템 내부 스케쥴링에 의해 필드 설정 변경 이후에 색인 요청이 수행될 수 있음)
+                * 3 : 진행중
+                * 4 : 성공
+                * 5 : 실패
 
 ### 검색
 * 검색 방법

@@ -205,8 +205,6 @@
             * 예제) 2017-09-22T15:39:28
         * yyyy-MM-dd'T'HH:mm:ss.SSS
             * 예제) 2017-09-22T15:39:28.248
-        * yyyy-MM-dd'T'HH:mm:ss.SSSXXX
-            * 예제) 2017-09-22T15:39:28.248+09:00
 
 ### 형태소 분석
 ![](http://static.toastoven.net/prod_search/detail-analysis.png)
