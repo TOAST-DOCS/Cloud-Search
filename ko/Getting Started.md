@@ -2,13 +2,15 @@
 
 ## 서비스 활성화
 Cloud Search 서비스를 사용하기 위해서는 Console로 이동합니다.
-![](http://static.toastoven.net/prod_search/product-use-02.png?????)
+* 활성화 방법
+    ![](http://static.toastoven.net/prod_search/product-use-02.png?????)
     1. "서비스 선택"을 클릭합니다.
     2. "Cloud Search"를 클릭해서 서비스를 활성화 합니다.
-
-![](http://static.toastoven.net/prod_search/product-use-03.png)
+<br>
+* 활성화 확인
+    ![](http://static.toastoven.net/prod_search/product-use-03.png)
     1. "Search" 클릭합니다.
-    2. "Cloud Search"를 클릭합니다.
+    2. "Cloud Search"가 노출되면 활성화된 것입니다.
 <br>
 
 ## 기본 사용법
@@ -112,7 +114,7 @@ Cloud Search 서비스를 사용하기 위해서는 Console로 이동합니다.
     * 색인 결과 확인 API
         * Request
             ```
-            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/ytlee/indexing_log?id=1'
+            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing_log?id=1'
             ```
             * id 1은 위의 색인 API Response 의 id 입니다.
         * Response
