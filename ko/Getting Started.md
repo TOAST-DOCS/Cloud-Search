@@ -2,11 +2,13 @@
 
 ## 서비스 활성화
 Cloud Search 서비스를 사용하기 위해서는 Console에서 [Upcoming Products] > [Cloud Search] 을 선택한 후 [상품이용] 버튼을 클릭하여 서비스를 활성화시킵니다.
-![](http://static.toastoven.net/prod_search/product-use-02.png?)
+![](http://static.toastoven.net/prod_search/product-use-02.png?????)
+1. "서비스 선택"을 클릭합니다.
+2. "Cloud Search"를 클릭해서 서비스를 활성화 합니다.
 
-1. "Upcoming Proucts"를 클릭합니다.
+![](http://static.toastoven.net/prod_search/product-use-03.png)
+1. "Search" 클릭합니다.
 2. "Cloud Search"를 클릭합니다.
-3. "상품이용" 버튼을 클릭합니다.
 <br>
 
 ## 기본 사용법
