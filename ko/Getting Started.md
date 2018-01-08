@@ -20,7 +20,7 @@
     ![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
     1. "도메인 생성" 버튼을 클릭합니다.
     2. 도메인 이름을 입력합니다.
-        * 영문, 숫자 및 일부 특수문자만 가능합니다.
+        * 영문(소문자), 숫자 및 일부 특수문자만 가능합니다.
         * 사용 가능한 특수 문자
         ```
         '~' '@' '$' '&' '(' ')' ':' '_' '-' '.'
@@ -34,7 +34,7 @@
 
 ### 필드 설정
 * 필드 설정 방법
-    ![](http://static.toastoven.net/prod_search/field_create_procedure.png???????)
+    ![](http://static.toastoven.net/prod_search/field_create_procedure.png??)
     1. "필드 설정" 탭을 클릭합니다.
     2. "필드 추가" 버튼을 클릭합니다.
     3. 필드 이름을 입력합니다.
@@ -50,7 +50,7 @@
 ### 색인
 * 색인할 파일 생성
     * <span style="color:red">색인할 파일은 UTF-8 로 생성해야 합니다.</span>
-      * Windows 메모장에서 파일 저장시 인코딩을 UTF-8 로 지정해서 저장합니다.
+        * Windows 메모장에서 파일 저장시 인코딩을 UTF-8 로 지정해서 저장합니다.
     * 예제에서는 data/documents.json 이름으로 생성했습니다.
     ```
     [
@@ -81,16 +81,16 @@
     ]
     ```
     * action
-      * add : 문서 추가 또는 기존 문서 수정시 "add"로 지정합니다.
-      * delete : 문서 삭제시 "delete"로 지정합니다.
+        * add : 문서 추가 또는 기존 문서 수정시 "add"로 지정합니다.
+        * delete : 문서 삭제시 "delete"로 지정합니다.
     * id
-      * 문서의 고유한 ID 입니다.
+        * 문서의 고유한 ID 입니다.
     * 최대 파일 사이즈는 128Mb 입니다.
         * 128Mb 이상의 데이터는 여러개로 나누어서 색인해야 합니다.
 <br>
 * 색인 방법
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?????)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png???)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
@@ -103,7 +103,7 @@
     * 색인 API
         * Request
             ```
-            $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/CWx4DRh2HVqzdEqJ/domains/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
         * Response
             ```
@@ -114,7 +114,7 @@
     * 색인 결과 확인 API
         * Request
             ```
-            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/indexing_log?id=1'
+            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/CWx4DRh2HVqzdEqJ/domains/test/indexing_log?id=1'
             ```
             * id 1은 위의 색인 API Response 의 id 입니다.
         * Response
@@ -135,7 +135,7 @@
 
 ### 검색
 * 검색 방법
-    ![](http://static.toastoven.net/prod_search/search_procedure.png)
+    ![](http://static.toastoven.net/prod_search/search_procedure.png?)
     1. "검색" 탭을 클릭합니다.
     2. 검색할 필드명을 체크합니다.
     3. 검색할 필드별 가중치를 설정합니다.
@@ -159,7 +159,7 @@
     * 아래와 같이 Rest API를 사용 가능합니다.
     * Request
     ```
-    $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/rjmIWV4TQuTaxvAc/domains/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
+    $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/CWx4DRh2HVqzdEqJ/domains/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
     ```
     * Response
     ```
