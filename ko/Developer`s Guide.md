@@ -185,7 +185,7 @@
 ## 상세 설명
 
 ### 필드 타입
-![](http://static.toastoven.net/prod_search/detail-field_type.png???)
+![](http://static.toastoven.net/prod_search/detail-field_type.png??)
 
 * text
     * 필드값이 문자열인 경우 선택합니다.
@@ -195,7 +195,20 @@
     * 예를 들어 카테고리, 우편 번호, 태그 등과 같은 데이터에 사용합니다.
     * 필터링, 정렬, 요약 기능을 사용할 수 있습니다.
 * integer
-    * 필드 값이 숫자인 경우 선택합니다.
+    * 4byte 정수형입니다.
+    * -2^31 ~ 2^31 - 1 까지 표현 가능합니다.
+* long
+    * 8byte 정수형입니다.
+    * -2^63 ~ 2^63 - 1 까지 표현 가능합니다.
+* float
+    * 4byte 실수형입니다.    
+    * -3.4E38 ~ 3.4E38 까지 표현 가능합니다.
+* double
+    * 8byte 실수형입니다.
+    * -1.7E308 ~ 1.7E308 까지 표현 가능합니다.
+* boolean
+    * 1byte
+    * true or false
 * date
     * 필드 값이 날짜인 경우 선택합니다.
     * 지원하는 날짜 형식
