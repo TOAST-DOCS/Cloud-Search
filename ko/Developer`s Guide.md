@@ -17,7 +17,7 @@
 <br>
 * 필드 설정
     * 필드 설정 방법
-        ![](http://static.toastoven.net/prod_search/field_create_procedure-3_function.png?????)
+        ![](http://static.toastoven.net/prod_search/field_create_procedure-3_function.png???)
         1. "필드 설정" 탭을 클릭합니다.
         2. "필드 추가" 버튼을 클릭합니다.
         3. "필드명"을 입력합니다.
@@ -172,6 +172,22 @@
     }
     ```
     * dealer별 문서 개수가 출력됩니다.
+
+### 필수 필터 기능
+* 사용 예시
+    * 예를 들어 메일 검색 서비스를 할 경우 다른 사용자의 메일이 검색되면 안되기 때문에 반드시 사용자별로 필터링을 해야 합니다.
+* 사용 방법
+    ![](http://static.toastoven.net/prod_search/mandatory_search_filter_01.png???)
+    ![](http://static.toastoven.net/prod_search/mandatory_search_filter_02.png?)
+    1. "필드 설정" 탭을 클릭합니다.
+    2. dealer 필드의 필수 검색 필터를 체크합니다.
+        * 다른 설정도 그림과 같이 지정합니다.
+    3. "저장" 버튼을 클릭합니다.
+    4. "검색" 탭을 클릭합니다.
+    5. dealer 필드의 필터를 체크합니다.
+        * 이때 필터링 값은 입력하지 않습니다.
+    6. 검색 버튼을 클릭합니다.
+    7. 필수 검색 필터로 지정된 필드에 필터링 값이 없기 때문에 실패 메시지가 출력됩니다.
 
 ### 필드 삭제
 * 필드 삭제 방법

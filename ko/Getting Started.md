@@ -34,7 +34,7 @@
 
 ### 필드 설정
 * 필드 설정 방법
-    ![](http://static.toastoven.net/prod_search/field_create_procedure.png??)
+    ![](http://static.toastoven.net/prod_search/field_create_procedure.png???)
     1. "필드 설정" 탭을 클릭합니다.
     2. "필드 추가" 버튼을 클릭합니다.
     3. 필드 이름을 입력합니다.
