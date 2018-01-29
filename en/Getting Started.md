@@ -1,1 +1,1 @@
-## Upcomming Products > Search > Getting Started
+## Search > Cloud Search > Console Guide
