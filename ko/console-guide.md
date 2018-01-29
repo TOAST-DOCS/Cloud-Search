@@ -1,4 +1,4 @@
-## Search > Cloud Search > Getting Started
+## Search > Cloud Search > 콘솔 사용 가이드
 
 ## 상품 활성화
 * Cloud Search 서비스를 활성화 하기 위해서 Console로 이동합니다.
