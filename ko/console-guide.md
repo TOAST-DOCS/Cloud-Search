@@ -8,7 +8,7 @@
     2. "Cloud Search"를 클릭해서 서비스를 활성화 합니다.
 <br>
 * 활성화 확인
-    ![](http://static.toastoven.net/prod_search/product-use-03.png)
+    ![](http://static.toastoven.net/prod_search/product-use-03.png?)
     1. "Search" 클릭합니다.
     2. "Cloud Search"가 노출되면 활성화된 것입니다.
 <br>
@@ -17,10 +17,10 @@
 
 ### 도메인 생성
 * 도메인 생성 방법
-    ![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
+    ![](http://static.toastoven.net/prod_search/domain_create_procedure.png??)
     1. "도메인 생성" 버튼을 클릭합니다.
     2. 도메인 이름을 입력합니다.
-        * 영문 소문자, 숫자 및 일부 특수 문자만 가능합니다.
+        * 영문 소문자, 숫자 및 일부 특수 문자만 사용 가능합니다.
         * 사용 가능한 특수 문자
         ```
         '~' '@' '$' '&' '(' ')' ':' '_' '-'
@@ -411,18 +411,24 @@
     * 필드값을 형태소 분석 할 필요가 없는 경우 선택합니다.
     * 예를 들어 카테고리, 우편 번호, 태그 등과 같은 데이터에 사용합니다.
     * 필터링, 정렬, 요약 기능을 사용할 수 있습니다.
+* byte
+    * 1byte 정수형입니다.
+    * -128 ~ 127까지 표현 가능합니다.
+* short
+    * 2byte 정수형입니다.
+    * -32,768 ~ 32,767까지 표현 가능합니다.
 * integer
     * 4byte 정수형입니다.
-    * -2^31 ~ 2^31 - 1 까지 표현 가능합니다.
+    * -2^31 ~ 2^31 - 1까지 표현 가능합니다.
 * long
     * 8byte 정수형입니다.
-    * -2^63 ~ 2^63 - 1 까지 표현 가능합니다.
+    * -2^63 ~ 2^63 - 1까지 표현 가능합니다.
 * float
     * 4byte 실수형입니다.    
-    * -3.4E38 ~ 3.4E38 까지 표현 가능합니다.
+    * -3.4E38 ~ 3.4E38까지 표현 가능합니다.
 * double
     * 8byte 실수형입니다.
-    * -1.7E308 ~ 1.7E308 까지 표현 가능합니다.
+    * -1.7E308 ~ 1.7E308까지 표현 가능합니다.
 * boolean
     * 1byte
     * true or false
