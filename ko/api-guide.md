@@ -1,4 +1,4 @@
-## Search > Cloud Search > Developer's Guide
+## Search > Cloud Search > API 가이드
 
 ## 기능 설명
 
