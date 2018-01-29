@@ -1,4 +1,4 @@
-## Search > Cloud Search > overview.md
+## Search > Cloud Search > Overview
 
 검색 서비스를 합리적인 비용으로 손쉽게 구축할 수 있습니다.
 
