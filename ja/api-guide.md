@@ -1,4 +1,4 @@
-## Upcomming Products > Search > Developer's Guide
+## Search > Cloud Search > API Guide
 
 ## 기본 사용법
 
