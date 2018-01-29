@@ -399,7 +399,7 @@
     3. "저장" 버튼을 클릭합니다.
     4. "지금 수행" 버튼을 클릭합니다.
 
-## 상세 설명
+## 상세 가이드
 
 ### 필드 타입
 ![](http://static.toastoven.net/prod_search/detail-field_type.png??)
