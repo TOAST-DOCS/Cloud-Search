@@ -1,4 +1,4 @@
-## Upcomming Products > Search > Getting Started
+## Search > Cloud Search > Getting Started
 
 ## 상품 활성화
 * Cloud Search 서비스를 활성화 하기 위해서 Console로 이동합니다.

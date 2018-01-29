@@ -1,4 +1,4 @@
-## Upcomming Products > Search > Release Notes
+## Search > Cloud Search > Release Notes
 
-### 2018.01.22
-* 상품 출시
+### 2018.02.22
+* 상품 출시 (알파)

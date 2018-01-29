@@ -1,4 +1,4 @@
-## Upcomming Products > Search > Developer's Guide
+## Search > Cloud Search > Developer's Guide
 
 ## 기능 설명
 
