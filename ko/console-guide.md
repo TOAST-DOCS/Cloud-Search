@@ -15,11 +15,11 @@
 
 ## 기본 사용법
 
-### 도메인 생성
-* 도메인 생성 방법
+### 서비스 생성
+* 서비스 생성 방법
     ![](http://static.toastoven.net/prod_search/domain_create_procedure.png??)
-    1. "도메인 생성" 버튼을 클릭합니다.
-    2. 도메인 이름을 입력합니다.
+    1. "서비스 생성" 버튼을 클릭합니다.
+    2. 서비스 ID를 입력합니다.
         * 영문 소문자, 숫자 및 일부 특수 문자만 사용 가능합니다.
         * 사용 가능한 특수 문자
         ```
@@ -27,9 +27,9 @@
         ```
     3. "저장" 버튼을 클릭합니다.
 <br>
-* 도메인 생성 결과
+* 서비스 생성 결과
     ![](http://static.toastoven.net/prod_search/domain_create_result.png)
-    1. 생성된 도메인(test)를 클릭합니다.
+    1. 생성된 서비스 ID(test)를 클릭합니다.
 <br>
 
 ### 필드 설정
@@ -204,16 +204,16 @@
 ## 기능 가이드
 
 ### 사전 준비
-* 도메인 삭제
-    * 기존에 "test" 도메인이 존재하면 삭제합니다.
+* 서비스 삭제
+    * 기존에 "test" 서비스 ID가 존재하면 삭제합니다.
         ![](http://static.toastoven.net/prod_search/domain_delete_procedure.png?)
         1. "삭제" 버튼을 클릭합니다.
 <br>
-* 도메인 생성
-    * 도메인 생성 방법
+* 서비스 생성
+    * 서비스 생성 방법
         ![](http://static.toastoven.net/prod_search/domain_create_procedure.png??)
-        1. "도메인 생성" 버튼을 클릭합니다.
-        2. 도메인 이름을 입력합니다.
+        1. "서비스 생성" 버튼을 클릭합니다.
+        2. 서비스 ID를 입력합니다.
         3. "저장" 버튼을 클릭합니다.
 <br>
 * 필드 설정
