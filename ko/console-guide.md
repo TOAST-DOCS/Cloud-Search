@@ -108,9 +108,8 @@
             $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
         * Response
-            ```
-            
-            {
+            ```        
+              {
               "id" : 1
             }
             ```
