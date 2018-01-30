@@ -108,26 +108,26 @@
             $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
         * Response
-            ```        
-              {
-              "id" : 1
-            }
-            ```
+          ```        
+          {
+            "id" : 1
+          }
+          ```
     * 색인 결과 확인 API
         * Request
-            ```
-            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing_log?id=1'
-            ```
+          ```
+          curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing_log?id=1'
+          ```
             * id 1은 위의 색인 API Response 의 id입니다.
         * Response
-            ```
-            {
-              "request_time" : "2017-10-23T12:36:43",
-              "file_name" : "documents.json",
-              "file_size" : "1185",
-              "status" : "4"
-            }
-            ```
+          ```
+          {
+            "request_time" : "2017-10-23T12:36:43",
+            "file_name" : "documents.json",
+            "file_size" : "1185",
+            "status" : "4"
+          }
+          ```
             * status
                 * 1 : 대기 중
                 * 2 : 무시됨 (필드 설정 변경 이전의 색인 요청은 무시됨)
