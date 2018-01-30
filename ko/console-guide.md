@@ -8,7 +8,7 @@
     2. "Cloud Search"를 클릭해서 서비스를 활성화합니다.
 <br>
 * 활성화 확인
-    ![](http://static.toastoven.net/prod_search/product-use-03.png?)
+    ![](http://static.toastoven.net/prod_search/product-use-03.png???)
     1. "Search" 클릭합니다.
     2. "Cloud Search"가 노출되면 활성화된 것입니다.
 <br>
@@ -96,10 +96,12 @@
     3. 색인할 파일을 선택합니다.
     4. "열기" 버튼을 클릭합니다.  
     5. 색인 명령어가 REST API로 출력됩니다.
+        * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
     6. "색인" 버튼을 클릭합니다.
     7. 색인 결과를 확인할 수 있습니다.
 <br>    
 * Rest API
+    * 아래와 같이 REST API를 사용 가능합니다.
     * 색인 API
         * Request
             ```
@@ -107,6 +109,7 @@
             ```
         * Response
             ```
+            
             {
               "id" : 1
             }
