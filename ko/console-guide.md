@@ -98,7 +98,7 @@
     5. 색인 명령어가 REST API로 출력됩니다.
         * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
     6. "색인" 버튼을 클릭합니다.
-    7. 색인 결과를 확인할 수 있습니다.
+    7. 색인 결과를 확인할 수 있습니다.        
 <br>    
 * Rest API
     * 아래와 같이 REST API를 사용 가능합니다.
@@ -108,26 +108,26 @@
             $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
         * Response
-          ```        
-          {
-            "id" : 1
-          }
-          ```
+            ```        
+            {
+              "id" : 1
+            }
+            ```
     * 색인 결과 확인 API
         * Request
-          ```
-          curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing_log?id=1'
-          ```
+            ```
+            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing_log?id=1'
+            ```  
             * id 1은 위의 색인 API Response 의 id입니다.
         * Response
-          ```
-          {
-            "request_time" : "2017-10-23T12:36:43",
-            "file_name" : "documents.json",
-            "file_size" : "1185",
-            "status" : "4"
-          }
-          ```
+            ```
+            {
+              "request_time" : "2017-10-23T12:36:43",
+              "file_name" : "documents.json",
+              "file_size" : "1185",
+              "status" : "4"
+            }
+            ```
             * status
                 * 1 : 대기 중
                 * 2 : 무시됨 (필드 설정 변경 이전의 색인 요청은 무시됨)
@@ -490,5 +490,5 @@
         * 예제) 202.179.177.21, 202.179.177.0/24
     * all 일 경우 모두 매칭 됩니다.
     * 값이 비어 있을 경우 모두 매칭 안됩니다.  
-* Allow, Deny 둘 다에 매칭이 될 경우 Deny 됩니다.
-* Allow, Deny 둘 다에 매칭이 안될 경우 Deny 됩니다.
+* 허용, 거부 둘 다에 매칭이 될 경우 거부됩니다.
+* 허용, 거부 둘 다에 매칭이 안될 경우 거부됩니다.
