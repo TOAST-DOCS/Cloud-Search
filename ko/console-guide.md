@@ -98,7 +98,9 @@
     5. 색인 명령어가 REST API로 출력됩니다.
         * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
     6. "색인" 버튼을 클릭합니다.
-    7. 색인 결과를 확인할 수 있습니다.        
+    7. 색인 결과를 확인할 수 있습니다.
+    <br>
+    * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.       
 <br>    
 * Rest API
     * 아래와 같이 REST API를 사용 가능합니다.
@@ -107,6 +109,7 @@
             ```
             $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
+            * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.  
         * Response
             ```        
             {
@@ -119,6 +122,7 @@
             curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing_log?id=1'
             ```  
             * id 1은 위의 색인 API Response 의 id입니다.
+            * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.
         * Response
             ```
             {
@@ -156,44 +160,47 @@
     13. 1 ~ 8 번까지 설정한 내용이 REST API로 출력됩니다.
         * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
     14. 검색 결과가 출력됩니다.   
+    <br>
+    * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.
 <br>
 * Rest API
     * 아래와 같이 REST API를 사용 가능합니다.
     * Request
-    ```
-    $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
-    ```
+        ```
+        $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
+        ```
+        * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.
     * Response
-    ```
-    {
-      "message" : {
-        "meta" : {
-          "timezone" : "+09:00"
-        },
-        "result" : {
-          "status" : {
-            "code" : 200,
-            "message" : "OK"
-          },
-          "query" : "나이키 운동화",
-          "start" : 1,
-          "itemCount" : 1,
-          "total" : 1,
-          "itemList" : {
-            "item" : [
-            {
-              "_RELEVANCE" : 0.2369668,
-              "_RANK" : 1,
-              "_ID" : "685165462",
-              "body" : "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
-              "title" : "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
+        ```
+        {
+          "message" : {
+              "meta" : {
+                "timezone" : "+09:00"
+              },
+              "result" : {
+                "status" : {
+                "code" : 200,
+                "message" : "OK"
+              },
+              "query" : "나이키 운동화",
+              "start" : 1,
+              "itemCount" : 1,
+              "total" : 1,
+              "itemList" : {
+                "item" : [
+                {
+                  "_RELEVANCE" : 0.2369668,
+                  "_RANK" : 1,
+                  "_ID" : "685165462",
+                  "body" : "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
+                  "title" : "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
+                }
+                ]
+              }
             }
-            ]
           }
         }
-      }
-    }
-    ```
+        ```
 
 ### ACL
 * ACL 설정 방법
@@ -279,6 +286,8 @@
     5. 색인 명령어가 Rest API로 출력됩니다.
     6. "색인" 버튼을 클릭합니다.
     7. 색인 결과를 확인할 수 있습니다.
+    <br>
+    * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.
 
 ### 필터링 기능
 * 필터링 방법
@@ -408,7 +417,7 @@
 
 * text
     * 필드값이 문자열인 경우 선택합니다.
-    * 최대 사이즈는 4096Byte입니다.
+    * 최대 사이즈는 4,096Byte입니다.
 * keyword
     * 필드값을 형태소 분석할 필요가 없는 경우 선택합니다.
     * 예를 들어 카테고리, 우편 번호, 태그 등과 같은 데이터에 사용합니다.
