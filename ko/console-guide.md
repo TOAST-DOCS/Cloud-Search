@@ -100,6 +100,7 @@
     6. "색인" 버튼을 클릭합니다.
     7. 색인 결과를 확인할 수 있습니다.
     <br>
+
     * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.       
 <br>    
 * Rest API
