@@ -1,5 +1,9 @@
 ## Search > Cloud Search > 콘솔 사용 가이드
 
+## 문서 설명
+* 문서 내의 호스트명 "alpha-api-search.cloud.toast.com"는 사용자별로 다를 수 있습니다.
+* 문서 내의 앱키 "gFGDJfG4pyUKZ9RF"는 사용자별로 다를 수 있습니다.
+
 ## 상품 활성화
 * Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
@@ -99,9 +103,6 @@
         * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
     6. "색인" 버튼을 클릭합니다.
     7. 색인 결과를 확인할 수 있습니다.
-    <br>
-
-    * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.       
 <br>    
 * Rest API
     * 아래와 같이 REST API를 사용 가능합니다.
@@ -110,7 +111,6 @@
             ```
             $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
-            * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.  
         * Response
             ```        
             {
@@ -123,7 +123,6 @@
             curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing_log?id=1'
             ```  
             * id 1은 위의 색인 API Response 의 id입니다.
-            * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.
         * Response
             ```
             {
@@ -161,16 +160,14 @@
     13. 1 ~ 8 번까지 설정한 내용이 REST API로 출력됩니다.
         * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
     14. 검색 결과가 출력됩니다.   
-    <br>
-    * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.
 <br>
+
 * Rest API
     * 아래와 같이 REST API를 사용 가능합니다.
     * Request
         ```
         $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
         ```
-        * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.
     * Response
         ```
         {
@@ -287,8 +284,7 @@
     5. 색인 명령어가 Rest API로 출력됩니다.
     6. "색인" 버튼을 클릭합니다.
     7. 색인 결과를 확인할 수 있습니다.
-    <br>
-    * 호스트명(alpha-api-search.cloud.toast.com)은 다를 수 있습니다.
+<br>
 
 ### 필터링 기능
 * 필터링 방법
@@ -323,6 +319,7 @@
     ]
     ```
     * "category" 가 1인 문서만 필터링 됩니다.
+<br>
 
 ### 정렬 기능
 * 정렬 방법
