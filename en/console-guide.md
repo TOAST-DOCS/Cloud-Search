@@ -1,5 +1,9 @@
 ## Search > Cloud Search > 콘솔 사용 가이드
 
+## 문서 설명
+* 문서 내의 호스트명 "alpha-api-search.cloud.toast.com"는 사용자별로 다를 수 있습니다.
+* 문서 내의 앱키 "gFGDJfG4pyUKZ9RF"는 사용자별로 다를 수 있습니다.
+
 ## 상품 활성화
 * Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
@@ -49,6 +53,7 @@
 
 ### 색인
 * 색인할 파일 생성
+    * 아래 예제와 같은 형식으로 색인 요청 파일을 생성합니다.
     * <span style="color:red">색인할 파일은 UTF-8로 생성해야 합니다.</span>
         * Windows 메모장에서 파일 저장시 인코딩을 UTF-8로 지정해서 저장합니다.
     * 예제에서는 data/documents.json 이름으로 생성했습니다.
@@ -98,7 +103,7 @@
     5. 색인 명령어가 REST API로 출력됩니다.
         * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
     6. "색인" 버튼을 클릭합니다.
-    7. 색인 결과를 확인할 수 있습니다.        
+    7. 색인 결과를 확인할 수 있습니다.
 <br>    
 * Rest API
     * 아래와 같이 REST API를 사용 가능합니다.
@@ -153,49 +158,52 @@
     10. 검색 연산자를 선택합니다.
     11. 검색할 단어를 입력합니다.
     12. 검색 아이콘을 클릭합니다.
-    13. 1 ~ 8 번까지 설정한 내용이 REST API로 출력됩니다.
+    13. 2 ~ 11번까지 설정한 내용이 REST API로 출력됩니다.
         * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
     14. 검색 결과가 출력됩니다.   
 <br>
+
 * Rest API
     * 아래와 같이 REST API를 사용 가능합니다.
     * Request
-    ```
-    $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
-    ```
+        ```
+        $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
+        ```
     * Response
-    ```
-    {
-      "message" : {
-        "meta" : {
-          "timezone" : "+09:00"
-        },
-        "result" : {
-          "status" : {
-            "code" : 200,
-            "message" : "OK"
-          },
-          "query" : "나이키 운동화",
-          "start" : 1,
-          "itemCount" : 1,
-          "total" : 1,
-          "itemList" : {
-            "item" : [
-            {
-              "_RELEVANCE" : 0.2369668,
-              "_RANK" : 1,
-              "_ID" : "685165462",
-              "body" : "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
-              "title" : "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
+        ```
+        {
+          "message" : {
+              "meta" : {
+                "timezone" : "+09:00"
+              },
+              "result" : {
+                "status" : {
+                "code" : 200,
+                "message" : "OK"
+              },
+              "query" : "나이키 운동화",
+              "start" : 1,
+              "itemCount" : 1,
+              "total" : 1,
+              "itemList" : {
+                "item" : [
+                {
+                  "_RELEVANCE" : 0.2369668,
+                  "_RANK" : 1,
+                  "_ID" : "685165462",
+                  "body" : "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
+                  "title" : "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
+                }
+                ]
+              }
             }
-            ]
           }
         }
-      }
-    }
-    ```
+        ```
 
 ### ACL
+* 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
+    * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
 * ACL 설정 방법
     ![](http://static.toastoven.net/prod_search/acl_procedure.png?)
     1. "ACL" 탭을 클릭합니다.
@@ -279,6 +287,7 @@
     5. 색인 명령어가 Rest API로 출력됩니다.
     6. "색인" 버튼을 클릭합니다.
     7. 색인 결과를 확인할 수 있습니다.
+<br>
 
 ### 필터링 기능
 * 필터링 방법
@@ -313,6 +322,7 @@
     ]
     ```
     * "category" 가 1인 문서만 필터링 됩니다.
+<br>
 
 ### 정렬 기능
 * 정렬 방법
@@ -407,11 +417,13 @@
 ![](http://static.toastoven.net/prod_search/detail-field_type.png??)
 
 * text
-    * 필드값이 문자열인 경우 선택합니다.
-    * 최대 사이즈는 4096Byte입니다.
+    * 형태소 분석이 필요한 필드일 경우 선택합니다.
+        * 필드 값이 "나이키운동화"일 경우 "나이키운동화", "나이키 운동화", "나이키" 또는 "운동화"로 검색했을 때 검색 결과가 나옵니다.
+    * 최대 사이즈는 4,096Byte입니다.
 * keyword
-    * 필드값을 형태소 분석할 필요가 없는 경우 선택합니다.
-    * 예를 들어 카테고리, 우편 번호, 태그 등과 같은 데이터에 사용합니다.
+    * 형태소 분석이 필요 없는 필드일 경우 선택합니다.
+        * 필드 값이 "나이키운동화"일 경우 "나이키운동화"로 검색했을 때만 검색 결과가 나옵니다.
+        * 필드 값이 "나이키 운동화"일 경우 "나이키 운동화"로 검색했을 때만 검색 결과가 나옵니다.
     * 최대 사이즈는 64Byte입니다.
 * byte
     * 1byte 정수형입니다.
