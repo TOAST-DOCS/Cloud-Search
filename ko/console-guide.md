@@ -291,10 +291,9 @@
 <br>
 
 ### 필터링 기능
+* 색인된 필드만 필터링 가능합니다.
+    * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "필터" 체크 박스가 노출됩니다.
 * 필터링 방법
-    * 색인된 필드만 필터링 가능합니다.
-        * 필드 설정에서 색인 체크 박스에 체크한 경우 필터 체크 박스가 노출됩니다.
-
     ![](http://static.toastoven.net/prod_search/search_procedure-filtering_function.png?)
     1. "색인" 탭을 클릭합니다.
     2. 필터링할 필드를 체크하고 필터링할 값을 입력합니다.
@@ -329,6 +328,8 @@
 <br>
 
 ### 정렬 기능
+* 색인된 필드만 필터링 가능합니다.
+    * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "정렬" 체크 박스가 노출됩니다.
 * 정렬 방법
     ![](http://static.toastoven.net/prod_search/search_procedure-sorting_function.png????)
     1. "색인" 탭을 클릭합니다.
@@ -372,7 +373,9 @@
     ```    
     * "update" 내림차순(desc)으로 정렬됩니다.
 
-### 요약 기능
+### 요약(Aggregation) 기능
+* 색인된 필드만 필터링 가능합니다.
+    * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "요약" 체크 박스가 노출됩니다.
 * 요약 방법
     ![](http://static.toastoven.net/prod_search/search_procedure-summary_function.png???)
     1. "색인" 탭을 클릭합니다.
