@@ -130,8 +130,8 @@
             {
               "request_time" : "2017-10-23T12:36:43",
               "file_name" : "documents.json",
-              "file_size" : "1185",
-              "status" : "4"
+              "file_size" : 1185,
+              "status" : 4
             }
             ```
             * status
