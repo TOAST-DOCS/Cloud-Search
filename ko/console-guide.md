@@ -292,6 +292,9 @@
 
 ### 필터링 기능
 * 필터링 방법
+    * 색인된 필드만 필터링 가능합니다.
+        * 필드 설정에서 색인 체크 박스에 체크한 경우 필터 체크 박스가 노출됩니다.
+
     ![](http://static.toastoven.net/prod_search/search_procedure-filtering_function.png?)
     1. "색인" 탭을 클릭합니다.
     2. 필터링할 필드를 체크하고 필터링할 값을 입력합니다.
