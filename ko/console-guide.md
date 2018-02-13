@@ -328,7 +328,7 @@
 <br>
 
 ### 정렬 기능
-* 색인된 필드만 필터링 가능합니다.
+* 색인된 필드만 정렬 가능합니다.
     * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "정렬" 체크 박스가 노출됩니다.
 * 정렬 방법
     ![](http://static.toastoven.net/prod_search/search_procedure-sorting_function.png????)
@@ -374,7 +374,7 @@
     * "update" 내림차순(desc)으로 정렬됩니다.
 
 ### 요약(Aggregation) 기능
-* 색인된 필드만 필터링 가능합니다.
+* 색인된 필드만 요약 가능합니다.
     * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "요약" 체크 박스가 노출됩니다.
 * 요약 방법
     ![](http://static.toastoven.net/prod_search/search_procedure-summary_function.png???)
