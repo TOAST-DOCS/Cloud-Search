@@ -472,7 +472,7 @@
 ![](http://static.toastoven.net/prod_search/detail-analysis.png)
 
 * default
-    * 형태소 분석기를 이용해 토큰을 분리한다.
+    * 형태소 분석기를 이용해 단어을 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
 * whitespace
     * whitespace를 구분자로 토큰을 분리한다.
