@@ -7,12 +7,12 @@
 ## 상품 활성화
 * Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
-    ![](http://static.toastoven.net/prod_search/product-use-02.png?????)
+    ![](http://static.toastoven.net/prod_search/product-use-02.png????)
     1. "서비스 선택"을 클릭합니다.
     2. "Cloud Search"를 클릭해서 서비스를 활성화합니다.
 <br>
 * 활성화 확인
-    ![](http://static.toastoven.net/prod_search/product-use-03.png???)
+    ![](http://static.toastoven.net/prod_search/product-use-03.png??)
     1. "Search" 클릭합니다.
     2. "Cloud Search"가 노출되면 활성화된 것입니다.
 <br>
@@ -21,7 +21,7 @@
 
 ### 서비스 생성
 * 서비스 생성 방법
-    ![](http://static.toastoven.net/prod_search/domain_create_procedure.png??)
+    ![](http://static.toastoven.net/prod_search/domain_create_procedure.png?)
     1. "서비스 생성" 버튼을 클릭합니다.
     2. 서비스 ID를 입력합니다.
         * 영문 소문자, 숫자 및 일부 특수 문자만 사용 가능합니다.
@@ -32,13 +32,13 @@
     3. "저장" 버튼을 클릭합니다.
 <br>
 * 서비스 생성 결과
-    ![](http://static.toastoven.net/prod_search/domain_create_result.png)
+    ![](http://static.toastoven.net/prod_search/domain_create_result.png?)
     1. 생성된 서비스 ID(test)를 클릭합니다.
 <br>
 
 ### 필드 설정
 * 필드 설정 방법
-    ![](http://static.toastoven.net/prod_search/field_create_procedure.png???)
+    ![](http://static.toastoven.net/prod_search/field_create_procedure.png??)
     1. "필드 설정" 탭을 클릭합니다.
     2. "필드 추가" 버튼을 클릭합니다.
     3. 필드 이름을 입력합니다.
@@ -95,8 +95,8 @@
         * 128Mb 이상의 데이터는 여러 개로 나누어서 색인해야 합니다.
 <br>
 * 색인 방법
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png?)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
@@ -130,8 +130,8 @@
             {
               "request_time" : "2017-10-23T12:36:43",
               "file_name" : "documents.json",
-              "file_size" : "1185",
-              "status" : "4"
+              "file_size" : 1185,
+              "status" : 4
             }
             ```
             * status
@@ -143,7 +143,7 @@
 
 ### 검색
 * 검색 방법
-    ![](http://static.toastoven.net/prod_search/search_procedure.png?)
+    ![](http://static.toastoven.net/prod_search/search_procedure.png??)
     1. "검색" 탭을 클릭합니다.
     2. 검색할 필드명을 체크합니다.
     3. 검색할 필드별 가중치를 설정합니다.
@@ -206,7 +206,7 @@
 * 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
     * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
 * ACL 설정 방법
-    ![](http://static.toastoven.net/prod_search/acl_procedure.png?)
+    ![](http://static.toastoven.net/prod_search/acl_procedure.png??)
     1. "ACL" 탭을 클릭합니다.
     2. 색인 요청은 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
     3. 검색 요청은 모든 IP에서 가능하도록 설정한 예제입니다.
@@ -217,19 +217,19 @@
 ### 사전 준비
 * 서비스 삭제
     * 기존에 "test" 서비스 ID가 존재하면 삭제합니다.
-        ![](http://static.toastoven.net/prod_search/domain_delete_procedure.png?)
+        ![](http://static.toastoven.net/prod_search/domain_delete_procedure.png??)
         1. "삭제" 버튼을 클릭합니다.
 <br>
 * 서비스 생성
     * 서비스 생성 방법
-        ![](http://static.toastoven.net/prod_search/domain_create_procedure.png??)
+        ![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
         1. "서비스 생성" 버튼을 클릭합니다.
         2. 서비스 ID를 입력합니다.
         3. "저장" 버튼을 클릭합니다.
 <br>
 * 필드 설정
     * 필드 설정 방법
-        ![](http://static.toastoven.net/prod_search/field_create_procedure-3_function.png???)
+        ![](http://static.toastoven.net/prod_search/field_create_procedure-3_function.png??)
         1. "필드 설정" 탭을 클릭합니다.
         2. "필드 추가" 버튼을 클릭합니다.
         3. "필드명"을 입력합니다.
@@ -279,8 +279,8 @@
     ```
 <br>
 * 색인
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?????)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png???????)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png????)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png??????)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
@@ -291,8 +291,10 @@
 <br>
 
 ### 필터링 기능
+* 색인된 필드만 필터링 가능합니다.
+    * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "필터" 체크 박스가 노출됩니다.
 * 필터링 방법
-    ![](http://static.toastoven.net/prod_search/search_procedure-filtering_function.png?)
+    ![](http://static.toastoven.net/prod_search/search_procedure-filtering_function.png??)
     1. "색인" 탭을 클릭합니다.
     2. 필터링할 필드를 체크하고 필터링할 값을 입력합니다.
     3. 검색 아이콘을 클릭합니다.
@@ -326,8 +328,10 @@
 <br>
 
 ### 정렬 기능
+* 색인된 필드만 정렬 가능합니다.
+    * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "정렬" 체크 박스가 노출됩니다.
 * 정렬 방법
-    ![](http://static.toastoven.net/prod_search/search_procedure-sorting_function.png????)
+    ![](http://static.toastoven.net/prod_search/search_procedure-sorting_function.png???)
     1. "색인" 탭을 클릭합니다.
     2. 소팅할 필드를 체크하고 소팅 Order(asc or desc)를 선택합니다.
     3. 검색 아이콘을 클릭합니다.
@@ -369,9 +373,11 @@
     ```    
     * "update" 내림차순(desc)으로 정렬됩니다.
 
-### 요약 기능
+### 요약(Aggregation) 기능
+* 색인된 필드만 요약 가능합니다.
+    * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "요약" 체크 박스가 노출됩니다.
 * 요약 방법
-    ![](http://static.toastoven.net/prod_search/search_procedure-summary_function.png???)
+    ![](http://static.toastoven.net/prod_search/search_procedure-summary_function.png????)
     1. "색인" 탭을 클릭합니다.
     2. 요약할 필드를 체크합니다.
     3. 검색 아이콘을 클릭합니다.
@@ -391,22 +397,21 @@
 * 사용 예시
     * 예를 들어 메일 검색 서비스를 할 경우 다른 사용자의 메일이 검색되면 안 되기 때문에 반드시 사용자별로 필터링을 해야 합니다.
 * 사용 방법
-    ![](http://static.toastoven.net/prod_search/mandatory_search_filter_01.png???)
-    ![](http://static.toastoven.net/prod_search/mandatory_search_filter_02.png?)
+    ![](http://static.toastoven.net/prod_search/mandatory_search_filter_01.png??)
+    ![](http://static.toastoven.net/prod_search/mandatory_search_filter_02.png??)
     1. "필드 설정" 탭을 클릭합니다.
     2. dealer 필드의 필수 검색 필터를 체크합니다.
         * 다른 설정도 그림과 같이 지정합니다.
     3. "저장" 버튼을 클릭합니다.
     4. "검색" 탭을 클릭합니다.
-    5. dealer 필드의 필터를 체크합니다.
-        * 이때 필터링 값은 입력하지 않습니다.
+    5. dealer 필드의 필터링 값은 입력하지 않습니다.
     6. 검색 버튼을 클릭합니다.
     7. 필수 검색 필터로 지정된 필드에 필터링 값이 없기 때문에 실패 메시지가 출력됩니다.
 
 ### 필드 삭제
 * 필드 삭제 방법
-    ![](http://static.toastoven.net/prod_search/field_delete_procedure_01.png)
-    ![](http://static.toastoven.net/prod_search/field_delete_procedure_02.png?)
+    ![](http://static.toastoven.net/prod_search/field_delete_procedure_01.png?)
+    ![](http://static.toastoven.net/prod_search/field_delete_procedure_02.png??)
     1. "필드 설정" 탭을 클릭합니다.
     2. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
     3. "저장" 버튼을 클릭합니다.
@@ -415,16 +420,18 @@
 ## 상세 가이드
 
 ### 필드 타입
-![](http://static.toastoven.net/prod_search/detail-field_type.png??)
+![](http://static.toastoven.net/prod_search/detail-field_type.png???)
 
 * text
-    * 형태소 분석이 필요한 필드일 경우 선택합니다.
+    * "검색""할 필드일 경우 선택합니다.
+    * 형태소 분석을 합니다.
         * 필드 값이 "나이키운동화"일 경우 "나이키운동화", "나이키 운동화", "나이키" 또는 "운동화"로 검색했을 때 검색 결과가 나옵니다.
     * 최대 사이즈는 4,096Byte입니다.
 * keyword
-    * 형태소 분석이 필요 없는 필드일 경우 선택합니다.
-        * 필드 값이 "나이키운동화"일 경우 "나이키운동화"로 검색했을 때만 검색 결과가 나옵니다.
-        * 필드 값이 "나이키 운동화"일 경우 "나이키 운동화"로 검색했을 때만 검색 결과가 나옵니다.
+    * "필터", "정렬", "요약"할 필드일 경우 선택합니다.
+    * 형태소 분석을 하지 않습니다.
+        * 필드 값이 "나이키운동화"일 경우 "나이키운동화"로만 "필터", "정렬", "요약"이 됩니다.
+        * 필드 값이 "나이키 운동화"일 경우 "나이키 운동화"로만 "필터", "정렬", "요약"이 됩니다.
     * 최대 사이즈는 64Byte입니다.
 * byte
     * 1byte 정수형입니다.
@@ -454,21 +461,25 @@
             * 예제) 2017-09-22
         * yyyy-MM-dd’T’HH:mm:ss
             * 예제) 2017-09-22T15:39:28
+        * yyyy-MM-dd’T’HH:mm:ss'Z'
+            * 예제) 2017-09-22T15:39:28Z
         * yyyy-MM-dd'T'HH:mm:ss.SSS
             * 예제) 2017-09-22T15:39:28.248
+        * yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+            * 예제) 2017-09-22T15:39:28.248Z
 
 ### 형태소 분석
-![](http://static.toastoven.net/prod_search/detail-analysis.png)
+![](http://static.toastoven.net/prod_search/detail-analysis.png?)
 
 * default
-    * 형태소 분석기를 이용해 토큰을 분리한다.
+    * 형태소 분석기를 이용해 단어을 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
 * whitespace
     * whitespace를 구분자로 토큰을 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이키" "신상슈즈"
 
 ### 필터링
-![](http://static.toastoven.net/prod_search/detail-filter.png)
+![](http://static.toastoven.net/prod_search/detail-filter.png?)
 
 * 단일 값 필터링
     * 예제) 1
@@ -493,7 +504,7 @@
           * category !=1 or category == 2
 
 ### ACL
-![](http://static.toastoven.net/prod_search/detail-acl.png?)
+![](http://static.toastoven.net/prod_search/detail-acl.png??)
 
 * 입력형식
     * IP 형식으로 입력 가능합니다.
