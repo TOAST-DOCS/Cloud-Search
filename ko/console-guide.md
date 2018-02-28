@@ -91,8 +91,8 @@
     * id
         * 문서의 고유한 ID입니다.
         * id의 타입은 문자열입니다.
-    * 최대 파일 사이즈는 128Mb입니다.
-        * 128Mb 이상의 데이터는 여러 개로 나누어서 색인해야 합니다.
+    * 최대 파일 사이즈는 8Mb입니다.
+        * 8Mb 이상의 데이터는 여러 개로 나누어서 색인해야 합니다.
 <br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?)
