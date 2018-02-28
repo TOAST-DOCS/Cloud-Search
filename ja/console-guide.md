@@ -1,4 +1,4 @@
-## Search > Cloud Search > 콘솔 사용 가이드
+## Search > Cloud Search > Console Guide
 
 ## 문서 설명
 * 문서 내의 호스트명 "alpha-api-search.cloud.toast.com"는 사용자별로 다를 수 있습니다.
