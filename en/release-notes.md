@@ -1,4 +1,4 @@
-## Search > Cloud Search > Release Notes
+## Search > Cloud Search > 릴리스 노트
 
 ### 2018.02.22
 #### 신규 상품 출시
