@@ -331,10 +331,12 @@
 * 색인된 필드만 정렬 가능합니다.
     * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "정렬" 체크 박스가 노출됩니다.
 * 정렬 방법
-    ![](http://static.toastoven.net/prod_search/search_procedure-sorting_function.png???)
+    ![](http://static.toastoven.net/prod_search/search_procedure-sorting_function.png?????)
     1. "색인" 탭을 클릭합니다.
     2. 소팅할 필드를 체크하고 소팅 Order(asc or desc)를 선택합니다.
-    3. 검색 아이콘을 클릭합니다.
+    3. 다중 정렬일 경우 정렬 순서를 지정합니다.
+        * 다중 정렬 : 예를 들어 update 필드로 정렬했는데 update 값이 동일한 경우 category 순으로 정렬하는 기능입니다.
+    4. 검색 아이콘을 클릭합니다.
 <br>
 * 검색 결과
     ```
@@ -416,6 +418,7 @@
     2. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
     3. "저장" 버튼을 클릭합니다.
     4. "지금 수행" 버튼을 클릭합니다.
+* 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
 
 ## 상세 가이드
 
@@ -467,9 +470,13 @@
             * 예제) 2017-09-22T15:39:28.248
         * yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
             * 예제) 2017-09-22T15:39:28.248Z
+* 모든 필드 타입은 배열 형태로 입력 가능합니다.
+    * ["나이키", "운동화"]
+    * [1.0, 2.0]
+    * ["2017-09-22T15:39:28", "2017-09-22T15:39:29"]
 
 ### 형태소 분석
-![](http://static.toastoven.net/prod_search/detail-analysis.png?)
+![](http://static.toastoven.net/prod_search/detail-analysis.png??)
 
 * default
     * 형태소 분석기를 이용해 단어을 분리한다.
@@ -477,6 +484,9 @@
 * whitespace
     * whitespace를 구분자로 토큰을 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이키" "신상슈즈"
+* bigram
+    * 2글자씩 단어를 분리한다.
+      * 예제) "나이키 신상슈즈" -> "나이" "이키" "신상" "상슈" "슈즈"
 
 ### 필터링
 ![](http://static.toastoven.net/prod_search/detail-filter.png?)
