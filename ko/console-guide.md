@@ -241,30 +241,30 @@
     ```
 * 검색
     ![](http://static.toastoven.net/prod_search/filtering-search-20180724.png?)
-        1. "category"가 "1"인 문서만 검색됩니다.
+    1. "category"가 "1"인 문서만 검색됩니다.
     <br>
-    * 필터링 입력 방법
-        * 단일 값 필터링
-            * 예제) 1
-                * category == 1
-        * or 필터링
-            * 예제) 1|2
-                * category == 1 or category == 2
-        * and 필터링
-            * 예제) 1&2
-                * category == 1 and category == 2      
-        * 범위 지정 필터링
-            * 예제) [1,2]
-                * 1 <= category <= 2
-            * 예제) {1,2]      
-                * 1 < category <= 2
-            * 예제) {,2]      
-                * category <= 2
-        * not 필터링
-            * 예제) !1
-                * category != 1
-            * 예제) !1|2
-                * category !=1 or category == 2
+* 필터링 입력 방법
+    * 단일 값 필터링
+        * 예제) 1
+            * category == 1
+    * or 필터링
+        * 예제) 1|2
+            * category == 1 or category == 2
+    * and 필터링
+        * 예제) 1&2
+            * category == 1 and category == 2      
+    * 범위 지정 필터링
+        * 예제) [1,2]
+            * 1 <= category <= 2
+        * 예제) {1,2]      
+            * 1 < category <= 2
+        * 예제) {,2]      
+            * category <= 2
+    * not 필터링
+        * 예제) !1
+            * category != 1
+        * 예제) !1|2
+            * category !=1 or category == 2
 <br>
 
 ### 위경도(geolocation) 필터링
