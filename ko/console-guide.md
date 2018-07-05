@@ -327,6 +327,45 @@
     * "category" 가 1인 문서만 필터링 됩니다.
 <br>
 
+### 위경도(geolocation) 필터링
+* 필드 설정
+    ![](http://static.toastoven.net/prod_search/field-geolocation-20180724.png)
+    1. 위경도를 입력할 필드 타입으로 geo_point를 선택합니다.
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+    {
+      "action": "add",
+      "id": "num-1",
+      "fields": {
+        "name" : "에프엑스수학학원",
+        "location" : [10.2, 10.2]
+      }
+    },
+    {
+      "action": "add",
+      "id": "num-2",
+      "fields": {
+        "name" : "좋은나무 사고력수학학원",
+        "location" : [10.30, 10.4]
+      }
+    },
+    {
+      "action": "add",
+      "id": "num-3",
+      "fields": {
+        "name" : "수학의아침학원",
+        "location" : [10.4, 10.3]
+      }
+    }
+    ]
+    ```
+* 검색
+    * 반경(circle) 필터링
+    * 영역(polygon) 필터링
+
+
 ### 정렬 기능
 * 색인된 필드만 정렬 가능합니다.
     * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "정렬" 체크 박스가 노출됩니다.
