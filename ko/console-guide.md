@@ -214,123 +214,64 @@
 
 ## 기능 가이드
 
-### 사전 준비
-* 서비스 삭제
-    * 기존에 "test" 서비스 ID가 존재하면 삭제합니다.
-        ![](http://static.toastoven.net/prod_search/domain_delete_procedure.png??)
-        1. "삭제" 버튼을 클릭합니다.
-<br>
-* 서비스 생성
-    * 서비스 생성 방법
-        ![](http://static.toastoven.net/prod_search/domain_create_procedure.png???)
-        1. "서비스 생성" 버튼을 클릭합니다.
-        2. 서비스 ID를 입력합니다.
-        3. "저장" 버튼을 클릭합니다.
-<br>
+### 필터링
 * 필드 설정
-    * 필드 설정 방법
-        ![](http://static.toastoven.net/prod_search/field_create_procedure-3_function.png??)
-        1. "필드 설정" 탭을 클릭합니다.
-        2. "필드 추가" 버튼을 클릭합니다.
-        3. "필드명"을 입력합니다.
-        4. "category" 필드는 "integer" 타입을 선택합니다.
-        5. "dealer" 필드는 "keyword" 타입을 선택합니다.
-        6. "update" 필드는 "date" 타입을 선택합니다.
-        7. "저장" 버튼을 클릭합니다.
-<br>
-* 색인 파일 생성
-    * 필터링, 정렬, 요약 기능 테스트를 위해 아래와 같은 데이터를 생성합니다.
-    ```
-    [
-      {
-        "action": "add",
-        "id": "633800446",
-        "fields": {
-          "title": "[무료배송]나이키 슈즈 195종!!",
-          "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??",
-          "category": 1,
-          "dealer": "롯데아이몰",
-          "update": "2017-09-19T12:34:28"
-        }
-      },
-      {
-        "action": "add",
-        "id": "685165462",
-        "fields": {
-          "title": "[슈퍼특가]나이키 운동화 109종",
-          "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~",
-          "category": 1,
-          "dealer": "롯데아이몰",
-          "update": "2017-09-20T13:23:38"
-        }
-      },
-      {
-        "action": "add",
-        "id": "610408574",
-        "fields": {
-          "title": "[아디다스]신상운동화/슬리퍼 114종",
-          "body": "[아디다스슈즈모음♥] 무/료/배/송 [아디다스]신상슬리퍼 /슈퍼스타 스탠스미스 /튜블라외 114종 득템기회!",
-          "category": 2,
-          "dealer": "신세계몰",
-          "update": "2017-09-20T23:58:12"
-        }
-      }
-    ]
-    ```
-<br>
+    ![](http://static.toastoven.net/prod_search/filtering-field-20180724.png)
 * 색인
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png????)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_02.png??????)
-    1. "색인" 탭을 클릭합니다.
-    2. "파일 선택" 버튼을 클릭합니다.
-    3. 색인할 파일을 선택합니다.
-    4. "열기" 버튼을 클릭합니다.  
-    5. 색인 명령어가 Rest API로 출력됩니다.
-    6. "색인" 버튼을 클릭합니다.
-    7. 색인 결과를 확인할 수 있습니다.
-<br>
-
-### 필터링 기능
-* 색인된 필드만 필터링 가능합니다.
-    * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "필터" 체크 박스가 노출됩니다.
-* 필터링 방법
-    ![](http://static.toastoven.net/prod_search/search_procedure-filtering_function.png??)
-    1. "색인" 탭을 클릭합니다.
-    2. 필터링할 필드를 체크하고 필터링할 값을 입력합니다.
-    3. 검색 아이콘을 클릭합니다.
-<br>
-* 검색결과
+    * 테스트를 위해 아래 데이터를 색인합니다.
     ```
     [
-      {
-        "dealer": "롯데아이몰",
-        "update": "2017-09-19T12:34:28",
-        "_RELEVANCE": 1,
-        "_RANK": 1,
-        "_ID": "633800446",
-        "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??",
-        "category": 1,
-        "title": "[무료배송]나이키 슈즈 195종!!"
-      },
-      {
-        "dealer": "롯데아이몰",
-        "update": "2017-09-20T13:23:38",
-        "_RELEVANCE": 1,
-        "_RANK": 2,
-        "_ID": "685165462",
-        "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~",
-        "category": 1,
-        "title": "[슈퍼특가]나이키 운동화 109종"
+    {
+      "action": "add",
+      "id": "num-1",
+      "fields": {
+        "name" : "나이키 에어맥스",
+        "category" : 1
       }
+    },
+    {
+      "action": "add",
+      "id": "num-2",
+      "fields": {
+        "name" : "나이키 샤이엔 솔리드",
+        "category" : 2
+      }
+    }
     ]
     ```
-    * "category" 가 1인 문서만 필터링 됩니다.
+* 검색
+    ![](http://static.toastoven.net/prod_search/filtering-search-20180724.png?)
+    1. "category"가 "1"인 문서만 검색됩니다.
+    <br>
+    * 필터링 입력 방법
+        * 단일 값 필터링
+            * 예제) 1
+                * category == 1
+        * or 필터링
+            * 예제) 1|2
+                * category == 1 or category == 2
+        * and 필터링
+            * 예제) 1&2
+                * category == 1 and category == 2      
+        * 범위 지정 필터링
+            * 예제) [1,2]
+                * 1 <= category <= 2
+            * 예제) {1,2]      
+                * 1 < category <= 2
+            * 예제) {,2]      
+                * category <= 2
+        * not 필터링
+            * 예제) !1
+                * category != 1
+            * 예제) !1|2
+                * category !=1 or category == 2
 <br>
 
 ### 위경도(geolocation) 필터링
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/geolocation-field-20180724.png)
-    1. 위경도를 입력할 필드 타입으로 geo_point를 선택합니다.
+    1. 위경도를 입력할 필드 타입으로 "geo_point"를 선택합니다.
+    <br>
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -362,6 +303,7 @@
     ]
     ```
     * geo_point 타입에는 [{경도}, {위도}] 형식으로 값을 입력합니다.
+    <br>
 * 검색
     * 반경(circle) 필터링
         ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20180724.png)
@@ -370,8 +312,7 @@
             * 예제 : circle,[10.3,10.3],15km
                 * 경도 10.3, 위도 10.3 중심으로 반경 15km 이내인 문서만 검색됩니다.
             * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
-        * 검색 결과
-
+    <br>
     * 영역(polygon) 필터링
         ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20180724.png)
         1. 필터링 값을 입력합니다.
@@ -381,74 +322,101 @@
             * 연결된 다각형 내의 문서만 검색됩니다.
 
 
-### 정렬 기능
-* 색인된 필드만 정렬 가능합니다.
-    * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "정렬" 체크 박스가 노출됩니다.
-* 정렬 방법
-    ![](http://static.toastoven.net/prod_search/search_procedure-sorting_function.png?????)
-    1. "색인" 탭을 클릭합니다.
-    2. 소팅할 필드를 체크하고 소팅 Order(asc or desc)를 선택합니다.
-    3. 다중 정렬일 경우 정렬 순서를 지정합니다.
-        * 다중 정렬 : 예를 들어 update 필드로 정렬했는데 update 값이 동일한 경우 category 순으로 정렬하는 기능입니다.
-    4. 검색 아이콘을 클릭합니다.
-<br>
-* 검색 결과
+### 정렬
+* 필드 설정
+    ![](http://static.toastoven.net/prod_search/sorting-field-20180724.png)
+    <br>
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
     ```
     [
-      {
-        "dealer": "신세계몰",
-        "update": "2017-09-20T23:58:12",
-        "_RELEVANCE": "NaN",
-        "_RANK": 1,
-        "_ID": "610408574",
-        "body": "[아디다스슈즈모음♥] 무/료/배/송 [아디다스]신상슬리퍼 /슈퍼스타 스탠스미스 /튜블라외 114종 득템기회!",
-        "category": 2,
-        "title": "[아디다스]신상운동화/슬리퍼 114종"
-      },
-      {
-        "dealer": "롯데아이몰",
-        "update": "2017-09-20T13:23:38",
-        "_RELEVANCE": "NaN",
-        "_RANK": 2,
-        "_ID": "685165462",
-        "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~",
-        "category": 1,
-        "title": "[슈퍼특가]나이키 운동화 109종"
-      },
-      {
-        "dealer": "롯데아이몰",
-        "update": "2017-09-19T12:34:28",
-        "_RELEVANCE": "NaN",
-        "_RANK": 3,
-        "_ID": "633800446",
-        "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??",
-        "category": 1,
-        "title": "[무료배송]나이키 슈즈 195종!!"
-      }
-    ]
-    ```    
-    * "update" 내림차순(desc)으로 정렬됩니다.
-
-### 요약(Aggregation) 기능
-* 색인된 필드만 요약 가능합니다.
-    * "필드 설정" 탭에서 "색인" 체크 박스에 체크한 경우만 "검색" 탭에 "요약" 체크 박스가 노출됩니다.
-* 요약 방법
-    ![](http://static.toastoven.net/prod_search/search_procedure-summary_function.png????)
-    1. "색인" 탭을 클릭합니다.
-    2. 요약할 필드를 체크합니다.
-    3. 검색 아이콘을 클릭합니다.
-<br>
-* 검색 결과
-    ```
     {
-      "dealer": {
-        "롯데아이몰": 2,
-        "신세계몰": 1
+      "action": "add",
+      "id": "num-1",
+      "fields": {
+        "name" : "나이키 에어맥스",
+        "popular" : 10,
+        "price" : 84180
+      }
+    },
+    {
+      "action": "add",
+      "id": "num-2",
+      "fields": {
+        "name" : "나이키 에어줌",
+        "popular" : 5,
+        "price" : 97200
+      }
+    },
+    {
+      "action": "add",
+      "id": "num-3",
+      "fields": {
+        "name" : "나이키 에어포스",
+        "popular" : 5,
+        "price" : 74680
       }
     }
+    ]
     ```
-    * dealer 별 문서 개수가 출력됩니다.
-
+    <br>
+* 검색
+    ![](http://static.toastoven.net/prod_search/sorting-search-20180724.png?)
+    1. 정렬 방식을 지정합니다.
+        * "asc" : 올림차순 정렬
+        * "desc" : 내림차순 정렬
+    2. 정렬 순서를 지정합니다.
+        * 위의 예제에서는 "popular"로 먼저 정렬합니다.
+        * "popular"가 동일한 경우 "price"로 정렬합니다.    
+    <br>
+### 요약
+* 필드 설정
+    ![](http://static.toastoven.net/prod_search/aggregation-field-20180724.png)
+    <br>
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+    {
+      "action": "add",
+      "id": "num-1",
+      "fields": {
+        "name" : "나이키 에어맥스",
+        "category" : "신발"
+      }
+    },
+    {
+      "action": "add",
+      "id": "num-2",
+      "fields": {
+        "name" : "나이키 에어줌",
+        "category" : "신발"
+      }
+    },
+    {
+      "action": "add",
+      "id": "num-3",
+      "fields": {
+        "name" : "나이키 스우시 반팔티",
+        "category" : "의류"
+      }
+    }
+    ]
+    ```    
+    <br>
+    * 검색
+        ![](http://static.toastoven.net/prod_search/aggregation-search-20180724.png)
+        1. "category" 필드의 "요약"을 체크합니다.
+        <br>
+        * 검색 결과와 함께 요약 정보가 출력됩니다.
+        ```
+        "summary": {
+          "category": {
+            "신발": 2,
+            "의류": 1
+          }
+        }
+        ```
 ### 문서 부스팅(Boosting)
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/documents_boosting-field-20180724.png)
@@ -474,7 +442,7 @@
       }
     ]
     ```
-    * "num-1"에는 "weight"를 0.1, "num-2"에는 "weight"를 0.9로 지정합니다.
+    * "num-1"에는 "weight"를 "0.1", "num-2"에는 "weight"를 "0.9"로 지정합니다.
     * "weight"는 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
 * 검색
     ![](http://static.toastoven.net/prod_search/documents_boosting-search-20180724.png)
@@ -500,33 +468,50 @@
     ```
     * "weight"를 높게 부여한 "num-2" 문서가 검색 결과 상위에 노출됩니다.
 
-### 필수 필터 기능
+### 필수 필터
 * 사용 예시
-    * 예를 들어 메일 검색 서비스를 할 경우 다른 사용자의 메일이 검색되면 안 되기 때문에 반드시 사용자별로 필터링을 해야 합니다.
-* 사용 방법
-    ![](http://static.toastoven.net/prod_search/mandatory_search_filter_01.png??)
-    ![](http://static.toastoven.net/prod_search/mandatory_search_filter_02.png??)
-    1. "필드 설정" 탭을 클릭합니다.
-    2. dealer 필드의 필수 검색 필터를 체크합니다.
-        * 다른 설정도 그림과 같이 지정합니다.
-    3. "저장" 버튼을 클릭합니다.
-    4. "검색" 탭을 클릭합니다.
-    5. dealer 필드의 필터링 값은 입력하지 않습니다.
-    6. 검색 버튼을 클릭합니다.
-    7. 필수 검색 필터로 지정된 필드에 필터링 값이 없기 때문에 실패 메시지가 출력됩니다.
+    * 예를 들어 부서별로 문서 권한이 있을 때 자신이 속한 부서의 문서만 검색 되도록 강제하기 위해 사용합니다.
+* 필드 설정
+    ![](http://static.toastoven.net/prod_search/mandatory_filter-field-20180724.png)
+    * "department" 필드의 "필수 필터"를 체크합니다.
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+    {
+      "action": "add",
+      "id": "num-1",
+      "fields": {
+        "title" : "정기감사 결과 보고서",
+        "department" : "경영팀"
+      }
+    },
+    {
+      "action": "add",
+      "id": "num-2",
+      "fields": {
+        "title" : "내부직원 만족도 보고서",
+        "department" : "인사팀"
+      }
+    }
+    ]
+    ```
+* 검색
+    ![](http://static.toastoven.net/prod_search/mandatory_filter-search-20180724.png)
+    1. "department" 필드로 필터링하도록 강제됩니다.
 
 ### 필드 삭제
-* 필드 삭제 방법
-    ![](http://static.toastoven.net/prod_search/field_delete_procedure_01.png?)
-    ![](http://static.toastoven.net/prod_search/field_delete_procedure_02.png??)
-    1. "필드 설정" 탭을 클릭합니다.
-    2. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
-    3. "저장" 버튼을 클릭합니다.
-    4. "지금 수행" 버튼을 클릭합니다.
+* 삭제 방법
+    ![](http://static.toastoven.net/prod_search/field_delete-1-20180724.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-2-20180724.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-3-20180724.png)
+    1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
+    2. "저장" 버튼을 클릭합니다.
+    3. "지금 수행" 버튼을 클릭합니다.
+    <br>
 * 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
 
 ## 상세 가이드
-
 ### 필드 타입
 ![](http://static.toastoven.net/prod_search/detail-field_type.png???)
 
@@ -593,35 +578,10 @@
     * 2글자씩 단어를 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이" "이키" "신상" "상슈" "슈즈"
 
-### 필터링
-![](http://static.toastoven.net/prod_search/detail-filter.png?)
-
-* 단일 값 필터링
-    * 예제) 1
-        * category == 1
-* or 필터링
-    * 예제) 1|2
-    * category == 1 or category == 2
-* and 필터링
-    * 예제) 1&2
-        * category == 1 and category == 2      
-* 범위 지정 필터링
-    * 예제) [1,2]
-        * 1 <= category <= 2
-    * 예제) {1,2]      
-        * 1 < category <= 2
-    * 예제) {,2]      
-        * category <= 2
-* not 필터링
-      * 예제) !1
-          * category != 1
-      * 예제) !1|2
-          * category !=1 or category == 2
-
 ### ACL
 ![](http://static.toastoven.net/prod_search/detail-acl.png??)
 
-* 입력형식
+* 입력 형식
     * IP 형식으로 입력 가능합니다.
         * 예제) 202.179.177.21
     * CIDR 형식으로 입력 가능합니다.
