@@ -241,7 +241,7 @@
     ```
 * 검색
     ![](http://static.toastoven.net/prod_search/filtering-search-20180724.png?)
-    1. "category"가 "1"인 문서만 검색됩니다.
+        1. "category"가 "1"인 문서만 검색됩니다.
     <br>
     * 필터링 입력 방법
         * 단일 값 필터링
@@ -407,17 +407,16 @@
     * 검색
         ![](http://static.toastoven.net/prod_search/aggregation-search-20180724.png)
         1. "category" 필드의 "요약"을 체크합니다.
-        <br>
-        * 검색 결과와 함께 요약 정보가 출력됩니다.
-        ```
-        "summary": {
-          "category": {
-            "신발": 2,
-            "의류": 1
-          }
-        }
-        ```
-        * "category"가 "신발"인 검색 결과가 2건, "의류"인 검색 결과가 1건이라는 의미입니다.
+            * 검색 결과와 함께 요약 정보가 출력됩니다.
+            ```
+            "summary": {
+              "category": {
+                "신발": 2,
+                "의류": 1
+              }
+            }
+            ```
+            * "category"가 "신발"인 검색 결과가 2건, "의류"인 검색 결과가 1건이라는 의미입니다.
 ### 문서 부스팅(Boosting)
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/documents_boosting-field-20180724.png)
