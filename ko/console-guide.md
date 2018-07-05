@@ -361,9 +361,22 @@
     }
     ]
     ```
+    * geo_point 타입에는 [{경도}, {위도}] 형식으로 값을 입력합니다.
 * 검색
     * 반경(circle) 필터링
+        ![](http://static.toastoven.net/prod_search/search-geolocation-circle-20180724.png)
+        1. 필터링 값을 입력합니다.
+            * 형식 : circle,[{경도},{위도}],{반경}
+            * 예제 : circle,[10.3,10.3],15km
+                * 경도 10.3, 위도 10.3 중심으로 반경 15km 이내인 문서만 검색됩니다.
+            * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
     * 영역(polygon) 필터링
+        ![](http://static.toastoven.net/prod_search/search-geolocation-polygon-20180724.png)
+        1. 필터링 값을 입력합니다.
+            * 형식 : polygon,[{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
+            * 예제 : polygon,[10.2,10.2],[10.3,10.5],[10.5,10.2]
+            * 각 점들은 시계 방향으로 연결됩니다.
+            * 연결된 다각형 내의 문서만 검색됩니다.
 
 
 ### 정렬 기능
