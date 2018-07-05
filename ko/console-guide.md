@@ -417,6 +417,7 @@
           }
         }
         ```
+        * "category"가 "신발"인 검색 결과가 2건, "의류"인 검색 결과가 1건이라는 의미입니다.
 ### 문서 부스팅(Boosting)
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/documents_boosting-field-20180724.png)
