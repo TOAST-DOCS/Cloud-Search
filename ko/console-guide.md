@@ -242,7 +242,7 @@
 * 검색
     ![](http://static.toastoven.net/prod_search/filtering-search-20180724.png?)
     1. "category"가 "1"인 문서만 검색됩니다.
-    <br>
+    <br><br>
 * 필터링 입력 방법
     * 단일 값 필터링
         * 예제) 1
