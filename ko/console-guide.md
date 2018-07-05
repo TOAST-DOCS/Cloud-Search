@@ -329,7 +329,7 @@
 
 ### 위경도(geolocation) 필터링
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/field-geolocation-20180724.png)
+    ![](http://static.toastoven.net/prod_search/geolocation-field-20180724.png)
     1. 위경도를 입력할 필드 타입으로 geo_point를 선택합니다.
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
@@ -364,14 +364,16 @@
     * geo_point 타입에는 [{경도}, {위도}] 형식으로 값을 입력합니다.
 * 검색
     * 반경(circle) 필터링
-        ![](http://static.toastoven.net/prod_search/search-geolocation-circle-20180724.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20180724.png)
         1. 필터링 값을 입력합니다.
             * 형식 : circle,[{경도},{위도}],{반경}
             * 예제 : circle,[10.3,10.3],15km
                 * 경도 10.3, 위도 10.3 중심으로 반경 15km 이내인 문서만 검색됩니다.
             * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
+        * 검색 결과
+
     * 영역(polygon) 필터링
-        ![](http://static.toastoven.net/prod_search/search-geolocation-polygon-20180724.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20180724.png)
         1. 필터링 값을 입력합니다.
             * 형식 : polygon,[{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
             * 예제 : polygon,[10.2,10.2],[10.3,10.5],[10.5,10.2]
@@ -446,6 +448,57 @@
     }
     ```
     * dealer 별 문서 개수가 출력됩니다.
+
+### 문서 부스팅(Boosting)
+* 필드 설정
+    ![](http://static.toastoven.net/prod_search/documents_boosting-field-20180724.png)
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+      {
+        "action": "add",
+        "id": "num-1",
+        "weight": 0.1,
+        "fields": {
+          "title" : "나이키"
+        }
+      },
+      {
+        "action": "add",
+        "id": "num-2",
+        "weight": 0.9,
+        "fields": {
+          "title" : "나이키"
+        }
+      }
+    ]
+    ```
+    * "num-1"에는 "weight"를 0.1, "num-2"에는 "weight"를 0.9로 지정합니다.
+    * "weight"는 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
+* 검색
+    ![](http://static.toastoven.net/prod_search/documents_boosting-search-20180724.png)
+    * "나이키"로 검색합니다.
+* 검색 결과
+    ```
+    "itemList": {
+      "item": [
+        {
+          "_RELEVANCE": 0.6772727,
+          "_RANK": 1,
+          "_ID": "num-2",
+          "title": "<b>나이키</b>"
+        },
+        {
+          "_RELEVANCE": 0.27727273,
+          "_RANK": 2,
+          "_ID": "num-1",
+          "title": "<b>나이키</b>"
+        }
+      ]
+    }
+    ```
+    * "weight"를 높게 부여한 "num-2" 문서가 검색 결과 상위에 노출됩니다.
 
 ### 필수 필터 기능
 * 사용 예시
