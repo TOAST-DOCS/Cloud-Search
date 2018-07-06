@@ -108,7 +108,7 @@
     * 색인 API
         * Request
             ```
-            $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
             ```
         * Response
             ```        
@@ -119,7 +119,7 @@
     * 색인 결과 확인 API
         * Request
             ```
-            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/indexing_log?id=1'
+            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing_log?id=1'
             ```  
             * id 1은 위의 색인 API Response 의 id입니다.
         * Response
@@ -140,7 +140,7 @@
 
 ### 검색
 * 검색 방법
-    ![](http://static.toastoven.net/prod_search/search_procedure.png??)
+    ![](http://static.toastoven.net/prod_search/basic-search-20180724.png)
     1. "검색" 탭을 클릭합니다.
     2. 검색할 필드명을 체크합니다.
     3. 검색할 필드별 가중치를 설정합니다.
@@ -164,7 +164,7 @@
     * 아래와 같이 REST API를 사용 가능합니다.
     * Request
         ```
-        $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/gFGDJfG4pyUKZ9RF/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
+        $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
         ```
     * Response
         ```
