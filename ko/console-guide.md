@@ -96,7 +96,8 @@
         * 8Mb 이상의 데이터는 여러 개로 나누어서 색인해야 합니다.
 <br><br>
 * 색인 방법
-![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?)![](http://static.toastoven.net/prod_search/indexing_procedure-02-20180724.png)
+<img align="left" src="http://static.toastoven.net/prod_search/indexing_procedure_01.png">
+<img align="left" src="http://static.toastoven.net/prod_search/indexing_procedure-02-20180724.png">
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
@@ -106,7 +107,6 @@
     6. "색인" 버튼을 클릭합니다.
     7. 색인 결과를 확인할 수 있습니다.
 <br><br>
-
 * Rest API
     * 아래와 같이 REST API를 사용 가능합니다.
     * 색인 API
