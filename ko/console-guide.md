@@ -95,10 +95,9 @@
     * 최대 파일 사이즈는 8Mb입니다.
         * 8Mb 이상의 데이터는 여러 개로 나누어서 색인해야 합니다.
 <br><br>
-
 * 색인 방법
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure-02-20180724.png)
+![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?)
+![](http://static.toastoven.net/prod_search/indexing_procedure-02-20180724.png)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
