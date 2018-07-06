@@ -1,24 +1,19 @@
 ## Search > Cloud Search > 콘솔 사용 가이드
-
 ## 문서 설명
 * 문서 내의 호스트명 "alpha-api-search.cloud.toast.com"는 사용자별로 다를 수 있습니다.
 * 문서 내의 앱키 "gFGDJfG4pyUKZ9RF"는 사용자별로 다를 수 있습니다.
-
 ## 상품 활성화
 * Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
     ![](http://static.toastoven.net/prod_search/product-use-02-20180724.png)
     1. "서비스 선택"을 클릭합니다.
     2. "Cloud Search"를 클릭해서 서비스를 활성화합니다.
-<br>
+<br><br>
 * 활성화 확인
     ![](http://static.toastoven.net/prod_search/product-use-03-20180724.png)
     1. "Search" 클릭합니다.
     2. "Cloud Search"가 노출되면 활성화된 것입니다.
-<br>
-
 ## 기본 사용법
-
 ### 서비스 생성
 * 서비스 생성 방법
     ![](http://static.toastoven.net/prod_search/domain_create_procedure.png?)
@@ -31,12 +26,9 @@
         ```
     3. "저장" 버튼을 클릭합니다.
 <br><br>
-
 * 서비스 생성 결과
     ![](http://static.toastoven.net/prod_search/domain_create_result.png?)
     1. 생성된 서비스 ID(test)를 클릭합니다.
-<br>
-
 ### 필드 설정
 * 필드 설정 방법
     ![](http://static.toastoven.net/prod_search/field_create_procedure.png??)
@@ -50,8 +42,6 @@
         ```
         * 필드명은 \_ (underscore)로 시작할 수 없습니다.
     4. "저장" 버튼을 클릭합니다.
-<br>
-
 ### 색인
 * 색인할 파일 생성
     * 아래 예제와 같은 형식으로 색인 요청 파일을 생성합니다.
@@ -141,7 +131,6 @@
                 * 3 : 진행 중
                 * 4 : 성공
                 * 5 : 실패
-
 ### 검색
 * 검색 방법
     ![](http://static.toastoven.net/prod_search/search_procedure.png??)
@@ -163,8 +152,7 @@
     13. 2 ~ 11번까지 설정한 내용이 REST API로 출력됩니다.
         * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
     14. 검색 결과가 출력됩니다.   
-<br>
-
+<br><br>
 * Rest API
     * 아래와 같이 REST API를 사용 가능합니다.
     * Request
@@ -202,7 +190,6 @@
           }
         }
         ```
-
 ### ACL
 * 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
     * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
@@ -212,9 +199,7 @@
     2. 색인 요청은 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
     3. 검색 요청은 모든 IP에서 가능하도록 설정한 예제입니다.
     4. "저장" 버튼을 클릭합니다.
-
 ## 기능 가이드
-
 ### 필터링
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/filtering-field-20180724.png)
@@ -243,7 +228,7 @@
 * 검색
     ![](http://static.toastoven.net/prod_search/filtering-search-20180724.png?)
     1. "category"가 "1"인 문서만 검색됩니다.
-    <br><br>
+<br><br>
 * 필터링 입력 방법
     * 단일 값 필터링
         * 예제) 1
@@ -266,13 +251,11 @@
             * category != 1
         * 예제) !1|2
             * category !=1 or category == 2
-<br>
-
 ### 위경도(geolocation) 필터링
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/geolocation-field-20180724.png)
     1. 위경도를 입력할 필드 타입으로 "geo_point"를 선택합니다.
-    <br>
+<br><br>
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -304,7 +287,7 @@
     ]
     ```
     * geo_point 타입에는 [{경도}, {위도}] 형식으로 값을 입력합니다.
-    <br>
+<br><br>
 * 검색
     * 반경(circle) 필터링
         ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20180724.png)
@@ -313,7 +296,7 @@
             * 예제 : circle,[10.3,10.3],15km
                 * 경도 10.3, 위도 10.3 중심으로 반경 15km 이내인 문서만 검색됩니다.
             * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
-    <br>
+<br><br>
     * 영역(polygon) 필터링
         ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20180724.png)
         1. 필터링 값을 입력합니다.
@@ -321,12 +304,9 @@
             * 예제 : polygon,[10.2,10.2],[10.3,10.5],[10.5,10.2]
             * 각 점들은 시계 방향으로 연결됩니다.
             * 연결된 다각형 내의 문서만 검색됩니다.
-
-
 ### 정렬
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/sorting-field-20180724.png)
-    <br>
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -360,7 +340,6 @@
     }
     ]
     ```
-    <br>
 * 검색
     ![](http://static.toastoven.net/prod_search/sorting-search-20180724.png?)
     1. 정렬 방식을 지정합니다.
@@ -369,11 +348,9 @@
     2. 정렬 순서를 지정합니다.
         * 위의 예제에서는 "popular"로 먼저 정렬합니다.
         * "popular"가 동일한 경우 "price"로 정렬합니다.    
-    <br>
 ### 요약
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/aggregation-field-20180724.png)
-    <br>
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -404,20 +381,19 @@
     }
     ]
     ```    
-    <br>
-    * 검색
-        ![](http://static.toastoven.net/prod_search/aggregation-search-20180724.png)
-        1. "category" 필드의 "요약"을 체크합니다.
-            * 검색 결과와 함께 요약 정보가 출력됩니다.
-            ```
-            "summary": {
-              "category": {
-                "신발": 2,
-                "의류": 1
-              }
-            }
-            ```
-            * "category"가 "신발"인 검색 결과가 2건, "의류"인 검색 결과가 1건이라는 의미입니다.
+* 검색
+    ![](http://static.toastoven.net/prod_search/aggregation-search-20180724.png)
+    1. "category" 필드의 "요약"을 체크합니다.
+        * 검색 결과와 함께 요약 정보가 출력됩니다.
+        ```
+        "summary": {
+          "category": {
+            "신발": 2,
+            "의류": 1
+          }
+        }
+        ```
+        * "category"가 "신발"인 검색 결과가 2건, "의류"인 검색 결과가 1건이라는 의미입니다.
 ### 문서 부스팅(Boosting)
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/documents_boosting-field-20180724.png)
@@ -445,9 +421,11 @@
     ```
     * "num-1"에는 "weight"를 "0.1", "num-2"에는 "weight"를 "0.9"로 지정합니다.
     * "weight"는 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
+<br><br>
 * 검색
     ![](http://static.toastoven.net/prod_search/documents_boosting-search-20180724.png)
     * "나이키"로 검색합니다.
+<br><br>
 * 검색 결과
     ```
     "itemList": {
@@ -497,10 +475,10 @@
     }
     ]
     ```
+<br><br>
 * 검색
     ![](http://static.toastoven.net/prod_search/mandatory_filter-search-20180724.png)
     1. "department" 필드로 필터링하도록 강제됩니다.
-
 ### 필드 삭제
 * 삭제 방법
     ![](http://static.toastoven.net/prod_search/field_delete-1-20180724.png)
@@ -509,13 +487,11 @@
     1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
     2. "저장" 버튼을 클릭합니다.
     3. "지금 수행" 버튼을 클릭합니다.
-    <br>
+<br><br>
 * 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
-
 ## 상세 가이드
 ### 필드 타입
 ![](http://static.toastoven.net/prod_search/detail-field_type.png???)
-
 * text
     * "검색"할 필드일 경우 선택합니다.
     * 형태소 분석을 합니다.
@@ -565,10 +541,8 @@
     * ["나이키", "아디다스"]
     * [1.0, 2.0]
     * ["2017-09-22T15:39:28", "2017-09-22T15:39:29"]
-
 ### 형태소 분석
 ![](http://static.toastoven.net/prod_search/detail-analysis.png??)
-
 * default
     * 형태소 분석기를 이용해 단어을 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
@@ -578,10 +552,8 @@
 * bigram
     * 2글자씩 단어를 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이" "이키" "신상" "상슈" "슈즈"
-
 ### ACL
 ![](http://static.toastoven.net/prod_search/detail-acl.png??)
-
 * 입력 형식
     * IP 형식으로 입력 가능합니다.
         * 예제) 202.179.177.21
