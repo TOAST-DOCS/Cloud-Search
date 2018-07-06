@@ -30,7 +30,8 @@
         '~' '@' '$' '&' '(' ')' ':' '_' '-'
         ```
     3. "저장" 버튼을 클릭합니다.
-<br>
+<br><br>
+
 * 서비스 생성 결과
     ![](http://static.toastoven.net/prod_search/domain_create_result.png?)
     1. 생성된 서비스 ID(test)를 클릭합니다.
@@ -93,7 +94,8 @@
         * id의 타입은 문자열입니다.
     * 최대 파일 사이즈는 8Mb입니다.
         * 8Mb 이상의 데이터는 여러 개로 나누어서 색인해야 합니다.
-<br>
+<br><br>
+
 * 색인 방법
     ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png?)
     ![](http://static.toastoven.net/prod_search/indexing_procedure-02-20180724.png)
@@ -105,7 +107,8 @@
         * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
     6. "색인" 버튼을 클릭합니다.
     7. 색인 결과를 확인할 수 있습니다.
-<br>    
+<br><br>
+
 * Rest API
     * 아래와 같이 REST API를 사용 가능합니다.
     * 색인 API
