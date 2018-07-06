@@ -2,7 +2,7 @@
 
 ## 문서 설명
 * 문서 내의 호스트명 "alpha-api-search.cloud.toast.com"는 사용자별로 다를 수 있습니다.
-* 문서 내의 앱키 "gFGDJfG4pyUKZ9RF"는 사용자별로 다를 수 있습니다.
+* 문서 내의 앱키 "bJsVUwrftmEl4K7D"는 사용자별로 다를 수 있습니다.
 
 ## 상품 활성화
 * Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
