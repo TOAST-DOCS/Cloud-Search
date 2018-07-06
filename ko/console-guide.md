@@ -97,7 +97,9 @@
 <br><br>
 * 색인 방법
 <img align="left" src="http://static.toastoven.net/prod_search/indexing_procedure_01.png">
+<br>
 <img align="left" src="http://static.toastoven.net/prod_search/indexing_procedure-02-20180724.png">
+<br>
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
