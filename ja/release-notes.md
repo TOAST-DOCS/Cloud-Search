@@ -1,4 +1,10 @@
-## Search > Cloud Search > 릴리스 노트
+## Search > Cloud Search > Release Notes
+
+### 2018.07.24
+* 문서 부스팅(Boosting) 기능을 추가했습니다.
+    * 특정 문서를 검색 결과 상위에 노출할 수 있습니다.
+* 위경도(Geolocation) 기능을 추가했습니다.
+* 색인 로그에 전체 색인 크기 및 전체 문서 개수를 추가했습니다.
 
 ### 2018.06.26
 * bigram 형태소 분석기를 추가했습니다.
