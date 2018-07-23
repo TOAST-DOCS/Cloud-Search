@@ -1,4 +1,4 @@
-## Search > Cloud Search > Release Notes
+## Search > Cloud Search > 릴리스 노트
 
 ### 2018.07.24
 * 문서 부스팅(Boosting) 기능을 추가했습니다.
