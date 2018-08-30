@@ -219,7 +219,7 @@
     [
     {
       "action": "add",
-      "id": "num-1",
+      "id": "id-1",
       "fields": {
         "name" : "나이키 에어맥스",
         "category" : 1
@@ -227,7 +227,7 @@
     },
     {
       "action": "add",
-      "id": "num-2",
+      "id": "id-2",
       "fields": {
         "name" : "나이키 샤이엔 솔리드",
         "category" : 2
@@ -279,7 +279,7 @@
     [
     {
       "action": "add",
-      "id": "num-1",
+      "id": "id-1",
       "fields": {
         "name" : "에프엑스수학학원",
         "location" : [10.1, 10.1]
@@ -287,7 +287,7 @@
     },
     {
       "action": "add",
-      "id": "num-2",
+      "id": "id-2",
       "fields": {
         "name" : "좋은나무 사고력수학학원",
         "location" : [10.3, 10.4]
@@ -295,7 +295,7 @@
     },
     {
       "action": "add",
-      "id": "num-3",
+      "id": "id-3",
       "fields": {
         "name" : "수학의아침학원",
         "location" : [10.4, 10.3]
@@ -307,18 +307,18 @@
     <br><br>
 * 검색
     * 반경(circle) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20180724.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20180911.png)
         1. 필터링 값을 입력합니다.
-            * 형식 : circle,[{경도},{위도}],{반경}
-            * 예제 : circle,[10.3,10.3],15km
+            * 형식 : [{경도},{위도}],{반경}
+            * 예제 : [10.3,10.3],15km
                 * 경도 10.3, 위도 10.3 중심으로 반경 15km 이내인 문서만 검색됩니다.
             * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
     <br><br>
     * 영역(polygon) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20180724.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20180911.png)
         1. 필터링 값을 입력합니다.
-            * 형식 : polygon,[{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
-            * 예제 : polygon,[10.2,10.2],[10.3,10.5],[10.5,10.2]
+            * 형식 : [{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
+            * 예제 : [10.2,10.2],[10.3,10.5],[10.5,10.2]
             * 각 점들은 시계 방향으로 연결됩니다.
             * 연결된 다각형 내의 문서만 검색됩니다.
 
@@ -331,7 +331,7 @@
     [
     {
       "action": "add",
-      "id": "num-1",
+      "id": "id-1",
       "fields": {
         "name" : "나이키 에어맥스",
         "popular" : 10,
@@ -340,7 +340,7 @@
     },
     {
       "action": "add",
-      "id": "num-2",
+      "id": "id-2",
       "fields": {
         "name" : "나이키 에어줌",
         "popular" : 5,
@@ -349,7 +349,7 @@
     },
     {
       "action": "add",
-      "id": "num-3",
+      "id": "id-3",
       "fields": {
         "name" : "나이키 에어포스",
         "popular" : 5,
@@ -377,7 +377,7 @@
     [
     {
       "action": "add",
-      "id": "num-1",
+      "id": "id-1",
       "fields": {
         "name" : "나이키 에어맥스",
         "category" : "신발"
@@ -385,7 +385,7 @@
     },
     {
       "action": "add",
-      "id": "num-2",
+      "id": "id-2",
       "fields": {
         "name" : "나이키 에어줌",
         "category" : "신발"
@@ -393,7 +393,7 @@
     },
     {
       "action": "add",
-      "id": "num-3",
+      "id": "id-3",
       "fields": {
         "name" : "나이키 스우시 반팔티",
         "category" : "의류"
@@ -416,7 +416,7 @@
         ```
         * "category"가 "신발"인 검색 결과가 2건, "의류"인 검색 결과가 1건이라는 의미입니다.
 
-### 문서 부스팅(Boosting)
+### 문서 가중치 지정
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/documents_boosting-field-20180724.png)
 * 색인
@@ -425,7 +425,7 @@
     [
       {
         "action": "add",
-        "id": "num-1",
+        "id": "id-1",
         "weight": 0.1,
         "fields": {
           "title" : "나이키"
@@ -433,7 +433,7 @@
       },
       {
         "action": "add",
-        "id": "num-2",
+        "id": "id-2",
         "weight": 0.9,
         "fields": {
           "title" : "나이키"
@@ -441,7 +441,7 @@
       }
     ]
     ```
-    * "num-1"에는 "weight"를 "0.1", "num-2"에는 "weight"를 "0.9"로 지정합니다.
+    * "id-1"에는 "weight"를 0.1, "id-2"에는 "weight"를 0.9로 지정합니다.
     * "weight"는 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
     <br><br>
 * 검색
@@ -455,13 +455,13 @@
         {
           "_RELEVANCE": 0.6772727,
           "_RANK": 1,
-          "_ID": "num-2",
+          "_ID": "id-2",
           "title": "<b>나이키</b>"
         },
         {
           "_RELEVANCE": 0.27727273,
           "_RANK": 2,
-          "_ID": "num-1",
+          "_ID": "id-1",
           "title": "<b>나이키</b>"
         }
       ]
@@ -475,7 +475,71 @@
         curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=title&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
         ```
         * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
-        * default는 0.5입니다.
+        * default는 1.0입니다.
+* 문서 유사도(similarity) 반영 비율 조정
+    * similarity_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
+        ```
+        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=title&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
+        ```    
+        * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
+        * default는 1.0입니다.
+* Tip
+    * similarity_ratio와 doc_weight_ratio를 조절해서 검색 결과 출력 순서를 최적화할 수 있습니다.
+
+### 문서 랭킹 지정
+* 필드 설정
+    ![](http://static.toastoven.net/prod_search/documents_ranking-field-20180911.png)
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+      {
+        "action": "add",
+        "id": "id-1",
+        "ranking": 2,
+        "fields": {
+          "title" : "나이키"
+        }
+      },
+      {
+        "action": "add",
+        "id": "id-2",
+        "ranking": 1,
+        "fields": {
+          "title" : "나이키"
+        }
+      }
+    ]
+    ```
+    * "id-1"에는 "ranking"을 2, "id-2"에는 "ranking"을 2로 지정합니다.
+    * "ranking"은 1 ~ 10000 사이의 값을 입력할 수 있습니다.
+    <br><br>
+* 검색
+    ![](http://static.toastoven.net/prod_search/documents_boosting-search-20180724.png)
+    * "나이키"로 검색합니다.
+    <br><br>
+* 검색 결과
+    ```
+    "itemList": {
+      "item": [
+        {
+          "_RELEVANCE": 10000.151,
+          "_RANK": 1,
+          "_ID": "id-2",
+          "title": "<b>나이키</b>"
+        },
+        {
+          "_RELEVANCE": 9999.151,
+          "_RANK": 2,
+          "_ID": "id-1",
+          "title": "<b>나이키</b>"
+        }
+      ]
+    }
+    ```
+    * "ranking"을 1로 지정한 "id-2" 문서가 검색 결과 1등으로 노출됩니다.
+    * "ranking"을 동일하게 지정한 경우 사용자가 입력한 질의와 유사도가 높은 문서가 먼저 노출됩니다.
+    <br><br>
 
 ### 필수 필터
 * 사용 예시
@@ -489,7 +553,7 @@
     [
     {
       "action": "add",
-      "id": "num-1",
+      "id": "id-1",
       "fields": {
         "title" : "정기감사 결과 보고서",
         "department" : "경영팀"
@@ -497,7 +561,7 @@
     },
     {
       "action": "add",
-      "id": "num-2",
+      "id": "id-2",
       "fields": {
         "title" : "내부직원 만족도 보고서",
         "department" : "인사팀"
