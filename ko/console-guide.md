@@ -237,31 +237,36 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/filtering-search-20180724.png?)
+    ![](http://static.toastoven.net/prod_search/filtering-search-20180911.png?)
     1. "category"가 "1"인 문서만 검색됩니다.
     <br><br>
-* 필터링 입력 방법
+* 필터링 값 입력 방법
     * 단일 값 필터링
-        * 예제) 1
+        * 예제) category=1
             * category == 1
     * or 필터링
-        * 예제) 1|2
+        * 예제) category=1|2
             * category == 1 or category == 2
     * and 필터링
-        * 예제) 1&2
+        * 예제) category=1&2
             * category == 1 and category == 2      
     * 범위 지정 필터링
-        * 예제) [1,2]
+        * 예제) category=[1,2]
             * 1 <= category <= 2
-        * 예제) {1,2]      
+        * 예제) category={1,2]      
             * 1 < category <= 2
-        * 예제) {,2]      
+        * 예제) category={,2]      
             * category <= 2
     * not 필터링
-        * 예제) !1
+        * 예제) category=!1
             * category != 1
-        * 예제) !1|2
+        * 예제) category=!1|2
             * category !=1 or category == 2
+* 여러 개의 필드 필터링
+    * filter='category=1&brand=2'
+        * category == 1 or brand == 2
+    * filter='category=1|brand=2'
+        * category == 1 and brand == 2
 
 ### 위경도(geolocation) 필터링
 * 필드 설정
