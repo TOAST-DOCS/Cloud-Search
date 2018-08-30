@@ -264,9 +264,9 @@
             * category !=1 or category == 2
 * 여러 개의 필드 필터링
     * filter='category=1&brand=2'
-        * category == 1 or brand == 2
-    * filter='category=1|brand=2'
         * category == 1 and brand == 2
+    * filter='category=1|brand=2'
+        * category == 1 or brand == 2
 
 ### 위경도(geolocation) 필터링
 * 필드 설정
