@@ -469,7 +469,7 @@
       ]
     }
     ```
-    * "weight"를 높게 부여한 "num-2" 문서가 검색 결과 상위에 노출됩니다.
+    * "weight"를 높게 부여한 "id-2" 문서가 검색 결과 상위에 노출됩니다.
     <br><br>
 * weight 반영 비율 조정
     * doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
@@ -478,7 +478,7 @@
         ```
         * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
         * default는 1.0입니다.
-* 문서 유사도(similarity) 반영 비율 조정
+* 사용자가 입력한 질의와 문서의 유사도(similarity) 반영 비율 조정
     * similarity_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
         ```
         curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=title&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
