@@ -486,7 +486,7 @@
         * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
         * default는 1.0입니다.
 * Tip
-    * similarity_ratio와 doc_weight_ratio를 조절해서 검색 결과 출력 순서를 최적화할 수 있습니다.
+    * similarity_ratio와 doc_weight_ratio를 조절해서 검색 결과 출력 순서를 커스터마이징할 수 있습니다.
 
 ### 문서 랭킹 지정
 * 필드 설정
