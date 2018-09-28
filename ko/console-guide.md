@@ -107,30 +107,30 @@
     * 아래와 같이 REST API를 사용 가능합니다.
     * 색인 API
         * Request
-            ```
-            $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-            ```
+            * 파일 업로드 방식
+                ```
+                $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+                ```
+            * Payload 방식
+                ```
+                $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:application/json; charset=UTF-8' -d '
+                [
+                  {
+                    "action": "add",
+                    "id": "633800446",
+                    "fields": {
+                      "title": "[무료배송]나이키 슈즈 195종!!",
+                      "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??"
+                    }
+                  }
+                ]
+                '
+                ```
         * Response
             ```        
             {
               "id" : 1
             }
-            ```
-    * Payload 방식 색인 API
-        * Request
-            ```
-            $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:application/json; charset=UTF-8' -d '
-            [
-              {
-                "action": "add",
-                "id": "633800446",
-                "fields": {
-                  "title": "[무료배송]나이키 슈즈 195종!!",
-                  "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??"
-                }
-              }
-            ]
-            '
             ```
     * 색인 결과 확인 API
         * Request
