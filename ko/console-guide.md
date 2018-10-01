@@ -701,7 +701,6 @@
     compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
     compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
     ```
-
 * 색인
     ```
     package com.toast.cloud.search.client;
@@ -777,7 +776,6 @@
       }
     }
     ```
-
 * 검색
     ```
     package com.toast.cloud.search.client;
