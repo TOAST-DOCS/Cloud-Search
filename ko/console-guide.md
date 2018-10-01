@@ -697,8 +697,9 @@
 
 ## 클라이언트 예제 코드
 * test
-```
+``` java
 package com.toast.cloud.search.client;
+
 import org.apache.http.HttpEntity;
 ```
 * dependency
