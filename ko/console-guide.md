@@ -747,7 +747,7 @@
 
         try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
 
-          // build multipart upload request
+          // build multipart upload request.
           HttpEntity data = MultipartEntityBuilder.create()
             .setMode(HttpMultipartMode.BROWSER_COMPATIBLE)
             .addBinaryBody("file", tempFile, ContentType.DEFAULT_BINARY, tempFile.getName())
@@ -761,7 +761,7 @@
 
           System.out.println("Executing request " + request.getRequestLine());
 
-          // Create a custom response handler
+          // Create a custom response handler.
           ResponseHandler<String> responseHandler = response -> {
             int status = response.getStatusLine().getStatusCode();
             if (status >= 200 && status < 300) {
@@ -807,7 +807,7 @@
 
                 System.out.println("Executing request " + request.getRequestLine());
 
-                // Create a custom response handler
+                // Create a custom response handler.
                 ResponseHandler<String> responseHandler = response -> {
                     int status = response.getStatusLine().getStatusCode();
                     if (status >= 200 && status < 300) {
