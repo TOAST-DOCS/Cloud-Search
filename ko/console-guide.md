@@ -696,6 +696,24 @@
 
 
 ## 클라이언트 예제 코드
+* test
+    ```
+    package com.toast.cloud.search.client;
+
+    import org.apache.http.HttpEntity;
+    ```
+* test2
+  ```
+  package com.toast.cloud.search.client;
+
+  import org.apache.http.HttpEntity;
+  ```
+* test3
+  ```
+    package com.toast.cloud.search.client;
+
+    import org.apache.http.HttpEntity;
+  ```	
 * dependency
     ```
     compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
