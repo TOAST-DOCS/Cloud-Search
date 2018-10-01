@@ -724,57 +724,57 @@
 
     public class IndexingClient {
 
-    	public static void main(String[] args) throws IOException {
+      public static void main(String[] args) throws IOException {
 
-    		String documents = ""
-    			+ "[\n"
-    			+ "  {\n"
-    			+ "    \"action\": \"add\",\n"
-    			+ "    \"id\": \"id-1\",\n"
-    			+ "    \"fields\": {\n"
-    			+ "      \"title\": \"[무료배송]나이키 슈즈 195종!!\",\n"
-    			+ "      \"body\": \"명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??\"\n"
-    			+ "    }\n"
-    			+ "  }\n"
-    			+ "]";
+        String documents = ""
+          + "[\n"
+          + "  {\n"
+          + "    \"action\": \"add\",\n"
+          + "    \"id\": \"id-1\",\n"
+          + "    \"fields\": {\n"
+          + "      \"title\": \"[무료배송]나이키 슈즈 195종!!\",\n"
+          + "      \"body\": \"명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??\"\n"
+          + "    }\n"
+          + "  }\n"
+          + "]";
 
-    		File tempFile = File.createTempFile("documents-",".json", new File("/tmp/"));
-    		tempFile.deleteOnExit();
+        File tempFile = File.createTempFile("documents-",".json", new File("/tmp/"));
+        tempFile.deleteOnExit();
 
-    		PrintWriter printWriter = new PrintWriter(tempFile);
-    		printWriter.println(documents);
-    		printWriter.close();
+        PrintWriter printWriter = new PrintWriter(tempFile);
+        printWriter.println(documents);
+        printWriter.close();
 
-    		try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
+        try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
 
-    			// build multipart upload request
-    			HttpEntity data = MultipartEntityBuilder.create()
-    				.setMode(HttpMultipartMode.BROWSER_COMPATIBLE)
-    				.addBinaryBody("file", tempFile, ContentType.DEFAULT_BINARY, tempFile.getName())
-    				.build();
+          // build multipart upload request
+          HttpEntity data = MultipartEntityBuilder.create()
+            .setMode(HttpMultipartMode.BROWSER_COMPATIBLE)
+            .addBinaryBody("file", tempFile, ContentType.DEFAULT_BINARY, tempFile.getName())
+            .build();
 
-    			// build http request and assign multipart upload data
-    			HttpUriRequest request = RequestBuilder
-    				.post("https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing")
-    				.setEntity(data)
-    				.build();
+          // build http request and assign multipart upload data
+          HttpUriRequest request = RequestBuilder
+            .post("https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing")
+            .setEntity(data)
+            .build();
 
-    			System.out.println("Executing request " + request.getRequestLine());
+          System.out.println("Executing request " + request.getRequestLine());
 
-    			// Create a custom response handler
-    			ResponseHandler<String> responseHandler = response -> {
-    				int status = response.getStatusLine().getStatusCode();
-    				if (status >= 200 && status < 300) {
-    					HttpEntity entity = response.getEntity();
-    					return entity != null ? EntityUtils.toString(entity) : null;
-    				} else {
-    					throw new ClientProtocolException("Unexpected response status: " + status);
-    				}
-    			};
-    			String responseBody = httpclient.execute(request, responseHandler);
-    			System.out.println(responseBody);
-    		}
-    	}
+          // Create a custom response handler
+          ResponseHandler<String> responseHandler = response -> {
+            int status = response.getStatusLine().getStatusCode();
+            if (status >= 200 && status < 300) {
+              HttpEntity entity = response.getEntity();
+              return entity != null ? EntityUtils.toString(entity) : null;
+            } else {
+              throw new ClientProtocolException("Unexpected response status: " + status);
+            }
+          };
+          String responseBody = httpclient.execute(request, responseHandler);
+          System.out.println(responseBody);
+        }
+      }
     }
     ```
 
@@ -797,30 +797,29 @@
 
     public class SearchClient {
 
-    	public static void main(String[] args) throws IOException {
+        public static void main(String[] args) throws IOException {
 
-    		try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
+            try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
 
-    			HttpUriRequest request = RequestBuilder
-    				.get("https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title&passage.body=180&passage.title=180&q=" + URLEncoder.encode("나이키", "UTF-8") + "&highlight=" + URLEncoder.encode("<b>,</b>","UTF-8"))
-    				.build();
+                HttpUriRequest request = RequestBuilder
+                    .get("https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title&passage.body=180&passage.title=180&q=" + URLEncoder.encode("나이키", "UTF-8") + "&highlight=" + URLEncoder.encode("<b>,</b>","UTF-8"))
+                    .build();
 
-    			System.out.println("Executing request " + request.getRequestLine());
+                System.out.println("Executing request " + request.getRequestLine());
 
-    			// Create a custom response handler
-    			ResponseHandler<String> responseHandler = response -> {
-    				int status = response.getStatusLine().getStatusCode();
-    				if (status >= 200 && status < 300) {
-    					HttpEntity entity = response.getEntity();
-    					return entity != null ? EntityUtils.toString(entity) : null;
-    				} else {
-    					throw new ClientProtocolException("Unexpected response status: " + status);
-    				}
-    			};
-    			String responseBody = httpclient.execute(request, responseHandler);
-    			System.out.println(responseBody);
-    		}
-    	}
+                // Create a custom response handler
+                ResponseHandler<String> responseHandler = response -> {
+                    int status = response.getStatusLine().getStatusCode();
+                    if (status >= 200 && status < 300) {
+                        HttpEntity entity = response.getEntity();
+                        return entity != null ? EntityUtils.toString(entity) : null;
+                    } else {
+                        throw new ClientProtocolException("Unexpected response status: " + status);
+                    }
+                };
+                String responseBody = httpclient.execute(request, responseHandler);
+                System.out.println(responseBody);
+            }
+        }
     }
-
     ```
