@@ -286,6 +286,17 @@
             * category != 1
         * 예제) category=!1|2
             * category !=1 or category == 2
+    * date 타입 필터링
+        * filter='update=[2017-03-22T08:28:44,}'
+            * 2017-03-22T08:28:44 <= update
+        * filter='update=[,2018-10-02T15:26:28}'
+            * update < 2018-10-02T15:26:28
+        * filter='update=[2017-03-22T08:28:44,2018-10-02T15:26:28}'
+            * 2017-03-22T08:28:44 <= update < 2018-10-02T15:26:28
+    * keyword 타입 필터링
+        * filter='dealer="DNC샵"'
+          * dealer == "DNC샵"
+          * keyword 타입은 큰따옴표를 사용하세요.
 * 여러 개의 필드 필터링
     * filter='category=1&brand=2'
         * category == 1 and brand == 2
