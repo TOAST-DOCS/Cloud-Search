@@ -224,7 +224,8 @@
 
 ### ACL
 * 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
-    * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
+    * <span style="color:red">다른 사람이 데이터를 삭제할 수 있으므로 색인 ACL은 반드시 설정해 주세요.</span>
+    * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.		
 * ACL 설정 방법
     ![](http://static.toastoven.net/prod_search/acl_procedure.png??)
     1. "ACL" 탭을 클릭합니다.
