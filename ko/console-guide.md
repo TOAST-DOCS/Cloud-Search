@@ -188,7 +188,7 @@
     * 아래와 같이 REST API를 사용 가능합니다.
     * Request
         ```
-        $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
+        $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title&passage.body=180&passage.title=180' --data-urlencode q='나이키 운동화'
         ```
     * Response
         ```
