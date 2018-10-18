@@ -36,7 +36,7 @@
 
 ### 필드 설정
 * 필드 설정 방법
-    ![](http://static.toastoven.net/prod_search/field_create_procedure.png??)
+    ![](http://static.toastoven.net/prod_search/field_create_procedure-20181023.png?)
     1. "필드 설정" 탭을 클릭합니다.
     2. "필드 추가" 버튼을 클릭합니다.
     3. 필드 이름을 입력합니다.
@@ -164,7 +164,7 @@
 
 ### 검색
 * 검색 방법
-    ![](http://static.toastoven.net/prod_search/basic-search-20180724.png)
+    ![](http://static.toastoven.net/prod_search/basic-search-20181023.png)
     1. "검색" 탭을 클릭합니다.
     2. 검색할 필드명을 체크합니다.
     3. 검색할 필드별 가중치를 설정합니다.
@@ -188,7 +188,7 @@
     * 아래와 같이 REST API를 사용 가능합니다.
     * Request
         ```
-        $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title&passage.body=180&passage.title=180' --data-urlencode q='나이키 운동화'
+        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>'
         ```
     * Response
         ```
@@ -237,7 +237,7 @@
 
 ### 필터링
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/filtering-field-20180724.png)
+    ![](http://static.toastoven.net/prod_search/filtering-field-20181023.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -262,7 +262,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/filtering-search-20180911.png?)
+    ![](http://static.toastoven.net/prod_search/filtering-search-20181023.png)
     1. "category"가 "1"인 문서만 검색됩니다.
     <br><br>
 * 필터링 값 입력 방법
@@ -308,7 +308,7 @@
 
 ### 위경도(geolocation) 필터링
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/geolocation-field-20180724.png)
+    ![](http://static.toastoven.net/prod_search/geolocation-field-20181023.png)
     1. 위경도를 입력할 필드 타입으로 "geo_point"를 선택합니다.
     <br><br>
 * 색인
@@ -345,7 +345,7 @@
     <br><br>
 * 검색
     * 반경(circle) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20180911.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20181023.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도},{위도}],{반경}
             * 예제 : [10.3,10.3],15km
@@ -353,7 +353,7 @@
             * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
     <br><br>
     * 영역(polygon) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20180911.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20181023.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
             * 예제 : [10.2,10.2],[10.3,10.5],[10.5,10.2]
@@ -362,7 +362,7 @@
 
 ### 정렬
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/sorting-field-20180724.png)
+    ![](http://static.toastoven.net/prod_search/sorting-field-20181023.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -398,7 +398,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/sorting-search-20180724.png?)
+    ![](http://static.toastoven.net/prod_search/sorting-search-20181023.png)
     1. 정렬 방식을 지정합니다.
         * "asc" : 올림차순 정렬
         * "desc" : 내림차순 정렬
@@ -408,7 +408,7 @@
 
 ### 요약
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/aggregation-field-20180724.png)
+    ![](http://static.toastoven.net/prod_search/aggregation-field-20181023.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -441,7 +441,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/aggregation-search-20180724.png)
+    ![](http://static.toastoven.net/prod_search/aggregation-search-20181023.png)
     1. "category" 필드의 "요약"을 체크합니다.
         * 검색 결과와 함께 요약 정보가 출력됩니다.
         ```
@@ -456,7 +456,7 @@
 
 ### 문서 가중치 지정
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/documents_boosting-field-20180724.png)
+    ![](http://static.toastoven.net/prod_search/documents_boosting-field-20181023.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -483,7 +483,7 @@
     * "weight"는 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
     <br><br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/documents_boosting-search-20180724.png)
+    ![](http://static.toastoven.net/prod_search/documents_boosting-search-20181023.png)
     * "나이키"로 검색합니다.
     <br><br>
 * 검색 결과
@@ -510,23 +510,23 @@
 * weight 반영 비율 조정
     * doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
         ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=title&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
+        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
         ```
         * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
         * default는 1.0입니다.
 * 사용자가 입력한 질의와 문서의 유사도(similarity) 반영 비율 조정
     * similarity_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
         ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=title&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
-        ```    
+        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
+        ```
         * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
-        * default는 1.0입니다.
+       * default는 1.0입니다.
 * Tip
     * similarity_ratio와 doc_weight_ratio를 조절해서 검색 결과 출력 순서를 커스터마이징할 수 있습니다.
 
 ### 문서 랭킹 지정
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/documents_ranking-field-20180911.png)
+    ![](http://static.toastoven.net/prod_search/documents_ranking-field-20181023.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -553,7 +553,7 @@
     * "ranking"은 1 ~ 10000 사이의 값을 입력할 수 있습니다.
     <br><br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/documents_boosting-search-20180724.png)
+    ![](http://static.toastoven.net/prod_search/documents_ranking-search-20181023.png)
     * "나이키"로 검색합니다.
     <br><br>
 * 검색 결과
@@ -579,44 +579,11 @@
     * "ranking"을 동일하게 지정한 경우 사용자가 입력한 질의와 유사도가 높은 문서가 먼저 노출됩니다.
     <br><br>
 
-### 필수 필터
-* 사용 예시
-    * 예를 들어 부서별로 문서 권한이 있을 때 자신이 속한 부서의 문서만 검색하도록 강제하기 위해 사용합니다.
-* 필드 설정
-    ![](http://static.toastoven.net/prod_search/mandatory_filter-field-20180724.png)
-    * "department" 필드의 "필수 필터"를 체크합니다.
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-    {
-      "action": "add",
-      "id": "id-1",
-      "fields": {
-        "title" : "정기감사 결과 보고서",
-        "department" : "경영팀"
-      }
-    },
-    {
-      "action": "add",
-      "id": "id-2",
-      "fields": {
-        "title" : "내부직원 만족도 보고서",
-        "department" : "인사팀"
-      }
-    }
-    ]
-    ```
-    <br>
-* 검색
-    ![](http://static.toastoven.net/prod_search/mandatory_filter-search-20180724.png)
-    1. "department" 필드로 필터링하도록 강제됩니다.
-
 ### 필드 삭제
 * 삭제 방법
-    ![](http://static.toastoven.net/prod_search/field_delete-1-20180724.png)
-    ![](http://static.toastoven.net/prod_search/field_delete-2-20180724.png)
-    ![](http://static.toastoven.net/prod_search/field_delete-3-20180724.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-1-20181023.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-2-20181023.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-3-20181023.png)
     1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
     2. "저장" 버튼을 클릭합니다.
     3. "지금 수행" 버튼을 클릭합니다.
@@ -627,7 +594,7 @@
 
 ### 필드 타입
 * 필드 타입 선택 화면
-    ![](http://static.toastoven.net/prod_search/detail-field_type.png???)
+    ![](http://static.toastoven.net/prod_search/detail-field_type-20181023.png)
 * text
     * "검색"할 필드일 경우 선택합니다.
     * 형태소 분석을 합니다.
@@ -680,7 +647,7 @@
 
 ### 형태소 분석
 * 형태소 분석기 선택 화면
-    ![](http://static.toastoven.net/prod_search/detail-analysis.png??)
+    ![](http://static.toastoven.net/prod_search/detail-analysis-20181023.png)
 * default
     * 형태소 분석기를 이용해 단어을 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
@@ -812,7 +779,7 @@ public class SearchClient {
     try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
 
       HttpUriRequest request = RequestBuilder
-        .get("https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title&passage.body=180&passage.title=180&q=" + URLEncoder.encode("나이키", "UTF-8") + "&highlight=" + URLEncoder.encode("<b>,</b>","UTF-8"))
+        .get("https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180&q=" + URLEncoder.encode("나이키", "UTF-8") + "&highlight=" + URLEncoder.encode("<b>,</b>","UTF-8"))
         .build();
 
       System.out.println("Executing request " + request.getRequestLine());
