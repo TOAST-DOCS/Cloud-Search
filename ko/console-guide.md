@@ -275,13 +275,14 @@
     * and 필터링
         * 예제) category=1&2
             * category == 1 and category == 2      
-    * 범위 지정 필터링
+    * 범위 지정 필터링		
         * 예제) category=[1,2]
             * 1 <= category <= 2
         * 예제) category={1,2]      
             * 1 < category <= 2
         * 예제) category={,2]      
             * category <= 2
+        * keyword, boolean, geo_point 타입은 범위 지정 필터링에 사용할 수 없습니다.
     * not 필터링
         * 예제) category=!1
             * category != 1
@@ -296,8 +297,7 @@
             * 2017-03-22T08:28:44 <= update < 2018-10-02T15:26:28
     * keyword 타입 필터링
         * filter='dealer="DNC샵"'
-          * dealer == "DNC샵"
-          * keyword 타입은 큰따옴표를 사용하세요.
+            * keyword 타입은 큰따옴표를 사용하세요.
 * 여러 개의 필드 필터링
     * filter='category=1&brand=2'
         * category == 1 and brand == 2
