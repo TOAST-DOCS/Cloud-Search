@@ -36,7 +36,7 @@
 
 ### 필드 설정
 * 필드 설정 방법
-    ![](http://static.toastoven.net/prod_search/field_create_procedure.png??)
+    ![](http://static.toastoven.net/prod_search/field_create_procedure-20181023.png?)
     1. "필드 설정" 탭을 클릭합니다.
     2. "필드 추가" 버튼을 클릭합니다.
     3. 필드 이름을 입력합니다.
@@ -107,9 +107,33 @@
     * 아래와 같이 REST API를 사용 가능합니다.
     * 색인 API
         * Request
-            ```
-            $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-            ```
+            * 파일 업로드 방식
+                ```
+                $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+                ```
+            * Payload 방식
+                ```
+                $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:application/json; charset=UTF-8' -d '
+                [
+                  {
+                    "action": "add",
+                    "id": "633800446",
+                    "fields": {
+                      "title": "[무료배송]나이키 슈즈 195종!!",
+                      "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??"
+                    }
+                  },
+                  {
+                    "action": "add",
+                    "id": "685165462",
+                    "fields": {
+                      "title": "[슈퍼특가]나이키 운동화 109종",
+                      "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~"
+                    }
+                  }
+                ]
+                '
+                ```
         * Response
             ```        
             {
@@ -140,7 +164,7 @@
 
 ### 검색
 * 검색 방법
-    ![](http://static.toastoven.net/prod_search/basic-search-20180724.png)
+    ![](http://static.toastoven.net/prod_search/basic-search-20181023.png)
     1. "검색" 탭을 클릭합니다.
     2. 검색할 필드명을 체크합니다.
     3. 검색할 필드별 가중치를 설정합니다.
@@ -164,7 +188,7 @@
     * 아래와 같이 REST API를 사용 가능합니다.
     * Request
         ```
-        $ curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=body,title' --data-urlencode q='나이키 운동화'
+        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>'
         ```
     * Response
         ```
@@ -200,7 +224,8 @@
 
 ### ACL
 * 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
-    * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
+    * <span style="color:red">다른 사람이 데이터를 삭제할 수 있으므로 색인 ACL은 반드시 설정해 주세요.</span>
+    * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.		
 * ACL 설정 방법
     ![](http://static.toastoven.net/prod_search/acl_procedure.png??)
     1. "ACL" 탭을 클릭합니다.
@@ -212,7 +237,7 @@
 
 ### 필터링
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/filtering-field-20180724.png)
+    ![](http://static.toastoven.net/prod_search/filtering-field-20181023.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -237,7 +262,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/filtering-search-20180911.png?)
+    ![](http://static.toastoven.net/prod_search/filtering-search-20181023.png)
     1. "category"가 "1"인 문서만 검색됩니다.
     <br><br>
 * 필터링 값 입력 방법
@@ -250,18 +275,29 @@
     * and 필터링
         * 예제) category=1&2
             * category == 1 and category == 2      
-    * 범위 지정 필터링
+    * 범위 지정 필터링		
         * 예제) category=[1,2]
             * 1 <= category <= 2
         * 예제) category={1,2]      
             * 1 < category <= 2
         * 예제) category={,2]      
             * category <= 2
+        * keyword, boolean, geo_point 타입은 범위 지정 필터링에 사용할 수 없습니다.
     * not 필터링
         * 예제) category=!1
             * category != 1
         * 예제) category=!1|2
             * category !=1 or category == 2
+    * date 타입 필터링
+        * filter='update=[2017-03-22T08:28:44,}'
+            * 2017-03-22T08:28:44 <= update
+        * filter='update=[,2018-10-02T15:26:28}'
+            * update < 2018-10-02T15:26:28
+        * filter='update=[2017-03-22T08:28:44,2018-10-02T15:26:28}'
+            * 2017-03-22T08:28:44 <= update < 2018-10-02T15:26:28
+    * keyword 타입 필터링
+        * filter='dealer="DNC샵"'
+            * keyword 타입은 큰따옴표를 사용하세요.
 * 여러 개의 필드 필터링
     * filter='category=1&brand=2'
         * category == 1 and brand == 2
@@ -272,7 +308,7 @@
 
 ### 위경도(geolocation) 필터링
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/geolocation-field-20180724.png)
+    ![](http://static.toastoven.net/prod_search/geolocation-field-20181023.png)
     1. 위경도를 입력할 필드 타입으로 "geo_point"를 선택합니다.
     <br><br>
 * 색인
@@ -309,7 +345,7 @@
     <br><br>
 * 검색
     * 반경(circle) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20180911.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20181023.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도},{위도}],{반경}
             * 예제 : [10.3,10.3],15km
@@ -317,7 +353,7 @@
             * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
     <br><br>
     * 영역(polygon) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20180911.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20181023.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
             * 예제 : [10.2,10.2],[10.3,10.5],[10.5,10.2]
@@ -326,7 +362,7 @@
 
 ### 정렬
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/sorting-field-20180724.png)
+    ![](http://static.toastoven.net/prod_search/sorting-field-20181023.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -362,7 +398,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/sorting-search-20180724.png?)
+    ![](http://static.toastoven.net/prod_search/sorting-search-20181023.png)
     1. 정렬 방식을 지정합니다.
         * "asc" : 올림차순 정렬
         * "desc" : 내림차순 정렬
@@ -372,7 +408,7 @@
 
 ### 요약
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/aggregation-field-20180724.png)
+    ![](http://static.toastoven.net/prod_search/aggregation-field-20181023.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -405,7 +441,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/aggregation-search-20180724.png)
+    ![](http://static.toastoven.net/prod_search/aggregation-search-20181023.png)
     1. "category" 필드의 "요약"을 체크합니다.
         * 검색 결과와 함께 요약 정보가 출력됩니다.
         ```
@@ -420,7 +456,7 @@
 
 ### 문서 가중치 지정
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/documents_boosting-field-20180724.png)
+    ![](http://static.toastoven.net/prod_search/documents_boosting-field-20181023.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -447,7 +483,7 @@
     * "weight"는 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
     <br><br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/documents_boosting-search-20180724.png)
+    ![](http://static.toastoven.net/prod_search/documents_boosting-search-20181023.png)
     * "나이키"로 검색합니다.
     <br><br>
 * 검색 결과
@@ -474,23 +510,23 @@
 * weight 반영 비율 조정
     * doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
         ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=title&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
+        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
         ```
         * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
         * default는 1.0입니다.
 * 사용자가 입력한 질의와 문서의 유사도(similarity) 반영 비율 조정
     * similarity_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
         ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=title&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
-        ```    
+        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
+        ```
         * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
-        * default는 1.0입니다.
+       * default는 1.0입니다.
 * Tip
     * similarity_ratio와 doc_weight_ratio를 조절해서 검색 결과 출력 순서를 커스터마이징할 수 있습니다.
 
 ### 문서 랭킹 지정
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/documents_ranking-field-20180911.png)
+    ![](http://static.toastoven.net/prod_search/documents_ranking-field-20181023.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -517,7 +553,7 @@
     * "ranking"은 1 ~ 10000 사이의 값을 입력할 수 있습니다.
     <br><br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/documents_boosting-search-20180724.png)
+    ![](http://static.toastoven.net/prod_search/documents_ranking-search-20181023.png)
     * "나이키"로 검색합니다.
     <br><br>
 * 검색 결과
@@ -543,44 +579,11 @@
     * "ranking"을 동일하게 지정한 경우 사용자가 입력한 질의와 유사도가 높은 문서가 먼저 노출됩니다.
     <br><br>
 
-### 필수 필터
-* 사용 예시
-    * 예를 들어 부서별로 문서 권한이 있을 때 자신이 속한 부서의 문서만 검색하도록 강제하기 위해 사용합니다.
-* 필드 설정
-    ![](http://static.toastoven.net/prod_search/mandatory_filter-field-20180724.png)
-    * "department" 필드의 "필수 필터"를 체크합니다.
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-    {
-      "action": "add",
-      "id": "id-1",
-      "fields": {
-        "title" : "정기감사 결과 보고서",
-        "department" : "경영팀"
-      }
-    },
-    {
-      "action": "add",
-      "id": "id-2",
-      "fields": {
-        "title" : "내부직원 만족도 보고서",
-        "department" : "인사팀"
-      }
-    }
-    ]
-    ```
-    <br>
-* 검색
-    ![](http://static.toastoven.net/prod_search/mandatory_filter-search-20180724.png)
-    1. "department" 필드로 필터링하도록 강제됩니다.
-
 ### 필드 삭제
 * 삭제 방법
-    ![](http://static.toastoven.net/prod_search/field_delete-1-20180724.png)
-    ![](http://static.toastoven.net/prod_search/field_delete-2-20180724.png)
-    ![](http://static.toastoven.net/prod_search/field_delete-3-20180724.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-1-20181023.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-2-20181023.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-3-20181023.png)
     1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
     2. "저장" 버튼을 클릭합니다.
     3. "지금 수행" 버튼을 클릭합니다.
@@ -591,7 +594,7 @@
 
 ### 필드 타입
 * 필드 타입 선택 화면
-    ![](http://static.toastoven.net/prod_search/detail-field_type.png???)
+    ![](http://static.toastoven.net/prod_search/detail-field_type-20181023.png)
 * text
     * "검색"할 필드일 경우 선택합니다.
     * 형태소 분석을 합니다.
@@ -644,7 +647,7 @@
 
 ### 형태소 분석
 * 형태소 분석기 선택 화면
-    ![](http://static.toastoven.net/prod_search/detail-analysis.png??)
+    ![](http://static.toastoven.net/prod_search/detail-analysis-20181023.png)
 * default
     * 형태소 분석기를 이용해 단어을 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
@@ -669,3 +672,132 @@
     * 값이 비어 있을 경우 모두 매칭 안됩니다.  
 * 허용, 거부 둘 다에 매칭이 될 경우 거부됩니다.
 * 허용, 거부 둘 다에 매칭이 안될 경우 거부됩니다.
+
+
+## 클라이언트 예제 코드
+* dependency
+``` java
+compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
+compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
+```
+* 색인
+``` java
+package com.toast.cloud.search.client;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.client.methods.RequestBuilder;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class IndexingClient {
+
+  public static void main(String[] args) throws IOException {
+
+    String documents = ""
+      + "[\n"
+      + "  {\n"
+      + "    \"action\": \"add\",\n"
+      + "    \"id\": \"id-1\",\n"
+      + "    \"fields\": {\n"
+      + "      \"title\": \"[무료배송]나이키 슈즈 195종!!\",\n"
+      + "      \"body\": \"명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??\"\n"
+      + "    }\n"
+      + "  }\n"
+      + "]";
+
+    File tempFile = File.createTempFile("documents-",".json", new File("/tmp/"));
+    tempFile.deleteOnExit();
+
+    PrintWriter printWriter = new PrintWriter(tempFile);
+    printWriter.println(documents);
+    printWriter.close();
+
+    try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
+
+      // build multipart upload request.
+      HttpEntity data = MultipartEntityBuilder.create()
+        .setMode(HttpMultipartMode.BROWSER_COMPATIBLE)
+        .addBinaryBody("file", tempFile, ContentType.DEFAULT_BINARY, tempFile.getName())
+        .build();
+
+      // build http request and assign multipart upload data.
+      HttpUriRequest request = RequestBuilder
+    	  .post("https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing")
+        .setEntity(data)
+        .build();
+
+      System.out.println("Executing request " + request.getRequestLine());
+
+      // Create a custom response handler.
+      ResponseHandler<String> responseHandler = response -> {
+        int status = response.getStatusLine().getStatusCode();
+        if (status >= 200 && status < 300) {
+          HttpEntity entity = response.getEntity();
+          return entity != null ? EntityUtils.toString(entity) : null;
+        } else {
+          throw new ClientProtocolException("Unexpected response status: " + status);
+        }
+      };
+      String responseBody = httpclient.execute(request, responseHandler);
+      System.out.println(responseBody);
+    }
+  }
+}
+```
+* 검색
+``` java
+package com.toast.cloud.search.client;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.client.methods.RequestBuilder;
+
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+
+import java.io.IOException;
+import java.net.URLEncoder;
+
+public class SearchClient {
+
+  public static void main(String[] args) throws IOException {
+
+    try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
+
+      HttpUriRequest request = RequestBuilder
+        .get("https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180&q=" + URLEncoder.encode("나이키", "UTF-8") + "&highlight=" + URLEncoder.encode("<b>,</b>","UTF-8"))
+        .build();
+
+      System.out.println("Executing request " + request.getRequestLine());
+
+      // Create a custom response handler.
+      ResponseHandler<String> responseHandler = response -> {
+        int status = response.getStatusLine().getStatusCode();
+        if (status >= 200 && status < 300) {
+          HttpEntity entity = response.getEntity();
+          return entity != null ? EntityUtils.toString(entity) : null;
+        } else {
+          throw new ClientProtocolException("Unexpected response status: " + status);
+        }
+      };
+
+      String responseBody = httpclient.execute(request, responseHandler);
+      System.out.println(responseBody);
+    }
+  }
+}
+```
