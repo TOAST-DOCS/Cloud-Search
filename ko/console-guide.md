@@ -489,10 +489,8 @@
     ![](http://static.toastoven.net/prod_search/boolean_query-search-20181030.png??)
     1. "boolean"을 선택합니다.
     2. &, |, (, ), ! 을 이용한 불리언 질의를 입력합니다.
-
 * 연산자 우선 순위
     * (), !, &, | 순입니다.
-
 * 피연산자 처리
     * 피연산자는 Exacting matching 으로 처리됩니다.
     * q=나이키 신발&q_option=boolean
