@@ -18,7 +18,7 @@
 
 ## 기본 사용법
 
-### 서비스 생성
+### 1. 서비스 생성
 * 서비스 생성 방법
     ![](http://static.toastoven.net/prod_search/domain_create_procedure.png?)
     1. "서비스 생성" 버튼을 클릭합니다.
@@ -34,7 +34,7 @@
     ![](http://static.toastoven.net/prod_search/domain_create_result.png?)
     1. 생성된 서비스 ID(test)를 클릭합니다.
 
-### 필드 설정
+### 2. 필드 설정
 * 필드 추가 방법
     ![](http://static.toastoven.net/prod_search/field_create_procedure-20181023.png?)
     1. "필드 설정" 탭을 클릭합니다.
@@ -61,7 +61,7 @@
 * 필드 수정 방법
     * 필드 수정은 지원하지 않습니다. 삭제후 다시 추가해야 합니다.
 
-### 색인
+### 3. 색인
 * 색인할 파일 생성
     * 아래 예제와 같은 형식으로 색인 요청 파일을 생성합니다.
     * <span style="color:red">색인할 파일은 UTF-8로 생성해야 합니다.</span>
@@ -175,7 +175,7 @@
                 * 4 : 성공
                 * 5 : 실패
 
-### 검색
+### 4. 검색
 * 검색 방법
     ![](http://static.toastoven.net/prod_search/basic-search-20181023.png)
     1. "검색" 탭을 클릭합니다.
@@ -235,7 +235,7 @@
         }
         ```
 
-### ACL
+### 5. ACL
 * 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
     * <span style="color:red">다른 사람이 데이터를 삭제할 수 있으므로 색인 ACL은 반드시 설정해 주세요.</span>
     * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.		
