@@ -467,6 +467,57 @@
         ```
         * "category"가 "신발"인 검색 결과가 2건, "의류"인 검색 결과가 1건이라는 의미입니다.
 
+### 불리언 질의
+* 필드 설정
+    ![boolean_query-search-20181030](https://static.toastoven.net/prod_search/boolean_query-field-20181030.png)
+
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+    {
+      "action": "add",
+      "id": "id-1",
+      "fields": {
+        "title" : "나이키 신발"
+      }
+    },
+    {
+      "action": "add",
+      "id": "id-2",
+      "fields": {
+        "title" : "나이키 슈즈"
+      }
+    },
+    {
+      "action": "add",
+      "id": "id-3",
+      "fields": {
+        "title" : "나이키 가방"
+      }
+    }
+    ]
+    ```
+    <br>
+
+* 검색
+    ![boolean_query-search-20181030](https://static.toastoven.net/prod_search/boolean_query-search-20181030.png)
+    1. "boolean"을 선택합니다.
+    2. &, |, (, ), ! 을 이용한 불리언 질의를 입력합니다.
+* 연산자 우선순위
+    * (), !, &, | 순입니다.
+* 피연산자 처리
+    * 피연산자는 Exact matching으로 처리됩니다.
+    * q=나이키 신발&q_option=boolean
+        * 검색이 되는 검색 대상
+            * "인기 나이키 신발 할인"
+            * "인기 나이키신발 할인"
+        * 검색이 안되는 검색 대상
+            * "인기 나이키 할인 신발"
+                * "나이키"와 "신발" 사이에 다른 단어가 들어 있기 때문임
+            * "인기 신발 나이키 할인"
+                * "나이키"와 "신발"의 순서가 다르기 때문임
+
 ### 문서 가중치 지정
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/documents_boosting-field-20181023.png)
