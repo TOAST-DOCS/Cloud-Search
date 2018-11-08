@@ -35,7 +35,7 @@
     1. 생성된 서비스 ID(test)를 클릭합니다.
 
 ### 필드 설정
-* 필드 설정 방법
+* 필드 추가 방법
     ![](http://static.toastoven.net/prod_search/field_create_procedure-20181023.png?)
     1. "필드 설정" 탭을 클릭합니다.
     2. "필드 추가" 버튼을 클릭합니다.
@@ -47,6 +47,19 @@
         ```
         * 필드명은 \_ (underscore)로 시작할 수 없습니다.
     4. "저장" 버튼을 클릭합니다.
+    <br><br>
+* 필드 삭제 방법
+    ![](http://static.toastoven.net/prod_search/field_delete-1-20181023.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-2-20181023.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-3-20181023.png)
+    1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
+    2. "저장" 버튼을 클릭합니다.
+    3. "지금 수행" 버튼을 클릭합니다.
+    <br>
+    * 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
+    <br><br>
+* 필드 수정 방법
+    * 필드 수정은 지원하지 않습니다. 삭제후 다시 추가해야 합니다.
 
 ### 색인
 * 색인할 파일 생성
@@ -526,7 +539,7 @@
 
 ### 문서 랭킹 지정
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/documents_ranking-field-20181023.png)
+    ![](http://static.toastoven.net/prod_search/documents_ranking-field-20181023.png?)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -579,16 +592,15 @@
     * "ranking"을 동일하게 지정한 경우 사용자가 입력한 질의와 유사도가 높은 문서가 먼저 노출됩니다.
     <br><br>
 
-### 필드 삭제
-* 삭제 방법
-    ![](http://static.toastoven.net/prod_search/field_delete-1-20181023.png)
-    ![](http://static.toastoven.net/prod_search/field_delete-2-20181023.png)
-    ![](http://static.toastoven.net/prod_search/field_delete-3-20181023.png)
-    1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
-    2. "저장" 버튼을 클릭합니다.
-    3. "지금 수행" 버튼을 클릭합니다.
-    <br><br>
-* 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
+### 필드 설정 다운로드/업로드
+* 설정 다운로드
+    ![cloudsearch_23_201812](https://static.toastoven.net/prod_search/cloudsearch_23_201812.png?)
+    * "설정 다운로드" 버튼을 클릭해서 현재 설정을 다운로드합니다.
+		<br><br>
+* 설정 업로드
+    ![cloudsearch_24_201812](https://static.toastoven.net/prod_search/cloudsearch_24_201812.png?)
+    * "설정 업로드" 버튼을 클릭해서 설정을 업로드합니다.
+    * 설정된 필드가 하나도 없을 때만 "설정 업로드" 버튼이 노출됩니다.
 
 ## 상세 가이드
 
