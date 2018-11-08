@@ -645,12 +645,13 @@
 
 ### 필드 설정 다운로드/업로드
 * 설정 다운로드
-    ![cloudsearch_23_201812](https://static.toastoven.net/prod_search/cloudsearch_23_201812.png?)
-    * "설정 다운로드" 버튼을 클릭해서 현재 설정을 다운로드합니다.
+    ![field-download-20181127](https://static.toastoven.net/prod_search/field-download-20181127.png??)
+    1. "설정 다운로드" 버튼을 클릭해서 현재 설정을 다운로드합니다.
 		<br><br>
 * 설정 업로드
-    ![cloudsearch_24_201812](https://static.toastoven.net/prod_search/cloudsearch_24_201812.png?)
-    * "설정 업로드" 버튼을 클릭해서 설정을 업로드합니다.
+    ![field-upload-20181127](https://static.toastoven.net/prod_search/field-upload-20181127.png??)
+    1. "설정 업로드" 버튼을 클릭해서 설정을 업로드합니다.
+		<br>
     * 설정된 필드가 하나도 없을 때만 "설정 업로드" 버튼이 노출됩니다.
 
 ## 상세 가이드
