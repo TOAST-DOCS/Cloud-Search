@@ -275,7 +275,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/filtering-search-20181023.png)
+    ![](http://static.toastoven.net/prod_search/filtering-search-20181023.png?)
     1. "category"가 "1"인 문서만 검색됩니다.
     <br><br>
 * 필터링 값 입력 방법
