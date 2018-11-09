@@ -358,7 +358,7 @@
     <br><br>
 * 검색
     * 반경(circle) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20181023.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20181127.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도},{위도}],{반경}
             * 예제 : [10.3,10.3],15km
@@ -366,7 +366,7 @@
             * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
     <br><br>
     * 영역(polygon) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20181023.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20181127.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
             * 예제 : [10.2,10.2],[10.3,10.5],[10.5,10.2]
@@ -411,7 +411,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/sorting-search-20181023.png)
+    ![](http://static.toastoven.net/prod_search/sorting-search-20181127.png)
     1. 정렬 방식을 지정합니다.
         * "asc" : 올림차순 정렬
         * "desc" : 내림차순 정렬
@@ -454,7 +454,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/aggregation-search-20181023.png)
+    ![](http://static.toastoven.net/prod_search/aggregation-search-20181127.png)
     1. "category" 필드의 "요약"을 체크합니다.
         * 검색 결과와 함께 요약 정보가 출력됩니다.
         ```
