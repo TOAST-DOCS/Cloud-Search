@@ -738,12 +738,15 @@
 
 
 ## 클라이언트 예제 코드
+* 파일 업로드 방식의 색인 예제 코드입니다.
+
+### java
 * dependency
 ``` java
 compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
 compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
 ```
-* 색인
+* 색인(파일 업로드 방식)
 ``` java
 package com.toast.cloud.search.client;
 
@@ -818,49 +821,45 @@ public class IndexingClient {
   }
 }
 ```
-* 검색
-``` java
-package com.toast.cloud.search.client;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.client.methods.RequestBuilder;
+### php
+* 색인(파일 업로드 방식)
+``` php
+<?php
+    $documents = ""
+      . "[\n"
+      . "  {\n"
+      . "    \"action\": \"add\",\n"
+      . "    \"id\": \"id-1\",\n"
+      . "    \"fields\": {\n"
+      . "      \"title\": \"[무료배송]나이키 슈즈 195종!!\",\n"
+      . "      \"body\": \"명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??\"\n"
+      . "    }\n"
+      . "  }\n"
+      . "]";
 
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
+    $file = DIRECTORY_SEPARATOR.trim(sys_get_temp_dir(), DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR.ltrim("documents.json", DIRECTORY_SEPARATOR);
+    file_put_contents($file, $documents);
 
-import java.io.IOException;
-import java.net.URLEncoder;
+    register_shutdown_function(function() use($file) {
+        unlink($file);
+    });
 
-public class SearchClient {
+    $data = array(
+        'file' => curl_file_create($file, "application/json", basename($file))
+    );
 
-  public static void main(String[] args) throws IOException {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,"https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, true);
 
-    try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
+    $response = curl_exec($ch) or die(curl_error($ch));
+    print_r($response);
 
-      HttpUriRequest request = RequestBuilder
-        .get("https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180&q=" + URLEncoder.encode("나이키", "UTF-8") + "&highlight=" + URLEncoder.encode("<b>,</b>","UTF-8"))
-        .build();
-
-      System.out.println("Executing request " + request.getRequestLine());
-
-      // Create a custom response handler.
-      ResponseHandler<String> responseHandler = response -> {
-        int status = response.getStatusLine().getStatusCode();
-        if (status >= 200 && status < 300) {
-          HttpEntity entity = response.getEntity();
-          return entity != null ? EntityUtils.toString(entity) : null;
-        } else {
-          throw new ClientProtocolException("Unexpected response status: " + status);
-        }
-      };
-
-      String responseBody = httpclient.execute(request, responseHandler);
-      System.out.println(responseBody);
-    }
-  }
-}
+    curl_close($ch);
+?>
 ```
