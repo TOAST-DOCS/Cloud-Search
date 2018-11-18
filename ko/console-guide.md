@@ -422,6 +422,7 @@
 ### 요약
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/aggregation-field-20181023.png)
+    * 색인이 체크된 필드만 요약 기능을 사용할 수 있습니다.
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -455,6 +456,7 @@
     <br>
 * 검색
     ![](http://static.toastoven.net/prod_search/aggregation-search-20181127.png)
+    * text 타입은 요약 기능을 사용할 수 없습니다.
     1. "category" 필드의 "요약"을 체크합니다.
         * 검색 결과와 함께 요약 정보가 출력됩니다.
         ```
