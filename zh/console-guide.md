@@ -18,7 +18,7 @@
 
 ## 기본 사용법
 
-### 서비스 생성
+### 1. 서비스 생성
 * 서비스 생성 방법
     ![](http://static.toastoven.net/prod_search/domain_create_procedure.png?)
     1. "서비스 생성" 버튼을 클릭합니다.
@@ -34,8 +34,8 @@
     ![](http://static.toastoven.net/prod_search/domain_create_result.png?)
     1. 생성된 서비스 ID(test)를 클릭합니다.
 
-### 필드 설정
-* 필드 설정 방법
+### 2. 필드 설정
+* 필드 추가 방법
     ![](http://static.toastoven.net/prod_search/field_create_procedure-20181023.png?)
     1. "필드 설정" 탭을 클릭합니다.
     2. "필드 추가" 버튼을 클릭합니다.
@@ -47,8 +47,20 @@
         ```
         * 필드명은 \_ (underscore)로 시작할 수 없습니다.
     4. "저장" 버튼을 클릭합니다.
+    <br><br>
+* 필드 삭제 방법
+    ![](http://static.toastoven.net/prod_search/field_delete-1-20181023.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-2-20181023.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-3-20181023.png)
+    1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
+    2. "저장" 버튼을 클릭합니다.
+    3. "지금 수행" 버튼을 클릭합니다.
+        * 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
+    <br><br>
+* 필드 수정 방법
+    * 필드 수정은 지원하지 않습니다. 삭제후 다시 추가해야 합니다.
 
-### 색인
+### 3. 색인
 * 색인할 파일 생성
     * 아래 예제와 같은 형식으로 색인 요청 파일을 생성합니다.
     * <span style="color:red">색인할 파일은 UTF-8로 생성해야 합니다.</span>
@@ -83,8 +95,9 @@
     ]
     ```
     * action
-        * add : 문서 추가 또는 기존 문서 수정시 "add"로 지정합니다.
-        * delete : 문서 삭제시 "delete"로 지정합니다.
+        * add : 해당 문서가 추가됩니다.
+            * 기존에 동일한 id가 존재하면 업데이트 됩니다.
+        * delete : 해당 문서가 삭제됩니다.
     * id
         * 문서의 고유한 ID입니다.
         * id의 타입은 문자열입니다.
@@ -162,7 +175,7 @@
                 * 4 : 성공
                 * 5 : 실패
 
-### 검색
+### 4. 검색
 * 검색 방법
     ![](http://static.toastoven.net/prod_search/basic-search-20181023.png)
     1. "검색" 탭을 클릭합니다.
@@ -222,7 +235,7 @@
         }
         ```
 
-### ACL
+### 5. ACL
 * 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
     * <span style="color:red">다른 사람이 데이터를 삭제할 수 있으므로 색인 ACL은 반드시 설정해 주세요.</span>
     * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.		
@@ -262,7 +275,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/filtering-search-20181023.png)
+    ![](http://static.toastoven.net/prod_search/filtering-search-20181023.png?)
     1. "category"가 "1"인 문서만 검색됩니다.
     <br><br>
 * 필터링 값 입력 방법
@@ -345,7 +358,7 @@
     <br><br>
 * 검색
     * 반경(circle) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20181023.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20181127.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도},{위도}],{반경}
             * 예제 : [10.3,10.3],15km
@@ -353,7 +366,7 @@
             * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
     <br><br>
     * 영역(polygon) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20181023.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20181127.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
             * 예제 : [10.2,10.2],[10.3,10.5],[10.5,10.2]
@@ -398,7 +411,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/sorting-search-20181023.png)
+    ![](http://static.toastoven.net/prod_search/sorting-search-20181127.png)
     1. 정렬 방식을 지정합니다.
         * "asc" : 올림차순 정렬
         * "desc" : 내림차순 정렬
@@ -409,6 +422,7 @@
 ### 요약
 * 필드 설정
     ![](http://static.toastoven.net/prod_search/aggregation-field-20181023.png)
+    * 색인이 체크된 필드만 요약 기능을 사용할 수 있습니다.
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -441,18 +455,73 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/aggregation-search-20181023.png)
-    1. "category" 필드의 "요약"을 체크합니다.
-        * 검색 결과와 함께 요약 정보가 출력됩니다.
-        ```
-        "summary": {
-          "category": {
-            "신발": 2,
-            "의류": 1
-          }
-        }
-        ```
-        * "category"가 "신발"인 검색 결과가 2건, "의류"인 검색 결과가 1건이라는 의미입니다.
+    ![](http://static.toastoven.net/prod_search/aggregation-search-20181127.png)
+    * 요약 사용 방법
+        1. "category" 필드의 "요약"을 체크합니다.
+            * 검색 결과와 함께 요약 정보가 출력됩니다.
+            ```
+            "summary": {
+              "category": {
+                "신발": 2,
+                "의류": 1
+              }
+            }
+            ```
+            * "category"가 "신발"인 검색 결과가 2건, "의류"인 검색 결과가 1건이라는 의미입니다.
+            <br>
+    * 요약 가능한 타입
+        * text 및 geo_point 타입은 요약 기능을 사용할 수 없습니다.
+
+### 불리언 질의
+* 필드 설정
+    ![boolean_query-search-20181030](https://static.toastoven.net/prod_search/boolean_query-field-20181030.png)
+
+* 색인
+    * 테스트를 위해 아래 데이터를 색인합니다.
+    ```
+    [
+    {
+      "action": "add",
+      "id": "id-1",
+      "fields": {
+        "title" : "나이키 신발"
+      }
+    },
+    {
+      "action": "add",
+      "id": "id-2",
+      "fields": {
+        "title" : "나이키 슈즈"
+      }
+    },
+    {
+      "action": "add",
+      "id": "id-3",
+      "fields": {
+        "title" : "나이키 가방"
+      }
+    }
+    ]
+    ```
+    <br>
+
+* 검색
+    ![boolean_query-search-20181030](https://static.toastoven.net/prod_search/boolean_query-search-20181030.png)
+    1. "boolean"을 선택합니다.
+    2. &, |, (, ), ! 을 이용한 불리언 질의를 입력합니다.
+* 연산자 우선순위
+    * (), !, &, | 순입니다.
+* 피연산자 처리
+    * 피연산자는 Exact matching으로 처리됩니다.
+    * q=나이키 신발&q_option=boolean
+        * 검색이 되는 검색 대상
+            * "인기 나이키 신발 할인"
+            * "인기 나이키신발 할인"
+        * 검색이 안되는 검색 대상
+            * "인기 나이키 할인 신발"
+                * "나이키"와 "신발" 사이에 다른 단어가 들어 있기 때문임
+            * "인기 신발 나이키 할인"
+                * "나이키"와 "신발"의 순서가 다르기 때문임
 
 ### 문서 가중치 지정
 * 필드 설정
@@ -526,7 +595,7 @@
 
 ### 문서 랭킹 지정
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/documents_ranking-field-20181023.png)
+    ![](http://static.toastoven.net/prod_search/documents_ranking-field-20181023.png?)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -579,16 +648,15 @@
     * "ranking"을 동일하게 지정한 경우 사용자가 입력한 질의와 유사도가 높은 문서가 먼저 노출됩니다.
     <br><br>
 
-### 필드 삭제
-* 삭제 방법
-    ![](http://static.toastoven.net/prod_search/field_delete-1-20181023.png)
-    ![](http://static.toastoven.net/prod_search/field_delete-2-20181023.png)
-    ![](http://static.toastoven.net/prod_search/field_delete-3-20181023.png)
-    1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
-    2. "저장" 버튼을 클릭합니다.
-    3. "지금 수행" 버튼을 클릭합니다.
-    <br><br>
-* 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
+### 필드 설정 다운로드/업로드
+* 설정 다운로드
+    ![field-download-20181127](https://static.toastoven.net/prod_search/field-download-20181127.png??)
+    1. "설정 다운로드" 버튼을 클릭해서 현재 설정을 다운로드합니다.
+		<br><br>
+* 설정 업로드
+    ![field-upload-20181127](https://static.toastoven.net/prod_search/field-upload-20181127.png??)
+    1. "설정 업로드" 버튼을 클릭해서 설정을 업로드합니다.
+        * 설정된 필드가 하나도 없을 때만 "설정 업로드" 버튼이 노출됩니다.
 
 ## 상세 가이드
 
@@ -675,12 +743,15 @@
 
 
 ## 클라이언트 예제 코드
+* 파일 업로드 방식의 색인 예제 코드입니다.
+
+### java
 * dependency
 ``` java
 compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
 compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
 ```
-* 색인
+* 색인(파일 업로드 방식)
 ``` java
 package com.toast.cloud.search.client;
 
@@ -755,49 +826,45 @@ public class IndexingClient {
   }
 }
 ```
-* 검색
-``` java
-package com.toast.cloud.search.client;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.client.methods.RequestBuilder;
+### php
+* 색인(파일 업로드 방식)
+``` php
+<?php
+    $documents = ""
+      . "[\n"
+      . "  {\n"
+      . "    \"action\": \"add\",\n"
+      . "    \"id\": \"id-1\",\n"
+      . "    \"fields\": {\n"
+      . "      \"title\": \"[무료배송]나이키 슈즈 195종!!\",\n"
+      . "      \"body\": \"명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??\"\n"
+      . "    }\n"
+      . "  }\n"
+      . "]";
 
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
+    $file = DIRECTORY_SEPARATOR.trim(sys_get_temp_dir(), DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR.ltrim("documents.json", DIRECTORY_SEPARATOR);
+    file_put_contents($file, $documents);
 
-import java.io.IOException;
-import java.net.URLEncoder;
+    register_shutdown_function(function() use($file) {
+        unlink($file);
+    });
 
-public class SearchClient {
+    $data = array(
+        'file' => curl_file_create($file, "application/json", basename($file))
+    );
 
-  public static void main(String[] args) throws IOException {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,"https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, true);
 
-    try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
+    $response = curl_exec($ch) or die(curl_error($ch));
+    print_r($response);
 
-      HttpUriRequest request = RequestBuilder
-        .get("https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180&q=" + URLEncoder.encode("나이키", "UTF-8") + "&highlight=" + URLEncoder.encode("<b>,</b>","UTF-8"))
-        .build();
-
-      System.out.println("Executing request " + request.getRequestLine());
-
-      // Create a custom response handler.
-      ResponseHandler<String> responseHandler = response -> {
-        int status = response.getStatusLine().getStatusCode();
-        if (status >= 200 && status < 300) {
-          HttpEntity entity = response.getEntity();
-          return entity != null ? EntityUtils.toString(entity) : null;
-        } else {
-          throw new ClientProtocolException("Unexpected response status: " + status);
-        }
-      };
-
-      String responseBody = httpclient.execute(request, responseHandler);
-      System.out.println(responseBody);
-    }
-  }
-}
+    curl_close($ch);
+?>
 ```
