@@ -122,11 +122,11 @@
         * Request
             * 파일 업로드 방식
                 ```
-                $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+                curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
                 ```
             * Payload 방식
                 ```
-                $ curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:application/json; charset=UTF-8' -d '
+                curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:application/json; charset=UTF-8' -d '
                 [
                   {
                     "action": "add",
@@ -144,8 +144,7 @@
                       "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~"
                     }
                   }
-                ]
-                '
+                ]'
                 ```
         * Response
             ```        
@@ -753,7 +752,7 @@ compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
 ```
 * 색인(파일 업로드 방식)
 ``` java
-package com.toast.cloud.search.client;
+package com.toast.cloud.cloudsearch.client;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
