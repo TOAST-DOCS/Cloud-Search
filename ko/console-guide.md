@@ -246,6 +246,19 @@
     8. 시작 날짜를 입력합니다.
     9. 종료 날짜를 입력합니다.
     10. "조회" 버튼을 클릭하면 통계 그래프가 출력됩니다.
+* Rest API
+    * Request
+        ```
+        curl -i -XGET 'http://alpha-api-search.cloud.toast.com/stats/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/stats?kind=total_query_count&date=2019-01-08'
+        ```
+        * kind
+            * total_query_count : 전체 질의수
+            * no_result_query_count : 검색 결과 없는 질의수
+        * date : 조회할 날짜
+    * Response
+        ````
+        [ [ "나이키", 8 ], [ "아디다스", 4 ] ]
+        ````
 
 ### 5. ACL
 * 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
