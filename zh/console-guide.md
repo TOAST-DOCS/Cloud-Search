@@ -36,7 +36,7 @@
 
 ### 2. 필드 설정
 * 필드 추가 방법
-    ![](http://static.toastoven.net/prod_search/field_create_procedure-20181023.png?)
+    ![](http://static.toastoven.net/prod_search/field_create_procedure-20190129.png)
     1. "필드 설정" 탭을 클릭합니다.
     2. "필드 추가" 버튼을 클릭합니다.
     3. 필드 이름을 입력합니다.
@@ -49,9 +49,9 @@
     4. "저장" 버튼을 클릭합니다.
     <br><br>
 * 필드 삭제 방법
-    ![](http://static.toastoven.net/prod_search/field_delete-1-20181023.png)
-    ![](http://static.toastoven.net/prod_search/field_delete-2-20181023.png)
-    ![](http://static.toastoven.net/prod_search/field_delete-3-20181023.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-1-20190129.png?)
+    ![](http://static.toastoven.net/prod_search/field_delete-2-20190129.png?)
+    ![](http://static.toastoven.net/prod_search/field_delete-3-20190129.png?)
     1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
     2. "저장" 버튼을 클릭합니다.
     3. "지금 수행" 버튼을 클릭합니다.
@@ -70,7 +70,7 @@
     [
       {
         "action": "add",
-        "id": "633800446",
+        "id": "id-1",
         "fields": {
           "title": "[무료배송]나이키 슈즈 195종!!",
           "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??"
@@ -78,7 +78,7 @@
       },
       {
         "action": "add",
-        "id": "685165462",
+        "id": "id-2",
         "fields": {
           "title": "[슈퍼특가]나이키 운동화 109종",
           "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~"
@@ -86,7 +86,7 @@
       },
       {
         "action": "add",
-        "id": "610408574",
+        "id": "id-3",
         "fields": {
           "title": "[아디다스]신상운동화/슬리퍼 114종",
           "body": "[아디다스슈즈모음♥] 무/료/배/송 [아디다스]신상슬리퍼 /슈퍼스타 스탠스미스 /튜블라외 114종 득템기회!"
@@ -106,7 +106,7 @@
     <br><br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure-02-20180724.png)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure-02-20190129.png)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
@@ -130,7 +130,7 @@
                 [
                   {
                     "action": "add",
-                    "id": "633800446",
+                    "id": "id-1",
                     "fields": {
                       "title": "[무료배송]나이키 슈즈 195종!!",
                       "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??"
@@ -138,7 +138,7 @@
                   },
                   {
                     "action": "add",
-                    "id": "685165462",
+                    "id": "id-2",
                     "fields": {
                       "title": "[슈퍼특가]나이키 운동화 109종",
                       "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~"
@@ -176,7 +176,7 @@
 
 ### 4. 검색
 * 검색 방법
-    ![](http://static.toastoven.net/prod_search/basic-search-20181023.png)
+    ![](http://static.toastoven.net/prod_search/basic-search-20190129.png)
     1. "검색" 탭을 클릭합니다.
     2. 검색할 필드명을 체크합니다.
     3. 검색할 필드별 가중치를 설정합니다.
@@ -221,9 +221,9 @@
               "itemList" : {
                 "item" : [
                 {
-                  "_RELEVANCE" : 0.2369668,
+                  "_RELEVANCE" : 0.07575758,
                   "_RANK" : 1,
-                  "_ID" : "685165462",
+                  "_ID" : "id-2",
                   "body" : "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
                   "title" : "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
                 }
@@ -233,23 +233,51 @@
           }
         }
         ```
+### 5. 통계
+* 통계 화면
+    ![](http://static.toastoven.net/prod_search/stats-20190129.png)
+    1. "통계" 탭을 클릭합니다.
+    2. "전체 질의수" 또는 "결과 없는 질의수"를 선택합니다.
+    3. 시작 날짜를 입력합니다.
+    4. 종료 날짜를 입력합니다.
+    5. "조회" 버튼을 클릭하면 통계 그래프가 출력됩니다.
+    6. "데이터 다운로드"를 클릭하면 질의별 통계 데이터가 다운로드됩니다.
+    7. "전체 문서수" 또는 "전체 색인 사이즈"를 선택합니다.
+    8. 시작 날짜를 입력합니다.
+    9. 종료 날짜를 입력합니다.
+    10. "조회" 버튼을 클릭하면 통계 그래프가 출력됩니다.
+* Rest API
+    * Request
+        ```
+        curl -i -XGET 'http://alpha-api-search.cloud.toast.com/stats/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/stats?kind=total_query_count&date=2019-01-08'
+        ```
+        * kind
+            * total_query_count : 전체 질의수
+            * no_result_query_count : 검색 결과 없는 질의수
+        * date : 조회할 날짜
+    * Response
+        ````
+        [ [ "나이키", 8 ], [ "아디다스", 4 ] ]
+        ````
+        * 질의수 3 이상만 조회됩니다.
 
-### 5. ACL
+### 6. ACL
 * 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
     * <span style="color:red">다른 사람이 데이터를 삭제할 수 있으므로 색인 ACL은 반드시 설정해 주세요.</span>
     * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.		
 * ACL 설정 방법
-    ![](http://static.toastoven.net/prod_search/acl_procedure.png??)
+    ![](http://static.toastoven.net/prod_search/acl_procedure-20190129.png)
     1. "ACL" 탭을 클릭합니다.
     2. 색인 요청은 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
     3. 검색 요청은 모든 IP에서 가능하도록 설정한 예제입니다.
-    4. "저장" 버튼을 클릭합니다.
+    4. 질의 통계 데이터 다운로드 요청는 모든 IP에서 가능하도록 설정한 예제입니다.
+    5. "저장" 버튼을 클릭합니다.
 
 ## 기능 가이드
 
 ### 필터링
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/filtering-field-20181023.png)
+    ![](http://static.toastoven.net/prod_search/filtering-field-20190129.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -274,7 +302,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/filtering-search-20181023.png?)
+    ![](http://static.toastoven.net/prod_search/filtering-search-20190129.png)
     1. "category"가 "1"인 문서만 검색됩니다.
     <br><br>
 * 필터링 값 입력 방법
@@ -308,8 +336,8 @@
         * filter='update=[2017-03-22T08:28:44,2018-10-02T15:26:28}'
             * 2017-03-22T08:28:44 <= update < 2018-10-02T15:26:28
     * keyword 타입 필터링
-        * filter='dealer="DNC샵"'
-            * keyword 타입은 큰따옴표를 사용하세요.
+        * filter='dealer="DNC샵"|"위드쇼핑"'
+            * keyword 타입은 큰따옴표 사용을 추천합니다.
 * 여러 개의 필드 필터링
     * filter='category=1&brand=2'
         * category == 1 and brand == 2
@@ -320,7 +348,7 @@
 
 ### 위경도(geolocation) 필터링
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/geolocation-field-20181023.png)
+    ![](http://static.toastoven.net/prod_search/geolocation-field-20190129.png)
     1. 위경도를 입력할 필드 타입으로 "geo_point"를 선택합니다.
     <br><br>
 * 색인
@@ -357,7 +385,7 @@
     <br><br>
 * 검색
     * 반경(circle) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20181127.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20190129.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도},{위도}],{반경}
             * 예제 : [10.3,10.3],15km
@@ -365,7 +393,7 @@
             * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
     <br><br>
     * 영역(polygon) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20181127.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20190129.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
             * 예제 : [10.2,10.2],[10.3,10.5],[10.5,10.2]
@@ -374,7 +402,7 @@
 
 ### 정렬
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/sorting-field-20181023.png)
+    ![](http://static.toastoven.net/prod_search/sorting-field-20190129.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -410,7 +438,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/sorting-search-20181127.png)
+    ![](http://static.toastoven.net/prod_search/sorting-search-20190129.png)
     1. 정렬 방식을 지정합니다.
         * "asc" : 올림차순 정렬
         * "desc" : 내림차순 정렬
@@ -420,7 +448,7 @@
 
 ### 요약
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/aggregation-field-20181023.png)
+    ![](http://static.toastoven.net/prod_search/aggregation-field-20190129.png)
     * 색인이 체크된 필드만 요약 기능을 사용할 수 있습니다.
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
@@ -454,7 +482,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/aggregation-search-20181127.png)
+    ![](http://static.toastoven.net/prod_search/aggregation-search-20190129.png)
     * 요약 사용 방법
         1. "category" 필드의 "요약"을 체크합니다.
             * 검색 결과와 함께 요약 정보가 출력됩니다.
@@ -473,7 +501,7 @@
 
 ### 불리언 질의
 * 필드 설정
-    ![boolean_query-search-20181030](https://static.toastoven.net/prod_search/boolean_query-field-20181030.png)
+    ![boolean_query-field-20190129](https://static.toastoven.net/prod_search/boolean_query-field-20190129.png)
 
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
@@ -505,7 +533,7 @@
     <br>
 
 * 검색
-    ![boolean_query-search-20181030](https://static.toastoven.net/prod_search/boolean_query-search-20181030.png)
+    ![boolean_query-search-20190129](https://static.toastoven.net/prod_search/boolean_query-search-20190129.png)
     1. "boolean"을 선택합니다.
     2. &, |, (, ), ! 을 이용한 불리언 질의를 입력합니다.
 * 연산자 우선순위
@@ -524,7 +552,7 @@
 
 ### 문서 가중치 지정
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/documents_boosting-field-20181023.png)
+    ![documents_boosting-field-20190129](http://static.toastoven.net/prod_search/documents_boosting-field-20190129.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -551,7 +579,7 @@
     * "weight"는 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
     <br><br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/documents_boosting-search-20181023.png)
+    ![documents_boosting-search-20190129](http://static.toastoven.net/prod_search/documents_boosting-search-20190129.png)
     * "나이키"로 검색합니다.
     <br><br>
 * 검색 결과
@@ -559,13 +587,13 @@
     "itemList": {
       "item": [
         {
-          "_RELEVANCE": 0.6772727,
+          "_RELEVANCE": 0.43333334,
           "_RANK": 1,
           "_ID": "id-2",
           "title": "<b>나이키</b>"
         },
         {
-          "_RELEVANCE": 0.27727273,
+          "_RELEVANCE": 0.20877191,
           "_RANK": 2,
           "_ID": "id-1",
           "title": "<b>나이키</b>"
@@ -594,7 +622,7 @@
 
 ### 문서 랭킹 지정
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/documents_ranking-field-20181023.png?)
+    ![documents_ranking-field-20190129](http://static.toastoven.net/prod_search/documents_ranking-field-20190129.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -621,7 +649,7 @@
     * "ranking"은 1 ~ 10000 사이의 값을 입력할 수 있습니다.
     <br><br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/documents_ranking-search-20181023.png)
+    ![documents_ranking-search-20190129](http://static.toastoven.net/prod_search/documents_ranking-search-20190129.png)
     * "나이키"로 검색합니다.
     <br><br>
 * 검색 결과
@@ -649,11 +677,11 @@
 
 ### 필드 설정 다운로드/업로드
 * 설정 다운로드
-    ![field-download-20181127](https://static.toastoven.net/prod_search/field-download-20181127.png??)
+    ![field-download-20190129](https://static.toastoven.net/prod_search/field-download-20190129.png)
     1. "설정 다운로드" 버튼을 클릭해서 현재 설정을 다운로드합니다.
 		<br><br>
 * 설정 업로드
-    ![field-upload-20181127](https://static.toastoven.net/prod_search/field-upload-20181127.png??)
+    ![field-upload-20190129](https://static.toastoven.net/prod_search/field-upload-20190129.png)
     1. "설정 업로드" 버튼을 클릭해서 설정을 업로드합니다.
         * 설정된 필드가 하나도 없을 때만 "설정 업로드" 버튼이 노출됩니다.
 
@@ -661,7 +689,7 @@
 
 ### 필드 타입
 * 필드 타입 선택 화면
-    ![](http://static.toastoven.net/prod_search/detail-field_type-20181023.png)
+    ![detail-field_type-20190129](http://static.toastoven.net/prod_search/detail-field_type-20190129.png)
 * text
     * "검색"할 필드일 경우 선택합니다.
     * 형태소 분석을 합니다.
@@ -714,7 +742,7 @@
 
 ### 형태소 분석
 * 형태소 분석기 선택 화면
-    ![](http://static.toastoven.net/prod_search/detail-analysis-20181023.png)
+    ![detail-analysis-20190129](http://static.toastoven.net/prod_search/detail-analysis-20190129.png)
 * default
     * 형태소 분석기를 이용해 단어을 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
@@ -727,7 +755,7 @@
 
 ### ACL
 * ACL 설정 화면
-    ![](http://static.toastoven.net/prod_search/detail-acl.png??)
+    ![detail-acl-20190129](http://static.toastoven.net/prod_search/detail-acl-20190129.png)
 * 입력 형식
     * IP 형식으로 입력 가능합니다.
         * 예제) 202.179.177.21
