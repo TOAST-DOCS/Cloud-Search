@@ -7,7 +7,7 @@
 ### 자동완성 서비스 개발 과정
 
 * 서비스 구성도
-![](http://static.toastoven.net/prod_autocomplete/block_diagrm-20200113.png)
+![](http://static.toastoven.net/prod_search/block_diagrm-20200113.png?)
 
 * 서비스 개발 과정
     1. 서비스 생성
