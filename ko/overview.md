@@ -1,11 +1,10 @@
 ## Search > Cloud Search > 개요
 
 별도의 인프라 및 검색 솔루션 설치 없이 간편하게 검색 서비스를 구축할 수 있습니다.
-* 색인 REST API로 검색할 데이터를 입력합니다.
-* 검색 REST API로 검색 결과를 받아옵니다.
+    * 색인 REST API로 검색할 데이터를 입력합니다.
+    * 검색 REST API로 검색 결과를 받아옵니다.
 
 ### 검색 서비스 개발 과정
-* 서비스 구성도
 ![](http://static.toastoven.net/prod_search/block_diagrm-20200113.png?)
 1. 서비스 생성
     * 검색 서비스를 생성합니다.
