@@ -5,7 +5,8 @@
 * 검색 REST API로 검색 결과를 받아옵니다.
 
 ### 검색 서비스 개발 과정
-![](http://static.toastoven.net/prod_search/block_diagrm-20200113.png)
+* 서비스 구성도
+    ![](http://static.toastoven.net/prod_search/block_diagrm-20200113.png)
 1. 서비스 생성
     * 검색 서비스를 생성합니다.
 2. 필드 설정
