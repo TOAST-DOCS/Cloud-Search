@@ -29,7 +29,7 @@
     3. "저장" 버튼을 클릭합니다.
     <br><br>
 * 서비스 생성 결과
-    ![](http://static.toastoven.net/prod_search/domain_create_result.png?)
+    ![](http://static.toastoven.net/prod_search/domain_create_result-20200115.0843.png)
     1. 생성된 서비스 ID(test)를 클릭합니다.
 
 ### 2. 필드 설정
