@@ -12,7 +12,7 @@
     2. "Cloud Search"를 클릭해서 서비스를 활성화합니다.
    <br><br>
 * 활성화 확인
-    ![](http://static.toastoven.net/prod_search/product-use-03-20180724.png)
+    ![](http://static.toastoven.net/prod_search/product-use-03-20190121.1520.png)
     1. "Search" 클릭합니다.
     2. "Cloud Search"가 노출되면 활성화된 것입니다.
 
