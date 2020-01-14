@@ -2,12 +2,12 @@
 
 ## 알아두기
 * 문서 내의 호스트명 "alpha-api-search.cloud.toast.com"는 사용자별로 다를 수 있습니다.
-* 문서 내의 앱키 "bJsVUwrftmEl4K7D"는 사용자별로 다를 수 있습니다.
+* 문서 내의 앱키 "bJsVUwrftmEl4K7D"는 사용자별로 다릅니다.
 
 ## 시작하기
 * Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
-    ![](http://static.toastoven.net/prod_search/product-use-02-20190121.png)
+    ![](http://static.toastoven.net/prod_search/product-use-02-20190121.png?)
     1. "서비스 선택"을 클릭합니다.
     2. "Cloud Search"를 클릭해서 서비스를 활성화합니다.
    <br><br>
