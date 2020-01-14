@@ -7,7 +7,7 @@
 ## 시작하기
 * Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
-    ![](http://static.toastoven.net/prod_search/product-use-02-20190121.1321.png)
+    ![](http://static.toastoven.net/prod_search/product-use-02-20190121.1445.png)
     1. "서비스 선택"을 클릭합니다.
     2. "Cloud Search"를 클릭해서 서비스를 활성화합니다.
    <br><br>
