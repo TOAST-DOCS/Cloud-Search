@@ -7,12 +7,12 @@
 ## 시작하기
 * Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
-    ![](http://static.toastoven.net/prod_search/product-use-02-20190121.1613.png)
+    ![](http://static.toastoven.net/prod_search/product-use-02-20200121.1640.png)
     1. "서비스 선택"을 클릭합니다.
     2. "Cloud Search"를 클릭해서 서비스를 활성화합니다.
    <br><br>
 * 활성화 확인
-    ![](http://static.toastoven.net/prod_search/product-use-03-20190121.1618.png?)
+    ![](http://static.toastoven.net/prod_search/product-use-03-20190121.1640.png?)
     1. "Search" 클릭합니다.
     2. "Cloud Search"가 노출되면 활성화된 것입니다.
 
@@ -20,7 +20,7 @@
 
 ### 1. 서비스 생성
 * 서비스 생성 방법
-    ![](http://static.toastoven.net/prod_search/domain_create_procedure-20200121.1556.png)
+    ![](http://static.toastoven.net/prod_search/domain_create_procedure-20200121.1640.png)
     1. "서비스 생성" 버튼을 클릭합니다.
     2. 서비스 ID를 입력합니다.
         * 영어 소문자, 숫자 및 \_(underscore)와 -(dash)만 사용할 수 있습니다.
