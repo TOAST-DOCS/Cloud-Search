@@ -88,8 +88,8 @@
         * 8Mb 이상의 데이터는 여러 개로 나누어서 색인해야 합니다.
     <br><br>
 * 색인 방법
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure-02-20190129.png)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_01-20200116.1827.png)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_02-20200116.1833.png)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
@@ -159,7 +159,7 @@
 
 ### 4. 검색
 * 검색 방법
-    ![](http://static.toastoven.net/prod_search/basic-search-20190129.png)
+    ![](http://static.toastoven.net/prod_search/basic-search-20200116.1847.png)
     1. "검색" 탭을 클릭합니다.
     2. 검색할 필드명을 체크합니다.
     3. 검색할 필드별 가중치를 설정합니다.
@@ -176,7 +176,7 @@
     11. 검색할 단어를 입력합니다.
     12. 검색 아이콘을 클릭합니다.
     13. 2 ~ 11번까지 설정한 내용이 REST API로 출력됩니다.
-        * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
+        * Rest API를 이용해서 검색 서비스를 개발하시면 됩니다.
     14. 검색 결과가 출력됩니다.
     <br><br>
 * Rest API
@@ -218,7 +218,7 @@
         ```
 ### 5. 통계
 * 통계 화면
-    ![](http://static.toastoven.net/prod_search/stats-20190129.png)
+    ![](http://static.toastoven.net/prod_search/stats-20200116.1950.png)
     1. "통계" 탭을 클릭합니다.
     2. "전체 질의수" 또는 "결과 없는 질의수"를 선택합니다.
     3. 시작 날짜를 입력합니다.
@@ -249,7 +249,7 @@
     * <span style="color:red">다른 사람이 데이터를 삭제할 수 있으므로 색인 ACL은 반드시 설정해 주세요.</span>
     * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.		
 * ACL 설정 방법
-    ![](http://static.toastoven.net/prod_search/acl_procedure-20190129.png)
+    ![](http://static.toastoven.net/prod_search/acl_procedure-20200116.1855.png)
     1. "ACL" 탭을 클릭합니다.
     2. 색인 요청은 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
     3. 검색 요청은 모든 IP에서 가능하도록 설정한 예제입니다.
