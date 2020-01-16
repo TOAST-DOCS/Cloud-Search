@@ -20,7 +20,7 @@
 
 ### 1. 서비스 생성
 * 서비스 생성 방법
-    ![](http://static.toastoven.net/prod_search/domain_create_procedure-20200121.1640.png)
+    ![](http://static.toastoven.net/prod_search/domain_create_procedure-20200115.0908.png)
     1. "서비스 생성" 버튼을 클릭합니다.
     2. 서비스 ID를 입력합니다.
         * 영어 소문자, 숫자 및 \_(underscore)와 -(dash)만 사용할 수 있습니다.
@@ -29,12 +29,12 @@
     3. "저장" 버튼을 클릭합니다.
     <br><br>
 * 서비스 생성 결과
-    ![](http://static.toastoven.net/prod_search/domain_create_result-20200115.0904.png)
+    ![](http://static.toastoven.net/prod_search/domain_create_result-20200116.1024.png)
     1. 생성된 서비스 ID(test)를 클릭합니다.
 
 ### 2. 필드 설정
 * 필드 추가 방법
-    ![](http://static.toastoven.net/prod_search/field_create_procedure-20190129.png)
+    ![](http://static.toastoven.net/prod_search/field_create_procedure-20200116.1017.png)
     1. "필드 설정" 탭을 클릭합니다.
     2. "필드 추가" 버튼을 클릭합니다.
     3. 필드 이름을 입력합니다.
@@ -42,18 +42,6 @@
         * 숫자, \_(underscore), -(dash)로 시작할 수 없습니다.
         * 최소 두 글자 이상 가능합니다.
     4. "저장" 버튼을 클릭합니다.
-    <br><br>
-* 필드 삭제 방법
-    ![](http://static.toastoven.net/prod_search/field_delete-1-20190129.png?)
-    ![](http://static.toastoven.net/prod_search/field_delete-2-20190129.png?)
-    ![](http://static.toastoven.net/prod_search/field_delete-3-20190129.png?)
-    1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
-    2. "저장" 버튼을 클릭합니다.
-    3. "지금 수행" 버튼을 클릭합니다.
-        * 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
-    <br><br>
-* 필드 수정 방법
-    * 필드 수정은 지원하지 않습니다. 삭제후 다시 추가해야 합니다.
 
 ### 3. 색인
 * 색인할 파일 생성
@@ -269,6 +257,20 @@
     5. "저장" 버튼을 클릭합니다.
 
 ## 기능 상세 설명
+
+### 필드 삭제
+* 팰드 삭제 방법
+    ![](http://static.toastoven.net/prod_search/field_delete-1-20190129.png?)
+    ![](http://static.toastoven.net/prod_search/field_delete-2-20190129.png?)
+    ![](http://static.toastoven.net/prod_search/field_delete-3-20190129.png?)
+    1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
+    2. "저장" 버튼을 클릭합니다.
+    3. "지금 수행" 버튼을 클릭합니다.
+        * 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
+    <br><br>
+
+### 필드 수정
+* 필드 수정은 지원하지 않습니다. 삭제후 다시 추가해야 합니다.
 
 ### 필터링
 * 필드 설정
