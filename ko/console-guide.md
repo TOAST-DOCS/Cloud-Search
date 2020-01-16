@@ -7,12 +7,12 @@
 ## 시작하기
 * Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
-    ![](http://static.toastoven.net/prod_search/product-use-02-20200121.1640.png)
+    ![](http://static.toastoven.net/prod_search/product-use-02-20200116.1057.png)
     1. "서비스 선택"을 클릭합니다.
     2. "Cloud Search"를 클릭해서 서비스를 활성화합니다.
    <br><br>
 * 활성화 확인
-    ![](http://static.toastoven.net/prod_search/product-use-03-20190121.1640.png?)
+    ![](http://static.toastoven.net/prod_search/product-use-03-20200116.1148.png)
     1. "Search" 클릭합니다.
     2. "Cloud Search"가 노출되면 활성화된 것입니다.
 
@@ -20,7 +20,7 @@
 
 ### 1. 서비스 생성
 * 서비스 생성 방법
-    ![](http://static.toastoven.net/prod_search/domain_create_procedure-20200115.0908.png)
+    ![](http://static.toastoven.net/prod_search/domain_create_prodedure-20200116.1710.png)
     1. "서비스 생성" 버튼을 클릭합니다.
     2. 서비스 ID를 입력합니다.
         * 영어 소문자, 숫자 및 \_(underscore)와 -(dash)만 사용할 수 있습니다.
@@ -29,12 +29,12 @@
     3. "저장" 버튼을 클릭합니다.
     <br><br>
 * 서비스 생성 결과
-    ![](http://static.toastoven.net/prod_search/domain_create_result-20200116.1024.png)
+    ![](http://static.toastoven.net/prod_search/domain_create_result-20200116.1655.png)
     1. 생성된 서비스 ID(test)를 클릭합니다.
 
 ### 2. 필드 설정
 * 필드 추가 방법
-    ![](http://static.toastoven.net/prod_search/field_create_procedure-20200116.1017.png)
+    ![](http://static.toastoven.net/prod_search/field_create_procedure-20200116.1714.png)
     1. "필드 설정" 탭을 클릭합니다.
     2. "필드 추가" 버튼을 클릭합니다.
     3. 필드 이름을 입력합니다.
