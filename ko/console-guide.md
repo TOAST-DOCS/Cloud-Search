@@ -95,11 +95,11 @@
     3. 색인할 파일을 선택합니다.
     4. "열기" 버튼을 클릭합니다.  
     5. 색인 명령어가 REST API로 출력됩니다.
-        * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
+        * REST API를 이용해서 검색 서비스를 개발하시면 됩니다.
     6. "색인" 버튼을 클릭합니다.
     7. 색인 결과를 확인할 수 있습니다.
     <br><br>
-* Rest API
+* REST API
     * 아래와 같이 REST API를 사용 가능합니다.
     * 색인 API
         * Request
@@ -176,10 +176,10 @@
     11. 검색할 단어를 입력합니다.
     12. 검색 아이콘을 클릭합니다.
     13. 2 ~ 11번까지 설정한 내용이 REST API로 출력됩니다.
-        * Rest API를 이용해서 검색 서비스를 개발하시면 됩니다.
+        * REST API를 이용해서 검색 서비스를 개발하시면 됩니다.
     14. 검색 결과가 출력됩니다.
     <br><br>
-* Rest API
+* REST API
     * 아래와 같이 REST API를 사용 가능합니다.
     * Request
         ```
@@ -229,7 +229,7 @@
     8. 시작 날짜를 입력합니다.
     9. 종료 날짜를 입력합니다.
     10. "조회" 버튼을 클릭하면 통계 그래프가 출력됩니다.
-* Rest API
+* REST API
     * Request
         ```
         curl -i -XGET 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/stats/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2019-01-08'
