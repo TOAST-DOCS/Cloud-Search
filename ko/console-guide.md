@@ -1,8 +1,8 @@
 ## Search > Cloud Search > 콘솔 사용 가이드
 
 ## 알아두기
-* 문서 내의 호스트명 "alpha-api-search.cloud.toast.com"는 사용자별로 다를 수 있습니다.
-* 문서 내의 앱키 "bJsVUwrftmEl4K7D"는 사용자별로 다릅니다.
+* 문서 내의 호스트명 "api-7ab1617e2df0f1d1-search.cloud.toast.com"는 사용자별로 다를 수 있습니다.
+* 문서 내의 앱키 "EMKPutYozUttWVY2"는 사용자별로 다릅니다.
 
 ## 시작하기
 * Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
@@ -105,11 +105,11 @@
         * Request
             * 파일 업로드 방식
                 ```
-                curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+                curl -XPOST 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
                 ```
             * Payload 방식
                 ```
-                curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:application/json; charset=UTF-8' -d '
+                curl -XPOST 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Content-Type:application/json; charset=UTF-8' -d '
                 [
                   {
                     "action": "add",
@@ -138,7 +138,7 @@
     * 색인 결과 확인 API
         * Request
             ```
-            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing_log?id=1'
+            curl -i -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1'
             ```  
             * id 1은 위의 색인 API Response 의 id입니다.
         * Response
@@ -183,7 +183,7 @@
     * 아래와 같이 REST API를 사용 가능합니다.
     * Request
         ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>'
+        curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>'
         ```
     * Response
         ```
@@ -232,7 +232,7 @@
 * Rest API
     * Request
         ```
-        curl -i -XGET 'http://alpha-api-search.cloud.toast.com/stats/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/stats?kind=total_query_count&date=2019-01-08'
+        curl -i -XGET 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/stats/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2019-01-08'
         ```
         * kind
             * total_query_count : 전체 질의수
@@ -262,7 +262,7 @@
 * 팰드 삭제 방법
     ![](http://static.toastoven.net/prod_search/field_delete-1-20200117.0835.png)
     ![](http://static.toastoven.net/prod_search/field_delete-2-20200117.0843.png)
-    ![](http://static.toastoven.net/prod_search/field_delete-3-20200117.0837.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-3-20200117.1201.png)
     1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
     2. "저장" 버튼을 클릭합니다.
     3. "지금 수행" 버튼을 클릭합니다.
@@ -603,14 +603,14 @@
 * weight 반영 비율 조정
     * doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
         ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
+        curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
         ```
         * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
         * default는 1.0입니다.
 * 사용자가 입력한 질의와 문서의 유사도(similarity) 반영 비율 조정
     * similarity_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
         ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
+        curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
         ```
         * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
         * default는 1.0입니다.
@@ -828,7 +828,7 @@ public class IndexingClient {
 
       // build http request and assign multipart upload data.
       HttpUriRequest request = RequestBuilder
-    	  .post("https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing")
+    	  .post("https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
         .setEntity(data)
         .build();
 
@@ -879,7 +879,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_URL,"https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
