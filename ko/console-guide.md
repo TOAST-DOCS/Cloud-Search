@@ -89,7 +89,7 @@
     <br><br>
 * 색인 방법
     ![](http://static.toastoven.net/prod_search/indexing_procedure_01-20200116.1827.png)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_02-20200117.0848.png)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_02-20200117.1123.png)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
