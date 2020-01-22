@@ -1,18 +1,18 @@
 ## Search > Cloud Search > 콘솔 사용 가이드
 
-## 문서 설명
-* 문서 내의 호스트명 "alpha-api-search.cloud.toast.com"는 사용자별로 다를 수 있습니다.
-* 문서 내의 앱키 "bJsVUwrftmEl4K7D"는 사용자별로 다를 수 있습니다.
+## 알아두기
+* 문서 내의 호스트명 "api-7ab1617e2df0f1d1-search.cloud.toast.com"는 사용자별로 다를 수 있습니다.
+* 문서 내의 앱키 "EMKPutYozUttWVY2"는 사용자별로 다릅니다.
 
-## 상품 활성화
+## 시작하기
 * Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
 * 활성화 방법
-    ![](http://static.toastoven.net/prod_search/product-use-02-20180724.png)
+    ![](http://static.toastoven.net/prod_search/product-use-02-20200116.1057.png)
     1. "서비스 선택"을 클릭합니다.
     2. "Cloud Search"를 클릭해서 서비스를 활성화합니다.
    <br><br>
 * 활성화 확인
-    ![](http://static.toastoven.net/prod_search/product-use-03-20180724.png)
+    ![](http://static.toastoven.net/prod_search/product-use-03-20200116.1148.png)
     1. "Search" 클릭합니다.
     2. "Cloud Search"가 노출되면 활성화된 것입니다.
 
@@ -20,21 +20,21 @@
 
 ### 1. 서비스 생성
 * 서비스 생성 방법
-    ![](http://static.toastoven.net/prod_search/domain_create_procedure.png?)
+    ![](http://static.toastoven.net/prod_search/domain_create_prodedure-20200116.1710.png)
     1. "서비스 생성" 버튼을 클릭합니다.
     2. 서비스 ID를 입력합니다.
-        * 영문 소문자, 숫자 및 \_(underscore)와 -(dash)만 사용할 수 있습니다.
+        * 영어 소문자, 숫자 및 \_(underscore)와 -(dash)만 사용할 수 있습니다.
         * 숫자, \_(underscore), -(dash)로 시작할 수 없습니다.
         * 최소 두 글자 이상 가능합니다.
     3. "저장" 버튼을 클릭합니다.
     <br><br>
 * 서비스 생성 결과
-    ![](http://static.toastoven.net/prod_search/domain_create_result.png?)
+    ![](http://static.toastoven.net/prod_search/domain_create_result-20200116.1655.png)
     1. 생성된 서비스 ID(test)를 클릭합니다.
 
 ### 2. 필드 설정
 * 필드 추가 방법
-    ![](http://static.toastoven.net/prod_search/field_create_procedure-20190129.png)
+    ![](http://static.toastoven.net/prod_search/field_create_procedure-20200116.1714.png)
     1. "필드 설정" 탭을 클릭합니다.
     2. "필드 추가" 버튼을 클릭합니다.
     3. 필드 이름을 입력합니다.
@@ -42,18 +42,6 @@
         * 숫자, \_(underscore), -(dash)로 시작할 수 없습니다.
         * 최소 두 글자 이상 가능합니다.
     4. "저장" 버튼을 클릭합니다.
-    <br><br>
-* 필드 삭제 방법
-    ![](http://static.toastoven.net/prod_search/field_delete-1-20190129.png?)
-    ![](http://static.toastoven.net/prod_search/field_delete-2-20190129.png?)
-    ![](http://static.toastoven.net/prod_search/field_delete-3-20190129.png?)
-    1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
-    2. "저장" 버튼을 클릭합니다.
-    3. "지금 수행" 버튼을 클릭합니다.
-        * 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
-    <br><br>
-* 필드 수정 방법
-    * 필드 수정은 지원하지 않습니다. 삭제후 다시 추가해야 합니다.
 
 ### 3. 색인
 * 색인할 파일 생성
@@ -100,28 +88,28 @@
         * 8Mb 이상의 데이터는 여러 개로 나누어서 색인해야 합니다.
     <br><br>
 * 색인 방법
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure-02-20190129.png)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_01-20200116.1827.png)
+    ![](http://static.toastoven.net/prod_search/indexing_procedure_02-20200117.1123.png)
     1. "색인" 탭을 클릭합니다.
     2. "파일 선택" 버튼을 클릭합니다.
     3. 색인할 파일을 선택합니다.
     4. "열기" 버튼을 클릭합니다.  
     5. 색인 명령어가 REST API로 출력됩니다.
-        * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
+        * REST API를 이용해서 검색 서비스를 개발하시면 됩니다.
     6. "색인" 버튼을 클릭합니다.
     7. 색인 결과를 확인할 수 있습니다.
     <br><br>
-* Rest API
+* REST API
     * 아래와 같이 REST API를 사용 가능합니다.
     * 색인 API
         * Request
             * 파일 업로드 방식
                 ```
-                curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+                curl -XPOST 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
                 ```
             * Payload 방식
                 ```
-                curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:application/json; charset=UTF-8' -d '
+                curl -XPOST 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Content-Type:application/json; charset=UTF-8' -d '
                 [
                   {
                     "action": "add",
@@ -150,7 +138,7 @@
     * 색인 결과 확인 API
         * Request
             ```
-            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing_log?id=1'
+            curl -i -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1'
             ```  
             * id 1은 위의 색인 API Response 의 id입니다.
         * Response
@@ -171,7 +159,7 @@
 
 ### 4. 검색
 * 검색 방법
-    ![](http://static.toastoven.net/prod_search/basic-search-20190129.png)
+    ![](http://static.toastoven.net/prod_search/basic-search-20200116.1847.png)
     1. "검색" 탭을 클릭합니다.
     2. 검색할 필드명을 체크합니다.
     3. 검색할 필드별 가중치를 설정합니다.
@@ -188,14 +176,14 @@
     11. 검색할 단어를 입력합니다.
     12. 검색 아이콘을 클릭합니다.
     13. 2 ~ 11번까지 설정한 내용이 REST API로 출력됩니다.
-        * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
+        * REST API를 이용해서 검색 서비스를 개발하시면 됩니다.
     14. 검색 결과가 출력됩니다.
     <br><br>
-* Rest API
+* REST API
     * 아래와 같이 REST API를 사용 가능합니다.
     * Request
         ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>'
+        curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>'
         ```
     * Response
         ```
@@ -230,7 +218,7 @@
         ```
 ### 5. 통계
 * 통계 화면
-    ![](http://static.toastoven.net/prod_search/stats-20190129.png)
+    ![](http://static.toastoven.net/prod_search/stats-20200116.1950.png)
     1. "통계" 탭을 클릭합니다.
     2. "전체 질의수" 또는 "결과 없는 질의수"를 선택합니다.
     3. 시작 날짜를 입력합니다.
@@ -241,10 +229,10 @@
     8. 시작 날짜를 입력합니다.
     9. 종료 날짜를 입력합니다.
     10. "조회" 버튼을 클릭하면 통계 그래프가 출력됩니다.
-* Rest API
+* REST API
     * Request
         ```
-        curl -i -XGET 'http://alpha-api-search.cloud.toast.com/stats/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/stats?kind=total_query_count&date=2019-01-08'
+        curl -i -XGET 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/stats/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2019-01-08'
         ```
         * kind
             * total_query_count : 전체 질의수
@@ -261,18 +249,32 @@
     * <span style="color:red">다른 사람이 데이터를 삭제할 수 있으므로 색인 ACL은 반드시 설정해 주세요.</span>
     * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.		
 * ACL 설정 방법
-    ![](http://static.toastoven.net/prod_search/acl_procedure-20190129.png)
+    ![](http://static.toastoven.net/prod_search/acl_procedure-20200116.1855.png)
     1. "ACL" 탭을 클릭합니다.
     2. 색인 요청은 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
     3. 검색 요청은 모든 IP에서 가능하도록 설정한 예제입니다.
     4. 질의 통계 데이터 다운로드 요청는 모든 IP에서 가능하도록 설정한 예제입니다.
     5. "저장" 버튼을 클릭합니다.
 
-## 기능 가이드
+## 기능 상세 설명
+
+### 필드 삭제
+* 팰드 삭제 방법
+    ![](http://static.toastoven.net/prod_search/field_delete-1-20200117.0835.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-2-20200117.0843.png)
+    ![](http://static.toastoven.net/prod_search/field_delete-3-20200117.1201.png)
+    1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
+    2. "저장" 버튼을 클릭합니다.
+    3. "지금 수행" 버튼을 클릭합니다.
+        * 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
+    <br><br>
+
+### 필드 수정
+* 필드 수정은 지원하지 않습니다. 삭제후 다시 추가해야 합니다.
 
 ### 필터링
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/filtering-field-20190129.png)
+    ![](http://static.toastoven.net/prod_search/filtering-field-20200117.0858.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -297,7 +299,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/filtering-search-20190129.png)
+    ![](http://static.toastoven.net/prod_search/filtering-search-20200117.0901.png)
     1. "category"가 "1"인 문서만 검색됩니다.
     <br><br>
 * 필터링 값 입력 방법
@@ -343,7 +345,7 @@
 
 ### 위경도(geolocation) 필터링
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/geolocation-field-20190129.png)
+    ![](http://static.toastoven.net/prod_search/geolocation-field-20200117.0910.png)
     1. 위경도를 입력할 필드 타입으로 "geo_point"를 선택합니다.
     <br><br>
 * 색인
@@ -380,7 +382,7 @@
     <br><br>
 * 검색
     * 반경(circle) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20190129.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20200117.0913.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도},{위도}],{반경}
             * 예제 : [10.3,10.3],15km
@@ -388,7 +390,7 @@
             * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
     <br><br>
     * 영역(polygon) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20190129.png)
+        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20200117.0914.png)
         1. 필터링 값을 입력합니다.
             * 형식 : [{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
             * 예제 : [10.2,10.2],[10.3,10.5],[10.5,10.2]
@@ -397,7 +399,7 @@
 
 ### 정렬
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/sorting-field-20190129.png)
+    ![](http://static.toastoven.net/prod_search/sorting-field-20200117.0923.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -433,7 +435,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/sorting-search-20190129.png)
+    ![](http://static.toastoven.net/prod_search/sorting-search-20200117.0925.png)
     1. 정렬 방식을 지정합니다.
         * "asc" : 올림차순 정렬
         * "desc" : 내림차순 정렬
@@ -443,7 +445,7 @@
 
 ### 요약
 * 필드 설정
-    ![](http://static.toastoven.net/prod_search/aggregation-field-20190129.png)
+    ![](http://static.toastoven.net/prod_search/aggregation-field-20200117.0933.png)
     * 색인이 체크된 필드만 요약 기능을 사용할 수 있습니다.
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
@@ -477,7 +479,7 @@
     ```
     <br>
 * 검색
-    ![](http://static.toastoven.net/prod_search/aggregation-search-20190129.png)
+    ![](http://static.toastoven.net/prod_search/aggregation-search-20200117.0933.png)
     * 요약 사용 방법
         1. "category" 필드의 "요약"을 체크합니다.
             * 검색 결과와 함께 요약 정보가 출력됩니다.
@@ -496,7 +498,7 @@
 
 ### 불리언 질의
 * 필드 설정
-    ![boolean_query-field-20190129](https://static.toastoven.net/prod_search/boolean_query-field-20190129.png)
+    ![](https://static.toastoven.net/prod_search/boolean_query-field-20200117.0941.png)
 
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
@@ -528,7 +530,7 @@
     <br>
 
 * 검색
-    ![boolean_query-search-20190129](https://static.toastoven.net/prod_search/boolean_query-search-20190129.png)
+    ![](https://static.toastoven.net/prod_search/boolean_query-search-20200117.0943.png)
     1. "boolean"을 선택합니다.
     2. &, |, (, ), ! 을 이용한 불리언 질의를 입력합니다.
 * 연산자 우선순위
@@ -547,7 +549,7 @@
 
 ### 문서 가중치 지정
 * 필드 설정
-    ![documents_boosting-field-20190129](http://static.toastoven.net/prod_search/documents_boosting-field-20190129.png)
+    ![](http://static.toastoven.net/prod_search/document_boosting-field-20200117.1006.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -574,7 +576,7 @@
     * "weight"는 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
     <br><br>
 * 검색
-    ![documents_boosting-search-20190129](http://static.toastoven.net/prod_search/documents_boosting-search-20190129.png)
+    ![](http://static.toastoven.net/prod_search/document_boosting-search-20200117.1023.png)
     * "나이키"로 검색합니다.
     <br><br>
 * 검색 결과
@@ -582,13 +584,13 @@
     "itemList": {
       "item": [
         {
-          "_RELEVANCE": 0.43333334,
+          "_RELEVANCE": 0.45151517,
           "_RANK": 1,
           "_ID": "id-2",
           "title": "<b>나이키</b>"
         },
         {
-          "_RELEVANCE": 0.20877191,
+          "_RELEVANCE": 0.18484849,
           "_RANK": 2,
           "_ID": "id-1",
           "title": "<b>나이키</b>"
@@ -601,23 +603,23 @@
 * weight 반영 비율 조정
     * doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
         ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
+        curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
         ```
         * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
         * default는 1.0입니다.
 * 사용자가 입력한 질의와 문서의 유사도(similarity) 반영 비율 조정
     * similarity_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
         ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
+        curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
         ```
         * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
-       * default는 1.0입니다.
+        * default는 1.0입니다.
 * Tip
     * similarity_ratio와 doc_weight_ratio를 조절해서 검색 결과 출력 순서를 커스터마이징할 수 있습니다.
 
 ### 문서 랭킹 지정
 * 필드 설정
-    ![documents_ranking-field-20190129](http://static.toastoven.net/prod_search/documents_ranking-field-20190129.png)
+    ![](http://static.toastoven.net/prod_search/document_ranking-field-20200117.1006.png)
 * 색인
     * 테스트를 위해 아래 데이터를 색인합니다.
     ```
@@ -644,7 +646,7 @@
     * "ranking"은 1 ~ 10000 사이의 값을 입력할 수 있습니다.
     <br><br>
 * 검색
-    ![documents_ranking-search-20190129](http://static.toastoven.net/prod_search/documents_ranking-search-20190129.png)
+    ![](http://static.toastoven.net/prod_search/document_ranking-search-20200117.1023.png)
     * "나이키"로 검색합니다.
     <br><br>
 * 검색 결과
@@ -672,11 +674,11 @@
 
 ### 필드 설정 다운로드/업로드
 * 설정 다운로드
-    ![field-download-20190129](https://static.toastoven.net/prod_search/field-download-20190129.png)
+    ![](https://static.toastoven.net/prod_search/field-download-20200117.1101.png)
     1. "설정 다운로드" 버튼을 클릭해서 현재 설정을 다운로드합니다.
 		<br><br>
 * 설정 업로드
-    ![field-upload-20190129](https://static.toastoven.net/prod_search/field-upload-20190129.png)
+    ![](https://static.toastoven.net/prod_search/filed-upload-20200117.1102.png)
     1. "설정 업로드" 버튼을 클릭해서 설정을 업로드합니다.
         * 설정된 필드가 하나도 없을 때만 "설정 업로드" 버튼이 노출됩니다.
 
@@ -684,7 +686,7 @@
 
 ### 필드 타입
 * 필드 타입 선택 화면
-    ![detail-field_type-20190129](http://static.toastoven.net/prod_search/detail-field_type-20190129.png)
+    ![](http://static.toastoven.net/prod_search/field_type-20200117.1111.png)
 * text
     * "검색"할 필드일 경우 선택합니다.
     * 형태소 분석을 합니다.
@@ -737,7 +739,7 @@
 
 ### 형태소 분석
 * 형태소 분석기 선택 화면
-    ![detail-analysis-20190129](http://static.toastoven.net/prod_search/detail-analysis-20190129.png)
+    ![](http://static.toastoven.net/prod_search/analyzer-20200117.1111.png)
 * default
     * 형태소 분석기를 이용해 단어을 분리한다.
       * 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
@@ -750,7 +752,7 @@
 
 ### ACL
 * ACL 설정 화면
-    ![detail-acl-20190129](http://static.toastoven.net/prod_search/detail-acl-20190129.png)
+    ![](http://static.toastoven.net/prod_search/acl-detail-20200117.1114.png)
 * 입력 형식
     * IP 형식으로 입력 가능합니다.
         * 예제) 202.179.177.21
@@ -826,7 +828,7 @@ public class IndexingClient {
 
       // build http request and assign multipart upload data.
       HttpUriRequest request = RequestBuilder
-    	  .post("https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing")
+    	  .post("https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
         .setEntity(data)
         .build();
 
@@ -877,7 +879,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_URL,"https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
