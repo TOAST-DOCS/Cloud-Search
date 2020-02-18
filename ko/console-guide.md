@@ -40,12 +40,14 @@
 ![](http://static.toastoven.net/prod_search/domain_create_prodedure-20200116.1710.png)<br>
 
 생성된 서비스 결과를 확인합니다.
+
 1. 생성된 서비스 ID(test)를 클릭합니다.
 
 ![](http://static.toastoven.net/prod_search/domain_create_result-20200116.1655.png)
 
 
 ### 2. 필드 설정
+
 필드를 추가하는 방법은 다음과 같습니다.
 
 1. **필드 설정** 탭을 클릭합니다.
@@ -101,6 +103,7 @@
   }
 ]
 ```
+
 * 파일 설명
     * action
         * add : 해당 문서가 추가됩니다.
@@ -134,17 +137,15 @@
 ![](http://static.toastoven.net/prod_search/indexing_procedure_02-20200117.1123.png)<br>
 
 **REST API**
+
 아래와 같이 REST API를 사용 가능합니다.
 
 - 색인 API
-
     - Request
-
         - 파일 업로드 방식
             ```
             curl -XPOST 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
                 ```
-
         - 페이로드(payload) 방식
             ```
             curl -XPOST 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Content-Type:application/json; charset=UTF-8' -d '
@@ -167,23 +168,18 @@
               }
             ]'
             ```
-
     - Response
         ```
         {
           "id" : 1
         }
         ```
-
 - 색인 결과 확인 API
-
     - Request
         ```
         curl -i -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1'
         ```
-
         - id 1은 위의 색인 API Response의 id입니다.
-
     - Response
         ```
         {
@@ -193,7 +189,6 @@
           "status" : 4
         }
         ```
-
         - status
             - 1 : 대기 중
             - 2 : 무시됨(필드 설정 변경 이전의 색인 요청은 무시됨)
@@ -202,6 +197,7 @@
             - 5 : 실패
 
 ### 4. 검색
+
 검색 방법은 다음과 같습니다.
 
 1. **검색** 탭을 클릭합니다.
@@ -243,6 +239,7 @@
 ![](http://static.toastoven.net/prod_search/basic-search-20200116.1847.png)<br>
 
 **REST API**
+
 아래와 같이 REST API를 사용할 수 있습니다.
 
 - Request
@@ -282,6 +279,7 @@
     ```
 
 ### 5. 통계
+
 통계를 확인하는 방법은 다음과 같습니다.
 
 1. **통계** 탭을 클릭합니다.
@@ -323,6 +321,7 @@
     - 쿼리수 3 이상만 조회됩니다.
 
 ### 6. ACL
+
 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
 
 - 다른 사람이 데이터를 삭제할 수 있으므로 색인 ACL은 반드시 설정해 주세요.
@@ -355,7 +354,8 @@
 2. **저장** 버튼을 클릭합니다.
 
 3. **지금 수행** 버튼을 클릭합니다.
-     - 재색인 중에는 문서 추가나 수정, 삭제가 안 됩니다.
+
+    - 재색인 중에는 문서 추가나 수정, 삭제가 안 됩니다.
 
 ![](http://static.toastoven.net/prod_search/field_delete-1-20200117.0835.png)
 ![](http://static.toastoven.net/prod_search/field_delete-2-20200117.0843.png)
