@@ -12,6 +12,7 @@
 ![](http://static.toastoven.net/prod_search/block_diagrm-20200113.png?)
 
 **서비스 개발 과정**
+
 1. 서비스 생성
 
     - 검색 서비스를 생성합니다.
