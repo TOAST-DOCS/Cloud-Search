@@ -37,7 +37,7 @@
 
 3. **저장** 버튼을 클릭합니다.
 
-![](http://static.toastoven.net/prod_search/domain_create_prodedure-20200116.1710.png)
+![](http://static.toastoven.net/prod_search/domain_create_prodedure-20200116.1710.png)<br>
 
 생성된 서비스 결과를 확인합니다.
 1. 생성된 서비스 ID(test)를 클릭합니다.
@@ -131,7 +131,7 @@
 7. 색인 결과를 확인합니다.
 
 ![](http://static.toastoven.net/prod_search/indexing_procedure_01-20200116.1827.png)
-![](http://static.toastoven.net/prod_search/indexing_procedure_02-20200117.1123.png)
+![](http://static.toastoven.net/prod_search/indexing_procedure_02-20200117.1123.png)<br>
 
 **REST API**
 아래와 같이 REST API를 사용 가능합니다.
@@ -240,7 +240,7 @@
 
 14. 검색 결과가 출력됩니다.
 
-![](http://static.toastoven.net/prod_search/basic-search-20200116.1847.png)
+![](http://static.toastoven.net/prod_search/basic-search-20200116.1847.png)<br>
 
 **REST API**
 아래와 같이 REST API를 사용할 수 있습니다.
@@ -285,17 +285,26 @@
 통계를 확인하는 방법은 다음과 같습니다.
 
 1. **통계** 탭을 클릭합니다.
+
 2. **전체 쿼리수** 또는 **결과 없는 쿼리수**를 선택합니다.
+
 3. 시작 날짜를 입력합니다.
+
 4. 종료 날짜를 입력합니다.
+
 5. **조회** 버튼을 클릭하면 통계 그래프가 출력됩니다.
+
 6. **데이터 다운로드**를 클릭하면 쿼리별 통계 데이터가 다운로드됩니다.
+
 7. **전체 문서수** 또는 **전체 색인 사이즈**를 선택합니다.
+
 8. 시작 날짜를 입력합니다.
+
 9. 종료 날짜를 입력합니다.
+
 10. **조회** 버튼을 클릭하면 통계 그래프가 출력됩니다.
 
-![](http://static.toastoven.net/prod_search/stats-20200116.1950.png)
+![](http://static.toastoven.net/prod_search/stats-20200116.1950.png)<br>
 
 **REST API**
 
@@ -320,6 +329,7 @@
 - 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.
 
 **ACL 설정 방법**
+
 아래는  IP 주소가 202.179.177.21인 경우에만 색인이 가능하고 검색 요청은 모든 IP에서 가능하도록 설정한 예입니다. 쿼리 통계 데이터 다운로드 요청는 모든 IP에서 가능하도록 설정한 예제입니다.
 
 1. **ACL** 탭을 클릭합니다.
@@ -352,15 +362,19 @@
 ![](http://static.toastoven.net/prod_search/field_delete-3-20200117.1201.jpg)
 
 ### 필드 수정
+
 필드 수정은 지원하지 않습니다. 삭제 후 다시 추가해야 합니다.
 
 ### 필터링
 
 **필드 설정**
+
 ![](http://static.toastoven.net/prod_search/filtering-field-20200117.0858.png)
 
 **색인**
+
 테스트를 위해 아래 데이터를 색인합니다.
+
 ```
 [
 {
@@ -383,11 +397,13 @@
 ```
 
 **검색**
+
 1. 필터링 값을 입력합니다.
 
 ![](http://static.toastoven.net/prod_search/filtering-search-20200117.0901.png)
 
-**필터링값 입력 방법**
+필터링값 입력 방법입니다.
+
 - 단일값 필터링
     - 예제) category=1
         - category == 1
@@ -429,13 +445,17 @@
         - (category == 1 and brand == 2) or (category == 3 and brand == 4)
 
 ### 위경도(geolocation) 필터링
+
 **필드 설정**
+
 1. 위경도를 입력할 필드 타입으로 'geo_point'를 선택합니다.
 
 ![](http://static.toastoven.net/prod_search/geolocation-field-20200117.0910.png)
 
 **색인**
+
 테스트를 위해 아래 데이터를 색인합니다.
+
 ```
 [
 {
@@ -488,12 +508,15 @@
 ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20200117.0914.png)
 
 ### 정렬
+
 **필드 설정**
 
 ![](http://static.toastoven.net/prod_search/sorting-field-20200117.0923.png)
 
 **색인**
+
 테스트를 위해 아래 데이터를 색인합니다.
+
 ```
 [
 {
@@ -527,25 +550,31 @@
 ```
 
 **검색**
+
 1. 정렬 방식을 지정합니다.
 
     - "asc" : 올림차순 정렬
     - "desc" : 내림차순 정렬
 
 2. 정렬 순서를 지정합니다.
+
     - 위의 예제에서는 "popular"로 먼저 정렬합니다.
     - "popular"가 동일한 경우 "price"로 정렬합니다.    
 
 ![](http://static.toastoven.net/prod_search/sorting-search-20200117.0925.png)
 
 ### 요약
+
 **필드 설정**
+
 ![](http://static.toastoven.net/prod_search/aggregation-field-20200117.0933.png)
 
 - 색인이 체크된 필드만 요약 기능을 사용할 수 있습니다.
 
 **색인**
+
 테스트를 위해 아래 데이터를 색인합니다.
+
 ```
 [
 {
@@ -576,11 +605,13 @@
 ```
 
 **검색**
+
 1. "category" 필드의 '요약'을 체크합니다.
 
 ![](http://static.toastoven.net/prod_search/aggregation-search-20200117.0933.png)
 
 **요약 결과**
+
 ```
 "summary": {
 	"category": {
@@ -596,12 +627,15 @@
     - text 및 geo_point 타입은 요약 기능을 사용할 수 없습니다.
 
 ### 불리언 쿼리
+
 **필드 설정**
 
 ![](https://static.toastoven.net/prod_search/boolean_query-field-20200117.0941.png)
 
 **색인**
+
 테스트를 위해 아래 데이터를 색인합니다.
+
 ```
 [
 {
@@ -629,7 +663,9 @@
 ```
 
 **검색**
+
 1. 'boolean'을 선택합니다.
+
 2. &, |, (, ), ! 을 이용한 불리언 쿼리를 입력합니다.
 
 ![](https://static.toastoven.net/prod_search/boolean_query-search-20200117.0943.png)
@@ -649,11 +685,15 @@
             - "나이키"와 "신발"의 순서가 다르기 때문임
 
 ### 문서 가중치 지정
+
 **필드 설정**
+
 ![](http://static.toastoven.net/prod_search/document_boosting-field-20200117.1006.png)
 
 **색인**
+
 테스트를 위해 아래 데이터를 색인합니다.
+
 ```
 [
   {
@@ -685,6 +725,7 @@
 ![](http://static.toastoven.net/prod_search/document_boosting-search-20200117.1023.png)
 
 **검색 결과**
+
 ```
 "itemList": {
   "item": [
@@ -703,30 +744,41 @@
   ]
 }
 ```
+
 - "weight"를 높게 부여한 "id-2" 문서가 검색 결과 상위에 노출됩니다.
 
 **weight 반영 비율 조정**
+
 - doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
     ```
     curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
     ```
     - 0.0~1.0 사이의 값을 입력할 수 있습니다.
     - default는 1.0입니다.
+
 **사용자가 입력한 검색어와 문서의 유사도(similarity) 반영 비율 조정**
+
 - similarity_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
     ```
     curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
     ```
     - 0.0~1.0 사이의 값을 입력할 수 있습니다.
     - default는 1.0입니다.
+
 **Tip**
+
 - similarity_ratio와 doc_weight_ratio를 조절해서 검색 결과 출력 순서를 커스터마이징할 수 있습니다.
 
 ### 문서 랭킹 지정
+
 **필드 설정**
+
 ![](http://static.toastoven.net/prod_search/document_ranking-field-20200117.1006.png)
+
 **색인**
+
 테스트를 위해 아래 데이터를 색인합니다.
+
 ```
 [
   {
@@ -747,14 +799,18 @@
   }
 ]
 ```
+
 - "id-1"에는 "ranking"을 2, "id-2"에는 "ranking"을 1로 지정합니다.
 - "ranking"은 1~10000 사이의 값을 입력할 수 있습니다.
 
 **검색**
+
 - "나이키"로 검색합니다.
+
 ![](http://static.toastoven.net/prod_search/document_ranking-search-20200117.1023.png)
 
 **검색 결과**
+
 ```
 "itemList": {
   "item": [
@@ -773,26 +829,33 @@
   ]
 }
 ```
+
 - "ranking"을 1로 지정한 "id-2" 문서가 검색 결과 1등으로 노출됩니다.
 - "ranking"을 동일하게 지정한 경우 사용자가 입력한 검색어와 유사도가 높은 문서가 먼저 노출됩니다.
 
 ### 필드 설정 다운로드/업로드
+
 **설정 다운로드**
+
 1. "설정 다운로드" 버튼을 클릭해서 현재 설정을 다운로드합니다.
 
 ![](https://static.toastoven.net/prod_search/field-download-20200117.1101.png)
 
 **설정 업로드**
+
 1. **설정 업로드** 버튼을 클릭해서 설정을 업로드합니다.    
 
 ![](https://static.toastoven.net/prod_search/filed-upload-20200117.1102.png)
+
 - 설정된 필드가 하나도 없을 때만 **설정 업로드** 버튼이 나타납니다.
 
 ## 상세 가이드
 
 ### 필드 타입
 필드 타입 선택 화면은 다음과 같습니다.
-    ![](http://static.toastoven.net/prod_search/field_type-20200117.1111.png)
+
+![](http://static.toastoven.net/prod_search/field_type-20200117.1111.png)
+
 - text
     - '검색'할 필드일 경우 선택합니다.
     - 형태소 분석을 합니다.
@@ -846,6 +909,7 @@
 ### 형태소 분석
 
 형태소 분석기 선택 화면은 다음과 같습니다.
+
 ![](http://static.toastoven.net/prod_search/analyzer-20200117.1111.png)
 
 - default
@@ -877,11 +941,13 @@ ACL 설정 화면은 다음과 같습니다.
 - 허용, 거부 둘 다에 해당되지않으면 거부됩니다.
 
 ## 클라이언트 예제 코드
+
 다음은 파일 업로드 방식의 색인 예제 코드입니다.
 
 ### java
 
 - dependency
+
 ``` java
 compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
 compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
@@ -964,7 +1030,9 @@ public class IndexingClient {
 ```
 
 ### php
+
 - 색인(파일 업로드 방식)
+
 ``` php
 <?php
     $documents = ""
