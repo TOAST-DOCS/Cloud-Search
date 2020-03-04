@@ -1,39 +1,39 @@
-## Search > Cloud Search > 릴리스 노트
+## Search > Cloud Search > Release Notes
 
-### 2020.02.25
-* 알파 서비스에서 베타 서비스로 전환되었습니다.
+### Feb. 25, 2020
+* Converted into Beta Service from the Alpha Service.
 
-### 2019.01.29
-* 통계 기능이 추가되었습니다.
+### Jan. 29, 2019
+* Added the statistics feature.
 
-### 2018.11.27
-* 불리언 질의 기능이 추가되었습니다.
-    * q='나이키 & (신발 | 슈즈) & !아디다스'
-* 필드 설정 다운로드/업로드 기능이 추가되었습니다.
+### Nov. 27, 2018
+* Added the feature of Boolean Search.  
+    * q='Nike & (shoes | shoes) & ! Addidas'
+* Added the downloading/uploading field setting feature.
 
-### 2018.10.23
-* Payload 방식의 색인 방법을 추가했습니다.
-    * 기존에는 파일 업로드 방식만 존재했습니다.
+### Oct. 23, 2018
+* Added the payload-type indexing
+    * Only file-uploading type was available before
 
-### 2018.09.11
-* 문서 랭킹 지정 기능을 추가했습니다.
-    * 특정 문서의 검색 결과 순위를 지정할 수 있습니다.
+### Sept. 11, 2018
+* Added the feature of specifying document ranks.
+    * The priority of search results can be specified for a specific document.
 
-### 2018.07.24
-* 문서 가중치 지정 기능을 추가했습니다.
-    * 특정 문서를 검색 결과 상위에 노출할 수 있습니다.
-* 위경도(Geolocation) 기능을 추가했습니다.
-* 색인 로그에 전체 색인 크기 및 전체 문서 개수를 추가했습니다.
+### July 24, 2018
+* Added the feature of specifying weights in document.  
+    * Specific documents can be exposed on top of search results.
+* Added the geolocation feature.
+* Added total index size and total number of documents to the index log
 
-### 2018.06.26
-* bigram 형태소 분석기를 추가했습니다.
-* 다중 정렬 기능을 추가했습니다.
-* 데이터를 배열 형태로 입력할 수 있도록 했습니다.
+### June 26, 2018
+* Added bigram morpheme analyzer.
+* Added the multiple sorting feature.
+* Allowed to enter data in sequence.
 
-### 2018.05.03
-* 형태소 분석 오류를 수정했습니다.
-    * 문서 색인할 때의 형태소 분석 방법과 검색 질의어를 형태소 분석하는 방법이 달랐습니다.
-    * 색인과 검색의 형태소 분석이 달라서 일부 단어가 검색되지 않는 문제를 해결했습니다.
+### May 3, 2018
+* Modified error in morpheme analysis.
+    * Different morpheme analysis methods were applied each for document indexing and search words.  
+    * Fixed an issue in which words were not properly searched due to different morpheme analysis on index and search.  
 
-### 2018.02.22
-* Cloud Search 상품 출시
+### Feb. 22, 2018
+* Released the Cloud Search service
