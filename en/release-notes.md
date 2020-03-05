@@ -1,6 +1,6 @@
 ## Search > Cloud Search > Release Notes
 
-### Feb. 25, 2020
+### Mar. 24, 2020
 * Converted into Beta Service from the Alpha Service.
 
 ### Jan. 29, 2019
