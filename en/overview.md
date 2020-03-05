@@ -21,7 +21,7 @@ Search service can be implemented with no additional infrastructure or search so
 
     - Set scheme for search data.
 
-3. Index
+3. Indexing
 
     - Create JSON data according to the Cloud Search input format.
     - Use REST API to enter created JSON data for Cloud Search.
