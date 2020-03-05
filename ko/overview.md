@@ -9,7 +9,7 @@
 
 **서비스 구성도**
 
-![](http://static.toastoven.net/prod_search/block_diagrm-20200113.png?)
+![](http://static.toastoven.net/prod_search/block_diagrm-ko-20200304.png)
 
 **서비스 개발 과정**
 

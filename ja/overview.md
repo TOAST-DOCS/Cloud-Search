@@ -9,7 +9,7 @@
 
 **サービス構成図**
 
-![](http://static.toastoven.net/prod_search/block_diagrm-20200113.png?)
+![](http://static.toastoven.net/prod_search/block_diagrm-ja-20200304.png)
 
 **サービス開発プロセス**
 
