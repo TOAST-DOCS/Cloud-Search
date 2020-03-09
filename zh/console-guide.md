@@ -30,7 +30,7 @@ Do as follows to check if service is enabled:
 2. Enter Service ID on **Create Services**.
    - Only English in lowercase, numbers, as well as _ (underscore) and - (hypen) are available.
    - Cannot start with a number, _ (underscore) or - (hypen).
-   - At least two characters are required. 
+   - At least two characters are required.
 3. Click **Save**.
 
 ![](http://static.toastoven.net/prod_search/domain_create_prodedure-20200116.1710.png)<br>
@@ -93,10 +93,8 @@ Do as follows to create and index files.
     "action": "add",
     "id": "id-3",
     "fields": {
-      "title": "[Addidas] 114 types of new
-      sneakers/slides",
+      "title": "[Addidas] 114 types of new sneakers/slides",
       "body": "[Collection of Addidas Shoes ♥] Free Shipping [Addidas] Get 114 types of new slides/Superstar Stan Smith/Tubular and more!"
-
     }
   }
 ]

@@ -11,14 +11,14 @@ First, enable the Cloud Search Service.
 
 2. Click **Cloud Search**.
 
-![](http://static.toastoven.net/prod_search/product-use-02-20200116.1057.png)<br>
+![](http://static.toastoven.net/prod_search/product-use-02-en-20200304.png)<br>
 
 Do as follows to check if service is enabled:
 
 1. Click **Search** on the left menu on **TOAST Console**.
 2. If you can find **Cloud Search**, the service has been enabled.
 
-![](http://static.toastoven.net/prod_search/product-use-03-20200116.1148.png)
+![](http://static.toastoven.net/prod_search/product-use-03-en-20200304.png)
 
 ## Basic Usage
 
@@ -33,13 +33,13 @@ Do as follows to check if service is enabled:
    - At least two characters are required.
 3. Click **Save**.
 
-![](http://static.toastoven.net/prod_search/domain_create_prodedure-20200116.1710.png)<br>
+![](http://static.toastoven.net/prod_search/domain_create_prodedure-en-20200304.png)<br>
 
 Check the result of service creation.
 
 1. Click Service ID which is created (test).
 
-![](http://static.toastoven.net/prod_search/domain_create_result-20200116.1655.png)
+![](http://static.toastoven.net/prod_search/domain_create_result-en-20200304.png)
 
 
 ### 2. Setting Fields
@@ -58,7 +58,7 @@ Fields can be added as follows:
 
 4. Click **Save**.
 
-![](http://static.toastoven.net/prod_search/field_create_procedure-20200116.1714.png)
+![](http://static.toastoven.net/prod_search/field_create_procedure-en-20200304.png)
 
 ### 3. Indexing
 
@@ -68,7 +68,7 @@ Do as follows to create and index files.
 
 - Create index request files in the format of example as below.
 - Create files encoded in UTF-8.
-  - Save the file on Windows memo, by specifying UTF-8 for encoding.
+    - Save the file on Windows memo, by specifying UTF-8 for encoding.
 - It was created in the name of data/documents.json in the example.
 
 ```
@@ -93,10 +93,8 @@ Do as follows to create and index files.
     "action": "add",
     "id": "id-3",
     "fields": {
-      "title": "[Addidas] 114 types of new
-      sneakers/slides",
+      "title": "[Addidas] 114 types of new sneakers/slides",
       "body": "[Collection of Addidas Shoes ♥] Free Shipping [Addidas] Get 114 types of new slides/Superstar Stan Smith/Tubular and more!"
-
     }
   }
 ]
@@ -131,8 +129,8 @@ Do as follows to create and index files.
 
 7. Check index results.
 
-![](http://static.toastoven.net/prod_search/indexing_procedure_01-20200116.1827.png)
-![](http://static.toastoven.net/prod_search/indexing_procedure_02-20200117.1123.png)<br>
+![](http://static.toastoven.net/prod_search/indexing_procedure_01-en-20200304.png)
+![](http://static.toastoven.net/prod_search/indexing_procedure_02-en-20200304.png)<br>
 
 **REST API**
 
@@ -233,7 +231,7 @@ Do as follows to search:
 
 14. The search result shows.  
 
-![](http://static.toastoven.net/prod_search/basic-search-20200116.1847.png)<br>
+![](http://static.toastoven.net/prod_search/basic-search-en-20200304.png)<br>
 
 **REST API**
 
@@ -338,7 +336,7 @@ The example regards to setting which allows indexing only when the IP address is
 
 5. Click **Save**.
 
-![](http://static.toastoven.net/prod_search/acl_procedure-20200116.1855.png)
+![](http://static.toastoven.net/prod_search/acl_procedure-en-20200304.png)
 
 ## Feature Details
 
