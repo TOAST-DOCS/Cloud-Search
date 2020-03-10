@@ -11,7 +11,7 @@
 
 2. **Cloud Search**をクリックします。
 
-![](http://static.toastoven.net/prod_search/product-use-02-20200116.1057.png)<br>
+![](http://static.toastoven.net/prod_search/product-use-02-ja-20200304.png)<br>
 
 サービスが有効化されているかを確認する方法は次のとおりです。
 
@@ -19,7 +19,7 @@
 
 2. **Cloud Search**が表示されたらサービスが有効になっているということです。
 
-![](http://static.toastoven.net/prod_search/product-use-03-20200116.1148.png)
+![](http://static.toastoven.net/prod_search/product-use-03-ja-20200304.png)
 
 ## 基本使用方法
 
@@ -37,13 +37,13 @@
 
 3. **保存**ボタンをクリックします。
 
-![](http://static.toastoven.net/prod_search/domain_create_prodedure-20200116.1710.png)<br>
+![](http://static.toastoven.net/prod_search/domain_create_prodedure-ja-20200304.png)<br>
 
 作成されたサービス結果を確認します。
 
 1. 作成されたサービスID(test)をクリックします。
 
-![](http://static.toastoven.net/prod_search/domain_create_result-20200116.1655.png)
+![](http://static.toastoven.net/prod_search/domain_create_result-ja-20200304.png)
 
 
 ### 2. フィールド設定
@@ -62,7 +62,7 @@
 
 4. **保存**ボタンをクリックします。
 
-![](http://static.toastoven.net/prod_search/field_create_procedure-20200116.1714.png)
+![](http://static.toastoven.net/prod_search/field_create_procedure-ja-20200304.png)
 
 ### 3. インデックス
 
@@ -133,8 +133,8 @@
 
 7. インデックス結果を確認します。
 
-![](http://static.toastoven.net/prod_search/indexing_procedure_01-20200116.1827.png)
-![](http://static.toastoven.net/prod_search/indexing_procedure_02-20200117.1123.png)<br>
+![](http://static.toastoven.net/prod_search/indexing_procedure_01-ja-20200304.png)
+![](http://static.toastoven.net/prod_search/indexing_procedure_02-ja-20200304.png)<br>
 
 **REST API**
 
@@ -236,7 +236,7 @@
 
 14. 検索結果が出力されます。
 
-![](http://static.toastoven.net/prod_search/basic-search-20200116.1847.png)<br>
+![](http://static.toastoven.net/prod_search/basic-search-ja-20200304.png)<br>
 
 **REST API**
 
@@ -302,7 +302,7 @@
 
 10. **照会**ボタンをクリックすると、統計グラフが出力されます。
 
-![](http://static.toastoven.net/prod_search/stats-20200116.1950.png)<br>
+![](http://static.toastoven.net/prod_search/stats-ja-20200304.png)<br>
 
 **REST API**
 
@@ -341,7 +341,7 @@
 
 5. **保存**ボタンをクリックします。
 
-![](http://static.toastoven.net/prod_search/acl_procedure-20200116.1855.png)
+![](http://static.toastoven.net/prod_search/acl_procedure-ja-20200304.png)
 
 ## 機能詳細説明
 
@@ -357,9 +357,9 @@
 
     - 再インデックス中は文書の追加、修正、削除ができません。
 
-![](http://static.toastoven.net/prod_search/field_delete-1-20200117.0835.png)
-![](http://static.toastoven.net/prod_search/field_delete-2-20200117.0843.png)
-![](http://static.toastoven.net/prod_search/field_delete-3-20200117.1201.jpg)
+![](http://static.toastoven.net/prod_search/field_delete-1-ja-20200304.png)
+![](http://static.toastoven.net/prod_search/field_delete-2-ja-20200304.png)
+![](http://static.toastoven.net/prod_search/field_delete-3-ja-20200304.png)
 
 ### フィールドの修正
 
@@ -369,7 +369,7 @@
 
 **フィールド設定**
 
-![](http://static.toastoven.net/prod_search/filtering-field-20200117.0858.png)
+![](http://static.toastoven.net/prod_search/filtering-field-ja-20200304.png)
 
 **インデックス**
 
@@ -400,7 +400,7 @@
 
 1. フィルタリング値を入力します。
 
-![](http://static.toastoven.net/prod_search/filtering-search-20200117.0901.png)
+![](http://static.toastoven.net/prod_search/filtering-search-ja-20200304.png)
 
 フィルタリング値の入力方法です。
 
@@ -450,7 +450,7 @@
 
 1. 経緯度を入力するフィールドのタイプに「geo_point」を選択します。
 
-![](http://static.toastoven.net/prod_search/geolocation-field-20200117.0910.png)
+![](http://static.toastoven.net/prod_search/geolocation-field-ja-20200304.png)
 
 **インデックス**
 
@@ -496,7 +496,7 @@
             - 経度10.3、緯度10.3を中心に半径15km以内の文書のみ検索されます。
             - 半径の単位は「km」「m」「cm」を使用できます。
 
-![](http://static.toastoven.net/prod_search/geolocation-search-circle-20200117.0913.png)
+![](http://static.toastoven.net/prod_search/geolocation-search-circle-ja-20200304.png)
 
 - 領域(polygon)フィルタリング
     1. フィルタリング値を入力します。
@@ -505,13 +505,13 @@
         - 各点は、時計方向に接続されます。
         - 接続された多角形内の文書のみ検索されます。
 
-![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20200117.0914.png)
+![](http://static.toastoven.net/prod_search/geolocation-search-polygon-ja-20200304.png)
 
 ### ソート
 
 **フィールド設定**
 
-![](http://static.toastoven.net/prod_search/sorting-field-20200117.0923.png)
+![](http://static.toastoven.net/prod_search/sorting-field-ja-20200304.png)
 
 **インデックス**
 
@@ -561,13 +561,13 @@
     - 上の例では「popular」で先にソートします。
     - 「popular」が同じ場合、「price」でソートします。   
 
-![](http://static.toastoven.net/prod_search/sorting-search-20200117.0925.png)
+![](http://static.toastoven.net/prod_search/sorting-search-ja-20200304.png)
 
 ### 要約
 
 **フィールド設定**
 
-![](http://static.toastoven.net/prod_search/aggregation-field-20200117.0933.png)
+![](http://static.toastoven.net/prod_search/aggregation-field-ja-20200304.png)
 
 - インデックスがチェックされたフィールドのみ要約機能を使用できます。
 
@@ -608,7 +608,7 @@
 
 1. 「category」フィールドの「要約」をチェックします。
 
-![](http://static.toastoven.net/prod_search/aggregation-search-20200117.0933.png)
+![](http://static.toastoven.net/prod_search/aggregation-search-ja-20200304.png)
 
 **要約結果**
 
@@ -630,7 +630,7 @@
 
 **フィールド設定**
 
-![](https://static.toastoven.net/prod_search/boolean_query-field-20200117.0941.png)
+![](https://static.toastoven.net/prod_search/boolean_query-field-ja-20200304.png)
 
 **インデックス**
 
@@ -668,7 +668,7 @@
 
 2. &, |, (, ), ! を利用したブーリアンクエリーを入力します。
 
-![](https://static.toastoven.net/prod_search/boolean_query-search-20200117.0943.png)
+![](https://static.toastoven.net/prod_search/boolean_query-search-ja-20200304.png)
 
 - 演算子優先順位
     - (), !, &, | の順です。
@@ -688,7 +688,7 @@
 
 **フィールド設定**
 
-![](http://static.toastoven.net/prod_search/document_boosting-field-20200117.1006.png)
+![](http://static.toastoven.net/prod_search/document_boosting-field-ja-20200304.png)
 
 **インデックス**
 
@@ -722,7 +722,7 @@
 
 - 「ナイキ」で検索します。
 
-![](http://static.toastoven.net/prod_search/document_boosting-search-20200117.1023.png)
+![](http://static.toastoven.net/prod_search/document_boosting-search-ja-20200304.png)
 
 **検索結果**
 
@@ -773,7 +773,7 @@
 
 **フィールド設定**
 
-![](http://static.toastoven.net/prod_search/document_ranking-field-20200117.1006.png)
+![](http://static.toastoven.net/prod_search/document_ranking-field-ja-20200304.png)
 
 **インデックス**
 
@@ -807,7 +807,7 @@
 
 - 「ナイキ」で検索します。
 
-![](http://static.toastoven.net/prod_search/document_ranking-search-20200117.1023.png)
+![](http://static.toastoven.net/prod_search/document_ranking-search-ja-20200304.png)
 
 **検索結果**
 
@@ -839,13 +839,13 @@
 
 1. 「設定ダウンロード」ボタンをクリックして現在の設定をダウンロードします。
 
-![](https://static.toastoven.net/prod_search/field-download-20200117.1101.png)
+![](https://static.toastoven.net/prod_search/field-download-ja-20200304.png)
 
 **設定のアップロード**
 
 1. **設定アップロード**ボタンをクリックして設定をアップロードします。   
 
-![](https://static.toastoven.net/prod_search/filed-upload-20200117.1102.png)
+![](https://static.toastoven.net/prod_search/filed-upload-ja-20200304.png)
 
 - 設定されたフィールドが1つもない時は**設定アップロード**ボタンが表示されます。
 
@@ -854,7 +854,7 @@
 ### フィールドタイプ
 フィールドタイプ選択画面は次のとおりです。
 
-![](http://static.toastoven.net/prod_search/field_type-20200117.1111.png)
+![](http://static.toastoven.net/prod_search/field_type-ja-20200304.png)
 
 - text
     - 「検索」するフィールドの場合に選択します。
@@ -910,7 +910,7 @@
 
 形態素解析の選択画面は次のとおりです。
 
-![](http://static.toastoven.net/prod_search/analyzer-20200117.1111.png)
+![](http://static.toastoven.net/prod_search/analyzer-ja-20200304.png)
 
 - default
     - 形態素解析ツールを利用して単語を分離します。
@@ -926,7 +926,7 @@
 
 ACL設定画面は次のとおりです。
 
-![](http://static.toastoven.net/prod_search/acl-detail-20200117.1114.png)
+![](http://static.toastoven.net/prod_search/acl-detail-ja-20200304.png)
 
 - 入力形式
     - IP形式で入力できます。

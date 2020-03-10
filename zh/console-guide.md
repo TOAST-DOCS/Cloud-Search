@@ -11,7 +11,7 @@ First, enable the Cloud Search Service.
 
 2. Click **Cloud Search**.
 
-![](http://static.toastoven.net/prod_search/product-use-02-en-20200304.png)<br>
+![](http://static.toastoven.net/prod_search/product-use-02-en-20200304.13.png)<br>
 
 Do as follows to check if service is enabled:
 
@@ -28,9 +28,11 @@ Do as follows to check if service is enabled:
 
 1. Click **Create Services**.
 2. Enter Service ID on **Create Services**.
-   - Only English in lowercase, numbers, as well as _ (underscore) and - (hypen) are available.
-   - Cannot start with a number, _ (underscore) or - (hypen).
-   - At least two characters are required.
+
+    - Only English in lowercase, numbers, as well as _ (underscore) and - (hypen) are available.
+    - Cannot start with a number, _ (underscore) or - (hypen).
+    - At least two characters are required.
+
 3. Click **Save**.
 
 ![](http://static.toastoven.net/prod_search/domain_create_prodedure-en-20200304.png)<br>
