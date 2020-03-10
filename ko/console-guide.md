@@ -11,7 +11,7 @@
 
 2. **Cloud Search**를 클릭합니다.
 
-![](http://static.toastoven.net/prod_search/product-use-02-20200116.1057.png)<br>
+![](http://static.toastoven.net/prod_search/product-use-02-ko-20200304.png)<br>
 
 서비스가 활성화되었는지 확인하는 방법은 다음과 같습니다.
 
@@ -19,7 +19,7 @@
 
 2. **Cloud Search**가 보이면 서비스가 활성화된 것입니다.
 
-![](http://static.toastoven.net/prod_search/product-use-03-20200116.1148.png)
+![](http://static.toastoven.net/prod_search/product-use-03-ko-20200304.png)
 
 ## 기본 사용법
 
@@ -37,13 +37,13 @@
 
 3. **저장** 버튼을 클릭합니다.
 
-![](http://static.toastoven.net/prod_search/domain_create_prodedure-20200116.1710.png)<br>
+![](http://static.toastoven.net/prod_search/domain_create_prodedure-ko-20200304.png)<br>
 
 생성된 서비스 결과를 확인합니다.
 
 1. 생성된 서비스 ID(test)를 클릭합니다.
 
-![](http://static.toastoven.net/prod_search/domain_create_result-20200116.1655.png)
+![](http://static.toastoven.net/prod_search/domain_create_result-ko-20200304.png)
 
 
 ### 2. 필드 설정
@@ -62,7 +62,7 @@
 
 4. **저장** 버튼을 클릭합니다.
 
-![](http://static.toastoven.net/prod_search/field_create_procedure-20200116.1714.png)
+![](http://static.toastoven.net/prod_search/field_create_procedure-ko-20200304.png)
 
 ### 3. 색인
 
@@ -133,8 +133,8 @@
 
 7. 색인 결과를 확인합니다.
 
-![](http://static.toastoven.net/prod_search/indexing_procedure_01-20200116.1827.png)
-![](http://static.toastoven.net/prod_search/indexing_procedure_02-20200117.1123.png)<br>
+![](http://static.toastoven.net/prod_search/indexing_procedure_01-ko-20200304.png)
+![](http://static.toastoven.net/prod_search/indexing_procedure_02-ko-20200304.png)<br>
 
 **REST API**
 
@@ -236,7 +236,7 @@
 
 14. 검색 결과가 출력됩니다.
 
-![](http://static.toastoven.net/prod_search/basic-search-20200116.1847.png)<br>
+![](http://static.toastoven.net/prod_search/basic-search-ko-20200304.png)<br>
 
 **REST API**
 
@@ -302,7 +302,7 @@
 
 10. **조회** 버튼을 클릭하면 통계 그래프가 출력됩니다.
 
-![](http://static.toastoven.net/prod_search/stats-20200116.1950.png)<br>
+![](http://static.toastoven.net/prod_search/stats-ko-20200304.png)<br>
 
 **REST API**
 
@@ -341,7 +341,7 @@
 
 5. **저장**버튼을 클릭합니다.
 
-![](http://static.toastoven.net/prod_search/acl_procedure-20200116.1855.png)
+![](http://static.toastoven.net/prod_search/acl_procedure-ko-20200304.png)
 
 ## 기능 상세 설명
 
@@ -357,9 +357,9 @@
 
     - 재색인 중에는 문서 추가나 수정, 삭제가 안 됩니다.
 
-![](http://static.toastoven.net/prod_search/field_delete-1-20200117.0835.png)
-![](http://static.toastoven.net/prod_search/field_delete-2-20200117.0843.png)
-![](http://static.toastoven.net/prod_search/field_delete-3-20200117.1201.jpg)
+![](http://static.toastoven.net/prod_search/field_delete-1-ko-20200304.png)
+![](http://static.toastoven.net/prod_search/field_delete-2-ko-20200304.png)
+![](http://static.toastoven.net/prod_search/field_delete-3-ko-20200304.png)
 
 ### 필드 수정
 
@@ -369,7 +369,7 @@
 
 **필드 설정**
 
-![](http://static.toastoven.net/prod_search/filtering-field-20200117.0858.png)
+![](http://static.toastoven.net/prod_search/filtering-field-ko-20200304.png)
 
 **색인**
 
@@ -400,7 +400,7 @@
 
 1. 필터링 값을 입력합니다.
 
-![](http://static.toastoven.net/prod_search/filtering-search-20200117.0901.png)
+![](http://static.toastoven.net/prod_search/filtering-search-ko-20200304.png)
 
 필터링값 입력 방법입니다.
 
@@ -450,7 +450,7 @@
 
 1. 위경도를 입력할 필드 타입으로 'geo_point'를 선택합니다.
 
-![](http://static.toastoven.net/prod_search/geolocation-field-20200117.0910.png)
+![](http://static.toastoven.net/prod_search/geolocation-field-ko-20200304.png)
 
 **색인**
 
@@ -496,7 +496,7 @@
             - 경도 10.3, 위도 10.3 중심으로 반경 15km 이내인 문서만 검색됩니다.
             - 반경 단위는 'km', 'm', 'cm'를 사용할 수 있습니다.
 
-![](http://static.toastoven.net/prod_search/geolocation-search-circle-20200117.0913.png)
+![](http://static.toastoven.net/prod_search/geolocation-search-circle-ko-20200304.png)
 
 - 영역(polygon) 필터링
     1. 필터링 값을 입력합니다.
@@ -505,13 +505,13 @@
         - 각 점들은 시계 방향으로 연결됩니다.
         - 연결된 다각형 내의 문서만 검색됩니다.
 
-![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20200117.0914.png)
+![](http://static.toastoven.net/prod_search/geolocation-search-polygon-ko-20200304.png)
 
 ### 정렬
 
 **필드 설정**
 
-![](http://static.toastoven.net/prod_search/sorting-field-20200117.0923.png)
+![](http://static.toastoven.net/prod_search/sorting-field-ko-20200304.png)
 
 **색인**
 
@@ -561,13 +561,13 @@
     - 위의 예제에서는 "popular"로 먼저 정렬합니다.
     - "popular"가 동일한 경우 "price"로 정렬합니다.    
 
-![](http://static.toastoven.net/prod_search/sorting-search-20200117.0925.png)
+![](http://static.toastoven.net/prod_search/sorting-search-ko-20200304.png)
 
 ### 요약
 
 **필드 설정**
 
-![](http://static.toastoven.net/prod_search/aggregation-field-20200117.0933.png)
+![](http://static.toastoven.net/prod_search/aggregation-field-ko-20200304.png)
 
 - 색인이 체크된 필드만 요약 기능을 사용할 수 있습니다.
 
@@ -608,7 +608,7 @@
 
 1. "category" 필드의 '요약'을 체크합니다.
 
-![](http://static.toastoven.net/prod_search/aggregation-search-20200117.0933.png)
+![](http://static.toastoven.net/prod_search/aggregation-search-ko-20200304.png)
 
 **요약 결과**
 
@@ -630,7 +630,7 @@
 
 **필드 설정**
 
-![](https://static.toastoven.net/prod_search/boolean_query-field-20200117.0941.png)
+![](https://static.toastoven.net/prod_search/boolean_query-field-ko-20200304.png)
 
 **색인**
 
@@ -668,7 +668,7 @@
 
 2. &, |, (, ), ! 을 이용한 불리언 쿼리를 입력합니다.
 
-![](https://static.toastoven.net/prod_search/boolean_query-search-20200117.0943.png)
+![](https://static.toastoven.net/prod_search/boolean_query-search-ko-20200304.png)
 
 - 연산자 우선순위
     - (), !, &, | 순입니다.
@@ -688,7 +688,7 @@
 
 **필드 설정**
 
-![](http://static.toastoven.net/prod_search/document_boosting-field-20200117.1006.png)
+![](http://static.toastoven.net/prod_search/document_boosting-field-ko-20200304.png)
 
 **색인**
 
@@ -722,7 +722,7 @@
 
 - "나이키"로 검색합니다.
 
-![](http://static.toastoven.net/prod_search/document_boosting-search-20200117.1023.png)
+![](http://static.toastoven.net/prod_search/document_boosting-search-ko-20200304.png)
 
 **검색 결과**
 
@@ -773,7 +773,7 @@
 
 **필드 설정**
 
-![](http://static.toastoven.net/prod_search/document_ranking-field-20200117.1006.png)
+![](http://static.toastoven.net/prod_search/document_ranking-field-ko-20200304.png)
 
 **색인**
 
@@ -807,7 +807,7 @@
 
 - "나이키"로 검색합니다.
 
-![](http://static.toastoven.net/prod_search/document_ranking-search-20200117.1023.png)
+![](http://static.toastoven.net/prod_search/document_ranking-search-ko-20200304.png)
 
 **검색 결과**
 
@@ -839,13 +839,13 @@
 
 1. "설정 다운로드" 버튼을 클릭해서 현재 설정을 다운로드합니다.
 
-![](https://static.toastoven.net/prod_search/field-download-20200117.1101.png)
+![](https://static.toastoven.net/prod_search/field-download-ko-20200304.png)
 
 **설정 업로드**
 
 1. **설정 업로드** 버튼을 클릭해서 설정을 업로드합니다.    
 
-![](https://static.toastoven.net/prod_search/filed-upload-20200117.1102.png)
+![](https://static.toastoven.net/prod_search/filed-upload-ko-20200304.png)
 
 - 설정된 필드가 하나도 없을 때만 **설정 업로드** 버튼이 나타납니다.
 
@@ -854,7 +854,7 @@
 ### 필드 타입
 필드 타입 선택 화면은 다음과 같습니다.
 
-![](http://static.toastoven.net/prod_search/field_type-20200117.1111.png)
+![](http://static.toastoven.net/prod_search/field_type-ko-20200304.png)
 
 - text
     - '검색'할 필드일 경우 선택합니다.
@@ -910,7 +910,7 @@
 
 형태소 분석기 선택 화면은 다음과 같습니다.
 
-![](http://static.toastoven.net/prod_search/analyzer-20200117.1111.png)
+![](http://static.toastoven.net/prod_search/analyzer-ko-20200304.png)
 
 - default
     - 형태소 분석기를 이용해 단어을 분리합니다.
@@ -926,7 +926,7 @@
 
 ACL 설정 화면은 다음과 같습니다.
 
-![](http://static.toastoven.net/prod_search/acl-detail-20200117.1114.png)
+![](http://static.toastoven.net/prod_search/acl-detail-ko-20200304.png)
 
 - 입력 형식
     - IP 형식으로 입력 가능합니다.
