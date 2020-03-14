@@ -9,7 +9,7 @@ Search service can be implemented with no additional infrastructure or search so
 
 **Service Configuration**
 
-![](http://static.toastoven.net/prod_search/block_diagrm-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/block_diagrm-en-20200304.png)
 
 **Development Process**
 

@@ -11,14 +11,14 @@ First, enable the Cloud Search Service.
 
 2. Click **Cloud Search**.
 
-![](http://static.toastoven.net/prod_search/product-use-02-en-20200304.13.png)<br>
+![img](http://static.toastoven.net/prod_search/product-use-02-en-20200304.jpg)<br>
 
 Do as follows to check if service is enabled:
 
 1. Click **Search** on the left menu on **TOAST Console**.
 2. If you can find **Cloud Search**, the service has been enabled.
 
-![](http://static.toastoven.net/prod_search/product-use-03-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/product-use-03-en-20200304.jpg)
 
 ## Basic Usage
 
@@ -35,13 +35,13 @@ Do as follows to check if service is enabled:
 
 3. Click **Save**.
 
-![](http://static.toastoven.net/prod_search/domain_create_prodedure-en-20200304.png)<br>
+![img](http://static.toastoven.net/prod_search/domain_create_prodedure-en-20200304.jpg)<br>
 
 Check the result of service creation.
 
 1. Click Service ID which is created (test).
 
-![](http://static.toastoven.net/prod_search/domain_create_result-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/domain_create_result-en-20200304.jpg)
 
 
 ### 2. Setting Fields
@@ -60,7 +60,7 @@ Fields can be added as follows:
 
 4. Click **Save**.
 
-![](http://static.toastoven.net/prod_search/field_create_procedure-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/field_create_procedure-en-20200304.jpg)
 
 ### 3. Indexing
 
@@ -131,8 +131,8 @@ Do as follows to create and index files.
 
 7. Check index results.
 
-![](http://static.toastoven.net/prod_search/indexing_procedure_01-en-20200304.png)
-![](http://static.toastoven.net/prod_search/indexing_procedure_02-en-20200304.png)<br>
+![img](http://static.toastoven.net/prod_search/indexing_procedure_01-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/indexing_procedure_02-en-20200304.jpg)<br>
 
 **REST API**
 
@@ -233,7 +233,7 @@ Do as follows to search:
 
 14. The search result shows.  
 
-![](http://static.toastoven.net/prod_search/basic-search-en-20200304.png)<br>
+![img](http://static.toastoven.net/prod_search/basic-search-en-20200304.jpg)<br>
 
 **REST API**
 
@@ -299,7 +299,7 @@ Do as follows to check statistics:
 
 10. Click **Query** and statistical graph comes as output.
 
-![](http://static.toastoven.net/prod_search/stats-en-20200304.png)<br>
+![img](http://static.toastoven.net/prod_search/stats-en-20200304.jpg)<br>
 
 **REST API**
 
@@ -338,7 +338,7 @@ The example regards to setting which allows indexing only when the IP address is
 
 5. Click **Save**.
 
-![](http://static.toastoven.net/prod_search/acl_procedure-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/acl_procedure-en-20200304.jpg)
 
 ## Feature Details
 
@@ -351,9 +351,9 @@ Do as follows to delete fields:
 3. Click **Execute Now**.
     - Documents cannot be added, edited, or deleted while re-indexed.
 
-![](http://static.toastoven.net/prod_search/field_delete-1-en-20200304.png)
-![](http://static.toastoven.net/prod_search/field_delete-2-en-20200304.png)
-![](http://static.toastoven.net/prod_search/field_delete-3-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/field_delete-1-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/field_delete-2-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/field_delete-3-en-20200304.jpg)
 
 ### Editing Fields
 
@@ -363,7 +363,7 @@ Editing is not supported. To edit, delete a field and add again.
 
 **Set Fields**
 
-![](http://static.toastoven.net/prod_search/filtering-field-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/filtering-field-en-20200304.jpg)
 
 **Index**
 
@@ -394,7 +394,7 @@ To test, index data as below:
 
 1. Enter a filtering value.
 
-![](http://static.toastoven.net/prod_search/filtering-search-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/filtering-search-en-20200304.jpg)
 
 Enter filtering values like below:
 
@@ -444,7 +444,7 @@ Enter filtering values like below:
 
 1. Select 'geo_point' as the field type for geolocation.
 
-![S](http://static.toastoven.net/prod_search/geolocation-field-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/geolocation-field-en-20200304.jpg)
 
 **Index**
 
@@ -490,7 +490,7 @@ To test, index data as below:
             - Search documents that are located within 15 km in radius as of 10.3 in longitude and latitude, only.    
             - Radius units are 'km', 'm', and 'cm'.
 
-![](http://static.toastoven.net/prod_search/geolocation-search-circle-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/geolocation-search-circle-en-20200304.jpg)
 
 - Filter by Polygon
     1. Enter a value to filter.
@@ -499,13 +499,13 @@ To test, index data as below:
         - Every point is connected in the clockwise.
         - Search documents within connected polygon, only.
 
-![](http://static.toastoven.net/prod_search/geolocation-search-polygon-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/geolocation-search-polygon-en-20200304.jpg)
 
 ### Sorting
 
 **Set Fields**
 
-![](http://static.toastoven.net/prod_search/sorting-field-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/sorting-field-en-20200304.jpg)
 
 **Index**
 
@@ -555,13 +555,13 @@ To test, index data as below:
     - Sort in the "popular" order in the below example.
     - When the "popular" index is same, sort in the "price" order.   
 
-![](http://static.toastoven.net/prod_search/sorting-search-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/sorting-search-en-20200304.jpg)
 
 ### Summary
 
 **Set Fields**
 
-![](http://static.toastoven.net/prod_search/aggregation-field-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/aggregation-field-en-20200304.jpg)
 
 - Only such fields in which index is checked can have Summary enabled.
 
@@ -602,7 +602,7 @@ To test, index data as below:
 
 1. Check 'Summary' of the "category" field.  
 
-![](http://static.toastoven.net/prod_search/aggregation-search-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/aggregation-search-en-20200304.jpg)
 
 **Summary Result**
 
@@ -624,7 +624,7 @@ To test, index data as below:
 
 **Set Fields**
 
-![](https://static.toastoven.net/prod_search/boolean_query-field-en-20200304.13.png)
+![img](https://static.toastoven.net/prod_search/boolean_query-field-en-20200304.13.jpg)
 
 **Index**
 
@@ -662,7 +662,7 @@ To test, index data as below:
 
 2. Enter boolean query by using &, |, (, ), or !.  
 
-![](https://static.toastoven.net/prod_search/boolean_query-search-en-20200304.png)
+![img](https://static.toastoven.net/prod_search/boolean_query-search-en-20200304.jpg)
 
 - In the priority of operators
     - In the order of (), !, &, and |.
@@ -682,7 +682,7 @@ To test, index data as below:
 
 **Set Fields**
 
-![](http://static.toastoven.net/prod_search/document_boosting-field-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/document_boosting-field-en-20200304.jpg)
 
 **Index**
 
@@ -716,7 +716,7 @@ To test, index data as below:
 
 - Search by "Nike".
 
-![](http://static.toastoven.net/prod_search/document_boosting-search-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-en-20200304.jpg)
 
 **Search Results**
 
@@ -767,7 +767,7 @@ To test, index data as below:
 
 **Set Fields**
 
-![](http://static.toastoven.net/prod_search/document_ranking-field-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/document_ranking-field-en-20200304.jpg)
 
 **Index**
 
@@ -801,7 +801,7 @@ To test, index data as below:
 
 - Search by "Nike".
 
-![](http://static.toastoven.net/prod_search/document_ranking-search-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/document_ranking-search-en-20200304.jpg)
 
 **Search Results**
 
@@ -833,13 +833,13 @@ To test, index data as below:
 
 1. Click "Download Setting" to download the current setting.
 
-![](https://static.toastoven.net/prod_search/field-download-en-20200304.png)
+![img](https://static.toastoven.net/prod_search/field-download-en-20200304.jpg)
 
 **Upload Setting**
 
 1. Click **Upload Setting** to upload setting.     
 
-![](https://static.toastoven.net/prod_search/filed-upload-en-20200304.png)
+![img](https://static.toastoven.net/prod_search/filed-upload-en-20200304.jpg)
 
 - Only when there is no field setting, the **Upload Setting** button shows.
 
@@ -848,7 +848,7 @@ To test, index data as below:
 ### Field Type
 Field type can be selected like below.
 
-![](http://static.toastoven.net/prod_search/field_type-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/field_type-en-20200304.jpg)
 
 - text
     - To be selected for the fields to 'Search'.
@@ -904,7 +904,7 @@ Field type can be selected like below.
 
 Morpheme analyzer can be selected as below:
 
-![](http://static.toastoven.net/prod_search/analyzer-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/analyzer-en-20200304.jpg)
 
 - default
     - Use morpheme analyzer to separate words:
@@ -920,7 +920,7 @@ Morpheme analyzer can be selected as below:
 
 ACL can be set on the below page:  
 
-![](http://static.toastoven.net/prod_search/acl-detail-en-20200304.png)
+![img](http://static.toastoven.net/prod_search/acl-detail-en-20200304.jpg)
 
 - Input Format
     - Input is available in the IP format.
