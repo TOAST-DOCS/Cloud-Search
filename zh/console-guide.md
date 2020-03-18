@@ -29,8 +29,8 @@ Do as follows to check if service is enabled:
 1. Click **Create Services**.
 2. Enter Service ID on **Create Services**.
 
-    - Only English in lowercase, numbers, as well as _ (underscore) and - (hypen) are available.
-    - Cannot start with a number, _ (underscore) or - (hypen).
+    - Only English in lowercase, numbers, as well as \_(underscore) and -(hypen) are available.
+    - Cannot start with a number, \_(underscore) or -(hypen).
     - At least two characters are required.
 
 3. Click **Save**.
@@ -54,8 +54,8 @@ Fields can be added as follows:
 
 3. Enter field name.
 
-    - Only English in lowercase, numbers, as well as _ (underscore) and - (hypen) are available.
-    - Cannot start with a number, _ (underscore) or - (hypen).
+    - Only English in lowercase, numbers, as well as \_(underscore) and -(hypen) are available.
+    - Cannot start with a number, \_(underscore) or -(hypen).
     - At least two characters are required.
 
 4. Click **Save**.
@@ -68,7 +68,7 @@ Do as follows to create and index files.
 
 **Create Index Files**
 
-- Create index request files in the format of example as below.
+- Create indexing request files in the format of example as below.
 - Create files encoded in UTF-8.
     - Save the file on Windows memo, by specifying UTF-8 for encoding.
 - It was created in the name of data/documents.json in the example.
@@ -113,23 +113,23 @@ Do as follows to create and index files.
     * The largest file size is 8MB.
         * Larger than 8 MB can be divided into many for indexing.
 
-**How to Index**
+**How to Indexing**
 
-1. Click **Index**.
+1. Click **Indexing**.
 
-2. Click **Select Files**.
+2. Click **Select File**.
 
-3. Select a file to index.
+3. Select a file to indexing.
 
 4. Click **Open**.
 
-5. Index command comes as REST API.
+5. Indexing command comes as REST API.
 
     - Use REST APIs to develop your search service.
 
-6. Click **Index**.
+6. Click **Indexing**.
 
-7. Check index results.
+7. Check indexing results.
 
 ![img](http://static.toastoven.net/prod_search/indexing_procedure_01-en-20200304.jpg)
 ![img](http://static.toastoven.net/prod_search/indexing_procedure_02-en-20200304.jpg)<br>
@@ -138,7 +138,7 @@ Do as follows to create and index files.
 
 REST APIs are available like below:
 
-- Index API
+- Indexing API
     - Request
         - By File Uploading
             ```
@@ -172,7 +172,7 @@ REST APIs are available like below:
           "id" : 1
         }
         ```
-- Index Result Check API
+- Indexing Result Check API
     - Request
         ```
         curl -i -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1'
@@ -189,7 +189,7 @@ REST APIs are available like below:
         ```
         - status
             - 1: Waiting  
-            - 2: Ignored (index requests before field setting change are ignored)
+            - 2: Ignored (indexing requests before field setting change are ignored)
             - 3: Progressing
             - 4: Successful
             - 5: Failed
@@ -321,7 +321,7 @@ Do as follows to check statistics:
 
 IPs may be restricted for equipment which may call index and search REST APIs.
 
-- Make sure to set index ACL since data may be deleted by others.
+- Make sure to set indexing ACL since data may be deleted by others.
 - Testing on console is not relevant with ACL setting.
 
 **How to Set ACL**
@@ -330,7 +330,7 @@ The example regards to setting which allows indexing only when the IP address is
 
 1. Click **ACL**.
 
-2.  Enter IP address for **Enable** below **Index**.
+2.  Enter IP address for **Enable** below **Indexing**.
 
 3. Enter 'all' for **Enable Statistics**.
 
@@ -349,7 +349,7 @@ Do as follows to delete fields:
 1. Click **Delete** for a field to delete.
 2. Click **Save**.
 3. Click **Execute Now**.
-    - Documents cannot be added, edited, or deleted while re-indexed.
+    - Documents cannot be added, edited, or deleted while re-indexing.
 
 ![img](http://static.toastoven.net/prod_search/field_delete-1-en-20200304.jpg)
 ![img](http://static.toastoven.net/prod_search/field_delete-2-en-20200304.jpg)
@@ -365,9 +365,9 @@ Editing is not supported. To edit, delete a field and add again.
 
 ![img](http://static.toastoven.net/prod_search/filtering-field-en-20200304.jpg)
 
-**Index**
+**Indexing**
 
-To test, index data as below:
+To test, index request data as below:
 
 ```
 [
@@ -446,7 +446,7 @@ Enter filtering values like below:
 
 ![img](http://static.toastoven.net/prod_search/geolocation-field-en-20200304.jpg)
 
-**Index**
+**Indexing**
 
 To test, index data as below:
 
@@ -507,7 +507,7 @@ To test, index data as below:
 
 ![img](http://static.toastoven.net/prod_search/sorting-field-en-20200304.jpg)
 
-**Index**
+**Indexing**
 
 To test, index data as below:
 
@@ -565,7 +565,7 @@ To test, index data as below:
 
 - Only such fields in which index is checked can have Summary enabled.
 
-**Index**
+**Indexing**
 
 To test, index data as below:
 
@@ -624,9 +624,9 @@ To test, index data as below:
 
 **Set Fields**
 
-![img](https://static.toastoven.net/prod_search/boolean_query-field-en-20200304.13.jpg)
+![img](https://static.toastoven.net/prod_search/boolean_query-field-en-20200304.jpg)
 
-**Index**
+**Indexing**
 
 To test, index data as below:
 
@@ -684,7 +684,7 @@ To test, index data as below:
 
 ![img](http://static.toastoven.net/prod_search/document_boosting-field-en-20200304.jpg)
 
-**Index**
+**Indexing**
 
 To test, index data as below:
 
@@ -769,7 +769,7 @@ To test, index data as below:
 
 ![img](http://static.toastoven.net/prod_search/document_ranking-field-en-20200304.jpg)
 
-**Index**
+**Indexing**
 
 To test, index data as below:
 
