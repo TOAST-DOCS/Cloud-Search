@@ -624,7 +624,7 @@ To test, index data as below:
 
 **Set Fields**
 
-![img](https://static.toastoven.net/prod_search/boolean_query-field-en-20200304.13.jpg)
+![img](https://static.toastoven.net/prod_search/boolean_query-field-en-20200304.jpg)
 
 **Indexing**
 
