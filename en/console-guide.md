@@ -153,7 +153,7 @@ REST APIs are available like below:
                 "id": "id-1",
                 "fields": {
                   "title": "[Free Shipping] 195 types of Nike shoes!!",
-                  "body": "The one and only Nike shoes are best selling for good reasons. Nike's 195 Hot-selling shoes★ Guess you need at least one pair of them??"
+                  "body": "The one and only Nike shoes are best selling for good reasons. Nike'\''s 195 Hot-selling shoes★ Guess you need at least one pair of them??"
                 }
               },
               {
@@ -241,7 +241,7 @@ Use REST APIs as below:
 
 - Request
     ```
-    curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='Nike sneakers' --data-urlencode highlight='<b>,</b>'
+    curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='Nike shoes' --data-urlencode highlight='<b>,</b>'
     ```
 - Response
     ```
@@ -255,19 +255,26 @@ Use REST APIs as below:
             "code" : 200,
             "message" : "OK"
           },
-          "query" : "Nike sneakers",
+          "query" : "Nike shoes",
           "start" : 1,
           "itemCount" : 1,
           "total" : 1,
           "itemList" : {
             "item" : [
-            {
-              "_RELEVANCE" : 0.07575758,
-              "_RANK" : 1,
-              "_ID" : "id-2",
-              "body" : "Just 7-day Opportunities! [Super Low Prices] for 109 types of Addidas shoes. Hesiation only pushes early sold-out"
-              "title" : "[Super Low Prices]<b>Nike</b> <b>Sneakers</b> 109 types"
-            }
+              {
+                "_RELEVANCE" : 0.15993541,
+                "_RANK" : 1,
+                "_ID" : "id-1",
+                "title" : "[Free Shipping] 195 types of <b>Nike</b> <b>shoes</b>!!",
+                "body" : "The one and only <b>Nike</b> <b>shoes</b> are best selling for good reasonsreasons. Nike's 195 Hot-selling <b>shoes</b>★ Guess you need at least one"
+              },
+              {
+                "_RELEVANCE" : 0.07575758,
+                  "_RANK" : 2,
+                  "_ID" : "id-2",
+                  "title" : "[Super Low Prices]109 types of <b>Nike</b> <b>shoes</b>",
+                  "body" : "Prices] for 109 types of Addidas <b>shoes</b>. Hesiation only pushes early"
+              }
             ]
           }
         }
