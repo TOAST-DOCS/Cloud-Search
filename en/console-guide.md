@@ -312,7 +312,7 @@ Do as follows to check statistics:
 
 - Request
     ```
-    curl -i -XGET 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/stats/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2019-01-08' -H 'Accept-Language:en'
+    curl -i -XGET 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/stats/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:en'
     ```
     - kind
         - total_query_count: Total query count
