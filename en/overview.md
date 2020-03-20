@@ -1,15 +1,31 @@
-## Search > Cloud Search > 개요
+## Search > Cloud Search > Overview
 
-검색 서비스를 합리적인 비용으로 손쉽게 구축할 수 있습니다.
+Search service can be implemented with no additional infrastructure or search solution.
 
-### 특/장점
-* 고품질의 형태소 분석기를 제공합니다.
-* 최적의 모델링 기술을 제공합니다.
-* 이중화를 통해 서비스 안정성을 보장합니다.
+- Enter data to search by using Index REST API.
+- Get search results by using Search REST API. to get search results.
 
-### 주요 기능
-* 해당 필드에 적합한 형태소 분석기를 선택 가능합니다.
-* 필드별 가중치를 부여할 수 있습니다.
-* 필터링 기능을 제공합니다.
-* 다양한 소팅 옵션을 지원합니다.
-* ACL을 지정하여 불필요한 접근을 제한할 수 있습니다.
+### Developing Search Service
+
+**Service Configuration**
+
+![img](http://static.toastoven.net/prod_search/block_diagrm-en-20200304.png)
+
+**Development Process**
+
+1. Create Service
+
+    - The Search Service is created.
+
+2. Set Fields
+
+    - Set scheme for search data.
+
+3. Indexing
+
+    - Create JSON data according to the Cloud Search input format.
+    - Use REST API to enter created JSON data for Cloud Search.
+
+4. Search
+
+    - Configure the front page with the result of Index REST API.

@@ -1,779 +1,959 @@
-## Search > Cloud Search > 콘솔 사용 가이드
+## Search > Cloud Search > コンソール使用ガイド
 
-## 문서 설명
-* 문서 내의 호스트명 "alpha-api-search.cloud.toast.com"는 사용자별로 다를 수 있습니다.
-* 문서 내의 앱키 "bJsVUwrftmEl4K7D"는 사용자별로 다를 수 있습니다.
+## 注意
+- 文書内のホスト名「api-7ab1617e2df0f1d1-search.cloud.toast.com」は、ユーザーごとに異なる場合があります。
+- 文書内のアプリケーションキー「EMKPutYozUttWVY2」は、ユーザーごとに異なります。
 
-## 상품 활성화
-* Cloud Search 서비스를 활성화하기 위해서 Console로 이동합니다.
-* 활성화 방법
-    ![](http://static.toastoven.net/prod_search/product-use-02-20180724.png)
-    1. "서비스 선택"을 클릭합니다.
-    2. "Cloud Search"를 클릭해서 서비스를 활성화합니다.
-   <br><br>
-* 활성화 확인
-    ![](http://static.toastoven.net/prod_search/product-use-03-20180724.png)
-    1. "Search" 클릭합니다.
-    2. "Cloud Search"가 노출되면 활성화된 것입니다.
+## 始める
+まずCloud Searchサービスを有効化します。
 
-## 기본 사용법
+1. **TOAST Console**で**サービス選択**をクリックします。
 
-### 1. 서비스 생성
-* 서비스 생성 방법
-    ![](http://static.toastoven.net/prod_search/domain_create_procedure.png?)
-    1. "서비스 생성" 버튼을 클릭합니다.
-    2. 서비스 ID를 입력합니다.
-        * 영문 소문자, 숫자 및 \_(underscore)와 -(dash)만 사용할 수 있습니다.
-        * 숫자, \_(underscore), -(dash)로 시작할 수 없습니다.
-        * 최소 두 글자 이상 가능합니다.
-    3. "저장" 버튼을 클릭합니다.
-    <br><br>
-* 서비스 생성 결과
-    ![](http://static.toastoven.net/prod_search/domain_create_result.png?)
-    1. 생성된 서비스 ID(test)를 클릭합니다.
+2. **Cloud Search**をクリックします。
 
-### 2. 필드 설정
-* 필드 추가 방법
-    ![](http://static.toastoven.net/prod_search/field_create_procedure-20190129.png)
-    1. "필드 설정" 탭을 클릭합니다.
-    2. "필드 추가" 버튼을 클릭합니다.
-    3. 필드 이름을 입력합니다.
-        * 영어 대소문자, 숫자 및 \_(underscore)와 -(dash)만 사용할 수 있습니다.
-        * 숫자, \_(underscore), -(dash)로 시작할 수 없습니다.
-        * 최소 두 글자 이상 가능합니다.
-    4. "저장" 버튼을 클릭합니다.
-    <br><br>
-* 필드 삭제 방법
-    ![](http://static.toastoven.net/prod_search/field_delete-1-20190129.png?)
-    ![](http://static.toastoven.net/prod_search/field_delete-2-20190129.png?)
-    ![](http://static.toastoven.net/prod_search/field_delete-3-20190129.png?)
-    1. 삭제할 필드의 "삭제" 버튼을 클릭합니다.
-    2. "저장" 버튼을 클릭합니다.
-    3. "지금 수행" 버튼을 클릭합니다.
-        * 재색인 중에는 문서 추가, 수정, 삭제가 안됩니다.
-    <br><br>
-* 필드 수정 방법
-    * 필드 수정은 지원하지 않습니다. 삭제후 다시 추가해야 합니다.
+![img](http://static.toastoven.net/prod_search/product-use-02-ja-20200304.jpg)<br>
 
-### 3. 색인
-* 색인할 파일 생성
-    * 아래 예제와 같은 형식으로 색인 요청 파일을 생성합니다.
-    * <span style="color:red">색인할 파일은 UTF-8로 생성해야 합니다.</span>
-        * Windows 메모장에서 파일 저장시 인코딩을 UTF-8로 지정해서 저장합니다.
-    * 예제에서는 data/documents.json 이름으로 생성했습니다.
-    ```
-    [
-      {
-        "action": "add",
-        "id": "id-1",
-        "fields": {
-          "title": "[무료배송]나이키 슈즈 195종!!",
-          "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??"
-        }
-      },
-      {
-        "action": "add",
-        "id": "id-2",
-        "fields": {
-          "title": "[슈퍼특가]나이키 운동화 109종",
-          "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~"
-        }
-      },
-      {
-        "action": "add",
-        "id": "id-3",
-        "fields": {
-          "title": "[아디다스]신상운동화/슬리퍼 114종",
-          "body": "[아디다스슈즈모음♥] 무/료/배/송 [아디다스]신상슬리퍼 /슈퍼스타 스탠스미스 /튜블라외 114종 득템기회!"
-        }
-      }
-    ]
-    ```
+サービスが有効化されているかを確認する方法は次のとおりです。
+
+1. **TOAST Console**左側メニューで**Search**をクリックします。
+
+2. **Cloud Search**が表示されたらサービスが有効になっているということです。
+
+![img](http://static.toastoven.net/prod_search/product-use-03-ja-20200304.jpg)
+
+## 基本使用方法
+
+### 1. サービスの作成
+
+サービスを作成する方法は次のとおりです。
+
+1. **サービス作成**ボタンをクリックします。
+
+2. **サービス作成**ウィンドウでサービスIDを入力します。
+
+    - 英字小文字、数字およびアンダースコア(_)とハイフン(-)のみ使用できます。
+    - 最初の文字に数字、アンダースコア(_)、ハイフン(-)は使用できません。
+    - 2文字以上入力する必要があります。
+
+3. **保存**ボタンをクリックします。
+
+![img](http://static.toastoven.net/prod_search/domain_create_prodedure-ja-20200304.jpg)<br>
+
+作成されたサービス結果を確認します。
+
+1. 作成されたサービスID(test)をクリックします。
+
+![img](http://static.toastoven.net/prod_search/domain_create_result-ja-20200304.jpg)
+
+
+### 2. フィールド設定
+
+フィールドを追加する方法は次のとおりです。
+
+1. **フィールド設定**タブをクリックします。
+
+2. **フィールド追加**ボタンをクリックします。
+
+3. フィールド名を入力します。
+
+    - 英字大文字/小文字、数字およびアンダースコア(_)とハイフン(-)のみ使用できます。
+    - 最初の文字に数字、アンダースコア(_)とハイフン(-)は使用できません。
+    - 2文字以上入力する必要があります。
+
+4. **保存**ボタンをクリックします。
+
+![img](http://static.toastoven.net/prod_search/field_create_procedure-ja-20200304.jpg)
+
+### 3. インデックス
+
+インデックスするファイルを作成してインデックスする方法は次のとおりです。
+
+**インデックスファイルの作成**
+
+  - 下記例のような形式でインデックスリクエストファイルを作成します。
+  - インデックスするファイルはUTF-8で作成する必要があります。
+      - Windowsのメモ帳でファイルを保存する時は、エンコードをUTF-8に指定して保存します。
+  - 例ではdata/documents.jsonという名前で作成しました。
+
+```
+[
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "title": "[送料無料]ナイキのシューズ195種！",
+      "body": "ナイキの人気シューズには売れているワケがあります！ナイキの人気シューズ195種★一足は必要じゃないですか？"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "title": "[超特価]ナイキの運動靴109種",
+      "body": "7日間だけの限定価格！超特価]アディダスシューズ109種！迷っていたら売り切れ必至"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "title": "[アディダス]メンズ運動靴/スリッパ114種",
+      "body": "[アディダスのシューズ♥]送/料/無/料[アディダス]メンズスリッパ /スーパースター、スタンスミス /チューブラー他114種が手に入るチャンス！"
+    }
+  }
+]
+```
+
+* ファイル説明
     * action
-        * add : 해당 문서가 추가됩니다.
-            * 기존에 동일한 id가 존재하면 업데이트 됩니다.
-        * delete : 해당 문서가 삭제됩니다.
+        * add :該当文書が追加されます。
+            * 既に同じidが存在する場合はアップデートされます。
+        * delete :該当文書が削除されます。
     * id
-        * 문서의 고유한 ID입니다.
-        * id의 타입은 문자열입니다.
-    * 최대 파일 사이즈는 8Mb입니다.
-        * 8Mb 이상의 데이터는 여러 개로 나누어서 색인해야 합니다.
-    <br><br>
-* 색인 방법
-    ![](http://static.toastoven.net/prod_search/indexing_procedure_01.png)
-    ![](http://static.toastoven.net/prod_search/indexing_procedure-02-20190129.png)
-    1. "색인" 탭을 클릭합니다.
-    2. "파일 선택" 버튼을 클릭합니다.
-    3. 색인할 파일을 선택합니다.
-    4. "열기" 버튼을 클릭합니다.  
-    5. 색인 명령어가 REST API로 출력됩니다.
-        * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
-    6. "색인" 버튼을 클릭합니다.
-    7. 색인 결과를 확인할 수 있습니다.
-    <br><br>
-* Rest API
-    * 아래와 같이 REST API를 사용 가능합니다.
-    * 색인 API
-        * Request
-            * 파일 업로드 방식
-                ```
-                curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-                ```
-            * Payload 방식
-                ```
-                curl -XPOST 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing' -H 'Content-Type:application/json; charset=UTF-8' -d '
-                [
-                  {
-                    "action": "add",
-                    "id": "id-1",
-                    "fields": {
-                      "title": "[무료배송]나이키 슈즈 195종!!",
-                      "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??"
-                    }
-                  },
-                  {
-                    "action": "add",
-                    "id": "id-2",
-                    "fields": {
-                      "title": "[슈퍼특가]나이키 운동화 109종",
-                      "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~"
-                    }
-                  }
-                ]'
-                ```
-        * Response
-            ```        
-            {
-              "id" : 1
-            }
-            ```
-    * 색인 결과 확인 API
-        * Request
-            ```
-            curl -i -XGET 'https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing_log?id=1'
-            ```  
-            * id 1은 위의 색인 API Response 의 id입니다.
-        * Response
-            ```
-            {
-              "request_time" : "2017-10-23T12:36:43",
-              "file_name" : "documents.json",
-              "file_size" : 1185,
-              "status" : 4
-            }
-            ```
-            * status
-                * 1 : 대기 중
-                * 2 : 무시됨 (필드 설정 변경 이전의 색인 요청은 무시됨)
-                * 3 : 진행 중
-                * 4 : 성공
-                * 5 : 실패
+        * 文書の固有IDです。
+        * idのタイプは文字列です。
+    * 最大ファイルサイズは8Mbです。
+        * 8Mb以上のデータは複数に分けてインデックスする必要があります。
 
-### 4. 검색
-* 검색 방법
-    ![](http://static.toastoven.net/prod_search/basic-search-20190129.png)
-    1. "검색" 탭을 클릭합니다.
-    2. 검색할 필드명을 체크합니다.
-    3. 검색할 필드별 가중치를 설정합니다.
-        * 0.0 ~ 1.0 값을 설정합니다.
-    4. 검색 결과에 출력할 필드를 체크합니다.
-    5. 검색 결과 길이를 설정합니다.
-    6. 강조(Highlight) pre 태그를 설정합니다.
-    7. 강조(Highlight) post 태그를 설정합니다.
-    8. 검색 결과에서 출력할 시작 순위를 지정합니다.
-        * "1"로 설정하면 1등부터 출력되고, "10"으로 설정하면 10등부터 출력됩니다.
-    9. 검색 결과 개수를 지정합니다.
-        * "5"로 설정하면 5개 출력되고, "10"으로 설정하면 10개 출력됩니다.
-    10. 검색 연산자를 선택합니다.
-    11. 검색할 단어를 입력합니다.
-    12. 검색 아이콘을 클릭합니다.
-    13. 2 ~ 11번까지 설정한 내용이 REST API로 출력됩니다.
-        * Rest API를 이용해서 검색 서비스를 연동하시면 됩니다.
-    14. 검색 결과가 출력됩니다.
-    <br><br>
-* Rest API
-    * 아래와 같이 REST API를 사용 가능합니다.
-    * Request
-        ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>'
-        ```
-    * Response
+**インデックス方法**
+
+1. **インデックス**タブをクリックします。
+
+2. **ファイル選択**ボタンをクリックします。
+
+3. インデックスするファイルを選択します。
+
+4. **開く**ボタンをクリックします。
+
+5. インデックスコマンドがREST APIで出力されます。
+
+    - REST APIを利用して検索サービスを開発してください。
+
+6. **インデックス**ボタンをクリックします。
+
+7. インデックス結果を確認します。
+
+![img](http://static.toastoven.net/prod_search/indexing_procedure_01-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/indexing_procedure_02-ja-20200304.jpg)<br>
+
+**REST API**
+
+下記のようにREST APIを使用可能です。
+
+- インデックスAPI
+    - Request
+        - ファイルアップロード方式
+            ```
+            curl -XPOST 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+                ```
+        - ペイロード(payload)方式
+            ```
+            curl -XPOST 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            [
+              {
+                "action": "add",
+                "id": "id-1",
+                "fields": {
+                  "title": "[送料無料]ナイキシューズ195種！",
+                  "body": "ナイキの人気シューズには売れているワケがあります！ナイキの人気シューズ195種★一足は必要じゃないですか？"
+                }
+              },
+              {
+                "action": "add",
+                "id": "id-2",
+                "fields": {
+                  "title": "[超特価]ナイキの運動靴109種",
+                  "body": "7日間だけの限定価格！超特価]アディダスシューズ109種！迷っていたら売り切れ必至"
+                }
+              }
+            ]'
+            ```
+    - Response
         ```
         {
-          "message" : {
-              "meta" : {
-                "timezone" : "+09:00"
-              },
-              "result" : {
-                "status" : {
-                "code" : 200,
-                "message" : "OK"
-              },
-              "query" : "나이키 운동화",
-              "start" : 1,
-              "itemCount" : 1,
-              "total" : 1,
-              "itemList" : {
-                "item" : [
-                {
-                  "_RELEVANCE" : 0.07575758,
-                  "_RANK" : 1,
-                  "_ID" : "id-2",
-                  "body" : "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
-                  "title" : "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
-                }
-                ]
-              }
+          "id" : 1
+        }
+        ```
+- インデックス結果確認API
+    - Request
+        ```
+        curl -i -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ja'
+        ```
+        - id 1は上記のインデックスAPI Responseのidです。
+    - Response
+        ```
+        {
+          "request_time" : "2017-10-23T12:36:43",
+          "file_name" : "documents.json",
+          "file_size" : 1185,
+          "status" : 4
+        }
+        ```
+        - status
+            - 1 :待機中
+            - 2 : 無視された(フィールド設定変更前のインデックスリクエストは無視される)
+            - 3 :進行中
+            - 4 :成功
+            - 5 :失敗
+
+### 4. 検索
+
+検索方法は次のとおりです。
+
+1. **検索**タブをクリックします。
+
+2. 検索するフィールド名をチェックします。
+
+3. 検索するフィールドごとに重みを設定します。
+
+    - 0.0～1.0の値を設定します。
+
+4. 検索結果に出力するフィールドをチェックします。
+
+5. 検索結果の長さを設定します。
+
+6. 強調(highlight) preタグを設定します。
+
+7. 強調(highlight) postタグを設定します。
+
+8. 検索結果で出力する開始順位を指定します。
+
+    - 「1」に設定すると1位から出力され、「10」に設定すると10位から出力されます。
+
+9. 検索結果の数を指定します。
+
+    - 「5」に設定すると5個出力され、「10」に設定すると10個出力されます。
+
+10. 検索演算子を選択します。
+
+11. 検索する単語を入力します。
+
+12. 検索アイコンをクリックします。
+
+13. 2～11番まで設定した内容がREST APIで出力されます。
+
+    - REST APIを利用して検索サービスを開発してください。
+
+14. 検索結果が出力されます。
+
+![img](http://static.toastoven.net/prod_search/basic-search-ja-20200304.jpg)<br>
+
+**REST API**
+
+下記のようにREST APIを使用できます。
+
+- Request
+    ```
+    curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='ナイキ 運動靴' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ja'
+    ```
+- Response
+    ```
+    {
+      "message" : {
+          "meta" : {
+            "timezone" : "+09:00"
+          },
+          "result" : {
+            "status" : {
+            "code" : 200,
+            "message" : "OK"
+          },
+          "query" : "ナイキ 運動靴",
+          "start" : 1,
+          "itemCount" : 1,
+          "total" : 1,
+          "itemList" : {
+            "item" : [
+            {
+              "_RELEVANCE" : 0.07575758,
+              "_RANK" : 1,
+              "_ID" : "id-2",
+              "body" : "7日間だけの限定価格！超特価]アディダスシューズ109種！迷っていたら売り切れ必至",
+              "title" : "[超特価]<b>ナイキ</b> <b>運動靴</b> 109種"
             }
+            ]
           }
         }
-        ```
-### 5. 통계
-* 통계 화면
-    ![](http://static.toastoven.net/prod_search/stats-20190129.png)
-    1. "통계" 탭을 클릭합니다.
-    2. "전체 질의수" 또는 "결과 없는 질의수"를 선택합니다.
-    3. 시작 날짜를 입력합니다.
-    4. 종료 날짜를 입력합니다.
-    5. "조회" 버튼을 클릭하면 통계 그래프가 출력됩니다.
-    6. "데이터 다운로드"를 클릭하면 질의별 통계 데이터가 다운로드됩니다.
-    7. "전체 문서수" 또는 "전체 색인 사이즈"를 선택합니다.
-    8. 시작 날짜를 입력합니다.
-    9. 종료 날짜를 입력합니다.
-    10. "조회" 버튼을 클릭하면 통계 그래프가 출력됩니다.
-* Rest API
-    * Request
-        ```
-        curl -i -XGET 'http://alpha-api-search.cloud.toast.com/stats/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/stats?kind=total_query_count&date=2019-01-08'
-        ```
-        * kind
-            * total_query_count : 전체 질의수
-            * no_result_query_count : 검색 결과 없는 질의수
-        * date : 조회할 날짜
-    * Response
-        ````
-        [ [ "나이키", 8 ], [ "아디다스", 4 ] ]
-        ````
-        * 질의수 3 이상만 조회됩니다.
+      }
+    }
+    ```
+
+### 5. 統計
+
+統計を確認する方法は次のとおりです。
+
+1. **統計**タブをクリックします。
+
+2. **全体クエリー数**または**結果がないクエリー数**を選択します。
+
+3. 開始日を入力します。
+
+4. 終了日を入力します。
+
+5. **照会**ボタンをクリックすると、統計グラフが出力されます。
+
+6. **データダウンロード**をクリックすると、クエリーごとに統計データがダウンロードされます。
+
+7. **全体文書数**または**全体インデックスサイズ**を選択します。
+
+8. 開始日を入力します。
+
+9. 終了日を入力します。
+
+10. **照会**ボタンをクリックすると、統計グラフが出力されます。
+
+![img](http://static.toastoven.net/prod_search/stats-ja-20200304.jpg)<br>
+
+**REST API**
+
+- Request
+    ```
+    curl -i -XGET 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/stats/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ja'
+    ```
+    - kind
+        - total_query_count ：全体クエリー数
+        - no_result_query_count ：検索結果がないクエリー数
+    - date ：照会する日
+- Response
+    ````
+    [ [ "ナイキ", 8 ], [ "アディダス", 4 ] ]
+    ````
+    - クエリー数3以上のみ照会されます。
 
 ### 6. ACL
-* 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
-    * <span style="color:red">다른 사람이 데이터를 삭제할 수 있으므로 색인 ACL은 반드시 설정해 주세요.</span>
-    * 콘솔에서 테스트하는 경우 ACL 설정과 관련 없습니다.		
-* ACL 설정 방법
-    ![](http://static.toastoven.net/prod_search/acl_procedure-20190129.png)
-    1. "ACL" 탭을 클릭합니다.
-    2. 색인 요청은 IP 주소가 202.179.177.21 인 경우만 색인이 가능하도록 설정한 예제입니다.
-    3. 검색 요청은 모든 IP에서 가능하도록 설정한 예제입니다.
-    4. 질의 통계 데이터 다운로드 요청는 모든 IP에서 가능하도록 설정한 예제입니다.
-    5. "저장" 버튼을 클릭합니다.
 
-## 기능 가이드
+インデックスおよび検索REST APIを呼び出すことができる端末のIPを制限できます。
 
-### 필터링
-* 필드 설정
-    ![](http://static.toastoven.net/prod_search/filtering-field-20190129.png)
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-    {
-      "action": "add",
-      "id": "id-1",
-      "fields": {
-        "name" : "나이키 에어맥스",
-        "category" : 1
-      }
-    },
-    {
-      "action": "add",
-      "id": "id-2",
-      "fields": {
-        "name" : "나이키 샤이엔 솔리드",
-        "category" : 2
-      }
+- 他の人がデータを削除することができるため、インデックスACLは必ず設定してください。
+- コンソールからテストする場合、ACL設定は関係ありません。
+
+**ACLの設定方法**
+
+下記は、IPアドレスが202.179.177.21の場合にのみインデックスが可能で、検索リクエストはすべてのIPからできるように設定した例です。クエリー統計データダウンロードリクエストは、すべてのIPからできるように設定した例です。
+
+1. **ACL**タブをクリックします。
+
+2. **インデックス**下の**許可**にIPアドレスを入力します。
+
+3. **統計** **許可**に「all」を入力します。
+
+4. **検索** **許可**に「all」を入力します。
+
+5. **保存**ボタンをクリックします。
+
+![img](http://static.toastoven.net/prod_search/acl_procedure-ja-20200304.jpg)
+
+## 機能詳細説明
+
+### フィールドの削除
+
+フィールドを削除する方法は次のとおりです。
+
+1. 削除するフィールドの**削除**ボタンをクリックします。
+
+2. **保存**ボタンをクリックします。
+
+3. **今実行**ボタンをクリックします。
+
+    - 再インデックス中は文書の追加、修正、削除ができません。
+
+![img](http://static.toastoven.net/prod_search/field_delete-1-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/field_delete-2-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/field_delete-3-ja-20200304.jpg)
+
+### フィールドの修正
+
+フィールドの修正はサポートしていません。削除後に再度追加する必要があります。
+
+### フィルタリング
+
+**フィールド設定**
+
+![img](http://static.toastoven.net/prod_search/filtering-field-ja-20200304.jpg)
+
+**インデックス**
+
+テストを行うために、下記のデータをインデックスします。
+
+```
+[
+{
+  "action": "add",
+  "id": "id-1",
+  "fields": {
+    "name" : "ナイキエアマックス",
+    "category" : 1
+  }
+},
+{
+  "action": "add",
+  "id": "id-2",
+  "fields": {
+    "name" : "ナイキシャイアンソリッド",
+    "category" : 2
+  }
+}
+]
+```
+
+**検索**
+
+1. フィルタリング値を入力します。
+
+![img](http://static.toastoven.net/prod_search/filtering-search-ja-20200304.jpg)
+
+フィルタリング値の入力方法です。
+
+- 単一の値のフィルタリング
+    - 例) category=1
+        - category == 1
+- orフィルタリング
+    - 例) category=1|2
+        - category == 1 or category == 2
+- andフィルタリング
+    - 例) category=1&2
+        - category == 1 and category == 2      
+- 範囲指定フィルタリング		
+    - 例) category=[1,2]
+        - 1 <= category <= 2
+    - 例) category={1,2]      
+        - 1 < category <= 2
+    - 例) category={,2]      
+        - category <= 2
+    - keyword、boolean、geo_pointタイプは、範囲指定フィルタリングに使用できません。
+- notフィルタリング
+    - 例) category=!1
+        - category != 1
+    - 例) category=!1|2
+        - category !=1 or category == 2
+- dateタイプフィルタリング
+    - filter='update=[2017-03-22T08:28:44,}'
+        - 2017-03-22T08:28:44 <= update
+    - filter='update=[,2018-10-02T15:26:28}'
+        - update < 2018-10-02T15:26:28
+    - filter='update=[2017-03-22T08:28:44,2018-10-02T15:26:28}'
+        - 2017-03-22T08:28:44 <= update < 2018-10-02T15:26:28
+- keywordタイプフィルタリング
+    - filter='dealer="DNCショップ"|"Widショッピング"'
+        - keywordタイプはダブルクォーテーションの使用を推薦します。
+- 複数のフィールドのフィルタリング
+    - filter='category=1&brand=2'
+        - category == 1 and brand == 2
+    - filter='category=1|brand=2'
+        - category == 1 or brand == 2
+    - filter='(category=1&brand=2)|(category=3&brand=4)'
+        - (category == 1 and brand == 2) or (category == 3 and brand == 4)
+
+### 経緯度(geolocation)フィルタリング
+
+**フィールド設定**
+
+1. 経緯度を入力するフィールドのタイプに「geo_point」を選択します。
+
+![img](http://static.toastoven.net/prod_search/geolocation-field-ja-20200304.jpg)
+
+**インデックス**
+
+テストを行うために下記のデータをインデックスします。
+
+```
+[
+{
+  "action": "add",
+  "id": "id-1",
+  "fields": {
+    "name" : "FX数学塾",
+    "location" : [10.1, 10.1]
+  }
+},
+{
+  "action": "add",
+  "id": "id-2",
+  "fields": {
+    "name" : "良木思考力数学塾",
+    "location" : [10.3, 10.4]
+  }
+},
+{
+  "action": "add",
+  "id": "id-3",
+  "fields": {
+    "name" : "数学の朝塾",
+    "location" : [10.4, 10.3]
+  }
+}
+]
+```
+
+- geo_pointタイプには[{経度},{緯度}]形式で値を入力します。
+
+**検索**
+
+- 半径(circle)フィルタリング
+    1. フィルタリング値を入力します。
+        - 形式：[{経度},{緯度}],{半径}
+        - 例：[10.3,10.3],15km
+            - 経度10.3、緯度10.3を中心に半径15km以内の文書のみ検索されます。
+            - 半径の単位は「km」「m」「cm」を使用できます。
+
+![img](http://static.toastoven.net/prod_search/geolocation-search-circle-ja-20200304.jpg)
+
+- 領域(polygon)フィルタリング
+    1. フィルタリング値を入力します。
+        - 形式：[{経度1},{緯度1}],[{経度2},{緯度2}],[{経度N},{緯度N}]
+        - 例：[10.2,10.2],[10.3,10.5],[10.5,10.2]
+        - 各点は、時計方向に接続されます。
+        - 接続された多角形内の文書のみ検索されます。
+
+![img](http://static.toastoven.net/prod_search/geolocation-search-polygon-ja-20200304.jpg)
+
+### ソート
+
+**フィールド設定**
+
+![img](http://static.toastoven.net/prod_search/sorting-field-ja-20200304.jpg)
+
+**インデックス**
+
+テストを行うために下記のデータをインデックスします。
+
+```
+[
+{
+  "action": "add",
+  "id": "id-1",
+  "fields": {
+    "name" : "ナイキエアマックス",
+    "popular" : 10,
+    "price" : 84180
+  }
+},
+{
+  "action": "add",
+  "id": "id-2",
+  "fields": {
+    "name" : "ナイキエアズーム",
+    "popular" : 5,
+    "price" : 97200
+  }
+},
+{
+  "action": "add",
+  "id": "id-3",
+  "fields": {
+    "name" : "ナイキエアフォース",
+    "popular" : 5,
+    "price" : 74680
+  }
+}
+]
+```
+
+**検索**
+
+1. ソート方式を指定します。
+
+    - "asc"：昇順ソート
+    - "desc"：降順ソート
+
+2. ソート順序を指定します。
+
+    - 上の例では「popular」で先にソートします。
+    - 「popular」が同じ場合、「price」でソートします。   
+
+![img](http://static.toastoven.net/prod_search/sorting-search-ja-20200304.jpg)
+
+### 要約
+
+**フィールド設定**
+
+![img](http://static.toastoven.net/prod_search/aggregation-field-ja-20200304.jpg)
+
+- インデックスがチェックされたフィールドのみ要約機能を使用できます。
+
+**インデックス**
+
+テストを行うために下記のデータをインデックスします。
+
+```
+[
+{
+  "action": "add",
+  "id": "id-1",
+  "fields": {
+    "name" : "ナイキエアマックス",
+    "category" : "靴"
+  }
+},
+{
+  "action": "add",
+  "id": "id-2",
+  "fields": {
+    "name" : "ナイキエアズーム",
+    "category" : "靴"
+  }
+},
+{
+  "action": "add",
+  "id": "id-3",
+  "fields": {
+    "name" : "ナイキスウォッシュ半袖シャツ",
+    "category" : "衣類"
+  }
+}
+]
+```
+
+**検索**
+
+1. 「category」フィールドの「要約」をチェックします。
+
+![img](http://static.toastoven.net/prod_search/aggregation-search-ja-20200304.jpg)
+
+**要約結果**
+
+```
+"summary": {
+	"category": {
+		"靴": 2,
+		"衣類": 1
+	}
+}
+```
+
+- 検索結果と要約情報が出力されます。
+- 「category」が「靴」の検索結果が2件、「衣類」の検索結果が1件という意味です。
+- 要約可能なタイプ
+    - textおよびgeo_pointタイプは要約機能を使用できません。
+
+### ブーリアンクエリー
+
+**フィールド設定**
+
+![img](https://static.toastoven.net/prod_search/boolean_query-field-ja-20200304.jpg)
+
+**インデックス**
+
+テストを行うために下記のデータをインデックスします。
+
+```
+[
+{
+  "action": "add",
+  "id": "id-1",
+  "fields": {
+    "title" : "ナイキ靴"
+  }
+},
+{
+  "action": "add",
+  "id": "id-2",
+  "fields": {
+    "title" : "ナイキシューズ"
+  }
+},
+{
+  "action": "add",
+  "id": "id-3",
+  "fields": {
+    "title" : "ナイキバッグ"
+  }
+}
+]
+```
+
+**検索**
+
+1. 「boolean」を選択します。
+
+2. &, |, (, ), ! を利用したブーリアンクエリーを入力します。
+
+![img](https://static.toastoven.net/prod_search/boolean_query-search-ja-20200304.jpg)
+
+- 演算子優先順位
+    - (), !, &, | の順です。
+- 被演算子処理
+    - 被演算子はExact matchingで処理されます。
+    - q=ナイキ 靴&q_option=boolean
+    - 検索される検索対象
+        - 「人気 ナイキ 靴 割引」
+        - 「人気 ナイキ靴 割引」
+    - 検索される検索対象
+        - 「人気 ナイキ 割引 靴」
+            - 「ナイキ」と「靴」の間に他の単語が入っているため
+        - 「人気 靴 ナイキ 割引」
+            - 「ナイキ」と「靴」の順序が異なるため
+
+### 文書重み指定
+
+**フィールド設定**
+
+![img](http://static.toastoven.net/prod_search/document_boosting-field-ja-20200304.jpg)
+
+**インデックス**
+
+テストを行うために下記のデータをインデックスします。
+
+```
+[
+  {
+    "action": "add",
+    "id": "id-1",
+    "weight": 0.1,
+    "fields": {
+      "title" : "ナイキ"
     }
-    ]
-    ```
-    <br>
-* 검색
-    ![](http://static.toastoven.net/prod_search/filtering-search-20190129.png)
-    1. "category"가 "1"인 문서만 검색됩니다.
-    <br><br>
-* 필터링 값 입력 방법
-    * 단일 값 필터링
-        * 예제) category=1
-            * category == 1
-    * or 필터링
-        * 예제) category=1|2
-            * category == 1 or category == 2
-    * and 필터링
-        * 예제) category=1&2
-            * category == 1 and category == 2      
-    * 범위 지정 필터링		
-        * 예제) category=[1,2]
-            * 1 <= category <= 2
-        * 예제) category={1,2]      
-            * 1 < category <= 2
-        * 예제) category={,2]      
-            * category <= 2
-        * keyword, boolean, geo_point 타입은 범위 지정 필터링에 사용할 수 없습니다.
-    * not 필터링
-        * 예제) category=!1
-            * category != 1
-        * 예제) category=!1|2
-            * category !=1 or category == 2
-    * date 타입 필터링
-        * filter='update=[2017-03-22T08:28:44,}'
-            * 2017-03-22T08:28:44 <= update
-        * filter='update=[,2018-10-02T15:26:28}'
-            * update < 2018-10-02T15:26:28
-        * filter='update=[2017-03-22T08:28:44,2018-10-02T15:26:28}'
-            * 2017-03-22T08:28:44 <= update < 2018-10-02T15:26:28
-    * keyword 타입 필터링
-        * filter='dealer="DNC샵"|"위드쇼핑"'
-            * keyword 타입은 큰따옴표 사용을 추천합니다.
-* 여러 개의 필드 필터링
-    * filter='category=1&brand=2'
-        * category == 1 and brand == 2
-    * filter='category=1|brand=2'
-        * category == 1 or brand == 2
-    * filter='(category=1&brand=2)|(category=3&brand=4)'
-        * (category == 1 and brand == 2) or (category == 3 and brand == 4)
-
-### 위경도(geolocation) 필터링
-* 필드 설정
-    ![](http://static.toastoven.net/prod_search/geolocation-field-20190129.png)
-    1. 위경도를 입력할 필드 타입으로 "geo_point"를 선택합니다.
-    <br><br>
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-    {
-      "action": "add",
-      "id": "id-1",
-      "fields": {
-        "name" : "에프엑스수학학원",
-        "location" : [10.1, 10.1]
-      }
-    },
-    {
-      "action": "add",
-      "id": "id-2",
-      "fields": {
-        "name" : "좋은나무 사고력수학학원",
-        "location" : [10.3, 10.4]
-      }
-    },
-    {
-      "action": "add",
-      "id": "id-3",
-      "fields": {
-        "name" : "수학의아침학원",
-        "location" : [10.4, 10.3]
-      }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "weight": 0.9,
+    "fields": {
+      "title" : "ナイキ"
     }
-    ]
-    ```
-    * geo_point 타입에는 [{경도}, {위도}] 형식으로 값을 입력합니다.
-    <br><br>
-* 검색
-    * 반경(circle) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-circle-20190129.png)
-        1. 필터링 값을 입력합니다.
-            * 형식 : [{경도},{위도}],{반경}
-            * 예제 : [10.3,10.3],15km
-                * 경도 10.3, 위도 10.3 중심으로 반경 15km 이내인 문서만 검색됩니다.
-            * 반경 단위는 "km", "m", "cm"를 사용할 수 있습니다.
-    <br><br>
-    * 영역(polygon) 필터링
-        ![](http://static.toastoven.net/prod_search/geolocation-search-polygon-20190129.png)
-        1. 필터링 값을 입력합니다.
-            * 형식 : [{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
-            * 예제 : [10.2,10.2],[10.3,10.5],[10.5,10.2]
-            * 각 점들은 시계 방향으로 연결됩니다.
-            * 연결된 다각형 내의 문서만 검색됩니다.
+  }
+]
+```
 
-### 정렬
-* 필드 설정
-    ![](http://static.toastoven.net/prod_search/sorting-field-20190129.png)
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
+- 「id-1」には「weight」を0.1、「id-2」には「weight」を0.9に指定します。
+- 「weight」は0.0～1.0の値を入力できます。
+
+**検索**
+
+- 「ナイキ」で検索します。
+
+![img](http://static.toastoven.net/prod_search/document_boosting-search-ja-20200304.jpg)
+
+**検索結果**
+
+```
+"itemList": {
+  "item": [
     {
-      "action": "add",
-      "id": "id-1",
-      "fields": {
-        "name" : "나이키 에어맥스",
-        "popular" : 10,
-        "price" : 84180
-      }
+      "_RELEVANCE": 0.45151517,
+      "_RANK": 1,
+      "_ID": "id-2",
+      "title": "<b>ナイキ</b>"
     },
     {
-      "action": "add",
-      "id": "id-2",
-      "fields": {
-        "name" : "나이키 에어줌",
-        "popular" : 5,
-        "price" : 97200
-      }
-    },
-    {
-      "action": "add",
-      "id": "id-3",
-      "fields": {
-        "name" : "나이키 에어포스",
-        "popular" : 5,
-        "price" : 74680
-      }
+      "_RELEVANCE": 0.18484849,
+      "_RANK": 2,
+      "_ID": "id-1",
+      "title": "<b>ナイキ</b>"
     }
-    ]
-    ```
-    <br>
-* 검색
-    ![](http://static.toastoven.net/prod_search/sorting-search-20190129.png)
-    1. 정렬 방식을 지정합니다.
-        * "asc" : 올림차순 정렬
-        * "desc" : 내림차순 정렬
-    2. 정렬 순서를 지정합니다.
-        * 위의 예제에서는 "popular"로 먼저 정렬합니다.
-        * "popular"가 동일한 경우 "price"로 정렬합니다.    
+  ]
+}
+```
 
-### 요약
-* 필드 설정
-    ![](http://static.toastoven.net/prod_search/aggregation-field-20190129.png)
-    * 색인이 체크된 필드만 요약 기능을 사용할 수 있습니다.
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
+- 「weight」を高く付与した「id-2」文書が検索結果の上位に表示されます。
+
+**weight反映比率を調整**
+
+- doc_weight_ratioパラメータを利用して反映比率を調整します。
     ```
-    [
+    curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='ナイキ' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ja'
+    ```
+    - 0.0～1.0の値を入力できます。
+    - defaultは1.0です。
+
+**ユーザーが入力した検索ワードと、文書の類似度(similarity)を反映して比率調整**
+
+- similarity_ratioパラメータを利用して反映比率を調整します。
+    ```
+    curl -G -XGET 'https://api-7ab1617e2df0f1d1-search.cloud.toast.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&similarity_ratio=0.1' --data-urlencode q='ナイキ' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ja'
+    ```
+    - 0.0～1.0の値を入力できます。
+    - defaultは1.0です。
+
+**Tip**
+
+- similarity_ratioとdoc_weight_ratioを調節して検索結果出力順序をカスタマイズできます。
+
+### 文書ランキング指定
+
+**フィールド設定**
+
+![img](http://static.toastoven.net/prod_search/document_ranking-field-ja-20200304.jpg)
+
+**インデックス**
+
+テストを行うために下記のデータをインデックスします。
+
+```
+[
+  {
+    "action": "add",
+    "id": "id-1",
+    "ranking": 2,
+    "fields": {
+      "title" : "ナイキ"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "ranking": 1,
+    "fields": {
+      "title" : "ナイキ"
+    }
+  }
+]
+```
+
+- 「id-1」には「ranking」を2、「id-2」には「ranking」を1に指定します。
+- 「ranking」は1～10000の値を入力できます。
+
+**検索**
+
+- 「ナイキ」で検索します。
+
+![img](http://static.toastoven.net/prod_search/document_ranking-search-ja-20200304.jpg)
+
+**検索結果**
+
+```
+"itemList": {
+  "item": [
     {
-      "action": "add",
-      "id": "id-1",
-      "fields": {
-        "name" : "나이키 에어맥스",
-        "category" : "신발"
-      }
+      "_RELEVANCE": 10000.151,
+      "_RANK": 1,
+      "_ID": "id-2",
+      "title": "<b>ナイキ</b>"
     },
     {
-      "action": "add",
-      "id": "id-2",
-      "fields": {
-        "name" : "나이키 에어줌",
-        "category" : "신발"
-      }
-    },
-    {
-      "action": "add",
-      "id": "id-3",
-      "fields": {
-        "name" : "나이키 스우시 반팔티",
-        "category" : "의류"
-      }
+      "_RELEVANCE": 9999.151,
+      "_RANK": 2,
+      "_ID": "id-1",
+      "title": "<b>ナイキ</b>"
     }
-    ]
-    ```
-    <br>
-* 검색
-    ![](http://static.toastoven.net/prod_search/aggregation-search-20190129.png)
-    * 요약 사용 방법
-        1. "category" 필드의 "요약"을 체크합니다.
-            * 검색 결과와 함께 요약 정보가 출력됩니다.
-            ```
-            "summary": {
-              "category": {
-                "신발": 2,
-                "의류": 1
-              }
-            }
-            ```
-            * "category"가 "신발"인 검색 결과가 2건, "의류"인 검색 결과가 1건이라는 의미입니다.
-            <br>
-    * 요약 가능한 타입
-        * text 및 geo_point 타입은 요약 기능을 사용할 수 없습니다.
+  ]
+}
+```
 
-### 불리언 질의
-* 필드 설정
-    ![boolean_query-field-20190129](https://static.toastoven.net/prod_search/boolean_query-field-20190129.png)
+- 「ranking」を1に指定した「id-2」文書が検索結果1位に表示されます。
+- 「ranking」を同じように指定した場合、ユーザーが入力した検索ワードと類似度が高い文書が先に表示されます。
 
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-    {
-      "action": "add",
-      "id": "id-1",
-      "fields": {
-        "title" : "나이키 신발"
-      }
-    },
-    {
-      "action": "add",
-      "id": "id-2",
-      "fields": {
-        "title" : "나이키 슈즈"
-      }
-    },
-    {
-      "action": "add",
-      "id": "id-3",
-      "fields": {
-        "title" : "나이키 가방"
-      }
-    }
-    ]
-    ```
-    <br>
+### フィールド設定のダウンロード/アップロード
 
-* 검색
-    ![boolean_query-search-20190129](https://static.toastoven.net/prod_search/boolean_query-search-20190129.png)
-    1. "boolean"을 선택합니다.
-    2. &, |, (, ), ! 을 이용한 불리언 질의를 입력합니다.
-* 연산자 우선순위
-    * (), !, &, | 순입니다.
-* 피연산자 처리
-    * 피연산자는 Exact matching으로 처리됩니다.
-    * q=나이키 신발&q_option=boolean
-        * 검색이 되는 검색 대상
-            * "인기 나이키 신발 할인"
-            * "인기 나이키신발 할인"
-        * 검색이 안되는 검색 대상
-            * "인기 나이키 할인 신발"
-                * "나이키"와 "신발" 사이에 다른 단어가 들어 있기 때문임
-            * "인기 신발 나이키 할인"
-                * "나이키"와 "신발"의 순서가 다르기 때문임
+**設定のダウンロード**
 
-### 문서 가중치 지정
-* 필드 설정
-    ![documents_boosting-field-20190129](http://static.toastoven.net/prod_search/documents_boosting-field-20190129.png)
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-      {
-        "action": "add",
-        "id": "id-1",
-        "weight": 0.1,
-        "fields": {
-          "title" : "나이키"
-        }
-      },
-      {
-        "action": "add",
-        "id": "id-2",
-        "weight": 0.9,
-        "fields": {
-          "title" : "나이키"
-        }
-      }
-    ]
-    ```
-    * "id-1"에는 "weight"를 0.1, "id-2"에는 "weight"를 0.9로 지정합니다.
-    * "weight"는 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
-    <br><br>
-* 검색
-    ![documents_boosting-search-20190129](http://static.toastoven.net/prod_search/documents_boosting-search-20190129.png)
-    * "나이키"로 검색합니다.
-    <br><br>
-* 검색 결과
-    ```
-    "itemList": {
-      "item": [
-        {
-          "_RELEVANCE": 0.43333334,
-          "_RANK": 1,
-          "_ID": "id-2",
-          "title": "<b>나이키</b>"
-        },
-        {
-          "_RELEVANCE": 0.20877191,
-          "_RANK": 2,
-          "_ID": "id-1",
-          "title": "<b>나이키</b>"
-        }
-      ]
-    }
-    ```
-    * "weight"를 높게 부여한 "id-2" 문서가 검색 결과 상위에 노출됩니다.
-    <br><br>
-* weight 반영 비율 조정
-    * doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
-        ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
-        ```
-        * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
-        * default는 1.0입니다.
-* 사용자가 입력한 질의와 문서의 유사도(similarity) 반영 비율 조정
-    * similarity_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
-        ```
-        curl -G -XGET 'https://alpha-api-search.cloud.toast.com/search/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&similarity_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>'
-        ```
-        * 0.0 ~ 1.0 사이의 값을 입력할 수 있습니다.
-       * default는 1.0입니다.
-* Tip
-    * similarity_ratio와 doc_weight_ratio를 조절해서 검색 결과 출력 순서를 커스터마이징할 수 있습니다.
+1. 「設定ダウンロード」ボタンをクリックして現在の設定をダウンロードします。
 
-### 문서 랭킹 지정
-* 필드 설정
-    ![documents_ranking-field-20190129](http://static.toastoven.net/prod_search/documents_ranking-field-20190129.png)
-* 색인
-    * 테스트를 위해 아래 데이터를 색인합니다.
-    ```
-    [
-      {
-        "action": "add",
-        "id": "id-1",
-        "ranking": 2,
-        "fields": {
-          "title" : "나이키"
-        }
-      },
-      {
-        "action": "add",
-        "id": "id-2",
-        "ranking": 1,
-        "fields": {
-          "title" : "나이키"
-        }
-      }
-    ]
-    ```
-    * "id-1"에는 "ranking"을 2, "id-2"에는 "ranking"을 1로 지정합니다.
-    * "ranking"은 1 ~ 10000 사이의 값을 입력할 수 있습니다.
-    <br><br>
-* 검색
-    ![documents_ranking-search-20190129](http://static.toastoven.net/prod_search/documents_ranking-search-20190129.png)
-    * "나이키"로 검색합니다.
-    <br><br>
-* 검색 결과
-    ```
-    "itemList": {
-      "item": [
-        {
-          "_RELEVANCE": 10000.151,
-          "_RANK": 1,
-          "_ID": "id-2",
-          "title": "<b>나이키</b>"
-        },
-        {
-          "_RELEVANCE": 9999.151,
-          "_RANK": 2,
-          "_ID": "id-1",
-          "title": "<b>나이키</b>"
-        }
-      ]
-    }
-    ```
-    * "ranking"을 1로 지정한 "id-2" 문서가 검색 결과 1등으로 노출됩니다.
-    * "ranking"을 동일하게 지정한 경우 사용자가 입력한 질의와 유사도가 높은 문서가 먼저 노출됩니다.
-    <br><br>
+![img](https://static.toastoven.net/prod_search/field-download-ja-20200304.jpg)
 
-### 필드 설정 다운로드/업로드
-* 설정 다운로드
-    ![field-download-20190129](https://static.toastoven.net/prod_search/field-download-20190129.png)
-    1. "설정 다운로드" 버튼을 클릭해서 현재 설정을 다운로드합니다.
-		<br><br>
-* 설정 업로드
-    ![field-upload-20190129](https://static.toastoven.net/prod_search/field-upload-20190129.png)
-    1. "설정 업로드" 버튼을 클릭해서 설정을 업로드합니다.
-        * 설정된 필드가 하나도 없을 때만 "설정 업로드" 버튼이 노출됩니다.
+**設定のアップロード**
 
-## 상세 가이드
+1. **設定アップロード**ボタンをクリックして設定をアップロードします。   
 
-### 필드 타입
-* 필드 타입 선택 화면
-    ![detail-field_type-20190129](http://static.toastoven.net/prod_search/detail-field_type-20190129.png)
-* text
-    * "검색"할 필드일 경우 선택합니다.
-    * 형태소 분석을 합니다.
-        * 필드 값이 "나이키운동화"일 경우 "나이키운동화", "나이키 운동화", "나이키" 또는 "운동화"로 검색했을 때 검색 결과가 나옵니다.
-    * 최대 사이즈는 32,768Byte입니다.
-* keyword
-    * "필터", "정렬", "요약"할 필드일 경우 선택합니다.
-    * 형태소 분석을 하지 않습니다.
-        * 필드 값이 "나이키운동화"일 경우 "나이키운동화"로만 "필터", "정렬", "요약"이 됩니다.
-        * 필드 값이 "나이키 운동화"일 경우 "나이키 운동화"로만 "필터", "정렬", "요약"이 됩니다.
-    * 최대 사이즈는 128Byte입니다.
-* byte
-    * 1byte 정수형입니다.
-    * -128 ~ 127까지 표현 가능합니다.
-* short
-    * 2byte 정수형입니다.
-    * -32,768 ~ 32,767까지 표현 가능합니다.
-* integer
-    * 4byte 정수형입니다.
-    * -2^31 ~ 2^31 - 1까지 표현 가능합니다.
-* long
-    * 8byte 정수형입니다.
-    * -2^63 ~ 2^63 - 1까지 표현 가능합니다.
-* float
-    * 4byte 실수형입니다.    
-    * -3.4E38 ~ 3.4E38까지 표현 가능합니다.
-* double
-    * 8byte 실수형입니다.
-    * -1.7E308 ~ 1.7E308까지 표현 가능합니다.
-* boolean
-    * 1byte
-    * true or false
-* date
-    * 필드 값이 날짜인 경우 선택합니다.
-    * 지원하는 날짜 형식
-        * yyyy-MM-dd
-            * 예제) 2017-09-22
-        * yyyy-MM-dd’T’HH:mm:ss
-            * 예제) 2017-09-22T15:39:28
-        * yyyy-MM-dd’T’HH:mm:ss'Z'
-            * 예제) 2017-09-22T15:39:28Z
-        * yyyy-MM-dd'T'HH:mm:ss.SSS
-            * 예제) 2017-09-22T15:39:28.248
-        * yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
-            * 예제) 2017-09-22T15:39:28.248Z
-* text를 제외한 모든 필드 타입은 배열 형태로 입력 가능합니다.
-    * ["나이키", "아디다스"]
-    * [1.0, 2.0]
-    * ["2017-09-22T15:39:28", "2017-09-22T15:39:29"]
+![img](https://static.toastoven.net/prod_search/filed-upload-ja-20200304.jpg)
 
-### 형태소 분석
-* 형태소 분석기 선택 화면
-    ![detail-analysis-20190129](http://static.toastoven.net/prod_search/detail-analysis-20190129.png)
-* default
-    * 형태소 분석기를 이용해 단어을 분리한다.
-      * 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
-* whitespace
-    * whitespace를 구분자로 토큰을 분리한다.
-      * 예제) "나이키 신상슈즈" -> "나이키" "신상슈즈"
-* bigram
-    * 2글자씩 단어를 분리한다.
-      * 예제) "나이키 신상슈즈" -> "나이" "이키" "신상" "상슈" "슈즈"
+- 設定されたフィールドが1つもない時は**設定アップロード**ボタンが表示されます。
+
+## 詳細ガイド
+
+### フィールドタイプ
+フィールドタイプ選択画面は次のとおりです。
+
+![img](http://static.toastoven.net/prod_search/field_type-ja-20200304.jpg)
+
+- text
+    - 「検索」するフィールドの場合に選択します。
+    - 形態素解析を行います。
+        - フィールドの値が「ナイキ 運動靴」の場合、「ナイキ運動靴」、「ナイキ 運動靴」、「ナイキ」または「運動靴」で検索した時、検索結果に表示されます。
+    - 最大サイズは32,768バイトです。
+- keyword
+    - 「フィルタ」、「ソート」、「要約」するフィールドの場合に選択します。
+    - 形態素解析を行いません。
+        - フィールドの値が「ナイキ運動靴」の場合、「ナイキ運動靴」でのみ「フィルタ」、「ソート」、「要約」されます。
+        - フィールドの値が「ナイキ 運動靴」の場合、「ナイキ 運動靴」でのみ「フィルタ」、「ソート」、「要約」されます。
+    - 最大サイズは128バイトです。
+- byte
+    - 1byteの整数です。
+    - -128～127まで記憶可能です。
+- short
+    - 2byteの整数です。
+    - -32,768～32,767まで記憶可能です。
+- integer
+    - 4byteの整数です。
+    - -2^31～2^31 - 1まで記憶可能です。
+- long
+    - 8byteの整数です。
+    - -2^63～2^63 - 1まで記憶可能です。
+- float
+    - 4byteの単精度浮動小数点実数です。   
+    - -3.4E38～3.4E38まで記憶可能です。
+- double
+    - 8byteの単精度浮動小数点実数です。
+    - -1.7E308～1.7E308まで記憶可能です。
+- boolean
+    - 1byte
+    - true or false
+- date
+    - フィールドの値が日付の場合に選択します。
+    - サポートする日形式
+        - yyyy-MM-dd
+            - 例) 2017-09-22
+        - yyyy-MM-dd’T’HH:mm:ss
+            - 例) 2017-09-22T15:39:28
+        - yyyy-MM-dd’T’HH:mm:ss'Z'
+            - 例) 2017-09-22T15:39:28Z
+        - yyyy-MM-dd'T'HH:mm:ss.SSS
+            - 例) 2017-09-22T15:39:28.248
+        - yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+            - 例) 2017-09-22T15:39:28.248Z
+- textを除くすべてのフィールドタイプは、配列形式で入力できます。
+    - ["ナイキ", "アディダス"]
+    - [1.0, 2.0]
+    - ["2017-09-22T15:39:28", "2017-09-22T15:39:29"]
+
+### 形態素解析
+
+形態素解析の選択画面は次のとおりです。
+
+![img](http://static.toastoven.net/prod_search/analyzer-ja-20200304.jpg)
+
+- default
+    - 形態素解析ツールを利用して単語を分離します。
+      - 例) 「ナイキ メンズシューズ」 → 「ナイキ」 「メンズ」 「シューズ」
+- whitespace
+    - whitespaceをセパレータにしてトークンを分離します。
+      - 例) 「ナイキ メンズシューズ」 → 「ナイキ」 「メンズシューズ」
+- bigram
+    - 2文字ずつ単語を分離します。
+      - 例) 「ナイキ メンズシューズ」 → 「ナイ」  「イキ」 「メン」 「ンズ」 「ズシ」 「シュ」 「ュー」 「ーズ」
 
 ### ACL
-* ACL 설정 화면
-    ![detail-acl-20190129](http://static.toastoven.net/prod_search/detail-acl-20190129.png)
-* 입력 형식
-    * IP 형식으로 입력 가능합니다.
-        * 예제) 202.179.177.21
-    * CIDR 형식으로 입력 가능합니다.
-        * 예제) 202.179.177.0/24
-    * IP 또는 CIDR 을 여러 개 입력 가능합니다.
-        * 예제) 202.179.177.21, 202.179.177.0/24
-    * all 일 경우 모두 매칭 됩니다.
-    * 값이 비어 있을 경우 모두 매칭 안됩니다.  
-* 허용, 거부 둘 다에 매칭이 될 경우 거부됩니다.
-* 허용, 거부 둘 다에 매칭이 안될 경우 거부됩니다.
 
+ACL設定画面は次のとおりです。
 
-## 클라이언트 예제 코드
-* 파일 업로드 방식의 색인 예제 코드입니다.
+![img](http://static.toastoven.net/prod_search/acl-detail-ja-20200304.jpg)
+
+- 入力形式
+    - IP形式で入力できます。
+        - 例) 202.179.177.21
+    - CIDR形式で入力できます。
+        - 例) 202.179.177.0/24
+    - IPまたはCIDRを複数入力できます。
+        - 例) 202.179.177.21, 202.179.177.0/24
+    - allの場合、すべてマッチングされます。
+    - 値が空の場合、すべてマッチングされません。
+- 許可、拒否のどちらにも該当する場合、拒否されます。
+- 許可、拒否のどちらにも該当しない場合、拒否されます。
+
+## クライアントサンプルコード
+
+次はファイルアップロード方式のインデックスのサンプルコードです。
 
 ### java
-* dependency
+
+- dependency
+
 ``` java
 compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
 compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
 ```
-* 색인(파일 업로드 방식)
+
+- インデックス(ファイルアップロード方式)
 ``` java
 package com.toast.cloud.cloudsearch.client;
 
@@ -803,8 +983,8 @@ public class IndexingClient {
       + "    \"action\": \"add\",\n"
       + "    \"id\": \"id-1\",\n"
       + "    \"fields\": {\n"
-      + "      \"title\": \"[무료배송]나이키 슈즈 195종!!\",\n"
-      + "      \"body\": \"명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??\"\n"
+      + "      \"title\": \"[送料無料]ナイキシューズ195種！\",\n"
+      + "      \"body\": \"ナイキの人気シューズには売れているワケがあります！ナイキの人気シューズ195種★一足は必要じゃないですか？\"\n"
       + "    }\n"
       + "  }\n"
       + "]";
@@ -826,7 +1006,7 @@ public class IndexingClient {
 
       // build http request and assign multipart upload data.
       HttpUriRequest request = RequestBuilder
-    	  .post("https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing")
+    	  .post("https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
         .setEntity(data)
         .build();
 
@@ -850,7 +1030,9 @@ public class IndexingClient {
 ```
 
 ### php
-* 색인(파일 업로드 방식)
+
+- インデックス(ファイルアップロード方式)
+
 ``` php
 <?php
     $documents = ""
@@ -859,8 +1041,8 @@ public class IndexingClient {
       . "    \"action\": \"add\",\n"
       . "    \"id\": \"id-1\",\n"
       . "    \"fields\": {\n"
-      . "      \"title\": \"[무료배송]나이키 슈즈 195종!!\",\n"
-      . "      \"body\": \"명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??\"\n"
+      . "      \"title\": \"[送料無料]ナイキシューズ195種！\",\n"
+      . "      \"body\": \"ナイキの人気シューズには売れているワケがあります！ナイキの人気シューズ195種★一足は必要じゃないですか？\"\n"
       . "    }\n"
       . "  }\n"
       . "]";
@@ -877,7 +1059,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://alpha-api-search.cloud.toast.com/indexing/v1.0/appkeys/bJsVUwrftmEl4K7D/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_URL,"https://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
