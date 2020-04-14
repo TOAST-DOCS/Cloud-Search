@@ -849,6 +849,32 @@
 
 - 설정된 필드가 하나도 없을 때만 **설정 업로드** 버튼이 나타납니다.
 
+### 전체 데이터 다시 색인
+전체 데이터를 다시 색인할 때는 Full indexing API를 사용합니다.
+
+- Full indexing 시작
+    ```
+    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
+    ```
+    - 새로운 index(저장소)를 생성합니다.
+    - Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.
+- Full indexing 요청
+    ```
+    curl -XPOST 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+    ```
+    - documents-002.json, documents-003.json 등 여러 번 색인 요청을 합니다.		
+- Full indexing 반영
+    ```
+    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
+    ```
+    - 색인된 내용을 서비스에 반영합니다.
+- Full indexing 취소
+    색인된 데이터를 서비스에 반영하지 않고 취소할 때 사용합니다.
+    ```
+    curl -i -XPOST 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
+    ```
+    - 색인이 진행 중일 때는 동작하지 않습니다.
+
 ## 상세 가이드
 
 ### 필드 타입
