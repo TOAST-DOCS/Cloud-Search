@@ -867,10 +867,8 @@
     ```
     curl -i -XPOST 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
     ```
-    - 색인된 내용을 서비스에 반영합니다.
+    - 색인된 데이터를 서비스에 반영합니다.
 - Full indexing 취소
-
-    색인된 데이터를 서비스에 반영하지 않고 취소할 때 사용합니다.
     ```
     curl -i -XPOST 'http://api-7ab1617e2df0f1d1-search.cloud.toast.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
     ```
