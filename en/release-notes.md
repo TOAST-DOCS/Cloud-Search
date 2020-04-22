@@ -1,15 +1,23 @@
 ## Search > Cloud Search > Release Notes
 
+### 2020. 05. 26.
+
+- 전체 데이터를 다시 색인하는 기능을 추가했습니다.
+
 ### Mar. 24, 2020
 * Converted into Beta Service from the Alpha Service.
+- 알파 서비스에서 베타 서비스로 전환했습니다.
 
 ### Jan. 29, 2019
 * Added the statistics feature.
+- 통계 기능을 추가했습니다.
 
 ### Nov. 27, 2018
 * Added the feature of Boolean Search.  
+- 불리언 검색 기능을 추가했습니다.
     * q='Nike & (shoes | shoes) & ! Addidas'
 * Added the downloading/uploading field setting feature.
+- 필드 설정 다운로드/업로드 기능을 추가했습니다.
 
 ### Oct. 23, 2018
 * Added the payload-type indexing
