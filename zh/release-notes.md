@@ -1,5 +1,9 @@
 ## Search > Cloud Search > Release Notes
 
+### 2020. 05, 26.
+
+- 전체 데이터를 다시 색인하는 기능을 추가했습니다.
+
 ### Mar. 24, 2020
 * Converted into Beta Service from the Alpha Service.
 
