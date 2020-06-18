@@ -1,6 +1,10 @@
 ## Search > Cloud Search > Release Notes
 
-### 2020. 05, 26.
+### June. 23, 2020
+
+- 베타 서비스에서 정식 서비스로 전환했습니다.
+
+### May. 26, 2020
 
 - 전체 데이터를 다시 색인하는 기능을 추가했습니다.
 
@@ -28,20 +32,20 @@
 - Added the feature of specifying document ranks.
     - The priority of search results can be specified for a specific document.
 
-### July 24, 2018
+### July. 24, 2018
 
 - Added the feature of specifying weights in document.  
     - Specific documents can be exposed on top of search results.
 - Added the geolocation feature.
 - Added total index size and total number of documents to the index log
 
-### June 26, 2018
+### June. 26, 2018
 
 - Added bigram morpheme analyzer.
 - Added the multiple sorting feature.
 - Allowed to enter data in sequence.
 
-### May 3, 2018
+### May. 3, 2018
 
 - Modified error in morpheme analysis.
     - Different morpheme analysis methods were applied each for document indexing and search words.  
