@@ -7,7 +7,7 @@
 ## Getting Started
 First, enable the Cloud Search Service.
 
-1. Go to **TOAST Console** and click **Select Service**.
+1. Go to **NHN Cloud Console** and click **Select Service**.
 
 2. Click **Cloud Search**.
 
@@ -15,7 +15,7 @@ First, enable the Cloud Search Service.
 
 Do as follows to check if service is enabled:
 
-1. Click **Search** on the left menu on **TOAST Console**.
+1. Click **Search** on the left menu on **NHN Cloud Console**.
 2. If you can find **Cloud Search**, the service has been enabled.
 
 ![img](http://static.toastoven.net/prod_search/product-use-03-en-20200304.jpg)
