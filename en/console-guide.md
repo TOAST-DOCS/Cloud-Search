@@ -11,14 +11,14 @@ First, enable the Cloud Search Service.
 
 2. Click **Cloud Search**.
 
-![img](http://static.toastoven.net/prod_search/product-use-02-en-20200304.jpg)<br>
+![img](http://static.toastoven.net/prod_search/product-use-02-en-20210506.jpg)<br>
 
 Do as follows to check if service is enabled:
 
 1. Click **Search** on the left menu on **TOAST Console**.
 2. If you can find **Cloud Search**, the service has been enabled.
 
-![img](http://static.toastoven.net/prod_search/product-use-03-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/product-use-03-en-20210506.jpg)
 
 ## Basic Usage
 
@@ -35,13 +35,13 @@ Do as follows to check if service is enabled:
 
 3. Click **Save**.
 
-![img](http://static.toastoven.net/prod_search/domain_create_prodedure-en-20200304.jpg)<br>
+![img](http://static.toastoven.net/prod_search/domain_create_prodedure-en-20210506.jpg)<br>
 
 Check the result of service creation.
 
 1. Click Service ID which is created (test).
 
-![img](http://static.toastoven.net/prod_search/domain_create_result-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/domain_create_result-en-20210506.jpg)
 
 
 ### 2. Setting Fields
