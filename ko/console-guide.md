@@ -11,7 +11,7 @@
 
 2. **Cloud Search**를 클릭합니다.
 
-![img](http://static.toastoven.net/prod_search/product-use-02-ko-20200304.jpg)<br>
+![img](http://static.toastoven.net/prod_search/product-use-02-ko-20210506.jpg)<br>
 
 서비스가 활성화되었는지 확인하는 방법은 다음과 같습니다.
 
@@ -19,7 +19,7 @@
 
 2. **Cloud Search**가 보이면 서비스가 활성화된 것입니다.
 
-![img](http://static.toastoven.net/prod_search/product-use-03-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/product-use-03-ko-20210506.jpg)
 
 ## 기본 사용법
 
@@ -37,13 +37,13 @@
 
 3. **저장** 버튼을 클릭합니다.
 
-![img](http://static.toastoven.net/prod_search/domain_create_prodedure-ko-20200304.jpg)<br>
+![img](http://static.toastoven.net/prod_search/domain_create_prodedure-ko-20210506.jpg)<br>
 
 생성된 서비스 결과를 확인합니다.
 
 1. 생성된 서비스 ID(test)를 클릭합니다.
 
-![img](http://static.toastoven.net/prod_search/domain_create_result-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/domain_create_result-ko-20210506.jpg)
 
 
 ### 2. 필드 설정

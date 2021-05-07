@@ -11,7 +11,7 @@
 
 2. **Cloud Search**をクリックします。
 
-![img](http://static.toastoven.net/prod_search/product-use-02-ja-20200304.jpg)<br>
+![img](http://static.toastoven.net/prod_search/product-use-02-ja-20210506.jpg)<br>
 
 サービスが有効化されているかを確認する方法は次のとおりです。
 
@@ -19,7 +19,7 @@
 
 2. **Cloud Search**が表示されたらサービスが有効になっているということです。
 
-![img](http://static.toastoven.net/prod_search/product-use-03-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/product-use-03-ja-20210506.jpg)
 
 ## 基本使用方法
 
@@ -37,13 +37,13 @@
 
 3. **保存**ボタンをクリックします。
 
-![img](http://static.toastoven.net/prod_search/domain_create_prodedure-ja-20200304.jpg)<br>
+![img](http://static.toastoven.net/prod_search/domain_create_prodedure-ja-20210506.jpg)<br>
 
 作成されたサービス結果を確認します。
 
 1. 作成されたサービスID(test)をクリックします。
 
-![img](http://static.toastoven.net/prod_search/domain_create_result-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/domain_create_result-ja-20210506.jpg)
 
 
 ### 2. フィールド設定
