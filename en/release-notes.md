@@ -1,5 +1,8 @@
 ## Search > Cloud Search > Release Notes
 
+### 2021. 11. 23
+- 한국어 분석기 사전을 갱신했습니다.
+
 ### June 23, 2020
 
 - Converted into Official Service from the Beta version.
