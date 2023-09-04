@@ -1,6 +1,6 @@
-## Search > Cloud Search > 콘솔 사용 가이드
+## Search > Cloud Search > 콘솔 사용 가이드 dev
 
-## 알아두기 dev
+## 알아두기
 - 문서 내의 호스트명 'api-7ab1617e2df0f1d1-search.cloud.toast.com'은 사용자별로 다를 수 있습니다.
 - 문서 내의 앱키 'EMKPutYozUttWVY2'는 사용자별로 다릅니다.
 
