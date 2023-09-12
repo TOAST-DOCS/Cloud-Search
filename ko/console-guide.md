@@ -74,7 +74,7 @@
 
 9. **저장** 버튼을 클릭합니다.
 
-![img](http://static.toastoven.net/prod_search/field_create_procedure-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/field_create_procedure-ko-20230831.jpg)
 
 ### 3. 색인
 
@@ -542,7 +542,8 @@
 2. 'text' 타입의 경우 정렬 기능을 지원하지 않습니다.
 3. 다중값을 사용할 경우 정렬 기능을 지원하지 않습니다.
 
-![img](http://static.toastoven.net/prod_search/sorting-field-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-field-01-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-field-02-ko-20230831.jpg)
 
 - 정렬이 체크된 필드만 기능을 사용할 수 있습니다.
 
@@ -856,7 +857,7 @@
 
 1. **설정 업로드** 버튼을 클릭해서 설정을 업로드합니다.
 
-![img](https://static.toastoven.net/prod_search/filed-upload-ko-20200304.jpg)
+![img](https://static.toastoven.net/prod_search/filed-upload-ko-20230831.jpg)
 
 - 설정된 필드가 하나도 없을 때만 **설정 업로드** 버튼이 나타납니다.
 
