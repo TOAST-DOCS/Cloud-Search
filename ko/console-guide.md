@@ -606,7 +606,8 @@
    - "asc" : 올림차순 정렬
    - "desc" : 내림차순 정렬
 
-![img](http://static.toastoven.net/prod_search/sorting-search-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-search-01-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-search-02-ko-20230831.jpg)
 
 - 1개의 정렬 필드만 선택 가능합니다.
 
