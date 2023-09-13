@@ -543,7 +543,6 @@
 3. 다중값을 사용할 경우 정렬 기능을 지원하지 않습니다.
 
 ![img](http://static.toastoven.net/prod_search/sorting-field-01-ko-20230831.jpg)
-![img](http://static.toastoven.net/prod_search/sorting-field-02-ko-20230831.jpg)
 
 - 정렬이 체크된 필드만 기능을 사용할 수 있습니다.
 
@@ -555,7 +554,7 @@
    - 선택 순서대로 정렬합니다.
 3. 각 필드의 정렬 방식을 선택합니다.
 
-![img](http://static.toastoven.net/prod_search/sorting-field-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-field-02-ko-20230831.jpg)
 
 - 2개 이상 필드의 정렬이 체크된 경우에 기능을 사용할 수 있습니다.
 
