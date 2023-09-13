@@ -740,7 +740,8 @@
 
 - "나이키"로 검색합니다.
 
-![img](http://static.toastoven.net/prod_search/document_boosting-search-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-01-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-02-ko-20230831.jpg)
 
 **검색 결과**
 
