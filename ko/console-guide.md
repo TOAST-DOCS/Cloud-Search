@@ -156,12 +156,12 @@
   - Request
     - 파일 업로드 방식
       ````
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
           ```
       ````
     - 페이로드(payload) 방식
       ```
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
       [
         {
           "action": "add",
@@ -190,7 +190,7 @@
 - 색인 결과 확인 API
   - Request
     ```
-    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
+    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
     ```
     - id 1은 위의 색인 API Response의 id입니다.
   - Response
@@ -262,7 +262,7 @@
 
 - Request
   ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ko' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ko' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
   ```
 - Response
   ```
@@ -326,7 +326,7 @@
 
 - Request
   ```
-  curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ko'
+  curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ko'
   ```
   - kind
     - total_query_count : 전체 쿼리수
@@ -773,7 +773,7 @@
 
 - doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
   ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
   ```
   - 0.0~1.0 사이의 값을 입력할 수 있습니다.
   - default는 1.0입니다.
@@ -868,23 +868,23 @@
 
 - Full indexing 시작
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
   ```
   - 새로운 index(저장소)가 생성됩니다.
   - Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.
 - Full indexing 요청
   ```
-  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
   ```
   - documents-002.json, documents-003.json 등 여러 번 색인 요청을 합니다.
 - Full indexing 반영
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
   ```
   - 색인된 데이터를 서비스에 반영합니다.
 - Full indexing 취소
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
   ```
   - 색인이 진행 중일 때는 동작하지 않습니다.
 
@@ -1056,7 +1056,7 @@ public class IndexingClient {
 
       // build http request and assign multipart upload data.
       HttpUriRequest request = RequestBuilder
-    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
+    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
         .setEntity(data)
         .build();
 
@@ -1109,7 +1109,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
