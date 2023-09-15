@@ -74,7 +74,7 @@
 
 9. **저장** 버튼을 클릭합니다.
 
-![img](http://static.toastoven.net/prod_search/field_create_procedure-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/field_create_procedure-ko-20230831.jpg)
 
 ### 3. 색인
 
@@ -542,7 +542,21 @@
 2. 'text' 타입의 경우 정렬 기능을 지원하지 않습니다.
 3. 다중 값을 사용할 경우 정렬 기능을 지원하지 않습니다.
 
-![img](http://static.toastoven.net/prod_search/sorting-field-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-field-01-ko-20230831.jpg)
+
+- 정렬이 체크된 필드만 기능을 사용할 수 있습니다.
+
+**다중정렬 설정**
+
+1. 필드명을 입력합니다.
+2. 대상 필드를 추가 후 선택해 순서를 조정합니다.
+   - 정렬이 2개 이상일 때 정렬 필드가 출력됩니다.
+   - 선택 순서대로 정렬합니다.
+3. 각 필드의 정렬 방식을 선택합니다.
+
+![img](http://static.toastoven.net/prod_search/sorting-field-02-ko-20230831.jpg)
+
+- 2개 이상 필드의 정렬이 체크된 경우에 기능을 사용할 수 있습니다.
 
 - 정렬이 체크된 필드만 기능을 사용할 수 있습니다.
 
@@ -606,7 +620,8 @@
    - "asc": 오름차순 정렬
    - "desc": 내림차순 정렬
 
-![img](http://static.toastoven.net/prod_search/sorting-search-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-search-01-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-search-02-ko-20230831.jpg)
 
 - 1개의 정렬 필드만 선택 가능합니다.
 
@@ -740,7 +755,8 @@
 
 - "나이키"로 검색합니다.
 
-![img](http://static.toastoven.net/prod_search/document_boosting-search-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-01-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-02-ko-20230831.jpg)
 
 **검색 결과**
 
@@ -856,7 +872,7 @@
 
 1. **설정 업로드** 버튼을 클릭해서 설정을 업로드합니다.
 
-![img](https://static.toastoven.net/prod_search/filed-upload-ko-20200304.jpg)
+![img](https://static.toastoven.net/prod_search/filed-upload-ko-20230831.jpg)
 
 - 설정된 필드가 하나도 없을 때만 **설정 업로드** 버튼이 나타납니다.
 
