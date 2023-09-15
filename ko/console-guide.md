@@ -1,4 +1,4 @@
-## Search > Cloud Search > 콘솔 사용 가이드
+## Search > Cloud Search > 콘솔 사용 가이드 dev test
 
 ## 알아두기
 
@@ -555,6 +555,20 @@
 3. 각 필드의 정렬 방식을 선택합니다.
 
 ![img](http://static.toastoven.net/prod_search/sorting-field-02-ko-20230831.jpg)
+
+- 2개 이상 필드의 정렬이 체크된 경우에 기능을 사용할 수 있습니다.
+
+- 정렬이 체크된 필드만 기능을 사용할 수 있습니다.
+
+**다중정렬 설정**
+
+1. 필드명을 입력합니다.
+2. 대상 필드를 추가 후 선택해 순서를 조정합니다.
+   - 정렬을 2개 이상 되면 출력됩니다.
+   - 선택 순서대로 정렬합니다.
+3. 각 필드의 정렬 방식을 선택합니다.
+
+![img](http://static.toastoven.net/prod_search/sorting-field-ko-20230831.jpg)
 
 - 2개 이상 필드의 정렬이 체크된 경우에 기능을 사용할 수 있습니다.
 
