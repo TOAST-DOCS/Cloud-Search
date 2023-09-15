@@ -1,4 +1,4 @@
-## Search > Cloud Search > 콘솔 사용 가이드 dev test
+## Search > Cloud Search > 콘솔 사용 가이드
 
 ## 알아두기
 
@@ -60,7 +60,7 @@
    - 숫자, \_(밑줄), -(하이픈)로 시작할 수 없습니다.
    - 최소 두 글자 이상 가능합니다.
 
-4. 다중값 사용 여부를 체크합니다.
+4. 다중 값 사용 여부를 체크합니다.
 
    - 필드 값의 구분자는 ,(쉼표)만 사용 가능하며 최대 30개까지 사용할 수 있습니다.
 
@@ -84,7 +84,7 @@
 
 - 아래 예제와 같은 형식으로 색인 요청 파일을 생성합니다.
 - 색인할 파일은 UTF-8로 생성해야 합니다.
-  - Windows 메모장에서 파일 저장시 인코딩을 UTF-8로 지정해서 저장합니다.
+  - Windows 메모장에서 파일 저장 시 인코딩을 UTF-8로 지정해서 저장합니다.
 - 예제에서는 data/documents.json 이름으로 생성했습니다.
 
 ```
@@ -118,14 +118,14 @@
 
 - 파일 설명
   - action
-    - add : 해당 문서가 추가됩니다.
+    - add: 해당 문서가 추가됩니다.
       - 기존에 동일한 id가 존재하면 업데이트 됩니다.
-    - delete : 해당 문서가 삭제됩니다.
+    - delete: 해당 문서가 삭제됩니다.
   - id
-    - 문서의 고유한 ID입니다.
+    - 문서의 고유한 id입니다.
     - id의 타입은 문자열입니다.
-  - 최대 파일 사이즈는 8Mb입니다.
-    - 8Mb 이상의 데이터는 여러 개로 나누어서 색인해야 합니다.
+  - 최대 파일 사이즈는 8MB입니다.
+    - 8MB 이상의 데이터는 여러 개로 나누어서 색인해야 합니다.
 
 **색인 방법**
 
@@ -139,7 +139,7 @@
 
 5. 색인 명령어가 REST API로 출력됩니다.
 
-   - REST API를 이용해서 검색 서비스를 개발하시면 됩니다.
+   - REST API를 이용하여 검색 서비스를 개발할 수 있습니다.
 
 6. **색인** 버튼을 클릭합니다.
 
@@ -156,12 +156,12 @@
   - Request
     - 파일 업로드 방식
       ````
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
           ```
       ````
     - 페이로드(payload) 방식
       ```
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
       [
         {
           "action": "add",
@@ -184,30 +184,30 @@
   - Response
     ```
     {
-      "id" : 1
+      "id": 1
     }
     ```
 - 색인 결과 확인 API
   - Request
     ```
-    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
+    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
     ```
     - id 1은 위의 색인 API Response의 id입니다.
   - Response
     ```
     {
-      "request_time" : "2017-10-23T12:36:43",
-      "file_name" : "documents.json",
-      "file_size" : 1185,
-      "status" : 4
+      "request_time": "2017-10-23T12:36:43",
+      "file_name": "documents.json",
+      "file_size": 1185,
+      "status": 4
     }
     ```
     - status
-      - 1 : 대기 중
-      - 2 : 무시됨(필드 설정 변경 이전의 색인 요청은 무시됨)
-      - 3 : 진행 중
-      - 4 : 성공
-      - 5 : 실패
+      - 1: 대기 중
+      - 2: 무시됨(필드 설정 변경 이전의 색인 요청은 무시됨)
+      - 3: 진행 중
+      - 4: 성공
+      - 5: 실패
 
 ### 4. 검색
 
@@ -250,7 +250,7 @@
 
 14. 2~11번까지 설정한 내용이 REST API로 출력됩니다.
 
-    - REST API를 이용해서 검색 서비스를 개발하시면 됩니다.
+    - REST API를 이용하여 검색 서비스를 개발할 수 있습니다.
 
 15. 검색 결과가 출력됩니다.
 
@@ -262,32 +262,32 @@
 
 - Request
   ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ko' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ko' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
   ```
 - Response
   ```
   {
-    "message" : {
-        "meta" : {
-          "timezone" : "+09:00"
+    "message": {
+        "meta": {
+          "timezone": "+09:00"
         },
-        "result" : {
-          "status" : {
-          "code" : 200,
-          "message" : "OK"
+        "result": {
+          "status": {
+          "code": 200,
+          "message": "OK"
         },
-        "query" : "나이키 운동화",
-        "start" : 1,
-        "itemCount" : 1,
-        "total" : 1,
-        "itemList" : {
-          "item" : [
+        "query": "나이키 운동화",
+        "start": 1,
+        "itemCount": 1,
+        "total": 1,
+        "itemList": {
+          "item": [
           {
-            "_RELEVANCE" : 0.07575758,
-            "_RANK" : 1,
-            "_ID" : "id-2",
-            "body" : "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
-            "title" : "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
+            "_RELEVANCE": 0.07575758,
+            "_RANK": 1,
+            "_ID": "id-2",
+            "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
+            "title": "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
           }
           ]
         }
@@ -326,12 +326,12 @@
 
 - Request
   ```
-  curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ko'
+  curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ko'
   ```
   - kind
-    - total_query_count : 전체 쿼리수
-    - no_result_query_count : 검색 결과 없는 쿼리수
-  - date : 조회할 날짜
+    - total_query_count: 전체 쿼리수
+    - no_result_query_count: 검색 결과 없는 쿼리수
+  - date: 조회할 날짜
 - Response
   ```
   [ [ "나이키", 8 ], [ "아디다스", 4 ] ]
@@ -347,7 +347,7 @@
 
 **ACL 설정 방법**
 
-아래는 IP 주소가 202.179.177.21인 경우에만 색인이 가능하고 검색 요청은 모든 IP에서 가능하도록 설정한 예입니다. 쿼리 통계 데이터 다운로드 요청는 모든 IP에서 가능하도록 설정한 예제입니다.
+아래는 IP 주소가 202.179.177.21인 경우에만 색인이 가능하고 검색 요청은 모든 IP에서 가능하도록 설정한 예입니다. 쿼리 통계 데이터 다운로드 요청은 모든 IP에서 가능하도록 설정한 예제입니다.
 
 1. **ACL** 탭을 클릭합니다.
 
@@ -406,16 +406,16 @@
   "action": "add",
   "id": "id-1",
   "fields": {
-    "name" : "나이키 에어맥스",
-    "category" : 1
+    "name": "나이키 에어맥스",
+    "category": 1
   }
 },
 {
   "action": "add",
   "id": "id-2",
   "fields": {
-    "name" : "나이키 샤이엔 솔리드",
-    "category" : 2
+    "name": "나이키 샤이엔 솔리드",
+    "category": 2
   }
 }
 ]
@@ -427,10 +427,10 @@
 
 ![img](http://static.toastoven.net/prod_search/filtering-search-ko-20230831.jpg)
 
-필터링값 입력 방법입니다.
+필터링 값 입력 방법입니다.
 
-1. filter_and : 단일값 필터링, 필터 필드 간 and 연산 필요 시 사용합니다.
-2. filter_or : 필터 필드 간 or 연산 필요 시 v2사용합니다.
+1. filter_and: 단일값 필터링, 필터 필드 간 and 연산 필요시 사용합니다.
+2. filter_or: 필터 필드 간 or 연산 필요시 사용합니다.
    - 범위 지정, 위경도 필터링에 사용할 수 없습니다.
 
 - 단일값 필터링
@@ -489,24 +489,24 @@
   "action": "add",
   "id": "id-1",
   "fields": {
-    "name" : "에프엑스수학학원",
-    "location" : [10.1, 10.1]
+    "name": "에프엑스수학학원",
+    "location": [10.1, 10.1]
   }
 },
 {
   "action": "add",
   "id": "id-2",
   "fields": {
-    "name" : "좋은나무 사고력수학학원",
-    "location" : [10.3, 10.4]
+    "name": "좋은나무 사고력수학학원",
+    "location": [10.3, 10.4]
   }
 },
 {
   "action": "add",
   "id": "id-3",
   "fields": {
-    "name" : "수학의아침학원",
-    "location" : [10.4, 10.3]
+    "name": "수학의아침학원",
+    "location": [10.4, 10.3]
   }
 }
 ]
@@ -518,8 +518,8 @@
 
 - 반경(circle) 필터링
   1. 필터링 값을 입력합니다.
-     - 형식 : [{경도},{위도}],{반경}
-     - 예제 : [10.3,10.3],15km
+     - 형식: [{경도},{위도}],{반경}
+     - 예제: [10.3,10.3],15km
        - 경도 10.3, 위도 10.3 중심으로 반경 15km 이내인 문서만 검색됩니다.
        - 반경 단위는 'km', 'm', 'cm'를 사용할 수 있습니다.
 
@@ -527,8 +527,8 @@
 
 - 영역(polygon) 필터링
   1. 필터링 값을 입력합니다.
-     - 형식 : [{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
-     - 예제 : [10.2,10.2],[10.3,10.5],[10.5,10.2]
+     - 형식: [{경도 1},{위도 1}],[{경도 2},{위도 2}],[{경도 N},{위도 N}]
+     - 예제: [10.2,10.2],[10.3,10.5],[10.5,10.2]
      - 각 점들은 시계 방향으로 연결됩니다.
      - 연결된 다각형 내의 문서만 검색됩니다.
 
@@ -540,17 +540,17 @@
 
 1. 대상 필드의 정렬 사용 여부를 체크합니다.
 2. 'text' 타입의 경우 정렬 기능을 지원하지 않습니다.
-3. 다중값을 사용할 경우 정렬 기능을 지원하지 않습니다.
+3. 다중 값을 사용할 경우 정렬 기능을 지원하지 않습니다.
 
 ![img](http://static.toastoven.net/prod_search/sorting-field-ko-20200304.jpg)
 
 - 정렬이 체크된 필드만 기능을 사용할 수 있습니다.
 
-**다중정렬 설정**
+**다중 정렬 설정**
 
 1. 필드명을 입력합니다.
 2. 대상 필드를 추가 후 선택해 순서를 조정합니다.
-   - 정렬을 2개 이상 되면 출력됩니다.
+   - 정렬이 2개 이상 되면 출력됩니다.
    - 선택 순서대로 정렬합니다.
 3. 각 필드의 정렬 방식을 선택합니다.
 
@@ -568,27 +568,27 @@
   "action": "add",
   "id": "id-1",
   "fields": {
-    "name" : "나이키 에어맥스",
-    "popular" : 10,
-    "price" : 84180
+    "name": "나이키 에어맥스",
+    "popular": 10,
+    "price": 84180
   }
 },
 {
   "action": "add",
   "id": "id-2",
   "fields": {
-    "name" : "나이키 에어줌",
-    "popular" : 5,
-    "price" : 97200
+    "name": "나이키 에어줌",
+    "popular": 5,
+    "price": 97200
   }
 },
 {
   "action": "add",
   "id": "id-3",
   "fields": {
-    "name" : "나이키 에어포스",
-    "popular" : 5,
-    "price" : 74680
+    "name": "나이키 에어포스",
+    "popular": 5,
+    "price": 74680
   }
 }
 ]
@@ -598,13 +598,13 @@
 
 1. 정렬 필드를 선택 후 방식을 지정합니다.
 
-   - "asc" : 올림차순 정렬
-   - "desc" : 내림차순 정렬
+   - "asc": 오름차순 정렬
+   - "desc": 내림차순 정렬
 
-2. 다중정렬 필드를 선택 후 방식을 지정합니다.
+2. 다중 정렬 필드를 선택 후 방식을 지정합니다.
 
-   - "asc" : 올림차순 정렬
-   - "desc" : 내림차순 정렬
+   - "asc": 오름차순 정렬
+   - "desc": 내림차순 정렬
 
 ![img](http://static.toastoven.net/prod_search/sorting-search-ko-20230831.jpg)
 
@@ -631,24 +631,24 @@
   "action": "add",
   "id": "id-1",
   "fields": {
-    "name" : "나이키 에어맥스",
-    "category" : "신발"
+    "name": "나이키 에어맥스",
+    "category": "신발"
   }
 },
 {
   "action": "add",
   "id": "id-2",
   "fields": {
-    "name" : "나이키 에어줌",
-    "category" : "신발"
+    "name": "나이키 에어줌",
+    "category": "신발"
   }
 },
 {
   "action": "add",
   "id": "id-3",
   "fields": {
-    "name" : "나이키 스우시 반팔티",
-    "category" : "의류"
+    "name": "나이키 스우시 반팔티",
+    "category": "의류"
   }
 }
 ]
@@ -656,7 +656,7 @@
 
 **검색**
 
-1. "category" 필드의 '요약'을 체크합니다.
+1. category 필드의 '요약'을 체크합니다.
 
 ![img](http://static.toastoven.net/prod_search/aggregation-field-ko-20230831.jpg)
 
@@ -672,9 +672,9 @@
 ```
 
 - 검색 결과와 함께 요약 정보가 출력됩니다.
-- "category"가 "신발"인 검색 결과가 2건, "의류"인 검색 결과가 1건이라는 의미입니다.
+- category가 '신발'인 검색 결과가 2건, '의류'인 검색 결과가 1건이라는 의미입니다.
 - 요약 가능한 타입
-  - text 및 geo_point 타입은 요약 기능을 사용할 수 없습니다.
+  - 'text' 및 'geo_point' 타입은 요약 기능을 사용할 수 없습니다.
 
 ### 불리언 쿼리
 
@@ -692,21 +692,21 @@
   "action": "add",
   "id": "id-1",
   "fields": {
-    "title" : "나이키 신발"
+    "title": "나이키 신발"
   }
 },
 {
   "action": "add",
   "id": "id-2",
   "fields": {
-    "title" : "나이키 슈즈"
+    "title": "나이키 슈즈"
   }
 },
 {
   "action": "add",
   "id": "id-3",
   "fields": {
-    "title" : "나이키 가방"
+    "title": "나이키 가방"
   }
 }
 ]
@@ -730,7 +730,7 @@
     - "인기 나이키신발 할인"
   - 검색이 안되는 검색 대상
     - "인기 나이키 할인 신발"
-      - "나이키"와 "신발" 사이에 다른 단어가 들어 있기 때문임
+      - "나이키"와 "신발" 사이에 다른 단어를 포함하고 있기 때문임
     - "인기 신발 나이키 할인"
       - "나이키"와 "신발"의 순서가 다르기 때문임
 
@@ -771,7 +771,7 @@
 
 - doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
   ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
   ```
   - 0.0~1.0 사이의 값을 입력할 수 있습니다.
   - default는 1.0입니다.
@@ -797,7 +797,7 @@
     "id": "id-1",
     "ranking": 2,
     "fields": {
-      "title" : "나이키"
+      "title": "나이키"
     }
   },
   {
@@ -805,7 +805,7 @@
     "id": "id-2",
     "ranking": 1,
     "fields": {
-      "title" : "나이키"
+      "title": "나이키"
     }
   }
 ]
@@ -866,23 +866,23 @@
 
 - Full indexing 시작
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
   ```
   - 새로운 index(저장소)가 생성됩니다.
   - Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.
 - Full indexing 요청
   ```
-  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
   ```
   - documents-002.json, documents-003.json 등 여러 번 색인 요청을 합니다.
 - Full indexing 반영
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
   ```
   - 색인된 데이터를 서비스에 반영합니다.
 - Full indexing 취소
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
   ```
   - 색인이 진행 중일 때는 동작하지 않습니다.
 
@@ -951,7 +951,7 @@
 ![img](http://static.toastoven.net/prod_search/analyzer-ko-20230831.jpg)
 
 - default
-  - 형태소 분석기를 이용해 단어을 분리합니다.
+  - 형태소 분석기를 이용해 단어를 분리합니다.
     - 예제) "나이키 신상슈즈" -> "나이키" "신상" "슈즈"
 - whitespace
   - whitespace를 구분자로 토큰을 분리합니다.
@@ -985,7 +985,7 @@ ACL 설정 화면은 다음과 같습니다.
   - all일 경우 모두 매칭됩니다.
   - 값이 비어 있을 경우 모두 매칭 안 됩니다.
 - 허용, 거부 둘 다에 해당되면 거부됩니다.
-- 허용, 거부 둘 다에 해당되지않으면 거부됩니다.
+- 허용, 거부 둘 다에 해당되지 않으면 거부됩니다.
 
 ## 클라이언트 예제 코드
 
@@ -1054,7 +1054,7 @@ public class IndexingClient {
 
       // build http request and assign multipart upload data.
       HttpUriRequest request = RequestBuilder
-    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
+    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
         .setEntity(data)
         .build();
 
@@ -1107,7 +1107,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
