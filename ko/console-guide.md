@@ -74,7 +74,7 @@
 
 9. **저장** 버튼을 클릭합니다.
 
-![img](http://static.toastoven.net/prod_search/field_create_procedure-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/field_create_procedure-ko-20230831.jpg)
 
 ### 3. 색인
 
@@ -156,12 +156,12 @@
   - Request
     - 파일 업로드 방식
       ````
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
           ```
       ````
     - 페이로드(payload) 방식
       ```
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
       [
         {
           "action": "add",
@@ -190,7 +190,7 @@
 - 색인 결과 확인 API
   - Request
     ```
-    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
+    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
     ```
     - id 1은 위의 색인 API Response의 id입니다.
   - Response
@@ -262,7 +262,7 @@
 
 - Request
   ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ko' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ko' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
   ```
 - Response
   ```
@@ -326,7 +326,7 @@
 
 - Request
   ```
-  curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ko'
+  curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ko'
   ```
   - kind
     - total_query_count : 전체 쿼리수
@@ -542,7 +542,21 @@
 2. 'text' 타입의 경우 정렬 기능을 지원하지 않습니다.
 3. 다중값을 사용할 경우 정렬 기능을 지원하지 않습니다.
 
-![img](http://static.toastoven.net/prod_search/sorting-field-ko-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-field-01-ko-20230831.jpg)
+
+- 정렬이 체크된 필드만 기능을 사용할 수 있습니다.
+
+**다중정렬 설정**
+
+1. 필드명을 입력합니다.
+2. 대상 필드를 추가 후 선택해 순서를 조정합니다.
+   - 정렬이 2개 이상일 때 정렬 필드가 출력됩니다.
+   - 선택 순서대로 정렬합니다.
+3. 각 필드의 정렬 방식을 선택합니다.
+
+![img](http://static.toastoven.net/prod_search/sorting-field-02-ko-20230831.jpg)
+
+- 2개 이상 필드의 정렬이 체크된 경우에 기능을 사용할 수 있습니다.
 
 - 정렬이 체크된 필드만 기능을 사용할 수 있습니다.
 
@@ -606,7 +620,8 @@
    - "asc" : 올림차순 정렬
    - "desc" : 내림차순 정렬
 
-![img](http://static.toastoven.net/prod_search/sorting-search-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-search-01-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-search-02-ko-20230831.jpg)
 
 - 1개의 정렬 필드만 선택 가능합니다.
 
@@ -740,7 +755,8 @@
 
 - "나이키"로 검색합니다.
 
-![img](http://static.toastoven.net/prod_search/document_boosting-search-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-01-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-02-ko-20230831.jpg)
 
 **검색 결과**
 
@@ -771,7 +787,7 @@
 
 - doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
   ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
   ```
   - 0.0~1.0 사이의 값을 입력할 수 있습니다.
   - default는 1.0입니다.
@@ -856,7 +872,7 @@
 
 1. **설정 업로드** 버튼을 클릭해서 설정을 업로드합니다.
 
-![img](https://static.toastoven.net/prod_search/filed-upload-ko-20200304.jpg)
+![img](https://static.toastoven.net/prod_search/filed-upload-ko-20230831.jpg)
 
 - 설정된 필드가 하나도 없을 때만 **설정 업로드** 버튼이 나타납니다.
 
@@ -866,23 +882,23 @@
 
 - Full indexing 시작
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
   ```
   - 새로운 index(저장소)가 생성됩니다.
   - Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.
 - Full indexing 요청
   ```
-  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
   ```
   - documents-002.json, documents-003.json 등 여러 번 색인 요청을 합니다.
 - Full indexing 반영
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
   ```
   - 색인된 데이터를 서비스에 반영합니다.
 - Full indexing 취소
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
   ```
   - 색인이 진행 중일 때는 동작하지 않습니다.
 
@@ -1054,7 +1070,7 @@ public class IndexingClient {
 
       // build http request and assign multipart upload data.
       HttpUriRequest request = RequestBuilder
-    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
+    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
         .setEntity(data)
         .build();
 
@@ -1107,7 +1123,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
