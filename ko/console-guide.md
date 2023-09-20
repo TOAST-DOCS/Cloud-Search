@@ -554,7 +554,7 @@
    - 선택 순서대로 정렬합니다.
 3. 각 필드의 정렬 방식을 선택합니다.
 
-![img](http://static.toastoven.net/prod_search/sorting-field-02-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-field-02-ko-20230920.jpg)
 
 - 2개 이상 필드의 정렬이 체크된 경우에 기능을 사용할 수 있습니다.
 
