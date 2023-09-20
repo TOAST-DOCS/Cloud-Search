@@ -659,7 +659,7 @@
 
 1. category 필드의 '요약'을 체크합니다.
 
-![img](http://static.toastoven.net/prod_search/aggregation-field-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/aggregation-search-ko-20230831.jpg)
 
 **요약 결과**
 
