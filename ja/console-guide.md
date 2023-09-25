@@ -74,7 +74,7 @@
 
 9. **保存**ボタンをクリックします。
 
-![img](http://static.toastoven.net/prod_search/field_create_procedure-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/field_create_procedure-ja-20230831.jpg)
 
 ### 3. インデックス
 
@@ -145,8 +145,8 @@
 
 7. インデックス結果を確認します。
 
-![img](http://static.toastoven.net/prod_search/indexing_procedure_01-ko-20230831.jpg)
-![img](http://static.toastoven.net/prod_search/indexing_procedure_02-ko-20230831.jpg)<br>
+![img](http://static.toastoven.net/prod_search/indexing_procedure_01-ja-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/indexing_procedure_02-ja-20230831.jpg)<br>
 
 **REST API**
 
@@ -156,12 +156,12 @@
   - Request
     - ファイルアップロード方式
       ````
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
           ```
       ````
     - ペイロード(payload)方式
       ```
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
       [
         {
           "action": "add",
@@ -190,7 +190,7 @@
 - インデックス結果確認API
   - Request
     ```
-    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
+    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ja'
     ```
     - id 1は上のインデックスAPI Responseのidです。
   - Response
@@ -262,7 +262,7 @@
 
 - Request
   ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ko' --data-urlencode q='ナイキ 運動靴' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ja' --data-urlencode q='ナイキ 運動靴' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ja'
   ```
 - Response
   ```
@@ -326,7 +326,7 @@
 
 - Request
   ```
-  curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ko'
+  curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ja'
   ```
   - kind
     - total_query_count ：全クエリー数
@@ -377,9 +377,9 @@
 
     - 再インデックス中は文書の追加、修正、削除ができません。
 
-![img](http://static.toastoven.net/prod_search/field_delete-1-ko-20230831.jpg)
-![img](http://static.toastoven.net/prod_search/field_delete-2-ko-20230831.jpg)
-![img](http://static.toastoven.net/prod_search/field_delete-3-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/field_delete-1-ja-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/field_delete-2-ja-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/field_delete-3-ja-20230831.jpg)
 
 ### フィールドの修正
 
@@ -392,7 +392,7 @@
 1. 対象フィールドのフィルタを使用するかどうかをチェックします。
 2. 'text'タイプの場合はフィルタ機能をサポートしません。
 
-![img](http://static.toastoven.net/prod_search/filtering-field-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/filtering-field-ja-20230831.jpg)
 
 - フィルタがチェックされたフィールドのみ機能を使用できます。
 
@@ -542,7 +542,7 @@
 2. 'text'タイプの場合はソート機能をサポートしません。
 3. 多重値を使用する場合はソート機能をサポートしません。
 
-![img](http://static.toastoven.net/prod_search/sorting-field-ja-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-field-ja-20230831.jpg)
 
 - ソートがチェックされたフィールドのみ機能を使用できます。
 
@@ -554,7 +554,7 @@
    - 選択順序通りにソートします。
 3. 各フィールドのソート方式を選択します。
 
-![img](http://static.toastoven.net/prod_search/sorting-field-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-field-ja-20230920.jpg)
 
 - 2つ以上のフィールドのソートがチェックされた場合に機能を使用できます。
 
@@ -606,7 +606,8 @@
    - "asc"：昇順ソート
    - "desc"：降順ソート
 
-![img](http://static.toastoven.net/prod_search/sorting-search-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-search-01-ja-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-search-02-ja-20230831.jpg)
 
 - 1つのソートフィールドのみ選択可能です。
 
@@ -617,7 +618,7 @@
 1. 対象フィールドの要約を使用するかどうかをチェックします。
 2. 'text', 'geo_point'タイプの場合、要約機能をサポートしません。
 
-![img](http://static.toastoven.net/prod_search/aggregation-field-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/aggregation-field-ja-20230831.jpg)
 
 - 要約がチェックされたフィールドのみ機能を使用できます。
 
@@ -658,7 +659,7 @@
 
 1. categoryフィールドの「要約」をチェックします。
 
-![img](http://static.toastoven.net/prod_search/aggregation-field-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/aggregation-field-ja-20230831.jpg)
 
 **要約結果**
 
@@ -740,7 +741,8 @@
 
 - 「ナイキ」で検索します。
 
-![img](http://static.toastoven.net/prod_search/document_boosting-search-ja-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-01-ja-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-02-ja-20230831.jpg)
 
 **検索結果**
 
@@ -771,7 +773,7 @@
 
 - doc_weight_ratioパラメータを利用して反映比率を調整します。
   ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='ナイキ' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='ナイキ' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ja'
   ```
   - 0.0～1.0の間の値を入力できます。
   - defaultは1.0です。
@@ -856,7 +858,7 @@
 
 1. **設定アップロード**ボタンをクリックして設定をアップロードします。
 
-![img](https://static.toastoven.net/prod_search/filed-upload-ja-20200304.jpg)
+![img](https://static.toastoven.net/prod_search/filed-upload-ja-20230831.jpg)
 
 - 設定されたフィールドが1つもない時は**設定アップロード**ボタンが表示されます。
 
@@ -866,23 +868,23 @@
 
 - Full indexingの開始
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
   ```
   - 新しいindex(保存場所)が作成されます。
   - Full indexingが反映されるまでは既存indexでサービスされます。
 - Full indexingのリクエスト
   ```
-  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
   ```
   - documents-002.json, documents-003.jsonなど、複数回のインデックスをリクエストします。
 - Full indexingの反映
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
   ```
   - インデックスされたデータをサービスに反映します。
 - Full indexingのキャンセル
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
   ```
   - インデックスが進行中の時は動作しません。
 
@@ -1054,10 +1056,10 @@ public class IndexingClient {
 
       // build http request and assign multipart upload data.
       HttpUriRequest request = RequestBuilder
-  .post("https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
+  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
         .setEntity(data)
         .build();
-       .post("https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
+       .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
       System.out.println("Executing request " + request.getRequestLine());
 
       // Create a custom response handler.
@@ -1107,7 +1109,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v1.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
