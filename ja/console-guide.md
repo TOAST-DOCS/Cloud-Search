@@ -208,6 +208,7 @@
       - 3 :進行中
       - 4 :成功
       - 5 :失敗
+      - 6 :キャンセル
 
 ### 4. 検索
 
@@ -542,7 +543,7 @@
 2. 'text'タイプの場合はソート機能をサポートしません。
 3. 多重値を使用する場合はソート機能をサポートしません。
 
-![img](http://static.toastoven.net/prod_search/sorting-field-ja-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-field-01-ja-20230831.jpg)
 
 - ソートがチェックされたフィールドのみ機能を使用できます。
 
@@ -554,7 +555,7 @@
    - 選択順序通りにソートします。
 3. 各フィールドのソート方式を選択します。
 
-![img](http://static.toastoven.net/prod_search/sorting-field-ja-20230920.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-field-02-ja-20230920.jpg)
 
 - 2つ以上のフィールドのソートがチェックされた場合に機能を使用できます。
 
@@ -659,7 +660,7 @@
 
 1. categoryフィールドの「要約」をチェックします。
 
-![img](http://static.toastoven.net/prod_search/aggregation-field-ja-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/aggregation-search-ja-20230831.jpg)
 
 **要約結果**
 
