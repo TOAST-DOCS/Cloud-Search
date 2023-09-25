@@ -758,7 +758,8 @@ To test, index data as below:
 
 - Search by "Nike".
 
-![img](http://static.toastoven.net/prod_search/document_boosting-search-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-01-en-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-02-en-20230831.jpg)
 
 **Search Results**
 
