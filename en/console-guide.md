@@ -461,7 +461,7 @@ Enter filtering values like below:
 
 1. Select 'geo_point' as the field type for geolocation.
 
-![img](http://static.toastoven.net/prod_search/geolocation-field-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/geolocation-field-en-20230831.jpg)
 
 **Indexing**
 
@@ -643,7 +643,7 @@ To test, index data as below:
 
 1. Check 'Summary' of the "category" field.  
 
-![img](http://static.toastoven.net/prod_search/aggregation-search-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/aggregation-search-en-20230831.jpg)
 
 **Summary Result**
 
@@ -665,7 +665,7 @@ To test, index data as below:
 
 **Set Fields**
 
-![img](https://static.toastoven.net/prod_search/boolean_query-field-en-20200304.jpg)
+![img](https://static.toastoven.net/prod_search/boolean_query-field-en-20230831.jpg)
 
 **Indexing**
 
@@ -703,7 +703,7 @@ To test, index data as below:
 
 2. Enter boolean query by using &, |, (, ), or !.  
 
-![img](https://static.toastoven.net/prod_search/boolean_query-search-en-20200304.jpg)
+![img](https://static.toastoven.net/prod_search/boolean_query-search-en-20230831.jpg)
 
 - In the priority of operators
     - In the order of (), !, &, and |.
@@ -719,48 +719,16 @@ To test, index data as below:
         - "Popular Shoes Nike in Sales"
             - Due to wrong order of "Nike" and "Shoes"  
 
-### Specifying Document Weights
+### 필드 가중치 지정
 
-**Set Fields**
+**검색**
+
+- "나이키"로 검색합니다.
 
 ![img](http://static.toastoven.net/prod_search/document_boosting-search-01-en-20230831.jpg)
 ![img](http://static.toastoven.net/prod_search/document_boosting-search-02-en-20230831.jpg)
 
-**Indexing**
-
-To test, index data as below:
-
-```
-[
-  {
-    "action": "add",
-    "id": "id-1",
-    "weight": 0.1,
-    "fields": {
-      "title" : "Nike"
-    }
-  },
-  {
-    "action": "add",
-    "id": "id-2",
-    "weight": 0.9,
-    "fields": {
-      "title" : "Nike"
-    }
-  }
-]
-```
-
-- For "weight", specify 0.1 for "id-1" and 0.9 for "id-2".
-- Enter a value between 0.0 and 1.0 for "weight".
-
-**Search**
-
-- Search by "Nike".
-
-![img](http://static.toastoven.net/prod_search/document_boosting-search-en-20200304.jpg)
-
-**Search Results**
+**검색 결과**
 
 ```
 "itemList": {
@@ -769,32 +737,35 @@ To test, index data as below:
       "_RELEVANCE": 0.45151517,
       "_RANK": 1,
       "_ID": "id-2",
-      "title": "<b>Nike</b>"
+      "title": "<b>나이키</b>"
+      "body": "<b>나이키</b>"
     },
     {
       "_RELEVANCE": 0.18484849,
       "_RANK": 2,
       "_ID": "id-1",
-      "title": "<b>Nike</b>"
+      "title": "<b>나이키</b>"
+      "body": "<b>나이키</b>"
     }
   ]
 }
 ```
 
-- The "id-2" document with higher "weight" comes first on the search result.
+- "title" 필드에 가중치가 높게 부여되어 "id-2" 문서가 검색 결과 상위에 노출됩니다.
 
-**Adjust Weight Ratio**
+**가중치 반영 비율 조정**
 
-- Use the doc_weight_ratio parameter to adjust the ratio.  
-    ```
-    curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='Nike' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
-    ```
-    - Enter a value between 0.0 and 1.0.
-    - Default is 1.0.
+- doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
+  ```
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='Nike' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
+  ```
+  - 0.0~1.0 사이의 값을 입력할 수 있습니다.
+  - default는 1.0입니다.
 
 **Tip**
 
-- Adjust similarity_ratio and doc_weight_ratio to customize the input order of search results.
+- 검색 가중치와 문서 랭킹을 조정해서 검색 결과 출력 순서를 커스터마이징할 수 있습니다.
+
 
 ### Specifying Document Ranks
 
