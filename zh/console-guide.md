@@ -193,6 +193,7 @@ REST APIs are available like below:
             - 3: Progressing
             - 4: Successful
             - 5: Failed
+            - 6: Canceled
 
 ### 4. Search
 
