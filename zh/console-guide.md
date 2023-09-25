@@ -723,8 +723,8 @@ To test, index data as below:
 
 **Set Fields**
 
-![img](http://static.toastoven.net/prod_search/document_boosting-field-01-en-20230831.jpg)
-![img](http://static.toastoven.net/prod_search/document_boosting-field-02-en-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-01-en-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-02-en-20230831.jpg)
 
 **Indexing**
 
