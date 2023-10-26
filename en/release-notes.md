@@ -8,6 +8,7 @@
     - Added indexing extraction options (BIGRAM, TRIGRAM, QUADGRAM)
 
 ### Nov 23, 2021
+
 - Updated the Korean analyzer dictionary.
 
 ### June 23, 2020
