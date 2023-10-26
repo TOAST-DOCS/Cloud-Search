@@ -56,13 +56,13 @@
 
 3. 필드 이름을 입력합니다.
 
-   - 영어 대소문자, 숫자 및 \_(밑줄)와 -(하이픈)만 사용할 수 있습니다.
-   - 숫자, \_(밑줄), -(하이픈)로 시작할 수 없습니다.
-   - 최소 두 글자 이상 가능합니다.
+	- 영어 대소문자, 숫자 및 \_(밑줄)와 -(하이픈)만 사용할 수 있습니다.
+	- 숫자, \_(밑줄), -(하이픈)로 시작할 수 없습니다.
+	- 최소 두 글자 이상 가능합니다.
 
 4. 다중 값 사용 여부를 체크합니다.
 
-   - 필드 값의 구분자는 ,(쉼표)만 사용 가능하며 최대 30개까지 사용할 수 있습니다.
+	- 필드 값의 구분자는 ,(쉼표)만 사용 가능하며 최대 30개까지 사용할 수 있습니다.
 
 5. 색인 사용 여부를 체크합니다.
 
@@ -889,6 +889,378 @@
 	```
 	- 색인이 진행 중일 때는 동작하지 않습니다.
 
+### 동의어 사전
+
+** URL **
+
+1. 등록
+	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/thesaurus?way=1
+2. 삭제
+	- DELETE	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/thesaurus
+3. 리셋
+	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/thesaurus/reset
+
+** 파라미터 **
+
+- 파라미터
+	- way	
+- 값
+	- 1: 단방향 (기본값)
+	- 2: 양방향
+	
+** 형식 **
+- 단어 간 comma(',') 로 구분. 단어 내에 공백, 구분자 사용 불가
+
+** 초기 상태 **
+
+1. 초기 상태
+- Request
+```
+curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
+```
+
+- Response
+```
+"itemList": {
+    "item": [
+	   {
+	      "_ID": "100433865",
+	      "_RANK": "0",
+	      "_RELEVANCE": 100,
+	      "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
+	   }
+	]
+}
+```
+	
+2. 동의어 사전 등록 (단방향)
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus?way=1'
+	```
+	```
+	신발,운동화,스포츠화
+	```
+- 신발
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=신발&passage.text_field=180'
+	```
+
+	- Response
+	```
+	"itemList": {
+    	"item": [
+   			{
+                "_ID": "100433865",
+                "_RANK": "0",
+                "_RELEVANCE": 100,
+                "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
+            },
+            {
+                "_ID": "101874425",
+                "_RANK": "0",
+                "_RELEVANCE": 1,
+                "productName": "아이보리도트운동화"
+            },
+            {
+	            "_ID": "101714054",
+	            "_RANK": "0",
+	            "_RELEVANCE": 1,
+	            "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
+	        },
+		]
+	}
+	```
+- 운동화
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=운동화&passage.text_field=180'
+	```
+
+	- Response
+	```
+	"itemList": {
+    	"item": [
+            {
+                "_ID": "101874425",
+                "_RANK": "0",
+                "_RELEVANCE": 1,
+                "productName": "아이보리도트운동화"
+            }
+		]
+	}
+	```
+
+3. 동의어 사전 등록 (양방향)
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus?way=2'
+	```
+	```	
+	신발,운동화,스포츠화
+	```
+
+- 신발
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=신발&passage.text_field=180'
+	```
+
+	- Response
+	```
+	"itemList": {
+    	"item": [
+   			{
+                "_ID": "100433865",
+                "_RANK": "0",
+                "_RELEVANCE": 100,
+                "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
+            },
+            {
+                "_ID": "101874425",
+                "_RANK": "0",
+                "_RELEVANCE": 1,
+                "productName": "아이보리도트운동화"
+            },
+            {
+	            "_ID": "101714054",
+	            "_RANK": "0",
+	            "_RELEVANCE": 1,
+	            "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
+	        }
+		]
+	}
+	```
+- 운동화
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=운동화&passage.text_field=180'
+	```
+
+	- Response
+	```
+	"itemList": {
+    	"item": [
+            {
+                "_ID": "100433865",
+                "_RANK": "0",
+                "_RELEVANCE": 100,
+                "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
+            },
+            {
+                "_ID": "101874425",
+                "_RANK": "0",
+                "_RELEVANCE": 1,
+                "productName": "아이보리도트운동화"
+            },
+            {
+	            "_ID": "101714054",
+	            "_RANK": "0",
+	            "_RELEVANCE": 1,
+	            "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
+	        }
+		]
+	}
+	```
+	
+4. 동의어 삭제
+
+	- Request
+	```
+	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus'
+	```
+	```
+	신발
+	```
+- 신발
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=신발&passage.text_field=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+    	"item": [
+            {
+                "_ID": "100433865",
+                "_RANK": "0",
+                "_RELEVANCE": 100,
+                "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
+            }
+		]
+	}
+	```
+
+- 운동화
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=운동화&passage.text_field=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+    	"item": [
+            {
+                "_ID": "101874425",
+                "_RANK": "0",
+                "_RELEVANCE": 1,
+                "productName": "아이보리도트운동화"
+            },
+            {
+	            "_ID": "101714054",
+	            "_RANK": "0",
+	            "_RELEVANCE": 1,
+	            "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
+	        }
+		]
+	}
+	```
+
+5. 동의어 초기화
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus/reset'
+	```
+
+### 불용어 사전
+
+** URL **
+
+1. 등록
+	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/stopwords
+2. 삭제
+	- DELETE	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/stopwords
+3. 리셋
+	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/stopwords/reset
+
+** 형식 **
+
+- 형식 : 단어 간 new line('\n') 단위로 구분. 단어 내 공백 사용 불가
+
+** 불용어 **
+
+1. 초기 상태
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=커피&passage.productName=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+    	"item": [
+            {
+                "_ID": "100433702",
+                "_RANK": "0",
+                "_RELEVANCE": 100,
+                "productName": "(STANLEY) 스탠리 마운틴 <b>커피</b>시스템 500미리"
+            }
+		]
+	}
+	```
+
+2. 불용어 사전 등록
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords'
+	```
+	```
+	커피
+	콜드브루				
+	```
+	
+- 커피
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=커피&passage.productName=180'
+	```
+
+	- Response
+	```
+	{
+	    "message": {
+	        "result": {
+	            "total": 0,
+	            "query": "커피",
+	            "start": 1,
+	            "status": {
+	                "code": 200,
+	                "message": "OK"
+	            },
+	            "itemCount": 0
+	        },
+	        "meta": {
+	            "timezone": "+09:00"
+	        }
+	    }
+	}
+	```
+	
+- 콜드브루
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=콜드브루&passage.productName=180'
+	```
+
+	- Response
+	```
+	{
+	    "message": {
+	        "result": {
+	            "total": 0,
+	            "query": "콜드브루",
+	            "start": 1,
+	            "status": {
+	                "code": 200,
+	                "message": "OK"
+	            },
+	            "itemCount": 0
+	        },
+	        "meta": {
+	            "timezone": "+09:00"
+	        }
+	    }
+	}
+	```
+	
+2. 불용어 사전 삭제
+	- Request
+	```
+	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords'
+	```
+	```
+	콜드브루				
+	```
+	
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=콜드브루&passage.productName=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+    	"item": [
+			{
+                "_ID": "101704573",
+                "_RANK": "0",
+                "_RELEVANCE": 100,
+                "productName": "[블루빅센] 티모르레스떼 콜드브루 더치<b>커피</b> 750ml (고급형)"
+            }
+		]
+	}
+	```
+
+3. 불용어 사전 삭제
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords'
+	```
+
+	
 ## 상세 가이드
 
 ### 필드 타입
