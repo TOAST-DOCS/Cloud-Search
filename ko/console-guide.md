@@ -284,7 +284,7 @@
         "itemList": {
           "item": [
           {
-            "_RELEVANCE": 0.07575758,
+            "_RELEVANCE": 100,
             "_RANK": 1,
             "_ID": "id-2",
             "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
@@ -751,14 +751,14 @@
 "itemList": {
   "item": [
     {
-      "_RELEVANCE": 0.45151517,
+      "_RELEVANCE": 200,
       "_RANK": 1,
       "_ID": "id-2",
       "title": "<b>나이키</b>"
       "body": "<b>나이키</b>"
     },
     {
-      "_RELEVANCE": 0.18484849,
+      "_RELEVANCE": 200,
       "_RANK": 2,
       "_ID": "id-1",
       "title": "<b>나이키</b>"
@@ -829,13 +829,13 @@
 "itemList": {
   "item": [
     {
-      "_RELEVANCE": 10000.151,
+      "_RELEVANCE": 100,
       "_RANK": 1,
       "_ID": "id-2",
       "title": "<b>나이키</b>"
     },
     {
-      "_RELEVANCE": 9999.151,
+      "_RELEVANCE": 100,
       "_RANK": 2,
       "_ID": "id-1",
       "title": "<b>나이키</b>"

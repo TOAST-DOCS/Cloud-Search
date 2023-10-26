@@ -5,6 +5,7 @@
 - The appkey, 'EMKPutYozUttWVY2', is different for each user.
 
 ## Getting Started
+
 First, enable the Cloud Search Service.
 
 1. Go to **NHN Cloud Console** and click **Select Service**.
@@ -16,6 +17,7 @@ First, enable the Cloud Search Service.
 Do as follows to check if service is enabled:
 
 1. Click **Search** on the left menu on **NHN Cloud Console**.
+
 2. If you can find **Cloud Search**, the service has been enabled.
 
 ![img](http://static.toastoven.net/prod_search/product-use-03-en-20210506.jpg)
@@ -27,6 +29,7 @@ Do as follows to check if service is enabled:
  Services can be created as follows:
 
 1. Click **Create Services**.
+
 2. Enter Service ID on **Create Services**.
 
     - Only English in lowercase, numbers, as well as \_(underscore) and -(hypen) are available.
@@ -43,7 +46,6 @@ Check the result of service creation.
 
 ![img](http://static.toastoven.net/prod_search/domain_create_result-en-20210506.jpg)
 
-
 ### 2. Setting Fields
 
 Fields can be added as follows:
@@ -58,7 +60,19 @@ Fields can be added as follows:
     - Cannot start with a number, \_(underscore) or -(hypen).
     - At least two characters are required.
 
-4. Click **Save**.
+4. Check whether to use multivalued.
+
+    - You can only use , (comma) as a delimiter for field values, and you can have up to 30 commas.
+
+5. Check whether to use index.
+
+6. Check whether to use filter.
+
+7. Check whether to use sorting.
+
+8. Check whether to use summary.
+
+9. Click **Save**.
 
 ![img](http://static.toastoven.net/prod_search/field_create_procedure-en-20230831.jpg)
 
@@ -102,16 +116,16 @@ Do as follows to create and index files.
 ]
 ```
 
-* File Description
-    * action
-        * add: Document is added.  
-            * Updated, if same ID exists.
-        * delete: Document is deleted.
-    * id
-        * Original ID of document.
-        * ID type is character strings.
-    * The largest file size is 8MB.
-        * Larger than 8 MB can be divided into many for indexing.
+- File Description
+    - action
+        - add: Document is added.  
+            - Updated, if same ID exists.
+        - delete: Document is deleted.
+    - id
+        - Original ID of document.
+        - ID type is character strings.
+    - The largest file size is 8MB.
+        - Larger than 8 MB can be divided into many for indexing.
 
 **How to Indexing**
 
@@ -141,9 +155,10 @@ REST APIs are available like below:
 - Indexing API
     - Request
         - By File Uploading
-            ```
-            curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-            ```
+      ````
+            curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json
+          ```
+      ````
         - By Payload
             ```
             curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
@@ -207,10 +222,10 @@ Do as follows to search:
 
     - Set a value between 0.0 and 1.0.
     
-4. 정렬할 필드를 선택합니다.
+4. Select a field to sort by.
 
-   - 다중 정렬할 경우 다중 정렬 필드를 선택합니다.
-   - 정렬 방식을 지정합니다.
+    - If you want to multisort, select the multisort fields.
+    - Specify how you want to sort.
 
 5. Check a field for output on the search result.
 
@@ -235,6 +250,7 @@ Do as follows to search:
 13. Click a search icon.
 
 14. Settings from 2 to 11 come as REST API.
+
      - Use REST APIs to develop your search service.
 
 15. The search result shows.  
@@ -251,42 +267,35 @@ Use REST APIs as below:
     ```
 - Response
     ```
-    {
-      "message" : {
-          "meta" : {
-            "timezone" : "+09:00"
-          },
-          "result" : {
-            "status" : {
-            "code" : 200,
-            "message" : "OK"
-          },
-          "query" : "Nike shoes",
-          "start" : 1,
-          "itemCount" : 1,
-          "total" : 1,
-          "itemList" : {
-            "item" : [
-              {
-                "_RELEVANCE" : 0.15993541,
-                "_RANK" : 1,
-                "_ID" : "id-1",
-                "title" : "[Free Shipping] 195 types of <b>Nike</b> <b>shoes</b>!!",
-                "body" : "The one and only <b>Nike</b> <b>shoes</b> are best selling for good reasonsreasons. Nike's 195 Hot-selling <b>shoes</b>★ Guess you need at least one"
-              },
-              {
-                "_RELEVANCE" : 0.07575758,
-                  "_RANK" : 2,
-                  "_ID" : "id-2",
-                  "title" : "[Super Low Prices]109 types of <b>Nike</b> <b>shoes</b>",
-                  "body" : "Prices] for 109 types of Addidas <b>shoes</b>. Hesiation only pushes early"
-              }
-            ]
-          }
-        }
-      }
-    }
-    ```
+	{
+	    "message" : {
+	        "meta" : {
+	          "timezone" : "+09:00"
+	        },
+	        "result" : {
+		          "status" : {
+		          "code" : 200,
+		          "message" : "OK"
+		        },
+		        "query" : "Nike shoes",
+		        "start" : 1,
+		        "itemCount" : 1,
+		        "total" : 1,
+		        "itemList" : {
+		          "item" : [
+		          {
+		            "_RELEVANCE" : 100,
+		            "_RANK" : 1,
+		            "_ID" : "id-2",
+		            "body" : "Prices for 109 types of Addidas <b>shoes</b>. Hesiation only pushes early",
+		            "title" : "[Super Low Prices]<b>Nike</b> <b>shoes</b> 109 types"
+		          }
+	          ]
+	        }
+	      }
+	    }
+	}
+	```
 
 ### 5. Statistics
 
@@ -360,8 +369,13 @@ The example regards to setting which allows indexing only when the IP address is
 Do as follows to delete fields:
 
 1. Click **Delete** for a field to delete.
+
+   - Fields used as multisort fields cannot be deleted. Delete the multi-sort field before proceeding.
+
 2. Click **Save**.
-3. Click **Execute Now**.
+
+3. Click **Reindex now**.
+
     - Documents cannot be added, edited, or deleted while re-indexing.
 
 ![img](http://static.toastoven.net/prod_search/field_delete-1-en-20230831.jpg)
@@ -376,7 +390,12 @@ Editing is not supported. To edit, delete a field and add again.
 
 **Set Fields**
 
+1. Check whether to use filter for the target field.
+2. For 'text' type, the filter feature is not supported.
+
 ![img](http://static.toastoven.net/prod_search/filtering-field-en-20230831.jpg)
+
+- The feature is only available for fields with filters checked. 
 
 **Indexing**
 
@@ -411,9 +430,9 @@ To test, index request data as below:
 
 Enter filtering values like below:
 
-1. filter_and: 단일값 필터링, 필터 필드 간 and 연산 필요시 사용합니다.
-2. filter_or: 필터 필드 간 or 연산 필요시 사용합니다.
-   - 범위 지정, 위경도 필터링에 사용할 수 없습니다.
+1. filter_and: Used when single-value filterig, and AND operations between filter fields are required.
+2. filter_or: Used when OR operations between filter fields are required.
+   - Not available for scoping, latitude filtering.
 
 - Single-value Filtering
     - Example) category=1
@@ -522,25 +541,25 @@ To test, index data as below:
 
 **Set Fields**
 
-1. 대상 필드의 정렬 사용 여부를 체크합니다.
-2. 'text' 타입의 경우 정렬 기능을 지원하지 않습니다.
-3. 다중 값을 사용할 경우 정렬 기능을 지원하지 않습니다.
+1. Check whether to use sorting for the target field.
+2. For 'text' type, the sorting feature is not supported.
+3. Sorting is not supported when using multiple values.
 
 ![img](http://static.toastoven.net/prod_search/sorting-field-01-en-20230831.jpg)
 
-- 정렬이 체크된 필드만 기능을 사용할 수 있습니다.
+- The feature is only available for fields with sorting checked.
 
-**다중 정렬 설정**
+**Setting up multiple sorting**
 
-1. 필드명을 입력합니다.
-2. 대상 필드를 추가 후 선택해 순서를 조정합니다.
-   - 정렬이 2개 이상 되면 출력됩니다.
-   - 선택 순서대로 정렬합니다.
-3. 각 필드의 정렬 방식을 선택합니다.
+1. Enter a field name.
+2. After adding the destination fields, select them to adjust their order.
+- If there is more than one sort, it will be output.
+   - Sort in the order of your choice.
+3. Select how you want each field to be sorted.
 
 ![img](http://static.toastoven.net/prod_search/sorting-field-02-en-20230920.jpg)
 
-- 2개 이상 필드의 정렬이 체크된 경우에 기능을 사용할 수 있습니다.
+- The feature is available when 2 or more fields have sorting checked.
 
 **Indexing**
 
@@ -593,14 +612,14 @@ To test, index data as below:
 ![img](http://static.toastoven.net/prod_search/sorting-search-01-en-20230831.jpg)
 ![img](http://static.toastoven.net/prod_search/sorting-search-02-en-20230831.jpg)
 
-- 1개의 정렬 필드만 선택 가능합니다.
+- You can select one sorting field.
 
 ### Summary
 
 **Set Fields**
 
-1. 대상 필드의 요약 사용 여부를 체크합니다.
-2. 'text', 'geo_point' 타입의 경우 요약 기능을 지원하지 않습니다.
+1. Check whether to use summary for the target field.
+2. For 'text', 'geo_point' types, the summary feature is not supported.
 
 ![img](http://static.toastoven.net/prod_search/aggregation-field-en-20230831.jpg)
 
@@ -719,52 +738,52 @@ To test, index data as below:
         - "Popular Shoes Nike in Sales"
             - Due to wrong order of "Nike" and "Shoes"  
 
-### 필드 가중치 지정
+### Specify field weight
 
-**검색**
+**Search**
 
-- "나이키"로 검색합니다.
+- Search for "Nike".
 
 ![img](http://static.toastoven.net/prod_search/document_boosting-search-01-en-20230831.jpg)
 ![img](http://static.toastoven.net/prod_search/document_boosting-search-02-en-20230831.jpg)
 
-**검색 결과**
+**Search result**
 
 ```
 "itemList": {
   "item": [
     {
-      "_RELEVANCE": 0.45151517,
+      "_RELEVANCE": 200,
       "_RANK": 1,
       "_ID": "id-2",
-      "title": "<b>나이키</b>"
-      "body": "<b>나이키</b>"
+      "title": "<b>Nike</b>"
+      "body": "<b>Nike</b>"
     },
     {
-      "_RELEVANCE": 0.18484849,
+      "_RELEVANCE": 200,
       "_RANK": 2,
       "_ID": "id-1",
-      "title": "<b>나이키</b>"
-      "body": "<b>나이키</b>"
+      "title": "<b>Nike</b>"
+      "body": "<b>Nike</b>"
     }
   ]
 }
 ```
 
-- "title" 필드에 가중치가 높게 부여되어 "id-2" 문서가 검색 결과 상위에 노출됩니다.
+- The "title" field is heavily weighted so that the "id-2" document appears at the top of the search results.
 
-**가중치 반영 비율 조정**
+**Adjust the weight ratio**
 
-- doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
+- Use the doc_weight_ratio parameter to adjust the reflection ratio.
   ```
   curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='Nike' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
   ```
-  - 0.0~1.0 사이의 값을 입력할 수 있습니다.
-  - default는 1.0입니다.
+- You can enter a value between 0.0 and 1.0.
+- The default is 1.0.
 
 **Tip**
 
-- 검색 가중치와 문서 랭킹을 조정해서 검색 결과 출력 순서를 커스터마이징할 수 있습니다.
+- You can customize the order in which search results are displayed by adjusting the search weight and document ranking.
 
 
 ### Specifying Document Ranks
@@ -813,13 +832,13 @@ To test, index data as below:
 "itemList": {
   "item": [
     {
-      "_RELEVANCE": 10000.151,
+      "_RELEVANCE": 100,
       "_RANK": 1,
       "_ID": "id-2",
       "title": "<b>Nike</b>"
     },
     {
-      "_RELEVANCE": 9999.151,
+      "_RELEVANCE": 100,
       "_RANK": 2,
       "_ID": "id-1",
       "title": "<b>Nike</b>"
@@ -945,14 +964,14 @@ Morpheme analyzer can be selected as below:
     - Separate words by two characters
       - Example) "New Nike Shoes" -> "ne" "nw" "ni" "ik" "ke" "sh" "ho" "oe" "es"
 - quadgram
-  - 4글자씩 단어를 분리합니다.
-    - 예제) "스탠스미스" -> "스탠스미" "탠스미스"
+  - Separate words by 4 letters.
+    - Example) "Stansmith" -> "Stans" "tansmith"
 - trigram
-  - 3글자씩 단어를 분리합니다.
-    - 예제) "스탠스미스" -> "스탠스" "탠스미" "스미스"
+  - Separate words by 3 letters.
+    - Example) "Stansmith" -> "Stans" "tansmith" "smith"
 - unigram
-  - 1글자씩 단어를 분리합니다.
-    - 예제) "스탠스미스" -> "스" "탠" "스" "미" "스"
+  - Separate words by 1 letter.
+    - Example) "Stansmith" -> "S" "tan" "s" "mi" "th"
 
 ### ACL
 
