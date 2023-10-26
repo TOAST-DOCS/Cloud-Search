@@ -145,8 +145,8 @@ Do as follows to create and index files.
 
 7. Check indexing results.
 
-![img](http://static.toastoven.net/prod_search/indexing_procedure_01-ko-20230831.jpg)
-![img](http://static.toastoven.net/prod_search/indexing_procedure_02-ko-20230831.jpg)<br>
+![img](http://static.toastoven.net/prod_search/indexing_procedure_01-en-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/indexing_procedure_02-en-20230831.jpg)<br>
 
 **REST API**
 
@@ -392,7 +392,7 @@ Editing is not supported. To edit, delete a field and add again.
 1. Check whether to use filter for the target field.
 2. For 'text' type, the filter feature is not supported.
 
-![img](http://static.toastoven.net/prod_search/filtering-field-ko-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/filtering-field-en-20230831.jpg)
 
 - The feature is only available for fields with filters checked. 
 
