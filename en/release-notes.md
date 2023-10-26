@@ -1,14 +1,14 @@
 ## Search > Cloud Search > Release Notes
 
-### 2023. 09. 26.
+### Sep 26, 2023
 
-- 신규 버전 출시
-    - REST API 정보 변경
-    - 필드 설정 세분화
-    - 색인 추출 옵션 추가(BIGRAM, TRIGRAM, QUADGRAM)
+- Release of a new version
+    - Modified REST API information
+    - Refined field settings
+    - Added indexing extraction options (BIGRAM, TRIGRAM, QUADGRAM)
 
-### 2021. 11. 23
-- 한국어 분석기 사전을 갱신했습니다.
+### Nov 23, 2021
+- Updated the Korean analyzer dictionary.
 
 ### June 23, 2020
 
