@@ -284,7 +284,7 @@ Use REST APIs as below:
 		        "itemList" : {
 		          "item" : [
 		          {
-		            "_RELEVANCE" : 0.07575758,
+		            "_RELEVANCE" : 100,
 		            "_RANK" : 1,
 		            "_ID" : "id-2",
 		            "body" : "Prices for 109 types of Addidas <b>shoes</b>. Hesiation only pushes early",
@@ -753,14 +753,14 @@ To test, index data as below:
 "itemList": {
   "item": [
     {
-      "_RELEVANCE": 0.45151517,
+      "_RELEVANCE": 200,
       "_RANK": 1,
       "_ID": "id-2",
       "title": "<b>Nike</b>"
       "body": "<b>Nike</b>"
     },
     {
-      "_RELEVANCE": 0.18484849,
+      "_RELEVANCE": 200,
       "_RANK": 2,
       "_ID": "id-1",
       "title": "<b>Nike</b>"
@@ -832,13 +832,13 @@ To test, index data as below:
 "itemList": {
   "item": [
     {
-      "_RELEVANCE": 10000.151,
+      "_RELEVANCE": 100,
       "_RANK": 1,
       "_ID": "id-2",
       "title": "<b>Nike</b>"
     },
     {
-      "_RELEVANCE": 9999.151,
+      "_RELEVANCE": 100,
       "_RANK": 2,
       "_ID": "id-1",
       "title": "<b>Nike</b>"

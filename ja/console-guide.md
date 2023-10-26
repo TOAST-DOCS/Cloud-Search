@@ -284,7 +284,7 @@
         "itemList" : {
           "item" : [
           {
-            "_RELEVANCE" : 0.07575758,
+            "_RELEVANCE" : 100,
             "_RANK" : 1,
             "_ID" : "id-2",
             "body" : "7日間だけの限定価格！超特価]アディダスシューズ109種！迷っていたら売り切れ必至",
@@ -751,14 +751,14 @@
 "itemList": {
   "item": [
     {
-      "_RELEVANCE": 0.45151517,
+      "_RELEVANCE": 200,
       "_RANK": 1,
       "_ID": "id-2",
       "title": "<b>ナイキ</b>"
       "body": "<b>ナイキ</b>"
     },
     {
-      "_RELEVANCE": 0.18484849,
+      "_RELEVANCE": 200,
       "_RANK": 2,
       "_ID": "id-1",
       "title": "<b>ナイキ</b>"
@@ -829,13 +829,13 @@
 "itemList": {
   "item": [
     {
-      "_RELEVANCE": 10000.151,
+      "_RELEVANCE": 100,
       "_RANK": 1,
       "_ID": "id-2",
       "title": "<b>ナイキ</b>"
     },
     {
-      "_RELEVANCE": 9999.151,
+      "_RELEVANCE": 100,
       "_RANK": 2,
       "_ID": "id-1",
       "title": "<b>ナイキ</b>"
