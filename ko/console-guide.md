@@ -911,27 +911,27 @@
 **형식**
 - 단어 간 comma(',') 로 구분. 단어 내에 공백, 구분자 사용 불가
 
-**초기 상태**
+**동의어**
 
 1. 초기 상태
-- Request
-```
-curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
-```
-
-- Response
-```
-"itemList": {
-  "item": [
-    {
-      "_ID": "100433865",
-      "_RANK": "0",
-      "_RELEVANCE": 100,
-      "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
-    }
-  ]
-}
-```
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+	  "item": [
+	    {
+	      "_ID": "100433865",
+	      "_RANK": "0",
+	      "_RELEVANCE": 100,
+	      "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
+	    }
+	  ]
+	}
+	```
 	
 2. 동의어 사전 등록 (단방향)
 	- Request
