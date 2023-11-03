@@ -894,11 +894,11 @@
 **URL**
 
 1. 등록
-	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/thesaurus?way=1
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus?way=1
 2. 삭제
-	- DELETE	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/thesaurus
+	- DELETE	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus
 3. 리셋
-	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/thesaurus/reset
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus/reset
 
 **파라미터**
 
@@ -944,7 +944,7 @@
 - 신발
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=신발&passage.text_field=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
 	```
 
 	- Response
@@ -975,7 +975,7 @@
 - 운동화
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=운동화&passage.text_field=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
 	```
 
 	- Response
@@ -985,86 +985,15 @@
         {
           "_ID": "101874425",
           "_RANK": "0",
-          "_RELEVANCE": 1,
-          "productName": "아이보리도트운동화"
+          "_RELEVANCE": 100,
+          "productName": "아이보리도트<b>운동화<>"
         }
 	  ]
 	}
 	```
 
-3. 동의어 사전 등록 (양방향)
-	- Request
-	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus?way=2'
-	```
-	```	
-	신발,운동화,스포츠화
-	```
-
-- 신발
-	- Request
-	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=신발&passage.text_field=180'
-	```
-
-	- Response
-	```
-	"itemList": {
-      "item": [
-        {
-          "_ID": "100433865",
-          "_RANK": "0",
-          "_RELEVANCE": 100,
-          "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
-        },
-        {
-          "_ID": "101874425",
-          "_RANK": "0",
-          "_RELEVANCE": 1,
-          "productName": "아이보리도트운동화"
-        },
-        {
-	      "_ID": "101714054",
-	      "_RANK": "0",
-	      "_RELEVANCE": 1,
-	      "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
-	    }
-	  ]
-	}
-	```
-- 운동화
-	- Request
-	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=운동화&passage.text_field=180'
-	```
-
-	- Response
-	```
-	"itemList": {
-      "item": [
-        {
-          "_ID": "100433865",
-          "_RANK": "0",
-          "_RELEVANCE": 100,
-          "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
-        },
-        {
-          "_ID": "101874425",
-          "_RANK": "0",
-          "_RELEVANCE": 1,
-          "productName": "아이보리도트운동화"
-        },
-        {
-	      "_ID": "101714054",
-	      "_RANK": "0",
-	      "_RELEVANCE": 1,
-	      "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
-	    }
-	  ]
-	}
-	```
 	
-4. 동의어 삭제
+4. 동의어 삭제 (단방향)
 
 	- Request
 	```
@@ -1076,7 +1005,7 @@
 - 신발
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=신발&passage.text_field=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
 	```
 	
 	- Response
@@ -1096,7 +1025,7 @@
 - 운동화
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,text_field*1.0&return=text_field&q=운동화&passage.text_field=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
 	```
 	
 	- Response
@@ -1106,14 +1035,8 @@
         {
           "_ID": "101874425",
           "_RANK": "0",
-          "_RELEVANCE": 1,
-          "productName": "아이보리도트운동화"
-        },
-        {
-          "_ID": "101714054",
-          "_RANK": "0",
-          "_RELEVANCE": 1,
-          "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
+          "_RELEVANCE": 100,
+          "productName": "아이보리도트<b>운동화</b>"
         }
 	  ]
 	}
@@ -1130,11 +1053,11 @@
 **URL**
 
 1. 등록
-	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/stopwords
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords
 2. 삭제
-	- DELETE	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/stopwords
+	- DELETE	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords
 3. 리셋
-	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/stopwords/reset
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords/reset
 
 **형식**
 
