@@ -891,7 +891,7 @@
 
 ### 동의어 사전
 
-** URL **
+**URL**
 
 1. 등록
 	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/thesaurus?way=1
@@ -900,7 +900,7 @@
 3. 리셋
 	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/thesaurus/reset
 
-** 파라미터 **
+**파라미터**
 
 - 파라미터
 	- way	
@@ -908,10 +908,10 @@
 	- 1: 단방향 (기본값)
 	- 2: 양방향
 	
-** 형식 **
+**형식**
 - 단어 간 comma(',') 로 구분. 단어 내에 공백, 구분자 사용 불가
 
-** 초기 상태 **
+**초기 상태**
 
 1. 초기 상태
 - Request
@@ -1127,7 +1127,7 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 
 ### 불용어 사전
 
-** URL **
+**URL**
 
 1. 등록
 	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/stopwords
@@ -1136,11 +1136,11 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 3. 리셋
 	- POST	/dictionary/v2.0/appkeys/{{appKey}}/serviceids/{{serviceId}}/dictionary/stopwords/reset
 
-** 형식 **
+**형식**
 
-- 형식 : 단어 간 new line('\n') 단위로 구분. 단어 내 공백 사용 불가
+- 단어 간 new line('\n') 단위로 구분. 단어 내 공백 사용 불가
 
-** 불용어 **
+**불용어**
 
 1. 초기 상태
 	- Request
