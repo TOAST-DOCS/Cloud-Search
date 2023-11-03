@@ -1177,7 +1177,7 @@
     }
 	```
 
-3. 불용어 사전 삭제
+3. 불용어 사전 초기화
 	- Request
 	```
 	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords'
