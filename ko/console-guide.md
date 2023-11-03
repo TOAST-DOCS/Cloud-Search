@@ -941,7 +941,7 @@
 	```
 	신발,운동화,스포츠화
 	```
-- 신발
+- '신발' 검색
 	- Request
 	```
 	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
@@ -972,7 +972,7 @@
 	  ]
 	}
 	```
-- 운동화
+- '운동화' 검색
 	- Request
 	```
 	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
@@ -1002,7 +1002,7 @@
 	```
 	신발
 	```
-- 신발
+- '신발' 검색
 	- Request
 	```
 	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
@@ -1022,7 +1022,7 @@
 	}
 	```
 
-- 운동화
+- '운동화' 검색
 	- Request
 	```
 	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
@@ -1095,7 +1095,7 @@
 	콜드브루				
 	```
 	
-- 커피
+- '커피' 검색
 	- Request
 	```
 	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=커피&passage.productName=180'
@@ -1122,7 +1122,7 @@
     }
 	```
 	
-- 콜드브루
+- '콜드브루' 검색
 	- Request
 	```
 	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=콜드브루&passage.productName=180'
@@ -1157,7 +1157,9 @@
 	```
 	콜드브루				
 	```
-	
+
+
+- '콜드브루' 검색
 	- Request
 	```
 	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=콜드브루&passage.productName=180'
@@ -1171,16 +1173,16 @@
           "_ID": "101704573",
           "_RANK": "0",
           "_RELEVANCE": 100,
-          "productName": "[블루빅센] 티모르레스떼 콜드브루 더치<b>커피</b> 750ml (고급형)"
+          "productName": "[블루빅센] 티모르레스떼 <b>콜드브루</b> 더치커피 750ml (고급형)"
         }
       ]
     }
 	```
 
-3. 불용어 사전 삭제
+3. 불용어 사전 초기화
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords/reset'
 	```
 
 	
