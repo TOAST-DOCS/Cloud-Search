@@ -922,14 +922,14 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 - Response
 ```
 "itemList": {
-    "item": [
-	   {
-	      "_ID": "100433865",
-	      "_RANK": "0",
-	      "_RELEVANCE": 100,
-	      "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
-	   }
-	]
+  "item": [
+    {
+      "_ID": "100433865",
+      "_RANK": "0",
+      "_RELEVANCE": 100,
+      "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
+    }
+  ]
 }
 ```
 	
@@ -950,26 +950,26 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 	- Response
 	```
 	"itemList": {
-    	"item": [
-   			{
-                "_ID": "100433865",
-                "_RANK": "0",
-                "_RELEVANCE": 100,
-                "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
-            },
-            {
-                "_ID": "101874425",
-                "_RANK": "0",
-                "_RELEVANCE": 1,
-                "productName": "아이보리도트운동화"
-            },
-            {
-	            "_ID": "101714054",
-	            "_RANK": "0",
-	            "_RELEVANCE": 1,
-	            "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
-	        },
-		]
+      "item": [
+        {
+          "_ID": "100433865",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
+        },
+        {
+          "_ID": "101874425",
+          "_RANK": "0",
+          "_RELEVANCE": 1,
+          "productName": "아이보리도트운동화"
+        },
+        {
+	      "_ID": "101714054",
+	      "_RANK": "0",
+	      "_RELEVANCE": 1,
+	      "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
+	    }
+	  ]
 	}
 	```
 - 운동화
@@ -981,14 +981,14 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 	- Response
 	```
 	"itemList": {
-    	"item": [
-            {
-                "_ID": "101874425",
-                "_RANK": "0",
-                "_RELEVANCE": 1,
-                "productName": "아이보리도트운동화"
-            }
-		]
+      "item": [
+        {
+          "_ID": "101874425",
+          "_RANK": "0",
+          "_RELEVANCE": 1,
+          "productName": "아이보리도트운동화"
+        }
+	  ]
 	}
 	```
 
@@ -1010,26 +1010,26 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 	- Response
 	```
 	"itemList": {
-    	"item": [
-   			{
-                "_ID": "100433865",
-                "_RANK": "0",
-                "_RELEVANCE": 100,
-                "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
-            },
-            {
-                "_ID": "101874425",
-                "_RANK": "0",
-                "_RELEVANCE": 1,
-                "productName": "아이보리도트운동화"
-            },
-            {
-	            "_ID": "101714054",
-	            "_RANK": "0",
-	            "_RELEVANCE": 1,
-	            "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
-	        }
-		]
+      "item": [
+        {
+          "_ID": "100433865",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
+        },
+        {
+          "_ID": "101874425",
+          "_RANK": "0",
+          "_RELEVANCE": 1,
+          "productName": "아이보리도트운동화"
+        },
+        {
+	      "_ID": "101714054",
+	      "_RANK": "0",
+	      "_RELEVANCE": 1,
+	      "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
+	    }
+	  ]
 	}
 	```
 - 운동화
@@ -1041,26 +1041,26 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 	- Response
 	```
 	"itemList": {
-    	"item": [
-            {
-                "_ID": "100433865",
-                "_RANK": "0",
-                "_RELEVANCE": 100,
-                "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
-            },
-            {
-                "_ID": "101874425",
-                "_RANK": "0",
-                "_RELEVANCE": 1,
-                "productName": "아이보리도트운동화"
-            },
-            {
-	            "_ID": "101714054",
-	            "_RANK": "0",
-	            "_RELEVANCE": 1,
-	            "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
-	        }
-		]
+      "item": [
+        {
+          "_ID": "100433865",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
+        },
+        {
+          "_ID": "101874425",
+          "_RANK": "0",
+          "_RELEVANCE": 1,
+          "productName": "아이보리도트운동화"
+        },
+        {
+	      "_ID": "101714054",
+	      "_RANK": "0",
+	      "_RELEVANCE": 1,
+	      "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
+	    }
+	  ]
 	}
 	```
 	
@@ -1082,14 +1082,14 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 	- Response
 	```
 	"itemList": {
-    	"item": [
-            {
-                "_ID": "100433865",
-                "_RANK": "0",
-                "_RELEVANCE": 100,
-                "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
-            }
-		]
+      "item": [
+        {
+          "_ID": "100433865",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": "부티크 리얼래빗퍼 슬리퍼 털슬리퍼 사무실<b>신발</b>"
+        }
+	  ]
 	}
 	```
 
@@ -1102,20 +1102,20 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 	- Response
 	```
 	"itemList": {
-    	"item": [
-            {
-                "_ID": "101874425",
-                "_RANK": "0",
-                "_RELEVANCE": 1,
-                "productName": "아이보리도트운동화"
-            },
-            {
-	            "_ID": "101714054",
-	            "_RANK": "0",
-	            "_RELEVANCE": 1,
-	            "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
-	        }
-		]
+      "item": [
+        {
+          "_ID": "101874425",
+          "_RANK": "0",
+          "_RELEVANCE": 1,
+          "productName": "아이보리도트운동화"
+        },
+        {
+          "_ID": "101714054",
+          "_RANK": "0",
+          "_RELEVANCE": 1,
+          "productName": "나이키/Nike Free TR 8 - Womens/Nike/기능성 스포츠화/라패셔니스타"
+        }
+	  ]
 	}
 	```
 
@@ -1151,14 +1151,14 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 	- Response
 	```
 	"itemList": {
-    	"item": [
-            {
-                "_ID": "100433702",
-                "_RANK": "0",
-                "_RELEVANCE": 100,
-                "productName": "(STANLEY) 스탠리 마운틴 <b>커피</b>시스템 500미리"
-            }
-		]
+      "item": [
+        {
+          "_ID": "100433702",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": "(STANLEY) 스탠리 마운틴 <b>커피</b>시스템 500미리"
+        }
+      ]
 	}
 	```
 
@@ -1181,22 +1181,22 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 	- Response
 	```
 	{
-	    "message": {
-	        "result": {
-	            "total": 0,
-	            "query": "커피",
-	            "start": 1,
-	            "status": {
-	                "code": 200,
-	                "message": "OK"
-	            },
-	            "itemCount": 0
-	        },
-	        "meta": {
-	            "timezone": "+09:00"
-	        }
-	    }
-	}
+      "message": {
+        "result": {
+          "total": 0,
+          "query": "커피",
+          "start": 1,
+          "status": {
+             "code": 200,
+             "message": "OK"
+          },
+          "itemCount": 0
+        },
+        "meta": {
+          "timezone": "+09:00"
+        }
+      }
+    }
 	```
 	
 - 콜드브루
@@ -1208,22 +1208,22 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 	- Response
 	```
 	{
-	    "message": {
-	        "result": {
-	            "total": 0,
-	            "query": "콜드브루",
-	            "start": 1,
-	            "status": {
-	                "code": 200,
-	                "message": "OK"
-	            },
-	            "itemCount": 0
-	        },
-	        "meta": {
-	            "timezone": "+09:00"
-	        }
-	    }
-	}
+      "message": {
+        "result": {
+          "total": 0,
+          "query": "콜드브루",
+          "start": 1,
+          "status": {
+             "code": 200,
+             "message": "OK"
+          },
+          "itemCount": 0
+        },
+        "meta": {
+          "timezone": "+09:00"
+        }
+      }
+    }
 	```
 	
 2. 불용어 사전 삭제
@@ -1242,16 +1242,16 @@ curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/E
 	
 	- Response
 	```
-	"itemList": {
-    	"item": [
-			{
-                "_ID": "101704573",
-                "_RANK": "0",
-                "_RELEVANCE": 100,
-                "productName": "[블루빅센] 티모르레스떼 콜드브루 더치<b>커피</b> 750ml (고급형)"
-            }
-		]
-	}
+    "itemList": {
+      "item": [
+        {
+          "_ID": "101704573",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": "[블루빅센] 티모르레스떼 콜드브루 더치<b>커피</b> 750ml (고급형)"
+        }
+      ]
+    }
 	```
 
 3. 불용어 사전 삭제
