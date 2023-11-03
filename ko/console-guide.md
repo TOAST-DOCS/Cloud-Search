@@ -914,9 +914,10 @@
 **동의어**
 
 1. 초기 상태
+- '신발' 검색
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
 	```
 	
 	- Response
@@ -944,7 +945,7 @@
 - '신발' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
 	```
 
 	- Response
@@ -975,7 +976,7 @@
 - '운동화' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
 	```
 
 	- Response
@@ -1005,7 +1006,7 @@
 - '신발' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
 	```
 	
 	- Response
@@ -1025,7 +1026,7 @@
 - '운동화' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=100&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
 	```
 	
 	- Response
@@ -1066,6 +1067,7 @@
 **불용어**
 
 1. 초기 상태
+- '커피' 검색
 	- Request
 	```
 	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=커피&passage.productName=180'
