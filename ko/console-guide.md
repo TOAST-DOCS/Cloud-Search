@@ -987,7 +987,7 @@
           "_ID": "101874425",
           "_RANK": "0",
           "_RELEVANCE": 100,
-          "productName": "아이보리도트<b>운동화<>"
+          "productName": "아이보리도트<b>운동화</b>"
         }
 	  ]
 	}
