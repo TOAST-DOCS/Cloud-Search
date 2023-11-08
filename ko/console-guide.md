@@ -2,7 +2,7 @@
 
 ## 알아두기
 
-- 문서 내의 앱키 'EMKPutYozUttWVY2'는 사용자별로 다릅니다.
+- 문서 내의 앱키 'CwSx6kv99g0QuNtM'는 사용자별로 다릅니다.
 
 ## 시작하기
 
@@ -155,32 +155,31 @@
 - 색인 API
     - Request
         - 파일 업로드 방식
-	        ```
-	            curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-	        ```
-	        ```
+          ```
+          curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+          ```
         - 페이로드(payload) 방식
-            ```
-		  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
-		  [
-			{
-			  "action": "add",
-			  "id": "id-1",
-			  "fields": {
-				"title": "[무료배송]나이키 슈즈 195종!!",
-				"body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??"
-			  }
-			},
-			{
-			  "action": "add",
-			  "id": "id-2",
-			  "fields": {
-				"title": "[슈퍼특가]나이키 운동화 109종",
-				"body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~"
-			  }
-			}
-		  ]'
-		 ```
+          ```
+          curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:ko' -H 'Content-Type:application/json; charset=UTF-8' -d '
+          [
+            {
+              "action": "add",
+              "id": "id-1",
+              "fields": {
+              "title": "[무료배송]나이키 슈즈 195종!!",
+              "body": "명불허전 나이키 인기슈즈 괜히 잘 팔리는게 아니죠~~ 나이키 핫!슈즈 195종★ 하나쯤은 있어야 하지 않아??"
+              }
+            },
+            {
+              "action": "add",
+              "id": "id-2",
+              "fields": {
+              "title": "[슈퍼특가]나이키 운동화 109종",
+              "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이면 품~절~"
+              }
+            }
+          ]'
+          ```
 	- Response
 		```
 		{
@@ -190,7 +189,7 @@
 - 색인 결과 확인 API
 	- Request
 		```
-		curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
+		curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ko'
 		```
 		- id 1은 위의 색인 API Response의 id입니다.
 	- Response
@@ -263,7 +262,7 @@
 
 - Request
 	```
-	curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ko' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
+	curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ko' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
 	```
 - Response
   ```
@@ -327,7 +326,7 @@
 
 - Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ko'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ko'
 	```
     - kind
         - total_query_count: 전체 쿼리수
@@ -403,22 +402,22 @@
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name": "나이키 에어맥스",
-    "category": 1
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name": "나이키 에어맥스",
+      "category": 1
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name": "나이키 샤이엔 솔리드",
+      "category": 2
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name": "나이키 샤이엔 솔리드",
-    "category": 2
-  }
-}
 ]
 ```
 
@@ -486,30 +485,30 @@
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name": "에프엑스수학학원",
-    "location": [10.1, 10.1]
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name": "에프엑스수학학원",
+      "location": [10.1, 10.1]
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name": "좋은나무 사고력수학학원",
+      "location": [10.3, 10.4]
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name": "수학의아침학원",
+      "location": [10.4, 10.3]
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name": "좋은나무 사고력수학학원",
-    "location": [10.3, 10.4]
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name": "수학의아침학원",
-    "location": [10.4, 10.3]
-  }
-}
 ]
 ```
 
@@ -565,33 +564,33 @@
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name": "나이키 에어맥스",
-    "popular": 10,
-    "price": 84180
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name": "나이키 에어맥스",
+      "popular": 10,
+      "price": 84180
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name": "나이키 에어줌",
+      "popular": 5,
+      "price": 97200
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name": "나이키 에어포스",
+      "popular": 5,
+      "price": 74680
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name": "나이키 에어줌",
-    "popular": 5,
-    "price": 97200
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name": "나이키 에어포스",
-    "popular": 5,
-    "price": 74680
-  }
-}
 ]
 ```
 
@@ -629,30 +628,30 @@
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name": "나이키 에어맥스",
-    "category": "신발"
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name": "나이키 에어맥스",
+      "category": "신발"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name": "나이키 에어줌",
+      "category": "신발"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name": "나이키 스우시 반팔티",
+      "category": "의류"
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name": "나이키 에어줌",
-    "category": "신발"
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name": "나이키 스우시 반팔티",
-    "category": "의류"
-  }
-}
 ]
 ```
 
@@ -690,27 +689,27 @@
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "title": "나이키 신발"
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "title": "나이키 신발"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "title": "나이키 슈즈"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "title": "나이키 가방"
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "title": "나이키 슈즈"
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "title": "나이키 가방"
-  }
-}
 ]
 ```
 
@@ -774,7 +773,7 @@
 
 - doc_weight_ratio 파라미터를 이용해서 반영 비율을 조정합니다.
 	```
-	curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
+	curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='나이키' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
 	```
 	- 0.0~1.0 사이의 값을 입력할 수 있습니다.
 	- default는 1.0입니다.
@@ -869,23 +868,23 @@
 
 - Full indexing 시작
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/begin'
 	```
 	- 새로운 index(저장소)가 생성됩니다.
 	- Full indexing을 반영하기 전까지는 기존 index로 서비스됩니다.
 - Full indexing 요청
 	```
-	curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+	curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
 	```
 	- documents-002.json, documents-003.json 등 여러 번 색인 요청을 합니다.
 - Full indexing 반영
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/end'
 	```
 	- 색인된 데이터를 서비스에 반영합니다.
 - Full indexing 취소
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/cancel'
 	```
 	- 색인이 진행 중일 때는 동작하지 않습니다.
 
@@ -917,7 +916,7 @@
 - '신발' 검색
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
 	```
 	
 	- Response
@@ -937,7 +936,7 @@
 2. 동의어 사전 등록 (단방향)
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus?way=1'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus?way=1'
 	```
 	```
 	신발,운동화,스포츠화
@@ -945,7 +944,7 @@
 - '신발' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
 	```
 
 	- Response
@@ -976,7 +975,7 @@
 - '운동화' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
 	```
 
 	- Response
@@ -998,7 +997,7 @@
 
 	- Request
 	```
-	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus'
+	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus'
 	```
 	```
 	신발
@@ -1006,7 +1005,7 @@
 - '신발' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
 	```
 	
 	- Response
@@ -1026,7 +1025,7 @@
 - '운동화' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=운동화&passage.productName=180'
 	```
 	
 	- Response
@@ -1046,7 +1045,7 @@
 5. 동의어 초기화
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus/reset'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus/reset'
 	```
 
 ### 불용어 사전
@@ -1070,7 +1069,7 @@
 - '커피' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=커피&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=커피&passage.productName=180'
 	```
 	
 	- Response
@@ -1090,7 +1089,7 @@
 2. 불용어 사전 등록
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords'
 	```
 	```
 	커피
@@ -1100,7 +1099,7 @@
 - '커피' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=커피&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=커피&passage.productName=180'
 	```
 
 	- Response
@@ -1127,7 +1126,7 @@
 - '콜드브루' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=콜드브루&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=콜드브루&passage.productName=180'
 	```
 
 	- Response
@@ -1154,7 +1153,7 @@
 2. 불용어 사전 삭제
 	- Request
 	```
-	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords'
+	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords'
 	```
 	```
 	콜드브루				
@@ -1164,7 +1163,7 @@
 - '콜드브루' 검색
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=콜드브루&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=콜드브루&passage.productName=180'
 	```
 	
 	- Response
@@ -1184,7 +1183,7 @@
 3. 불용어 사전 초기화
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords/reset'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords/reset'
 	```
 
 	
@@ -1356,7 +1355,7 @@ public class IndexingClient {
 
       // build http request and assign multipart upload data.
       HttpUriRequest request = RequestBuilder
-    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
+    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing")
         .setEntity(data)
         .build();
 
@@ -1409,7 +1408,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
