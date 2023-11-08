@@ -2,7 +2,7 @@
 
 ## 注意
 
-- 文書内のアプリケーションキー「EMKPutYozUttWVY2」は、ユーザーごとに異なります。
+- 文書内のアプリケーションキー「CwSx6kv99g0QuNtM」は、ユーザーごとに異なります。
 
 ## 始める
 
@@ -155,13 +155,12 @@
 - インデックスAPI
   - Request
     - ファイルアップロード方式
-      ````
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-          ```
-      ````
+      ```
+      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+      ```
     - ペイロード(payload)方式
       ```
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
+      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
       [
         {
           "action": "add",
@@ -190,7 +189,7 @@
 - インデックス結果確認API
   - Request
     ```
-    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ja'
+    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ja'
     ```
     - id 1は上のインデックスAPI Responseのidです。
   - Response
@@ -263,7 +262,7 @@
 
 - Request
   ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ja' --data-urlencode q='ナイキ 運動靴' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ja'
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ja' --data-urlencode q='ナイキ 運動靴' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ja'
   ```
 - Response
   ```
@@ -327,7 +326,7 @@
 
 - Request
   ```
-  curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ja'
+  curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ja'
   ```
   - kind
     - total_query_count ：全クエリー数
@@ -403,22 +402,22 @@
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "ナイキエアマックス",
-    "category" : 1
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "ナイキエアマックス",
+      "category" : 1
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "ナイキシャイアンソリッド",
+      "category" : 2
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "ナイキシャイアンソリッド",
-    "category" : 2
-  }
-}
 ]
 ```
 
@@ -486,30 +485,30 @@
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "FX数学塾",
-    "location" : [10.1, 10.1]
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "FX数学塾",
+      "location" : [10.1, 10.1]
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "良木思考力数学塾",
+      "location" : [10.3, 10.4]
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name" : "数学の朝塾",
+      "location" : [10.4, 10.3]
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "良木思考力数学塾",
-    "location" : [10.3, 10.4]
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name" : "数学の朝塾",
-    "location" : [10.4, 10.3]
-  }
-}
 ]
 ```
 
@@ -565,33 +564,33 @@
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "ナイキエアマックス",
-    "popular" : 10,
-    "price" : 84180
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "ナイキエアマックス",
+      "popular" : 10,
+      "price" : 84180
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "ナイキエアズーム",
+      "popular" : 5,
+      "price" : 97200
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name" : "ナイキエアフォース",
+      "popular" : 5,
+      "price" : 74680
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "ナイキエアズーム",
-    "popular" : 5,
-    "price" : 97200
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name" : "ナイキエアフォース",
-    "popular" : 5,
-    "price" : 74680
-  }
-}
 ]
 ```
 
@@ -629,30 +628,30 @@
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "ナイキエアマックス",
-    "category" : "靴"
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "ナイキエアマックス",
+      "category" : "靴"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "ナイキエアズーム",
+      "category" : "靴"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name" : "ナイキスウォッシュ半袖シャツ",
+      "category" : "衣類"
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "ナイキエアズーム",
-    "category" : "靴"
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name" : "ナイキスウォッシュ半袖シャツ",
-    "category" : "衣類"
-  }
-}
 ]
 ```
 
@@ -690,27 +689,27 @@
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "title" : "ナイキ靴"
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "title" : "ナイキ靴"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "title" : "ナイキシューズ"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "title" : "ナイキバッグ"
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "title" : "ナイキシューズ"
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "title" : "ナイキバッグ"
-  }
-}
 ]
 ```
 
@@ -774,7 +773,7 @@
 
 - doc_weight_ratioパラメータを利用して反映比率を調整します。
   ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='ナイキ' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ja'
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='ナイキ' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ja'
   ```
   - 0.0～1.0の間の値を入力できます。
   - defaultは1.0です。
@@ -869,23 +868,23 @@
 
 - Full indexingの開始
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/begin'
   ```
   - 新しいindex(保存場所)が作成されます。
   - Full indexingが反映されるまでは既存indexでサービスされます。
 - Full indexingのリクエスト
   ```
-  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
   ```
   - documents-002.json, documents-003.jsonなど、複数回のインデックスをリクエストします。
 - Full indexingの反映
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/end'
   ```
   - インデックスされたデータをサービスに反映します。
 - Full indexingのキャンセル
   ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
+  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/cancel'
   ```
   - インデックスが進行中の時は動作しません。
 
@@ -1057,10 +1056,10 @@ public class IndexingClient {
 
       // build http request and assign multipart upload data.
       HttpUriRequest request = RequestBuilder
-  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
+  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing")
         .setEntity(data)
         .build();
-       .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
+       .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing")
       System.out.println("Executing request " + request.getRequestLine());
 
       // Create a custom response handler.
@@ -1110,7 +1109,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);

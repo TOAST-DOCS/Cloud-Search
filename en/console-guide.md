@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- The appkey, 'EMKPutYozUttWVY2', is different for each user.
+- The appkey, 'CwSx6kv99g0QuNtM', is different for each user.
 
 ## Getting Started
 
@@ -155,13 +155,13 @@ REST APIs are available like below:
 - Indexing API
     - Request
         - By File Uploading
-      ````
-            curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json
-          ```
-      ````
+            ```
+            curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json
+            ```
+
         - By Payload
             ```
-            curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
             [
               {
                 "action": "add",
@@ -190,7 +190,7 @@ REST APIs are available like below:
 - Indexing Result Check API
     - Request
         ```
-        curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:en'
+        curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing_log?id=1' -H 'Accept-Language:en'
         ```
         - id 1 refers to the ID for Response of Index API in the above.
     - Response
@@ -263,7 +263,7 @@ Use REST APIs as below:
 
 - Request
     ```
-    curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='Nike shoes' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
+    curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='Nike shoes' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
     ```
 - Response
     ```
@@ -327,7 +327,7 @@ Do as follows to check statistics:
 
 - Request
     ```
-    curl -i -XGET 'http://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:en'
+    curl -i -XGET 'http://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:en'
     ```
     - kind
         - total_query_count: Total query count
@@ -403,22 +403,22 @@ To test, index request data as below:
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "Nike Air Max",
-    "category" : 1
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "Nike Air Max",
+      "category" : 1
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "Nike Cheyenne Solid",
+      "category" : 2
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "Nike Cheyenne Solid",
-    "category" : 2
-  }
-}
 ]
 ```
 
@@ -488,30 +488,30 @@ To test, index data as below:
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "FX Math Academy",
-    "location" : [10.1, 10.1]
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "FX Math Academy",
+      "location" : [10.1, 10.1]
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "Tree Thinking Math Academy",
+      "location" : [10.3, 10.4]
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name" : "Morning of Math Academy",
+      "location" : [10.4, 10.3]
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "Tree Thinking Math Academy",
-    "location" : [10.3, 10.4]
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name" : "Morning of Math Academy",
-    "location" : [10.4, 10.3]
-  }
-}
 ]
 ```
 
@@ -567,33 +567,33 @@ To test, index data as below:
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "Nike Air Max",
-    "popular" : 10,
-    "price" : 84180
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "Nike Air Max",
+      "popular" : 10,
+      "price" : 84180
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "Nike Air Zoom",
+      "popular" : 5,
+      "price" : 97200
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name" : "Nike Air Force",
+      "popular" : 5,
+      "price" : 74680
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "Nike Air Zoom",
-    "popular" : 5,
-    "price" : 97200
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name" : "Nike Air Force",
-    "popular" : 5,
-    "price" : 74680
-  }
-}
 ]
 ```
 
@@ -631,30 +631,30 @@ To test, index data as below:
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "Nike Air Max",
-    "category" : "Shoes"
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "Nike Air Max",
+      "category" : "Shoes"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "Nike Air Zoom",
+      "category" : "Shoes"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name" : "Nike Swoosh short sleeve t-shirt",
+      "category" : "Clothing"
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "Nike Air Zoom",
-    "category" : "Shoes"
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name" : "Nike Swoosh short sleeve t-shirt",
-    "category" : "Clothing"
-  }
-}
 ]
 ```
 
@@ -692,27 +692,27 @@ To test, index data as below:
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "title" : "Nike Shoes"
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "title" : "Nike Shoes"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "title" : "Nike Shoes"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "title" : "Nike Bags"
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "title" : "Nike Shoes"
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "title" : "Nike Bags"
-  }
-}
 ]
 ```
 
@@ -776,7 +776,7 @@ To test, index data as below:
 
 - Use the doc_weight_ratio parameter to adjust the reflection ratio.
   ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='Nike' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='Nike' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
   ```
 - You can enter a value between 0.0 and 1.0.
 - The default is 1.0.
@@ -871,23 +871,23 @@ To re-index the entire data, use Full Indexing API.
 
 - Start Full indexing
     ```
-    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
+    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/begin'
     ```
     - A new index (repository) is created.
     - Before Full indexing is applied, service is provided with the existing index.
 - Request Full indexing
     ```
-    curl -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+    curl -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
     ```
     - Indexing is requested for many times, such as documents-002.json, and documents-003.json.
 - Apply Full indexing
     ```
-    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
+    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/end'
     ```
     - Indexed data is applied to service.
 - Cancel Full indexing
     ```
-    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
+    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/cancel'
     ```
     - Service becomes inoperable while indexing is underway.
 
@@ -1057,7 +1057,7 @@ public class IndexingClient {
 
       // build http request and assign multipart upload data.
       HttpUriRequest request = RequestBuilder
-    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
+    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing")
         .setEntity(data)
         .build();
 
@@ -1110,7 +1110,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
