@@ -561,6 +561,20 @@ To test, index data as below:
 
 - The feature is available when 2 or more fields have sorting checked.
 
+- Only such fields in which sorting is checked can have Sorting enabled.
+
+**Set Multi-Sorting**
+
+1. Enter a field name.
+2. Add and select target fields to adust the order.
+   - If there is more than one sort, it will be output.
+   - Sort in order of selection.
+3. Select how each field is sorted.
+
+![img](http://static.toastoven.net/prod_search/sorting-field-02-ko-20230831.jpg)
+
+- More than one fields in which sorting is checked can have Sorting enabled.
+
 **Indexing**
 
 To test, index data as below:
