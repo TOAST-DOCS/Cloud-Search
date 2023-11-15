@@ -1,7 +1,15 @@
 ## Search > Cloud Search > Release Notes
 
-### 2021. 11. 23
-- 한국어 분석기 사전을 갱신했습니다.
+### Sep 26, 2023
+
+- Release of a new version
+    - Modified REST API information
+    - Refined field settings
+    - Added indexing extraction options (BIGRAM, TRIGRAM, QUADGRAM)
+
+### Nov 23, 2021
+
+- Updated the Korean analyzer dictionary.
 
 ### June 23, 2020
 

@@ -1,13 +1,14 @@
 ## Search > Cloud Search > Release Notes
 
-### September 26, 2023
+### Sep 26, 2023
 
-- Released a new version
-    - Changed REST API information
-    - Subdivided field settings
-    - Added indexting options (BIGRAM, TRIGRAM, QUADGRAM)
+- Release of a new version
+    - Modified REST API information
+    - Refined field settings
+    - Added indexing extraction options (BIGRAM, TRIGRAM, QUADGRAM)
 
-### November 23, 2021
+### Nov 23, 2021
+
 - Updated the Korean analyzer dictionary.
 
 ### June 23, 2020

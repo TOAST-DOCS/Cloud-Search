@@ -2,9 +2,10 @@
 
 ## Prerequisites
 
-- The appkey, 'EMKPutYozUttWVY2', is different for each user.
+- The appkey, 'CwSx6kv99g0QuNtM', is different for each user.
 
 ## Getting Started
+
 First, enable the Cloud Search Service.
 
 1. Go to **NHN Cloud Console** and click **Select Service**.
@@ -16,6 +17,7 @@ First, enable the Cloud Search Service.
 Do as follows to check if service is enabled:
 
 1. Click **Search** on the left menu on **NHN Cloud Console**.
+
 2. If you can find **Cloud Search**, the service has been enabled.
 
 ![img](http://static.toastoven.net/prod_search/product-use-03-en-20210506.jpg)
@@ -27,6 +29,7 @@ Do as follows to check if service is enabled:
  Services can be created as follows:
 
 1. Click **Create Services**.
+
 2. Enter Service ID on **Create Services**.
 
     - Only English in lowercase, numbers, as well as \_(underscore) and -(hypen) are available.
@@ -43,7 +46,6 @@ Check the result of service creation.
 
 ![img](http://static.toastoven.net/prod_search/domain_create_result-en-20210506.jpg)
 
-
 ### 2. Setting Fields
 
 Fields can be added as follows:
@@ -58,9 +60,21 @@ Fields can be added as follows:
     - Cannot start with a number, \_(underscore) or -(hypen).
     - At least two characters are required.
 
-4. Click **Save**.
+4. Check whether to use multivalued.
 
-![img](http://static.toastoven.net/prod_search/field_create_procedure-en-20200304.jpg)
+    - You can only use , (comma) as a delimiter for field values, and you can have up to 30 commas.
+
+5. Check whether to use index.
+
+6. Check whether to use filter.
+
+7. Check whether to use sorting.
+
+8. Check whether to use summary.
+
+9. Click **Save**.
+
+![img](http://static.toastoven.net/prod_search/field_create_procedure-en-20230831.jpg)
 
 ### 3. Indexing
 
@@ -102,16 +116,16 @@ Do as follows to create and index files.
 ]
 ```
 
-* File Description
-    * action
-        * add: Document is added.  
-            * Updated, if same ID exists.
-        * delete: Document is deleted.
-    * id
-        * Original ID of document.
-        * ID type is character strings.
-    * The largest file size is 8MB.
-        * Larger than 8 MB can be divided into many for indexing.
+- File Description
+    - action
+        - add: Document is added.  
+            - Updated, if same ID exists.
+        - delete: Document is deleted.
+    - id
+        - Original ID of document.
+        - ID type is character strings.
+    - The largest file size is 8MB.
+        - Larger than 8 MB can be divided into many for indexing.
 
 **How to Indexing**
 
@@ -131,8 +145,8 @@ Do as follows to create and index files.
 
 7. Check indexing results.
 
-![img](http://static.toastoven.net/prod_search/indexing_procedure_01-en-20200304.jpg)
-![img](http://static.toastoven.net/prod_search/indexing_procedure_02-en-20200304.jpg)<br>
+![img](http://static.toastoven.net/prod_search/indexing_procedure_01-en-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/indexing_procedure_02-en-20230831.jpg)<br>
 
 **REST API**
 
@@ -142,11 +156,11 @@ REST APIs are available like below:
     - Request
         - By File Uploading
             ```
-            curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+            curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json
             ```
         - By Payload
             ```
-            curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
+            curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
             [
               {
                 "action": "add",
@@ -175,7 +189,7 @@ REST APIs are available like below:
 - Indexing Result Check API
     - Request
         ```
-        curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing_log?id=1' -H 'Accept-Language:en'
+        curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing_log?id=1' -H 'Accept-Language:en'
         ```
         - id 1 refers to the ID for Response of Index API in the above.
     - Response
@@ -193,6 +207,7 @@ REST APIs are available like below:
             - 3: Progressing
             - 4: Successful
             - 5: Failed
+            - 6: Canceled
 
 ### 4. Search
 
@@ -205,35 +220,41 @@ Do as follows to search:
 3. Set weighted value for each field to search.
 
     - Set a value between 0.0 and 1.0.
+    
+4. Select a field to sort by.
 
-4. Check a field for output on the search result.
+    - If you want to multisort, select the multisort fields.
+    - Specify how you want to sort.
 
-5. Set the length of search result.
+5. Check a field for output on the search result.
 
-6. Set the highlighted pre tag.
+6. Set the length of search result.
 
-7. Set the highlighted post tag.
+7. Set the highlighted pre tag.
 
-8. Specify the priority order for an output from search result.
+8. Set the highlighted post tag.
+
+9. Specify the priority order for an output from search result.
 
     - Set '1' to to start with rank 1,or set '10' to start from rank 10.
 
-9. Specify the number of search results.
+10. Specify the number of search results.
 
     - Set '5' to show 5, or '10' to show 10.
 
-10. Select a search operator.
+11. Select a search operator.
 
-11. Enter a word to search.
+12. Enter a word to search.
 
-12. Click a search icon.
+13. Click a search icon.
 
-13. Settings from 2 to 11 come as REST API.
+14. Settings from 2 to 11 come as REST API.
+
      - Use REST APIs to develop your search service.
 
-14. The search result shows.  
+15. The search result shows.  
 
-![img](http://static.toastoven.net/prod_search/basic-search-en-20200304.jpg)<br>
+![img](http://static.toastoven.net/prod_search/basic-search-en-20230831.jpg)<br>
 
 **REST API**
 
@@ -241,46 +262,39 @@ Use REST APIs as below:
 
 - Request
     ```
-    curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='Nike shoes' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
+    curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' --data-urlencode q='Nike shoes' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
     ```
 - Response
     ```
-    {
-      "message" : {
-          "meta" : {
-            "timezone" : "+09:00"
-          },
-          "result" : {
-            "status" : {
-            "code" : 200,
-            "message" : "OK"
-          },
-          "query" : "Nike shoes",
-          "start" : 1,
-          "itemCount" : 1,
-          "total" : 1,
-          "itemList" : {
-            "item" : [
-              {
-                "_RELEVANCE" : 0.15993541,
-                "_RANK" : 1,
-                "_ID" : "id-1",
-                "title" : "[Free Shipping] 195 types of <b>Nike</b> <b>shoes</b>!!",
-                "body" : "The one and only <b>Nike</b> <b>shoes</b> are best selling for good reasonsreasons. Nike's 195 Hot-selling <b>shoes</b>★ Guess you need at least one"
-              },
-              {
-                "_RELEVANCE" : 0.07575758,
-                  "_RANK" : 2,
-                  "_ID" : "id-2",
-                  "title" : "[Super Low Prices]109 types of <b>Nike</b> <b>shoes</b>",
-                  "body" : "Prices] for 109 types of Addidas <b>shoes</b>. Hesiation only pushes early"
-              }
-            ]
-          }
-        }
-      }
-    }
-    ```
+	{
+	    "message" : {
+	        "meta" : {
+	          "timezone" : "+09:00"
+	        },
+	        "result" : {
+		          "status" : {
+		          "code" : 200,
+		          "message" : "OK"
+		        },
+		        "query" : "Nike shoes",
+		        "start" : 1,
+		        "itemCount" : 1,
+		        "total" : 1,
+		        "itemList" : {
+		          "item" : [
+		          {
+		            "_RELEVANCE" : 100,
+		            "_RANK" : 1,
+		            "_ID" : "id-2",
+		            "body" : "Prices for 109 types of Addidas <b>shoes</b>. Hesiation only pushes early",
+		            "title" : "[Super Low Prices]<b>Nike</b> <b>shoes</b> 109 types"
+		          }
+	          ]
+	        }
+	      }
+	    }
+	}
+	```
 
 ### 5. Statistics
 
@@ -312,7 +326,7 @@ Do as follows to check statistics:
 
 - Request
     ```
-    curl -i -XGET 'http://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:en'
+    curl -i -XGET 'http://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:en'
     ```
     - kind
         - total_query_count: Total query count
@@ -354,13 +368,18 @@ The example regards to setting which allows indexing only when the IP address is
 Do as follows to delete fields:
 
 1. Click **Delete** for a field to delete.
+
+   - Fields used as multisort fields cannot be deleted. Delete the multi-sort field before proceeding.
+
 2. Click **Save**.
-3. Click **Execute Now**.
+
+3. Click **Reindex now**.
+
     - Documents cannot be added, edited, or deleted while re-indexing.
 
-![img](http://static.toastoven.net/prod_search/field_delete-1-en-20200304.jpg)
-![img](http://static.toastoven.net/prod_search/field_delete-2-en-20200304.jpg)
-![img](http://static.toastoven.net/prod_search/field_delete-3-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/field_delete-1-en-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/field_delete-2-en-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/field_delete-3-en-20230831.jpg)
 
 ### Editing Fields
 
@@ -370,7 +389,12 @@ Editing is not supported. To edit, delete a field and add again.
 
 **Set Fields**
 
-![img](http://static.toastoven.net/prod_search/filtering-field-en-20200304.jpg)
+1. Check whether to use filter for the target field.
+2. For 'text' type, the filter feature is not supported.
+
+![img](http://static.toastoven.net/prod_search/filtering-field-en-20230831.jpg)
+
+- The feature is only available for fields with filters checked. 
 
 **Indexing**
 
@@ -378,22 +402,22 @@ To test, index request data as below:
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "Nike Air Max",
-    "category" : 1
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "Nike Air Max",
+      "category" : 1
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "Nike Cheyenne Solid",
+      "category" : 2
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "Nike Cheyenne Solid",
-    "category" : 2
-  }
-}
 ]
 ```
 
@@ -401,9 +425,13 @@ To test, index request data as below:
 
 1. Enter a filtering value.
 
-![img](http://static.toastoven.net/prod_search/filtering-search-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/filtering-search-en-20230831.jpg)
 
 Enter filtering values like below:
+
+1. filter_and: Used when single-value filterig, and AND operations between filter fields are required.
+2. filter_or: Used when OR operations between filter fields are required.
+   - Not available for scoping, latitude filtering.
 
 - Single-value Filtering
     - Example) category=1
@@ -451,7 +479,7 @@ Enter filtering values like below:
 
 1. Select 'geo_point' as the field type for geolocation.
 
-![img](http://static.toastoven.net/prod_search/geolocation-field-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/geolocation-field-en-20230831.jpg)
 
 **Indexing**
 
@@ -459,30 +487,30 @@ To test, index data as below:
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "FX Math Academy",
-    "location" : [10.1, 10.1]
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "FX Math Academy",
+      "location" : [10.1, 10.1]
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "Tree Thinking Math Academy",
+      "location" : [10.3, 10.4]
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name" : "Morning of Math Academy",
+      "location" : [10.4, 10.3]
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "Tree Thinking Math Academy",
-    "location" : [10.3, 10.4]
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name" : "Morning of Math Academy",
-    "location" : [10.4, 10.3]
-  }
-}
 ]
 ```
 
@@ -497,7 +525,7 @@ To test, index data as below:
             - Search documents that are located within 15 km in radius as of 10.3 in longitude and latitude, only.    
             - Radius units are 'km', 'm', and 'cm'.
 
-![img](http://static.toastoven.net/prod_search/geolocation-search-circle-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/geolocation-search-circle-en-20230831.jpg)
 
 - Filter by Polygon
     1. Enter a value to filter.
@@ -506,13 +534,31 @@ To test, index data as below:
         - Every point is connected in the clockwise.
         - Search documents within connected polygon, only.
 
-![img](http://static.toastoven.net/prod_search/geolocation-search-polygon-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/geolocation-search-polygon-en-20230831.jpg)
 
 ### Sorting
 
 **Set Fields**
 
-![img](http://static.toastoven.net/prod_search/sorting-field-en-20200304.jpg)
+1. Check whether to use sorting for the target field.
+2. For 'text' type, the sorting feature is not supported.
+3. Sorting is not supported when using multiple values.
+
+![img](http://static.toastoven.net/prod_search/sorting-field-01-en-20230831.jpg)
+
+- The feature is only available for fields with sorting checked.
+
+**Setting up multiple sorting**
+
+1. Enter a field name.
+2. After adding the destination fields, select them to adjust their order.
+- If there is more than one sort, it will be output.
+   - Sort in the order of your choice.
+3. Select how you want each field to be sorted.
+
+![img](http://static.toastoven.net/prod_search/sorting-field-02-en-20230920.jpg)
+
+- The feature is available when 2 or more fields have sorting checked.
 
 **Indexing**
 
@@ -520,33 +566,33 @@ To test, index data as below:
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "Nike Air Max",
-    "popular" : 10,
-    "price" : 84180
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "Nike Air Max",
+      "popular" : 10,
+      "price" : 84180
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "Nike Air Zoom",
+      "popular" : 5,
+      "price" : 97200
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name" : "Nike Air Force",
+      "popular" : 5,
+      "price" : 74680
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "Nike Air Zoom",
-    "popular" : 5,
-    "price" : 97200
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name" : "Nike Air Force",
-    "popular" : 5,
-    "price" : 74680
-  }
-}
 ]
 ```
 
@@ -562,13 +608,19 @@ To test, index data as below:
     - Sort in the "popular" order in the below example.
     - When the "popular" index is same, sort in the "price" order.   
 
-![img](http://static.toastoven.net/prod_search/sorting-search-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-search-01-en-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/sorting-search-02-en-20230831.jpg)
+
+- You can select one sorting field.
 
 ### Summary
 
 **Set Fields**
 
-![img](http://static.toastoven.net/prod_search/aggregation-field-en-20200304.jpg)
+1. Check whether to use summary for the target field.
+2. For 'text', 'geo_point' types, the summary feature is not supported.
+
+![img](http://static.toastoven.net/prod_search/aggregation-field-en-20230831.jpg)
 
 - Only such fields in which index is checked can have Summary enabled.
 
@@ -578,30 +630,30 @@ To test, index data as below:
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "name" : "Nike Air Max",
-    "category" : "Shoes"
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "name" : "Nike Air Max",
+      "category" : "Shoes"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "name" : "Nike Air Zoom",
+      "category" : "Shoes"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "name" : "Nike Swoosh short sleeve t-shirt",
+      "category" : "Clothing"
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "name" : "Nike Air Zoom",
-    "category" : "Shoes"
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "name" : "Nike Swoosh short sleeve t-shirt",
-    "category" : "Clothing"
-  }
-}
 ]
 ```
 
@@ -609,7 +661,7 @@ To test, index data as below:
 
 1. Check 'Summary' of the "category" field.  
 
-![img](http://static.toastoven.net/prod_search/aggregation-search-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/aggregation-search-en-20230831.jpg)
 
 **Summary Result**
 
@@ -631,7 +683,7 @@ To test, index data as below:
 
 **Set Fields**
 
-![img](https://static.toastoven.net/prod_search/boolean_query-field-en-20200304.jpg)
+![img](https://static.toastoven.net/prod_search/boolean_query-field-en-20230831.jpg)
 
 **Indexing**
 
@@ -639,27 +691,27 @@ To test, index data as below:
 
 ```
 [
-{
-  "action": "add",
-  "id": "id-1",
-  "fields": {
-    "title" : "Nike Shoes"
+  {
+    "action": "add",
+    "id": "id-1",
+    "fields": {
+      "title" : "Nike Shoes"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-2",
+    "fields": {
+      "title" : "Nike Shoes"
+    }
+  },
+  {
+    "action": "add",
+    "id": "id-3",
+    "fields": {
+      "title" : "Nike Bags"
+    }
   }
-},
-{
-  "action": "add",
-  "id": "id-2",
-  "fields": {
-    "title" : "Nike Shoes"
-  }
-},
-{
-  "action": "add",
-  "id": "id-3",
-  "fields": {
-    "title" : "Nike Bags"
-  }
-}
 ]
 ```
 
@@ -669,7 +721,7 @@ To test, index data as below:
 
 2. Enter boolean query by using &, |, (, ), or !.  
 
-![img](https://static.toastoven.net/prod_search/boolean_query-search-en-20200304.jpg)
+![img](https://static.toastoven.net/prod_search/boolean_query-search-en-20230831.jpg)
 
 - In the priority of operators
     - In the order of (), !, &, and |.
@@ -685,96 +737,59 @@ To test, index data as below:
         - "Popular Shoes Nike in Sales"
             - Due to wrong order of "Nike" and "Shoes"  
 
-### Specifying Document Weights
-
-**Set Fields**
-
-![img](http://static.toastoven.net/prod_search/document_boosting-field-en-20200304.jpg)
-
-**Indexing**
-
-To test, index data as below:
-
-```
-[
-  {
-    "action": "add",
-    "id": "id-1",
-    "weight": 0.1,
-    "fields": {
-      "title" : "Nike"
-    }
-  },
-  {
-    "action": "add",
-    "id": "id-2",
-    "weight": 0.9,
-    "fields": {
-      "title" : "Nike"
-    }
-  }
-]
-```
-
-- For "weight", specify 0.1 for "id-1" and 0.9 for "id-2".
-- Enter a value between 0.0 and 1.0 for "weight".
+### Specify field weight
 
 **Search**
 
-- Search by "Nike".
+- Search for "Nike".
 
-![img](http://static.toastoven.net/prod_search/document_boosting-search-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-01-en-20230831.jpg)
+![img](http://static.toastoven.net/prod_search/document_boosting-search-02-en-20230831.jpg)
 
-**Search Results**
+**Search result**
 
 ```
 "itemList": {
   "item": [
     {
-      "_RELEVANCE": 0.45151517,
+      "_RELEVANCE": 200,
       "_RANK": 1,
       "_ID": "id-2",
       "title": "<b>Nike</b>"
+      "body": "<b>Nike</b>"
     },
     {
-      "_RELEVANCE": 0.18484849,
+      "_RELEVANCE": 200,
       "_RANK": 2,
       "_ID": "id-1",
       "title": "<b>Nike</b>"
+      "body": "<b>Nike</b>"
     }
   ]
 }
 ```
 
-- The "id-2" document with higher "weight" comes first on the search result.
+- The "title" field is heavily weighted so that the "id-2" document appears at the top of the search results.
 
-**Adjust Weight Ratio**
+**Adjust the weight ratio**
 
-- Use the doc_weight_ratio parameter to adjust the ratio.  
-    ```
-    curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='Nike' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
-    ```
-    - Enter a value between 0.0 and 1.0.
-    - Default is 1.0.
-
-**Adjust Similarity Ratio Between User-input Search Word and Document**
-
-- Use the similarity_ratio parameter to adjust the ratio.
-    ```
-    curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&similarity_ratio=0.1' --data-urlencode q='Nike' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
-    ```
-    - Enter a value between 0.0 and 1.0.  
-    - Default is 1.0.
+- Use the doc_weight_ratio parameter to adjust the reflection ratio.
+  ```
+  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='Nike' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
+  ```
+- You can enter a value between 0.0 and 1.0.
+- The default is 1.0.
 
 **Tip**
 
-- Adjust similarity_ratio and doc_weight_ratio to customize the input order of search results.
+- You can customize the order in which search results are displayed by adjusting the search weight and document ranking.
+
 
 ### Specifying Document Ranks
 
 **Set Fields**
 
-![img](http://static.toastoven.net/prod_search/document_ranking-field-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/document_ranking-field-en-20230831.jpg)
 
 **Indexing**
 
@@ -808,7 +823,7 @@ To test, index data as below:
 
 - Search by "Nike".
 
-![img](http://static.toastoven.net/prod_search/document_ranking-search-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/document_ranking-search-en-20230831.jpg)
 
 **Search Results**
 
@@ -816,13 +831,13 @@ To test, index data as below:
 "itemList": {
   "item": [
     {
-      "_RELEVANCE": 10000.151,
+      "_RELEVANCE": 100,
       "_RANK": 1,
       "_ID": "id-2",
       "title": "<b>Nike</b>"
     },
     {
-      "_RELEVANCE": 9999.151,
+      "_RELEVANCE": 100,
       "_RANK": 2,
       "_ID": "id-1",
       "title": "<b>Nike</b>"
@@ -840,13 +855,13 @@ To test, index data as below:
 
 1. Click "Download Setting" to download the current setting.
 
-![img](https://static.toastoven.net/prod_search/field-download-en-20200304.jpg)
+![img](https://static.toastoven.net/prod_search/field-download-en-20230831.jpg)
 
 **Upload Setting**
 
 1. Click **Upload Setting** to upload setting.     
 
-![img](https://static.toastoven.net/prod_search/filed-upload-en-20200304.jpg)
+![img](https://static.toastoven.net/prod_search/filed-upload-en-20230831.jpg)
 
 - Only when there is no field setting, the **Upload Setting** button shows.
 
@@ -855,23 +870,23 @@ To re-index the entire data, use Full Indexing API.
 
 - Start Full indexing
     ```
-    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/begin'
+    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/begin'
     ```
     - A new index (repository) is created.
     - Before Full indexing is applied, service is provided with the existing index.
 - Request Full indexing
     ```
-    curl -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+    curl -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
     ```
     - Indexing is requested for many times, such as documents-002.json, and documents-003.json.
 - Apply Full indexing
     ```
-    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/end'
+    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/end'
     ```
     - Indexed data is applied to service.
 - Cancel Full indexing
     ```
-    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing/full/cancel'
+    curl -i -XPOST 'http://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/cancel'
     ```
     - Service becomes inoperable while indexing is underway.
 
@@ -880,7 +895,7 @@ To re-index the entire data, use Full Indexing API.
 ### Field Type
 Field type can be selected like below.
 
-![img](http://static.toastoven.net/prod_search/field_type-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/field_type-en-20230831.jpg)
 
 - text
     - To be selected for the fields to 'Search'.
@@ -936,7 +951,7 @@ Field type can be selected like below.
 
 Morpheme analyzer can be selected as below:
 
-![img](http://static.toastoven.net/prod_search/analyzer-en-20200304.jpg)
+![img](http://static.toastoven.net/prod_search/analyzer-en-20230831.jpg)
 
 - default
     - Use morpheme analyzer to separate words:
@@ -947,6 +962,15 @@ Morpheme analyzer can be selected as below:
 - bigram
     - Separate words by two characters
       - Example) "New Nike Shoes" -> "ne" "nw" "ni" "ik" "ke" "sh" "ho" "oe" "es"
+- quadgram
+  - Separate words by 4 letters.
+    - Example) "Stansmith" -> "Stans" "tansmith"
+- trigram
+  - Separate words by 3 letters.
+    - Example) "Stansmith" -> "Stans" "tansmith" "smith"
+- unigram
+  - Separate words by 1 letter.
+    - Example) "Stansmith" -> "S" "tan" "s" "mi" "th"
 
 ### ACL
 
@@ -1032,7 +1056,7 @@ public class IndexingClient {
 
       // build http request and assign multipart upload data.
       HttpUriRequest request = RequestBuilder
-    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing")
+    	  .post("https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing")
         .setEntity(data)
         .build();
 
@@ -1085,7 +1109,7 @@ public class IndexingClient {
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/indexing");
+    curl_setopt($ch, CURLOPT_URL,"https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data; charset=UTF-8"));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
