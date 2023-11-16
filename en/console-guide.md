@@ -928,13 +928,13 @@ Field type can be selected like below.
     - Represented from -128 to 127.
 - short
     - 2-byte integer type.  
-    - Represented in -32, 768~32, and to 767.
+    - Represented from -32,768 to 32,767.
 - integer
     - 4-byte integer type.  
-    - Represented from -2^31~2^31, and to - 1.
+    - Represented from -999,999,999 to 999,999,999.
 - long
     - 8-byte integer type.
-    - Represented from -2^63~2^63, and to- 1.
+    - Represented from -999,999,999,999,999,999 to 999,999,999,999,999,999.
 - float
     - 4-byte real number type.  
     - Represented from -3.4E38 to 3.4E38.
@@ -953,10 +953,6 @@ Field type can be selected like below.
             - Example) 2017-09-22T15:39:28
         - yyyy-MM-dd’T’HH:mm:ss'Z'
             - Example) 2017-09-22T15:39:28Z
-        - yyyy-MM-dd'T'HH:mm:ss.SSS
-            - Example) 2017-09-22T15:39:28.248
-        - yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
-            - Example) 2017-09-22T15:39:28.248Z
 - All field types, excluding text, are available in the sequence format.
     - ["Nike", "Addidas"]
     - [1.0, 2.0]
