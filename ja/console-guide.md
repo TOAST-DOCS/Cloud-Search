@@ -888,6 +888,304 @@
   ```
   - インデックスが進行中の時は動作しません。
 
+### 同義語辞典
+
+**URL**
+
+1. 登録
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus?way=1
+2. 削除
+	- DELETE	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus
+3. リセット
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus/reset
+
+**パラメータ**
+
+- パラメータ
+	- way	
+- 値
+	- 1: 単方向(デフォルト値)
+	- 2:双方向
+	
+**形式**
+- 単語間をカンマ(',')で区切ります。単語内に空白、セパレータを使用不可
+
+**同意語**
+
+1. 初期状態
+- '靴'検索
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=靴&passage.productName=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+	  "item": [
+	    {
+	      "_ID": "100433865",
+	      "_RANK": "0",
+	      "_RELEVANCE": 100,
+	      "productName": "ブティック リアルラビット スリッパ 毛皮スリッパ オフィス<b>靴</b>"
+	    }
+	  ]
+	}
+	```
+	
+2. 同義語辞書登録(単方向)
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus?way=1'
+	```
+	```
+	靴,スニーカー,スポーツシューズ
+	```
+- '靴'検索
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=靴&passage.productName=180'
+	```
+
+	- Response
+	```
+	"itemList": {
+      "item": [
+        {
+          "_ID": "100433865",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": "ブティック リアルラビット スリッパ 毛皮スリッパ オフィス<b>靴</b>"
+        },
+        {
+          "_ID": "101874425",
+          "_RANK": "0",
+          "_RELEVANCE": 1,
+          "productName": "アイボリードットスニーカー"
+        },
+        {
+	      "_ID": "101714054",
+	      "_RANK": "0",
+	      "_RELEVANCE": 1,
+	      "productName": "ナイキ/Nike Free TR 8 - Womens/Nike/機能性 スポーツシューズ/ラファッショニスタ"
+	    }
+	  ]
+	}
+	```
+- 'スニーカー'検索
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=スニーカー&passage.productName=180'
+	```
+
+	- Response
+	```
+	"itemList": {
+      "item": [
+        {
+          "_ID": "101874425",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": アイボリードット<b>スニーカー</b>"
+        }
+	  ]
+	}
+	```
+
+	
+4. 同意語削除(単方向)
+
+	- Request
+	```
+	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus'
+	```
+	```
+	靴
+	```
+- '靴'検索
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=靴&passage.productName=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+      "item": [
+        {
+          "_ID": "100433865",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": "ブティック リアルラビット スリッパ 毛皮スリッパ オフィス<b>靴</b>"
+        }
+	  ]
+	}
+	```
+
+- 'スニーカー'検索
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=スニーカー&passage.productName=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+      "item": [
+        {
+          "_ID": "101874425",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": アイボリードット<b>スニーカー</b>"
+        }
+	  ]
+	}
+	```
+
+5. 同意語 初期化
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus/reset'
+	```
+
+### 不用語辞書
+
+**URL**
+
+1. 登録
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords
+2. 削除
+	- DELETE	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords
+3. リセット
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords/reset
+
+**形式**
+
+- 単語間をnew line('\n')単位で区切ります。単語内の空白は使用不可
+
+**不用語**
+
+1. 初期状態
+- 'コーヒー'検索
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=コーヒー&passage.productName=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+      "item": [
+        {
+          "_ID": "100433702",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": "(STANLEY)  スタンレーマウンテン<b>コーヒー</b>システム500ミリ"
+        }
+      ]
+	}
+	```
+
+2. 不用語の事前登録
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords'
+	```
+	```
+ コーヒー 
+ コールドブリュー 
+	```
+	
+- 'コーヒー'検索
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=コーヒー&passage.productName=180'
+	```
+
+	- Response
+	```
+	{
+      "message": {
+        "result": {
+          "total": 0,
+          "query": "コーヒー",
+          "start": 1,
+          "status": {
+             "code": 200,
+             "message": "OK"
+          },
+          "itemCount": 0
+        },
+        "meta": {
+          "timezone": "+09:00"
+        }
+      }
+    }
+	```
+	
+- ' コールドブリュー '検索
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q= コールドブリュー &passage.productName=180'
+	```
+
+	- Response
+	```
+	{
+      "message": {
+        "result": {
+          "total": 0,
+          "query": " コールドブリュー ",
+          "start": 1,
+          "status": {
+             "code": 200,
+             "message": "OK"
+          },
+          "itemCount": 0
+        },
+        "meta": {
+          "timezone": "+09:00"
+        }
+      }
+    }
+	```
+	
+2. 不用語の事前削除
+	- Request
+	```
+	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords'
+	```
+	```
+ コールドブリュー 
+	```
+
+
+- ' コールドブリュー '検索
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q= コールドブリュー &passage.productName=180'
+	```
+	
+	- Response
+	```
+    "itemList": {
+      "item": [
+        {
+          "_ID": "101704573",
+          "_RANK": "0",
+          "_RELEVANCE": 100,
+          "productName": "[ブルービクセン] ティモレステ <b>コールドブリュー</b> オランダコーヒー 750ml (高級型)"
+        }
+      ]
+    }
+	```
+
+3. 不用語辞書の初期化
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords/reset'
+	```
+
 ## 詳細ガイド
 
 ### フィールドタイプ
