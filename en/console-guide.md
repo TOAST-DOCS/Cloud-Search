@@ -158,7 +158,6 @@ REST APIs are available like below:
             ```
             curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json
             ```
-
         - By Payload
             ```
             curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:en' -H 'Content-Type:application/json; charset=UTF-8' -d '
@@ -452,10 +451,8 @@ Enter filtering values like below:
         - category <= 2
     - keyword, boolean, or geo_point type is not available for range-specific filtering.
 - Not Filtering
-    - Example) category=!1
+    - Example) filter_and='category=!1'
         - category != 1
-    - Example) category=!1|2
-        - category !=1 or category == 2
 - Date-type Filtering
     - filter='update=[2017-03-22T08:28:44,}'
         - 2017-03-22T08:28:44 <= update
@@ -560,20 +557,6 @@ To test, index data as below:
 ![img](http://static.toastoven.net/prod_search/sorting-field-02-en-20230920.jpg)
 
 - The feature is available when 2 or more fields have sorting checked.
-
-- Only such fields in which sorting is checked can have Sorting enabled.
-
-**Set Multi-Sorting**
-
-1. Enter a field name.
-2. Add and select target fields to adust the order.
-   - If there is more than one sort, it will be output.
-   - Sort in order of selection.
-3. Select how each field is sorted.
-
-![img](http://static.toastoven.net/prod_search/sorting-field-02-ko-20230831.jpg)
-
-- More than one fields in which sorting is checked can have Sorting enabled.
 
 **Indexing**
 
@@ -799,7 +782,6 @@ To test, index data as below:
 
 - You can customize the order in which search results are displayed by adjusting the search weight and document ranking.
 
-
 ### Specifying Document Ranks
 
 **Set Fields**
@@ -881,6 +863,7 @@ To test, index data as below:
 - Only when there is no field setting, the **Upload Setting** button shows.
 
 ### Re-indexing Entire Data
+
 To re-index the entire data, use Full Indexing API.
 
 - Start Full indexing
@@ -905,9 +888,309 @@ To re-index the entire data, use Full Indexing API.
     ```
     - Service becomes inoperable while indexing is underway.
 
+### Synonyms Dictionary
+
+**URL**
+
+1. Register
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus?way=1
+2. Delete
+	- DELETE /dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus
+3. Reset
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus/reset
+
+**Parameters**
+
+- Parameters
+	- way	
+- Value
+	- 1: Unidirectional (default)
+	- 2: Bi-directional
+	
+**Format**
+- Comma (',') separators between words. No spaces and delimiters within words
+
+**Synonyms**
+
+1. Initial state
+- Search for ‘shoes’
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=shoes&passage.productName=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+	  "item": [
+	    {
+	      "_ID": "100433865",
+	      "_RANK": "0",
+	      "_relevance": 100,
+	      "productName": "Boutique Real Rabbitfur Slippers Fur Slippers Office<b>Shoes</b>"
+	    }
+	  ]
+	}
+	```
+	
+2. Synonyms registration (one-way)
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus?way=1'
+	```
+	```
+	Shoes,Sneakers,Sports Shoes
+	```
+- Search for ‘shoes’
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
+	```
+
+	- Response
+	```
+	"itemList": {
+  "item": [
+    {
+      "_ID": "100433865",
+      "_RANK": "0",
+      "_relevance": 100,
+      "productName": "Boutique Real Rabbitfur Slippers Fur Slippers Office<b>Shoes</b>"
+    },
+    {
+      "_ID": "101874425",
+      "_RANK": "0",
+      "_RELEVANCE": 1,
+      "productName": "ivorydot sneakers"
+    },
+    {
+	      "_ID": "101714054",
+	      "_RANK": "0",
+	      "_RELEVANCE": 1,
+	      "productName": "Nike/Nike Free TR 8 - Womens/Nike/Functional-Sneakers/Ladies"
+	    }
+	  ]
+	}
+	```
+- Search for ‘Sneakers’
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=sneakers&passage.productName=180'
+	```
+
+	- Response
+	```
+	"itemList": {
+  "item": [
+    {
+      "_ID": "101874425",
+      "_RANK": "0",
+      "_relevance": 100,
+      "productName": "Ivory Dot<b>Sneakers</b>"
+    }
+	  ]
+	}
+	```
+
+	
+4. Delete synonyms (one-way)
+
+	- Request
+	```
+	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus'
+	```
+	```
+	Shoes
+	```
+- Search for ‘shoes’
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=신발&passage.productName=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+  "item": [
+    {
+      "_ID": "100433865",
+      "_RANK": "0",
+      "_relevance": 100,
+      "productName": "Boutique Real Rabbitfur Slippers Fur Slippers Office<b>Shoes</b>"
+    }
+	  ]
+	}
+	```
+
+- Search for ‘Sneakers’
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=sneakers&passage.productName=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+  "item": [
+    {
+      "_ID": "101874425",
+      "_RANK": "0",
+      "_relevance": 100,
+      "productName": "Ivory Dot<b>Sneakers</b>"
+    }
+	  ]
+	}
+	```
+
+5. Reset synonyms
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus/reset'
+	```
+
+### Unused Terms Dictionary
+
+**URL**
+
+1. Register
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords
+2. Delete
+	- DELETE	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords
+3. Reset
+	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords/reset
+
+**Format**
+
+- New line('\\n') separation between words. No whitespace within words
+
+**Unused terms**
+
+1. Initial state
+- Search for "coffee
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=coffee&passage.productName=180'
+	```
+	
+	- Response
+	```
+	"itemList": {
+  "item": [
+    {
+      "_ID": "100433702",
+      "_RANK": "0",
+      "_relevance": 100,
+      "productName": "(STANLEY) Stanley Mountain <b>Coffee</b> System 500 preview"
+    }
+  ]
+	}
+	```
+
+2. Register unused terms
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords'
+	```
+	```
+	Coffee
+	Cold brew				
+	```
+	
+- Search for "coffee
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=coffee&passage.productName=180'
+	```
+
+	- Response
+	```
+	{
+  "message": {
+    "result": {
+      "total": 0,
+      "query": "Coffee",
+      "start": 1,
+      "status": {
+         "code": 200,
+         "message": "OK"
+      },
+      "itemCount": 0
+    },
+    "meta": {
+      "timezone": "+09:00"
+    }
+  }
+}
+	```
+	
+- Search for ‘cold brew’
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=Coldbrew&passage.productName=180'
+	```
+
+	- Response
+	```
+	{
+  "message": {
+    "result": {
+      "total": 0,
+      "query": "Cold brew",
+      "start": 1,
+      "status": {
+         "code": 200,
+         "message": "OK"
+      },
+      "itemCount": 0
+    },
+    "meta": {
+      "timezone": "+09:00"
+    }
+  }
+}
+	```
+	
+2. Delete unused terms
+	- Request
+	```
+	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords'
+	```
+	```
+	Cold Brew				
+	```
+
+
+- Search for ‘cold brew’
+	- Request
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=Coldbrew&passage.productName=180'
+	```
+	
+	- Response
+	```
+    "itemList": {
+  "item": [
+    {
+      "_ID": "101704573",
+      "_RANK": "0",
+      "_relevance": 100,
+      "productName": "[Blue Bixen] Timor Leste <b>Cold Brew</b> Dutch Coffee 750ml (Premium)"
+    }
+  ]
+}
+	```
+
+3. Reset unused terms
+	- Request
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords/reset'
+	```
+
+
 ## Guide Details
 
 ### Field Type
+
 Field type can be selected like below.
 
 ![img](http://static.toastoven.net/prod_search/field_type-en-20230831.jpg)
@@ -1015,6 +1298,7 @@ compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
 ```
 
 - Index (by file uploading)
+
 ``` java
 package com.toast.cloud.cloudsearch.client;
 
