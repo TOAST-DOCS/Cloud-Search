@@ -916,7 +916,7 @@
 - '靴'検索
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=靴&passage.productName=180'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=靴&passage.productName=180'
 	```
 	
 	- Response
@@ -936,7 +936,7 @@
 2. 同義語辞書登録(単方向)
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus?way=1'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus?way=1'
 	```
 	```
 	靴,スニーカー,スポーツシューズ
@@ -944,7 +944,7 @@
 - '靴'検索
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=靴&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=靴&passage.productName=180'
 	```
 
 	- Response
@@ -975,7 +975,7 @@
 - 'スニーカー'検索
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=スニーカー&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=スニーカー&passage.productName=180'
 	```
 
 	- Response
@@ -997,7 +997,7 @@
 
 	- Request
 	```
-	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus'
+	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus'
 	```
 	```
 	靴
@@ -1005,7 +1005,7 @@
 - '靴'検索
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=靴&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=靴&passage.productName=180'
 	```
 	
 	- Response
@@ -1025,7 +1025,7 @@
 - 'スニーカー'検索
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=スニーカー&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=スニーカー&passage.productName=180'
 	```
 	
 	- Response
@@ -1045,7 +1045,7 @@
 5. 同意語 初期化
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/thesaurus/reset'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus/reset'
 	```
 
 ### 不用語辞書
@@ -1069,7 +1069,7 @@
 - 'コーヒー'検索
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=コーヒー&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=コーヒー&passage.productName=180'
 	```
 	
 	- Response
@@ -1089,7 +1089,7 @@
 2. 不用語の事前登録
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords'
 	```
 	```
  コーヒー 
@@ -1099,7 +1099,7 @@
 - 'コーヒー'検索
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=コーヒー&passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q=コーヒー&passage.productName=180'
 	```
 
 	- Response
@@ -1126,7 +1126,7 @@
 - ' コールドブリュー '検索
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q= コールドブリュー &passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q= コールドブリュー &passage.productName=180'
 	```
 
 	- Response
@@ -1153,7 +1153,7 @@
 2. 不用語の事前削除
 	- Request
 	```
-	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords'
+	curl -i -XDELETE 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords'
 	```
 	```
  コールドブリュー 
@@ -1163,7 +1163,7 @@
 - ' コールドブリュー '検索
 	- Request
 	```
-	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q= コールドブリュー &passage.productName=180'
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,productName*1.0&return=productName&q= コールドブリュー &passage.productName=180'
 	```
 	
 	- Response
@@ -1183,7 +1183,7 @@
 3. 不用語辞書の初期化
 	- Request
 	```
-	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/EMKPutYozUttWVY2/serviceids/test/dictionary/stopwords/reset'
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords/reset'
 	```
 
 ## 詳細ガイド
