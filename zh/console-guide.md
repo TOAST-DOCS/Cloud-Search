@@ -665,10 +665,10 @@ To test, index data as below:
 
 ```
 "summary": {
-	"category": {
-		"Shoes": 2,
-		"Clothing": 1
-	}
+  "category": {
+    "Shoes": 2,
+    "Clothing": 1
+  }
 }
 ```
 
