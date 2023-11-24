@@ -250,7 +250,7 @@ Do as follows to search:
 
 14. Settings from 2 to 11 come as REST API.
 
-     - Use REST APIs to develop your search service.
+    - Use REST APIs to develop your search service.
 
 15. The search result shows.  
 
@@ -351,7 +351,7 @@ The example regards to setting which allows indexing only when the IP address is
 
 1. Click **ACL**.
 
-2.  Enter IP address for **Enable** below **Indexing**.
+2. Enter IP address for **Enable** below **Indexing**.
 
 3. Enter 'all' for **Enable Statistics**.
 
@@ -369,7 +369,7 @@ Do as follows to delete fields:
 
 1. Click **Delete** for a field to delete.
 
-   - Fields used as multisort fields cannot be deleted. Delete the multi-sort field before proceeding.
+    - Fields used as multisort fields cannot be deleted. Delete the multi-sort field before proceeding.
 
 2. Click **Save**.
 
@@ -431,44 +431,44 @@ Enter filtering values like below:
 
 1. filter_and: Used when single-value filterig, and AND operations between filter fields are required.
 2. filter_or: Used when OR operations between filter fields are required.
-   - Not available for scoping, latitude filtering.
+    - Not available for scoping, latitude filtering.
 
 - Single-value Filtering
-    - Example) category=1
+    - Example) filter_and='category=1'
         - category == 1
 - Or Filtering
-    - Example) category=1|2
+    - Example) filter_and='category=1|2'
         - category == 1 or category == 2
 - And Filtering
-    - Example) category=1&2
+    - Example) filter_and='category=1&2'
         - category == 1 and category == 2      
 - Range-specific Filtering 		
-    - Example) category=[1,2]
+    - Example) filter_and='category=[1,2]'
         - 1 <= category <= 2
-    - Example) category={1,2]      
+    - Example) filter_and='category={1,2]'  
         - 1 < category <= 2
-    - Example) category={,2]      
+    - Example) filter_and='category={,2]'
         - category <= 2
     - keyword, boolean, or geo_point type is not available for range-specific filtering.
 - Not Filtering
     - Example) filter_and='category=!1'
         - category != 1
 - Date-type Filtering
-    - filter='update=[2017-03-22T08:28:44,}'
+    - filter_or='update=[2017-03-22T08:28:44,}'
         - 2017-03-22T08:28:44 <= update
-    - filter='update=[,2018-10-02T15:26:28}'
+    - filter_or='update=[,2018-10-02T15:26:28}'
         - update < 2018-10-02T15:26:28
-    - filter='update=[2017-03-22T08:28:44,2018-10-02T15:26:28}'
+    - filter_or='update=[2017-03-22T08:28:44,2018-10-02T15:26:28}'
         - 2017-03-22T08:28:44 <= update < 2018-10-02T15:26:28
 - Keyword-type Filtering
-    - filter='dealer="DNC Shop"|"With Shopping"'
+    - filter_and='dealer="DNC Shop"|"With Shopping"'
         - Double quotes are recommended for the keyword type.
 - Many-Field Filtering
-    - filter='category=1&brand=2'
+    - filter_and='category=1&brand=2'
         - category == 1 and brand == 2
-    - filter='category=1|brand=2'
+    - filter_or='category=1|brand=2'
         - category == 1 or brand == 2
-    - filter='(category=1&brand=2)|(category=3&brand=4)'
+    - filter_or='(category=1&brand=2)|(category=3&brand=4)'
         - (category == 1 and brand == 2) or (category == 3 and brand == 4)
 
 ### Geolocation Filtering
@@ -517,20 +517,20 @@ To test, index data as below:
 **Search**
 
 - Filter by Radius
-    1. Enter a value to filter.
-        - Format: [{Longitude},{Latitude}],{Radius}
-        - Example: [10.3,10.3], 15km
-            - Search documents that are located within 15 km in radius as of 10.3 in longitude and latitude, only.    
-            - Radius units are 'km', 'm', and 'cm'.
+1. Enter a value to filter.
+    - Format: [{Longitude},{Latitude}],{Radius}
+    - Example: [10.3,10.3], 15km
+        - Search documents that are located within 15 km in radius as of 10.3 in longitude and latitude, only.    
+        - Radius units are 'km', 'm', and 'cm'.
 
 ![img](http://static.toastoven.net/prod_search/geolocation-search-circle-en-20230831.jpg)
 
 - Filter by Polygon
-    1. Enter a value to filter.
-        - Format: [{Longitude 1},{Latitude 1}],[{Longitude 2},{Latitude 2}],[{Longitude N},{Latitude N}]
-        - Example: [10.2,10.2],[10.3,10.5],[10.5,10.2]
-        - Every point is connected in the clockwise.
-        - Search documents within connected polygon, only.
+1. Enter a value to filter.
+    - Format: [{Longitude 1},{Latitude 1}],[{Longitude 2},{Latitude 2}],[{Longitude N},{Latitude N}]
+    - Example: [10.2,10.2],[10.3,10.5],[10.5,10.2]
+    - Every point is connected in the clockwise.
+    - Search documents within connected polygon, only.
 
 ![img](http://static.toastoven.net/prod_search/geolocation-search-polygon-en-20230831.jpg)
 
@@ -550,8 +550,8 @@ To test, index data as below:
 
 1. Enter a field name.
 2. After adding the destination fields, select them to adjust their order.
-- If there is more than one sort, it will be output.
-   - Sort in the order of your choice.
+	- If there is more than one sort, it will be output.
+	- Sort in the order of your choice.
 3. Select how you want each field to be sorted.
 
 ![img](http://static.toastoven.net/prod_search/sorting-field-02-en-20230920.jpg)
@@ -772,11 +772,11 @@ To test, index data as below:
 **Adjust the weight ratio**
 
 - Use the doc_weight_ratio parameter to adjust the reflection ratio.
-  ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='Nike' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
-  ```
-- You can enter a value between 0.0 and 1.0.
-- The default is 1.0.
+    ```
+    curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='Nike' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:en'
+    ```
+	- You can enter a value between 0.0 and 1.0.
+	- The default is 1.0.
 
 **Tip**
 
@@ -1011,13 +1011,13 @@ To re-index the entire data, use Full Indexing API.
 	- Response
 	```
 	"itemList": {
-  "item": [
-    {
-      "_ID": "100433865",
-      "_RANK": "0",
-      "_relevance": 100,
-      "productName": "Boutique Real Rabbitfur Slippers Fur Slippers Office<b>Shoes</b>"
-    }
+	  "item": [
+	    {
+	      "_ID": "100433865",
+	      "_RANK": "0",
+	      "_relevance": 100,
+	      "productName": "Boutique Real Rabbitfur Slippers Fur Slippers Office<b>Shoes</b>"
+	    }
 	  ]
 	}
 	```
@@ -1031,13 +1031,13 @@ To re-index the entire data, use Full Indexing API.
 	- Response
 	```
 	"itemList": {
-  "item": [
-    {
-      "_ID": "101874425",
-      "_RANK": "0",
-      "_relevance": 100,
-      "productName": "Ivory Dot<b>Sneakers</b>"
-    }
+	  "item": [
+	    {
+	      "_ID": "101874425",
+	      "_RANK": "0",
+	      "_relevance": 100,
+	      "productName": "Ivory Dot<b>Sneakers</b>"
+	    }
 	  ]
 	}
 	```
@@ -1075,14 +1075,14 @@ To re-index the entire data, use Full Indexing API.
 	- Response
 	```
 	"itemList": {
-  "item": [
-    {
-      "_ID": "100433702",
-      "_RANK": "0",
-      "_relevance": 100,
-      "productName": "(STANLEY) Stanley Mountain <b>Coffee</b> System 500 preview"
-    }
-  ]
+	  "item": [
+	    {
+	      "_ID": "100433702",
+	      "_RANK": "0",
+	      "_relevance": 100,
+	      "productName": "(STANLEY) Stanley Mountain <b>Coffee</b> System 500 preview"
+	    }
+	  ]
 	}
 	```
 
@@ -1105,22 +1105,22 @@ To re-index the entire data, use Full Indexing API.
 	- Response
 	```
 	{
-  "message": {
-    "result": {
-      "total": 0,
-      "query": "Coffee",
-      "start": 1,
-      "status": {
-         "code": 200,
-         "message": "OK"
-      },
-      "itemCount": 0
-    },
-    "meta": {
-      "timezone": "+09:00"
-    }
-  }
-}
+	  "message": {
+	    "result": {
+	      "total": 0,
+	      "query": "Coffee",
+	      "start": 1,
+	      "status": {
+	         "code": 200,
+	         "message": "OK"
+	      },
+	      "itemCount": 0
+	    },
+	    "meta": {
+	      "timezone": "+09:00"
+	    }
+	  }
+	}
 	```
 	
 - Search for ‘cold brew’
@@ -1132,22 +1132,22 @@ To re-index the entire data, use Full Indexing API.
 	- Response
 	```
 	{
-  "message": {
-    "result": {
-      "total": 0,
-      "query": "Cold brew",
-      "start": 1,
-      "status": {
-         "code": 200,
-         "message": "OK"
-      },
-      "itemCount": 0
-    },
-    "meta": {
-      "timezone": "+09:00"
-    }
-  }
-}
+	  "message": {
+	    "result": {
+	      "total": 0,
+	      "query": "Cold brew",
+	      "start": 1,
+	      "status": {
+	         "code": 200,
+	         "message": "OK"
+	      },
+	      "itemCount": 0
+	    },
+	    "meta": {
+	      "timezone": "+09:00"
+	    }
+	  }
+	}
 	```
 	
 2. Delete unused terms
@@ -1169,15 +1169,15 @@ To re-index the entire data, use Full Indexing API.
 	- Response
 	```
     "itemList": {
-  "item": [
-    {
-      "_ID": "101704573",
-      "_RANK": "0",
-      "_relevance": 100,
-      "productName": "[Blue Bixen] Timor Leste <b>Cold Brew</b> Dutch Coffee 750ml (Premium)"
-    }
-  ]
-}
+	  "item": [
+	    {
+	      "_ID": "101704573",
+	      "_RANK": "0",
+	      "_relevance": 100,
+	      "productName": "[Blue Bixen] Timor Leste <b>Cold Brew</b> Dutch Coffee 750ml (Premium)"
+	    }
+	  ]
+	}
 	```
 
 3. Reset unused terms
@@ -1249,22 +1249,22 @@ Morpheme analyzer can be selected as below:
 
 - default
     - Use morpheme analyzer to separate words:
-      - Example) "New Nike Shoes" -> "New" "Nike" "Shoes"
+        - Example) "New Nike Shoes" -> "New" "Nike" "Shoes"
 - whitespace
     - Use whitespace as delimiter to separate tokens.
-      - Example) "New Nike Shoes" -> "Nike" "New Shoes"
+        - Example) "New Nike Shoes" -> "Nike" "New Shoes"
 - bigram
     - Separate words by two characters
-      - Example) "New Nike Shoes" -> "ne" "nw" "ni" "ik" "ke" "sh" "ho" "oe" "es"
+        - Example) "New Nike Shoes" -> "ne" "nw" "ni" "ik" "ke" "sh" "ho" "oe" "es"
 - quadgram
-  - Separate words by 4 letters.
-    - Example) "Stansmith" -> "Stans" "tansmith"
+    - Separate words by 4 letters.
+        - Example) "Stansmith" -> "Stan" "tans" "ansm" "nsmi" "smit" "mith"
 - trigram
-  - Separate words by 3 letters.
-    - Example) "Stansmith" -> "Stans" "tansmith" "smith"
+    - Separate words by 3 letters.
+        - Example) "Stansmith" -> "Sta" "tan" "ans" "nsm" "smi" "mit" "ith"
 - unigram
-  - Separate words by 1 letter.
-    - Example) "Stansmith" -> "S" "tan" "s" "mi" "th"
+    - Separate words by 1 letter.
+        - Example) "Stansmith" -> "S" "t" "a" "n" "s" "m" "i" "t" "h"
 
 ### ACL
 

@@ -32,9 +32,9 @@
 
 2. **サービス作成**ウィンドウでサービスIDを入力します。
 
-   - 英字小文字、数字およびアンダースコア(_)とハイフン(-)のみ使用できます。
-   - 最初の文字に数字、アンダースコア(_)、ハイフン(-)は使用できません。
-   - 2文字以上入力する必要があります。
+    - 英字小文字、数字およびアンダースコア(_)とハイフン(-)のみ使用できます。
+    - 最初の文字に数字、アンダースコア(_)、ハイフン(-)は使用できません。
+    - 2文字以上入力する必要があります。
 
 3. **保存**ボタンをクリックします。
 
@@ -56,13 +56,13 @@
 
 3. フィールド名を入力します。
 
-   - 英字大文字/小文字、数字およびアンダースコア(_)とハイフン(-)のみ使用できます。
-   - 最初の文字に数字、アンダースコア(_)とハイフン(-)は使用できません。
-   - 2文字以上入力する必要があります。
+    - 英字大文字/小文字、数字およびアンダースコア(_)とハイフン(-)のみ使用できます。
+    - 最初の文字に数字、アンダースコア(_)とハイフン(-)は使用できません。
+    - 2文字以上入力する必要があります。
 
 4. 複数の値を使用するかどうかをチェックします。
 
-   - フィールド値のセパレータは、(カンマ)のみ使用でき、最大30個まで使用できます。
+    - フィールド値のセパレータは、(カンマ)のみ使用でき、最大30個まで使用できます。
 
 5. インデックスを使用するかどうかをチェックします。
 
@@ -117,15 +117,15 @@
 ```
 
 - ファイル説明
-  - action
-    - add:該当文書が追加されます。
-      - 既に同じIDが存在する場合はアップデートされます。
-    - delete:該当文書が削除されます。
-  - ID
-    - 文書の固有IDです。
-    - IDのタイプは文字列です。
-  - 最大ファイルサイズは8MBです。
-    - 8MB以上のデータは複数に分けてインデックスする必要があります。
+    - action
+        - add:該当文書が追加されます。
+            - 既に同じIDが存在する場合はアップデートされます。
+        - delete:該当文書が削除されます。
+    - ID
+        - 文書の固有IDです。
+        - IDのタイプは文字列です。
+    - 最大ファイルサイズは8MBです。
+        - 8MB以上のデータは複数に分けてインデックスする必要があります。
 
 **インデックス方法**
 
@@ -139,7 +139,7 @@
 
 5. インデックスコマンドがREST APIで出力されます。
 
-   - REST APIを利用して検索サービスを開発できます。
+    - REST APIを利用して検索サービスを開発できます。
 
 6. **インデックス**ボタンをクリックします。
 
@@ -153,61 +153,61 @@
 下記のようにREST APIを使用可能です。
 
 - インデックスAPI
-  - Request
-    - ファイルアップロード方式
-      ```
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
-      ```
-    - ペイロード(payload)方式
-      ```
-      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
-      [
-        {
-          "action": "add",
-          "id": "id-1",
-          "fields": {
-            "title": "[送料無料]ナイキシューズ195種！",
-            "body": "ナイキの人気シューズには売れているワケがあります！ナイキの人気シューズ195種★一足は必要じゃないですか？"
-          }
-        },
-        {
-          "action": "add",
-          "id": "id-2",
-          "fields": {
-            "title": "[超特価]ナイキの運動靴109種",
-            "body": "7日間だけの限定価格！超特価]アディダスシューズ109種！迷っていたら売り切れ必至"
-          }
-        }
-      ]'
-      ```
-  - Response
-    ```
-    {
-      "id" : 1
-    }
-    ```
+    - Request
+        - ファイルアップロード方式
+	      ```
+	      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents.json'
+	      ```
+        - ペイロード(payload)方式
+	      ```
+	      curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing' -H 'Accept-Language:ja' -H 'Content-Type:application/json; charset=UTF-8' -d '
+	      [
+	        {
+	          "action": "add",
+	          "id": "id-1",
+	          "fields": {
+	            "title": "[送料無料]ナイキシューズ195種！",
+	            "body": "ナイキの人気シューズには売れているワケがあります！ナイキの人気シューズ195種★一足は必要じゃないですか？"
+	          }
+	        },
+	        {
+	          "action": "add",
+	          "id": "id-2",
+	          "fields": {
+	            "title": "[超特価]ナイキの運動靴109種",
+	            "body": "7日間だけの限定価格！超特価]アディダスシューズ109種！迷っていたら売り切れ必至"
+	          }
+	        }
+	      ]'
+	      ```
+    - Response
+    	```
+	    {
+	      "id" : 1
+	    }
+	    ```
 - インデックス結果確認API
-  - Request
-    ```
-    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ja'
-    ```
-    - id 1は上のインデックスAPI Responseのidです。
-  - Response
-    ```
-    {
-      "request_time" : "2017-10-23T12:36:43",
-      "file_name" : "documents.json",
-      "file_size" : 1185,
-      "status" : 4
-    }
-    ```
-    - status
-      - 1 :待機中
-      - 2 :無視された(フィールド設定変更前のインデックスリクエストは無視される)
-      - 3 :進行中
-      - 4 :成功
-      - 5 :失敗
-      - 6 :キャンセル
+	- Request
+	    ```
+	    curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing_log?id=1' -H 'Accept-Language:ja'
+	    ```
+	    - id 1は上のインデックスAPI Responseのidです。
+	- Response
+	    ```
+	    {
+	      "request_time" : "2017-10-23T12:36:43",
+	      "file_name" : "documents.json",
+	      "file_size" : 1185,
+	      "status" : 4
+	    }
+	    ```
+	- status
+	    - 1 :待機中
+	    - 2 :無視された(フィールド設定変更前のインデックスリクエストは無視される)
+	    - 3 :進行中
+	    - 4 :成功
+	    - 5 :失敗
+	    - 6 :キャンセル
 
 ### 4. 検索
 
@@ -219,12 +219,12 @@
 
 3. 検索するフィールドごとに重みを設定します。
 
-   - 0.0～1.0の値を設定します。
+    - 0.0～1.0の値を設定します。
 
 4. ソートするフィールドを選択します。
 
-   - 多重ソートする場合は多重ソートフィールドを選択します。
-   - ソート方式を指定します。
+    - 多重ソートする場合は多重ソートフィールドを選択します。
+    - ソート方式を指定します。
 
 5. 検索結果に出力するフィールドをチェックします。
 
@@ -236,7 +236,7 @@
 
 9. 検索結果で出力する開始順位を指定します。
 
-   - 「1」に設定すると1位から出力され、「10」に設定すると10位から出力されます。
+    - 「1」に設定すると1位から出力され、「10」に設定すると10位から出力されます。
 
 10. 検索結果の数を指定します。
 
@@ -325,18 +325,18 @@
 **REST API**
 
 - Request
-  ```
-  curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ja'
-  ```
-  - kind
-    - total_query_count ：全クエリー数
-    - no_result_query_count ：検索結果がないクエリー数
-  - date ：照会する日
+	```
+	curl -i -XGET 'https://kr1-search.api.nhncloudservice.com/stats/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/stats?kind=total_query_count&date=2020-03-09' -H 'Accept-Language:ja'
+	```
+    - kind
+	    - total_query_count ：全クエリー数
+	    - no_result_query_count ：検索結果がないクエリー数
+    - date ：照会する日
 - Response
-  ```
-  [ [ "ナイキ", 8 ], [ "アディダス", 4 ] ]
-   ```
-  - クエリー数3以上のみ照会されます。
+    ```
+    [ [ "ナイキ", 8 ], [ "アディダス", 4 ] ]
+    ```
+    - クエリー数3以上のみ照会されます。
 
 ### 6. ACL
 
@@ -369,7 +369,7 @@
 
 1. 削除するフィールドの**削除**ボタンをクリックします。
 
-   - 多重ソートフィールドで使用されるフィールドは、削除できません。多重ソートフィールドを削除してから進めてください。
+    - 多重ソートフィールドで使用されるフィールドは、削除できません。多重ソートフィールドを削除してから進めてください。
 
 2. **保存**ボタンをクリックします。
 
@@ -431,45 +431,45 @@
 
 1. filter_and : 単一値フィルタリング、フィルタフィールド間のand演算が必要な時に使用します。
 2. filter_or :フィルタフィールド間or演算が必要な場合、v2使用します。
-   - 範囲指定、経緯度フィルタリングに使用できません。
+    - 範囲指定、経緯度フィルタリングに使用できません。
 
 - 単一の値のフィルタリング
-  - 例) filter_and='category=1'
-    - category == 1
+    - 例) filter_and='category=1'
+    	- category == 1
 - orフィルタリング
-  - 例) filter_and='category=1|2'
-    - category == 1 or category == 2
+    - 例) filter_and='category=1|2'
+    	- category == 1 or category == 2
 - andフィルタリング
-  - 例) filter_and='category=1&2'
-    - category == 1 and category == 2
-'- 範囲指定フィルタリング
-  - 例) filter_and='category=[1,2]'
-    - 1 <= category <= 2
-  - 例) filter_and='category={1,2]'
-    - 1 < category <= 2
-  - 例) filter_and='category={,2]'
-    - category <= 2
-  - keyword, boolean, geo_pointタイプは、範囲指定フィルタリングに使用できません。
+    - 例) filter_and='category=1&2'
+    	- category == 1 and category == 2
+- 範囲指定フィルタリング
+    - 例) filter_and='category=[1,2]'
+    	- 1 <= category <= 2
+    - 例) filter_and='category={1,2]'
+  	    - 1 < category <= 2
+    - 例) filter_and='category={,2]'
+  	    - category <= 2
+    - keyword, boolean, geo_pointタイプは、範囲指定フィルタリングに使用できません。
 - notフィルタリング
-  - 例) filter_and='category=!1'
-    - category != 1
+    - 例) filter_and='category=!1'
+  	    - category != 1
 - dateタイプフィルタリング
-  - filter_or='update=[2017-03-22T08:28:44,}'
-    - 2017-03-22T08:28:44 <= update
-  - filter_or='update=[,2018-10-02T15:26:28}'
-    - update < 2018-10-02T15:26:28
-  - filter_or='update=[2017-03-22T08:28:44,2018-10-02T15:26:28}'
-    - 2017-03-22T08:28:44 <= update < 2018-10-02T15:26:28
+    - filter_or='update=[2017-03-22T08:28:44,}'
+    	- 2017-03-22T08:28:44 <= update
+    - filter_or='update=[,2018-10-02T15:26:28}'
+ 	    - update < 2018-10-02T15:26:28
+    - filter_or='update=[2017-03-22T08:28:44,2018-10-02T15:26:28}'
+	    - 2017-03-22T08:28:44 <= update < 2018-10-02T15:26:28
 - keywordタイプフィルタリング
-  - filter_and='dealer="DNCショップ"|"Widショッピング"'
-    - keywordタイプはダブルクォーテーションの使用を推薦します。
+    - filter_and='dealer="DNCショップ"|"Widショッピング"'
+ 	    - keywordタイプはダブルクォーテーションの使用を推薦します。
 - 複数のフィールドのフィルタリング
-  - filter_and='category=1&brand=2'
-    - category == 1 and brand == 2
-  - filter_or='category=1|brand=2'
-    - category == 1 or brand == 2
-  - filter_or='(category=1&brand=2)|(category=3&brand=4)'
-    - (category == 1 and brand == 2) or (category == 3 and brand == 4)
+    - filter_and='category=1&brand=2'
+ 	    - category == 1 and brand == 2
+    - filter_or='category=1|brand=2'
+ 	    - category == 1 or brand == 2
+    - filter_or='(category=1&brand=2)|(category=3&brand=4)'
+ 	    - (category == 1 and brand == 2) or (category == 3 and brand == 4)
 
 ### 経緯度(geolocation)フィルタリング
 
@@ -517,20 +517,20 @@
 **検索**
 
 - 半径(circle)フィルタリング
-  1. フィルタリング値を入力します。
-     - 形式：[{経度},{緯度}],{半径}
-     - 例：[10.3,10.3],15km
-       - 経度10.3、緯度10.3を中心に半径15km以内の文書のみ検索されます。
-       - 半径の単位は「km」「m」「cm」を使用できます。
+1. フィルタリング値を入力します。
+    - 形式：[{経度},{緯度}],{半径}
+    - 例：[10.3,10.3],15km
+        - 経度10.3、緯度10.3を中心に半径15km以内の文書のみ検索されます。
+        - 半径の単位は「km」「m」「cm」を使用できます。
 
 ![img](http://static.toastoven.net/prod_search/geolocation-search-circle-ja-20230831.jpg)
 
 - 領域(polygon)フィルタリング
-  1. フィルタリング値を入力します。
-     - 形式：[{経度1},{緯度1}],[{経度2},{緯度2}],[{経度N},{緯度N}]
-     - 例：[10.2,10.2],[10.3,10.5],[10.5,10.2]
-     - 各点は、時計方向に接続されます。
-     - 接続された多角形内の文書のみ検索されます。
+1. フィルタリング値を入力します。
+    - 形式：[{経度1},{緯度1}],[{経度2},{緯度2}],[{経度N},{緯度N}]
+    - 例：[10.2,10.2],[10.3,10.5],[10.5,10.2]
+    - 各点は、時計方向に接続されます。
+    - 接続された多角形内の文書のみ検索されます。
 
 ![img](http://static.toastoven.net/prod_search/geolocation-search-polygon-ja-20230831.jpg)
 
@@ -550,8 +550,8 @@
 
 1. フィールド名を入力します。
 2. 対象フィールドを追加後、選択して順序を調整します。
-   - ソートが2つ以上あると出力されます。
-   - 選択順序通りにソートします。
+    - ソートが2つ以上あると出力されます。
+    - 選択順序通りにソートします。
 3. 各フィールドのソート方式を選択します。
 
 ![img](http://static.toastoven.net/prod_search/sorting-field-02-ja-20230920.jpg)
@@ -598,13 +598,13 @@
 
 1. ソートフィールドを選択し、方式を指定します。
 
-   - "asc"：昇順ソート
-   - "desc"：降順ソート
+    - "asc"：昇順ソート
+    - "desc"：降順ソート
 
 2.  多重ソートフィールドを選択し、方式を指定します。
 
-   - "asc"：昇順ソート
-   - "desc"：降順ソート
+    - "asc"：昇順ソート
+    - "desc"：降順ソート
 
 ![img](http://static.toastoven.net/prod_search/sorting-search-01-ja-20230831.jpg)
 ![img](http://static.toastoven.net/prod_search/sorting-search-02-ja-20230831.jpg)
@@ -675,7 +675,7 @@
 - 検索結果と要約情報が出力されます。
 - categoryが「靴」の検索結果が2件、「衣類」の検索結果が1件という意味です。
 - 要約可能なタイプ
-  -  「text」および「geo_point」タイプは要約機能を使用できません。
+    - 「text」および「geo_point」タイプは要約機能を使用できません。
 
 ### ブーリアンクエリー
 
@@ -722,18 +722,18 @@
 ![img](https://static.toastoven.net/prod_search/boolean_query-search-ja-20230831.jpg)
 
 - 演算子優先順位
-  - (), !, &, | の順です。
+    - (), !, &, | の順です。
 - 被演算子処理
-  - 被演算子はExact matchingで処理されます。
-  - q=ナイキ 靴&q_option=boolean
-  - 検索される検索対象
-    - 「人気 ナイキ 靴 割引」
-    - 「人気 ナイキ靴 割引」
-  - 検索されない検索対象
-    - 「人気 ナイキ 割引 靴」
-      - 「ナイキ」と「靴」の間に他の単語が含まれているため
-    - 「人気 靴 ナイキ 割引」
-      - 「ナイキ」と「靴」の順序が異なるため 
+    - 被演算子はExact matchingで処理されます。
+    - q=ナイキ 靴&q_option=boolean
+    - 検索される検索対象
+        - 「人気 ナイキ 靴 割引」
+        - 「人気 ナイキ靴 割引」
+    - 検索されない検索対象
+        - 「人気 ナイキ 割引 靴」
+            - 「ナイキ」と「靴」の間に他の単語が含まれているため
+        - 「人気 靴 ナイキ 割引」
+            - 「ナイキ」と「靴」の順序が異なるため 
 
 ### フィールドの重み指定
 
@@ -772,11 +772,11 @@
 **重み反映比率を調整**
 
 - doc_weight_ratioパラメータを利用して反映比率を調整します。
-  ```
-  curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='ナイキ' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ja'
-  ```
-  - 0.0～1.0の間の値を入力できます。
-  - defaultは1.0です。
+    ```
+    curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,title*1.0&return=&passage.title=180&doc_weight_ratio=0.1' --data-urlencode q='ナイキ' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ja'
+    ```
+    - 0.0～1.0の間の値を入力できます。
+    - defaultは1.0です。
 
 **Tip**
 
@@ -867,26 +867,26 @@
 全データを再インデックスする時はFull indexing APIを使用します。
 
 - Full indexingの開始
-  ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/begin'
-  ```
-  - 新しいindex(保存場所)が作成されます。
-  - Full indexingが反映されるまでは既存indexでサービスされます。
+	```
+	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/begin'
+	```
+    - 新しいindex(保存場所)が作成されます。
+    - Full indexingが反映されるまでは既存indexでサービスされます。
 - Full indexingのリクエスト
-  ```
-  curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
-  ```
-  - documents-002.json, documents-003.jsonなど、複数回のインデックスをリクエストします。
+    ```
+    curl -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full' -H 'Content-Type:multipart/form-data; charset=UTF-8' -F 'file=@documents-001.json'
+    ```
+    - documents-002.json, documents-003.jsonなど、複数回のインデックスをリクエストします。
 - Full indexingの反映
-  ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/end'
-  ```
+    ```
+    curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/end'
+    ```
   - インデックスされたデータをサービスに反映します。
 - Full indexingのキャンセル
-  ```
-  curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/cancel'
-  ```
-  - インデックスが進行中の時は動作しません。
+    ```
+    curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/indexing/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/indexing/full/cancel'
+    ```
+    - インデックスが進行中の時は動作しません。
 
 ### 同義語辞典
 
@@ -1195,50 +1195,50 @@
 ![img](http://static.toastoven.net/prod_search/field_type-ja-20230831.jpg)
 
 - text
-  - 「検索」するフィールドの場合に選択します。
-  - 形態素解析を行います。
-    - フィールドの値が「ナイキ運動靴」の場合、「ナイキ運動靴」、「ナイキ運動靴」、「ナイキ」または「運動靴」で検索した時、検索結果に表示されます。
-  - 最大サイズは32,768バイトです。
+    - 「検索」するフィールドの場合に選択します。
+    - 形態素解析を行います。
+        - フィールドの値が「ナイキ運動靴」の場合、「ナイキ運動靴」、「ナイキ運動靴」、「ナイキ」または「運動靴」で検索した時、検索結果に表示されます。
+    - 最大サイズは32,768バイトです。
 - keyword
-  - 「フィルタ」、「ソート」、「要約」するフィールドの場合に選択します。
-  - 形態素解析を行いません。
-    - フィールドの値が「ナイキ運動靴」の場合、「ナイキ運動靴」でのみ「フィルタ」、「ソート」、「要約」されます。
-    - フィールドの値が「ナイキ運動靴」の場合、「ナイキ運動靴」でのみ「フィルタ」、「ソート」、「要約」されます。
-  - 最大サイズは128バイトです。
+    - 「フィルタ」、「ソート」、「要約」するフィールドの場合に選択します。
+    - 形態素解析を行いません。
+        - フィールドの値が「ナイキ運動靴」の場合、「ナイキ運動靴」でのみ「フィルタ」、「ソート」、「要約」されます。
+        - フィールドの値が「ナイキ運動靴」の場合、「ナイキ運動靴」でのみ「フィルタ」、「ソート」、「要約」されます。
+    - 最大サイズは128バイトです。
 - byte
-  - 1byteの整数です。
-  - -128～127まで記憶可能です。
+    - 1byteの整数です。
+    - -128～127まで記憶可能です。
 - short
-  - 2byteの整数です。
-  - -32,768～32,767まで記憶可能です。
+    - 2byteの整数です。
+    - -32,768～32,767まで記憶可能です。
 - integer
-  - 4byteの整数です。
-  - -999,999,999～999,999,999まで記憶可能です。
+    - 4byteの整数です。
+    - -999,999,999～999,999,999まで記憶可能です。
 - long
-  - 8byteの整数です。
-  - -999,999,999,999,999,999～999,999,999,999,999,999まで記憶可能です。
+    - 8byteの整数です。
+    - -999,999,999,999,999,999～999,999,999,999,999,999まで記憶可能です。
 - float
-  - 4byteの単精度浮動小数点実数です。   
-  - -3.4E38～3.4E38まで記憶可能です。
+    - 4byteの単精度浮動小数点実数です。   
+    - -3.4E38～3.4E38まで記憶可能です。
 - double
-  - 8byteの単精度浮動小数点実数です。
-  - -1.7E308～1.7E308まで記憶可能です。
+    - 8byteの単精度浮動小数点実数です。
+    - -1.7E308～1.7E308まで記憶可能です。
 - boolean
-  - 1byte
-  - true or false
+    - 1byte
+    - true or false
 - date
-  - フィールドの値が日付の場合に選択します。
-  - サポートする日形式
-    - yyyy-MM-dd
-      - 例) 2017-09-22
-    - yyyy-MM-dd’T’HH:mm:ss
-      - 例) 2017-09-22T15:39:28
-    - yyyy-MM-dd’T’HH:mm:ss'Z'
-      - 例) 2017-09-22T15:39:28Z
+    - フィールドの値が日付の場合に選択します。
+    - サポートする日形式
+        - yyyy-MM-dd
+            - 例) 2017-09-22
+        - yyyy-MM-dd’T’HH:mm:ss
+            - 例) 2017-09-22T15:39:28
+        - yyyy-MM-dd’T’HH:mm:ss'Z'
+            - 例) 2017-09-22T15:39:28Z
 - textを除くすべてのフィールドタイプは、配列形式で入力できます。
-  - ["ナイキ", "アディダス"]
-  - [1.0, 2.0]
-  - ["2017-09-22T15:39:28", "2017-09-22T15:39:29"]
+    - ["ナイキ", "アディダス"]
+    - [1.0, 2.0]
+    - ["2017-09-22T15:39:28", "2017-09-22T15:39:29"]
 
 ### 形態素解析
 
@@ -1247,23 +1247,23 @@
 ![img](http://static.toastoven.net/prod_search/analyzer-ja-20230831.jpg)
 
 - default
-  - 形態素解析ツールを利用して単語を分離します。
-    - 例) 「ナイキメンズシューズ」 → 「ナイキ」 「メンズ」 「シューズ」
+    - 形態素解析ツールを利用して単語を分離します。
+        - 例) 「ナイキメンズシューズ」 → 「ナイキ」 「メンズ」 「シューズ」
 - whitespace
-  - whitespaceをセパレータにしてトークンを分離します。
-    - 例) 「ナイキ メンズシューズ」 → 「ナイキ」 「メンズシューズ」
+    - whitespaceをセパレータにしてトークンを分離します。
+        - 例) 「ナイキ メンズシューズ」 → 「ナイキ」 「メンズシューズ」
 - bigram
-  - 2文字ずつ単語を分離します。
-    - 例) 「ナイキ メンズシューズ」 →「ナイ」 「イキ」 「メン」 「ンズ」 「ズシ」 「シュ」 「ュー」 「ーズ」
+    - 2文字ずつ単語を分離します。
+        - 例) 「ナイキ メンズシューズ」 →「ナイ」 「イキ」 「メン」 「ンズ」 「ズシ」 「シュ」 「ュー」 「ーズ」
 - quadgram
-  - 4文字ずつ単語を分離します。
-    - 例) 「スタンスミス」 → 「スタンス」 「タンスミ」 「ンスミス」
+    - 4文字ずつ単語を分離します。
+        - 例) 「スタンスミス」 → 「スタンス」 「タンスミ」 「ンスミス」
 - trigram
-  - 3文字ずつ単語を分離します。
-    - 例) 「スタンスミス」 → 「スタン」 「タンス」 「ンスミ」 「スミス」
+    - 3文字ずつ単語を分離します。
+        - 例) 「スタンスミス」 → 「スタン」 「タンス」 「ンスミ」 「スミス」
 - unigram
-  - 1文字ずつ単語を分離します。
-    - 例) 「スタンスミス」 → 「ス」 「タ」 「ン」 「ス」 「ミ」 「ス」
+    - 1文字ずつ単語を分離します。
+        - 例) 「スタンスミス」 → 「ス」 「タ」 「ン」 「ス」 「ミ」 「ス」
 
 ### ACL
 
@@ -1272,14 +1272,14 @@ ACL設定画面は次のとおりです。
 ![img](http://static.toastoven.net/prod_search/acl-detail-ja-20200304.jpg)
 
 - 入力形式
-  - IP形式で入力できます。
-    - 例) 202.179.177.21
-  - CIDR形式で入力できます。
-    - 例) 202.179.177.0/24
-  - IPまたはCIDRを複数入力できます。
-    - 例) 202.179.177.21, 202.179.177.0/24
-  - allの場合、すべてマッチングされます。
-  - 値が空の場合、すべてマッチングされません。
+    - IP形式で入力できます。
+        - 例) 202.179.177.21
+    - CIDR形式で入力できます。
+        - 例) 202.179.177.0/24
+    - IPまたはCIDRを複数入力できます。
+        - 例) 202.179.177.21, 202.179.177.0/24
+    - allの場合、すべてマッチングされます。
+    - 値が空の場合、すべてマッチングされません。
 - 許可、拒否のどちらにも該当する場合、拒否されます。
 - 許可、拒否のどちらにも該当しない場合、拒否されます。
 
