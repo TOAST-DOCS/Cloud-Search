@@ -266,34 +266,33 @@ Use REST APIs as below:
     ```
 - Response
     ```
-	{
-	    "message" : {
-	        "meta" : {
-	          "timezone" : "+09:00"
-	        },
-	        "result" : {
-		          "status" : {
-		          "code" : 200,
-		          "message" : "OK"
-		        },
-		        "query" : "Nike shoes",
-		        "start" : 1,
-		        "itemCount" : 1,
-		        "total" : 1,
-		        "itemList" : {
-		          "item" : [
-		          {
-		            "_RELEVANCE" : 100,
-		            "_RANK" : 1,
-		            "_ID" : "id-2",
-		            "body" : "Prices for 109 types of Addidas <b>shoes</b>. Hesiation only pushes early",
-		            "title" : "[Super Low Prices]<b>Nike</b> <b>shoes</b> 109 types"
-		          }
-	          ]
-	        }
-	      }
-	    }
-	}
+    {
+      "message" : {
+        "meta" : {
+          "timezone" : "+09:00"
+        },
+        "result" : {
+          "status" : {
+          "code" : 200,
+          "message" : "OK"
+        },
+        "query" : "Nike shoes",
+        "start" : 1,
+        "itemCount" : 1,
+        "total" : 1,
+        "itemList" : {
+          "item" : [
+            {
+              "_RELEVANCE" : 100,
+              "_RANK" : 1,
+              "_ID" : "id-2",
+              "body" : "Prices for 109 types of Addidas <b>shoes</b>. Hesiation only pushes early",
+              "title" : "[Super Low Prices]<b>Nike</b> <b>shoes</b> 109 types"
+            }
+          ]
+        }
+      }
+    }
 	```
 
 ### 5. Statistics
@@ -666,8 +665,8 @@ To test, index data as below:
 ```
 "summary": {
   "category": {
-    "Shoes": 2,
-    "Clothing": 1
+    "신발": 2,
+    "의류": 1
   }
 }
 ```

@@ -268,20 +268,20 @@
   ```
   {
     "message" : {
-        "meta" : {
-          "timezone" : "+09:00"
-        },
-        "result" : {
-          "status" : {
-          "code" : 200,
-          "message" : "OK"
-        },
-        "query" : "ナイキ 運動靴",
-        "start" : 1,
-        "itemCount" : 1,
-        "total" : 1,
-        "itemList" : {
-          "item" : [
+      "meta" : {
+        "timezone" : "+09:00"
+      },
+      "result" : {
+        "status" : {
+        "code" : 200,
+        "message" : "OK"
+      },
+      "query" : "ナイキ 運動靴",
+      "start" : 1,
+      "itemCount" : 1,
+      "total" : 1,
+      "itemList" : {
+        "item" : [
           {
             "_RELEVANCE" : 100,
             "_RANK" : 1,
@@ -289,8 +289,7 @@
             "body" : "7日間だけの限定価格！超特価]アディダスシューズ109種！迷っていたら売り切れ必至",
             "title" : "[超特価]<b>ナイキ</b> <b>運動靴</b> 109種"
           }
-          ]
-        }
+        ]
       }
     }
   }

@@ -265,9 +265,9 @@
 	curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ko' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
 	```
 - Response
-  ```
-  {
-    "message": {
+    ```
+    {
+      "message": {
         "meta": {
           "timezone": "+09:00"
         },
@@ -282,19 +282,18 @@
         "total": 1,
         "itemList": {
           "item": [
-          {
-            "_RELEVANCE": 100,
-            "_RANK": 1,
-            "_ID": "id-2",
-            "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
-            "title": "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
-          }
+            {
+              "_RELEVANCE": 100,
+              "_RANK": 1,
+              "_ID": "id-2",
+              "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
+              "title": "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
+            }
           ]
         }
       }
     }
-  }
-  ```
+    ```
 
 ### 5. 통계
 
