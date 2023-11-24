@@ -265,9 +265,9 @@
 	curl -G -XGET 'https://kr1-search.api.nhncloudservice.com/search/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/search?start=1&size=10&q_option=and,body*1.0,title*1.0&return=&passage.body=180&passage.title=180' -H 'Accept-Language:ko' --data-urlencode q='나이키 운동화' --data-urlencode highlight='<b>,</b>' -H 'Accept-Language:ko'
 	```
 - Response
-  ```
-  {
-    "message": {
+    ```
+    {
+      "message": {
         "meta": {
           "timezone": "+09:00"
         },
@@ -282,19 +282,18 @@
         "total": 1,
         "itemList": {
           "item": [
-          {
-            "_RELEVANCE": 100,
-            "_RANK": 1,
-            "_ID": "id-2",
-            "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
-            "title": "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
-          }
+            {
+              "_RELEVANCE": 100,
+              "_RANK": 1,
+              "_ID": "id-2",
+              "body": "단 7일만 이가격!  [슈퍼특가] 아디다스 슈즈 109종 모음전 망설이품~절~",
+              "title": "[슈퍼특가]<b>나이키</b> <b>운동화</b> 109종"
+            }
           ]
         }
       }
     }
-  }
-  ```
+    ```
 
 ### 5. 통계
 
@@ -665,10 +664,10 @@
 
 ```
 "summary": {
-	"category": {
-		"신발": 2,
-		"의류": 1
-	}
+  "category": {
+    "신발": 2,
+    "의류": 1
+  }
 }
 ```
 
@@ -904,11 +903,11 @@
 - 파라미터
 	- way	
 - 값
-	- 1: 단방향 (기본값)
+	- 1: 단방향(기본값)
 	- 2: 양방향
 	
 **형식**
-- 단어 간 comma(',') 로 구분. 단어 내에 공백, 구분자 사용 불가
+- 단어 사이를 콤마(',')로 구분. 단어 내에 공백 및 구분자 사용 불가
 
 **동의어**
 
@@ -933,7 +932,7 @@
 	}
 	```
 	
-2. 동의어 사전 등록 (단방향)
+2. 동의어 사전 등록(단방향)
 	- Request
 	```
 	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus?way=1'
@@ -993,7 +992,7 @@
 	```
 
 	
-4. 동의어 삭제 (단방향)
+4. 동의어 삭제(단방향)
 
 	- Request
 	```
@@ -1061,7 +1060,7 @@
 
 **형식**
 
-- 단어 간 new line('\n') 단위로 구분. 단어 내 공백 사용 불가
+- 단어 사이를 new line('\n') 단위로 구분. 단어 내 공백 사용 불가
 
 **불용어**
 
@@ -1214,10 +1213,10 @@
 	- -32,768~32,767까지 표현 가능합니다.
 - integer
 	- 4byte 정수형입니다.
-	- -2^31~2^31 - 1까지 표현 가능합니다.
+	- -999,999,999~999,999,999까지 표현 가능합니다.
 - long
 	- 8byte 정수형입니다.
-	- -2^63~2^63 - 1까지 표현 가능합니다.
+	- -999,999,999,999,999,999~999,999,999,999,999,999까지 표현 가능합니다.
 - float
 	- 4byte 실수형입니다.
 	- -3.4E38~3.4E38까지 표현 가능합니다.
@@ -1236,10 +1235,6 @@
 			- 예제) 2017-09-22T15:39:28
 		- yyyy-MM-dd’T’HH:mm:ss'Z'
 			- 예제) 2017-09-22T15:39:28Z
-		- yyyy-MM-dd'T'HH:mm:ss.SSS
-			- 예제) 2017-09-22T15:39:28.248
-		- yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
-			- 예제) 2017-09-22T15:39:28.248Z
 - text를 제외한 모든 필드 타입은 배열 형태로 입력할 수 있습니다.
 	- ["나이키", "아디다스"]
 	- [1.0, 2.0]
