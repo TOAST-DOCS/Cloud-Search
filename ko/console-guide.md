@@ -892,11 +892,11 @@
 **URL**
 
 1. 등록
-	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus?way=1
+	- POST	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus?way=1
 2. 삭제
-	- DELETE	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus
+	- DELETE	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus
 3. 리셋
-	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus/reset
+	- POST	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus/reset
 
 **파라미터**
 
@@ -1052,11 +1052,11 @@
 **URL**
 
 1. 등록
-	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords
+	- POST	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords
 2. 삭제
-	- DELETE	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords
+	- DELETE	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords
 3. 리셋
-	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords/reset
+	- POST	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords/reset
 
 **형식**
 
