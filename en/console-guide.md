@@ -242,7 +242,7 @@ Do as follows to search:
 10. Specify the number of search results.
 
     - Set '5' to show 5, or '10' to show 10.
-        - Express from 1 to 10000.
+    - Express from 1 to 9999.
 
 11. Select a search operator.
 
@@ -384,8 +384,8 @@ Do as follows to delete fields:
 
 ### Editing Fields
 
-Editing is not supported. To edit, delete a field and add again.
-To use the same field name when editing fields, proceed with reindex after deleting and setting up fields.
+- Editing is not supported. To edit, delete a field and add again.
+- To use the same field name when editing fields, proceed with reindex after deleting and setting up fields.
 
 ### Filtering
 
