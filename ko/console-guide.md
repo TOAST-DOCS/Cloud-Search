@@ -237,10 +237,12 @@
 9. 검색 결과에서 출력할 시작 순위를 지정합니다.
 
     - '1'로 설정하면 1등부터 출력되고, '10'으로 설정하면 10등부터 출력됩니다.
+    - 1~2^31 - 1까지 표현 가능합니다.
 
 10. 검색 결과 개수를 지정합니다.
 
     - '5'로 설정하면 5개 출력되고, '10'으로 설정하면 10개 출력됩니다.
+	- 1~9999까지 표현 가능합니다.
 
 11. 검색 연산자를 선택합니다.
 
@@ -382,7 +384,8 @@
 
 ### 필드 수정
 
-필드 수정은 지원하지 않습니다. 삭제 후 다시 추가해야 합니다.
+- 필드 수정은 지원하지 않습니다. 삭제 후 다시 추가해야 합니다.
+- 필드 수정 시 동일한 필드명을 사용하려면 삭제 및 추가 설정 후 재색인을 진행해야 합니다.
 
 ### 필터링
 
@@ -892,11 +895,11 @@
 **URL**
 
 1. 등록
-	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus?way=1
+	- POST	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus?way=1
 2. 삭제
-	- DELETE	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus
+	- DELETE	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus
 3. 리셋
-	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/thesaurus/reset
+	- POST	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus/reset
 
 **파라미터**
 
@@ -1052,11 +1055,11 @@
 **URL**
 
 1. 등록
-	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords
+	- POST	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords
 2. 삭제
-	- DELETE	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords
+	- DELETE	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords
 3. 리셋
-	- POST	/dictionary/v2.0/appkeys/EMKPutYozUttWVY/serviceids/test/dictionary/stopwords/reset
+	- POST	/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords/reset
 
 **형식**
 
