@@ -237,10 +237,12 @@ Do as follows to search:
 9. Specify the priority order for an output from search result.
 
     - Set '1' to to start with rank 1,or set '10' to start from rank 10.
+    - Express from 1 to 2^31 - 1.
 
 10. Specify the number of search results.
 
     - Set '5' to show 5, or '10' to show 10.
+        - Express from 1 to 10000.
 
 11. Select a search operator.
 
@@ -383,6 +385,7 @@ Do as follows to delete fields:
 ### Editing Fields
 
 Editing is not supported. To edit, delete a field and add again.
+To use the same field name when editing fields, proceed with reindex after deleting and setting up fields.
 
 ### Filtering
 
