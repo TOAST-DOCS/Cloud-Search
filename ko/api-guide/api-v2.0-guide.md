@@ -820,13 +820,29 @@ URI 정보
 
 파라미터 정보
 
-| 이름 | 설명                                      |
-| ---- | ----------------------------------------- |
-| kind | total_query_count - 전체 쿼리 수          |
-|      | no_result_query_count - 결과 없는 쿼리 수 |
-|      | total_doc_count - 전체 문서 수            |
-|      | total_index_size - 전체 색인 크기         |
-| date | 날짜                                      |
+<table>
+    <tr>
+        <th>이름</th>
+        <th>설명</th>
+    </tr>
+    <tr>
+         <td rowspan="4">kind</td>
+        <td>total_query_count - 전체 쿼리 수</td>
+    </tr>
+    <tr>
+        <td>no_result_query_count - 결과 없는 쿼리 수</td>
+    </tr>
+    <tr>
+        <td>total_doc_count - 전체 문서 수</td>
+    </tr>
+    <tr>
+        <td>total_index_size - 전체 색인 크기</td>
+    </tr>
+    <tr>
+        <td>date</td>
+        <td>날짜</td>
+    </tr>
+</table>
 
 **[응답]**
 
@@ -848,15 +864,37 @@ URI 정보
 
 파라미터 정보
 
-| 이름       | 설명                                      |
-| ---------- | ----------------------------------------- |
-| kind       | total_query_count - 전체 쿼리 수          |
-|            | no_result_query_count - 결과 없는 쿼리 수 |
-|            | total_doc_count - 전체 문서 수            |
-|            | total_index_size - 전체 색인 크기         |
-| start_date | 시작 날짜                                 |
-| end_date   | 끝 날짜                                   |
-| resolution | month, day 구분                           |
+<table>
+    <tr>
+        <th>이름</th>
+        <th>설명</th>
+    </tr>
+    <tr>
+        <td rowspan="4">kind</td>
+        <td>total_query_count - 전체 쿼리 수</td>
+    </tr>
+    <tr>
+        <td>no_result_query_count - 결과 없는 쿼리 수</td>
+    </tr>
+    <tr>
+        <td>total_doc_count - 전체 문서 수</td>
+    </tr>
+    <tr>
+        <td>total_index_size - 전체 색인 크기</td>
+    </tr>
+    <tr>
+        <td>start_date</td>
+        <td>시작 날짜</td>
+    </tr>
+    <tr>
+        <td>end_date</td>
+        <td>끝 날짜</td>
+    </tr>
+    <tr>
+        <td>resolution</td>
+        <td>month, day 구분</td>
+    </tr>
+</table>
 
 **[응답]**
 
