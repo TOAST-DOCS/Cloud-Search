@@ -117,49 +117,49 @@ BODY 정보
 
 ```
 {
-	"analysis": {
-		"analyzer": {
-			"default_analyzer": {
-				"tokenizer": "default_tokenizer"
-			},
-			"atomic_analyzer": {
-				"tokenizer": "atomic_tokenizer"
-			},
-			"bigram_analyzer": {
-				"tokenizer": "bigram_tokenizer"
-			}
-		},
-		"tokenizer": {
-			"default_tokenizer": {
-				"type": "linguist2_tokenizer",
-				"method": "sgmt",
-				"hanaterm_options": "seq_locinputenc=utf8outputenc=utf8+korea+japan+josacat+eomicat"
-			},
-			"atomic_tokenizer": {
-				"type": "linguist2_tokenizer",
-				"method": "atomic",
-				"hanaterm_options": "seq_locinputenc=utf8outputenc=utf8"
-			},
-			"bigram_tokenizer": {
-				"type": "linguist2_tokenizer",
-				"method": "bigram",
-				"hanaterm_options": "seq_locinputenc=utf8outputenc=utf8"
-			}
-		}
-	},
-	"store": {
-		"stats_refresh_interval": "-1"
-	},
-	"number_of_shards": 3,
-	"number_of_replicas": 1,
-	"similarity": {
-		"tcsbm25": {
-			"type": "similarity-tcsbm25",
-			"a": 0.25,
-			"b": 1.2,
-			"c": 0
-		}
-	}
+    "analysis": {
+        "analyzer": {
+            "default_analyzer": {
+                "tokenizer": "default_tokenizer"
+            },
+            "atomic_analyzer": {
+                "tokenizer": "atomic_tokenizer"
+            },
+            "bigram_analyzer": {
+                "tokenizer": "bigram_tokenizer"
+            }
+        },
+        "tokenizer": {
+            "default_tokenizer": {
+                "type": "linguist2_tokenizer",
+                "method": "sgmt",
+                "hanaterm_options": "seq_locinputenc=utf8outputenc=utf8+korea+japan+josacat+eomicat"
+            },
+            "atomic_tokenizer": {
+                "type": "linguist2_tokenizer",
+                "method": "atomic",
+                "hanaterm_options": "seq_locinputenc=utf8outputenc=utf8"
+            },
+            "bigram_tokenizer": {
+                "type": "linguist2_tokenizer",
+                "method": "bigram",
+                "hanaterm_options": "seq_locinputenc=utf8outputenc=utf8"
+            }
+        }
+    },
+    "store": {
+        "stats_refresh_interval": "-1"
+    },
+    "number_of_shards": 3,
+    "number_of_replicas": 1,
+    "similarity": {
+        "tcsbm25": {
+            "type": "similarity-tcsbm25",
+            "a": 0.25,
+            "b": 1.2,
+            "c": 0
+        }
+    }
 }
 ```
 
