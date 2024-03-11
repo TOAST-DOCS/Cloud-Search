@@ -1,6 +1,6 @@
 ## Search > Cloud Search > API v2.0 가이드
 
-NHN Cloud Search에서 제공하는 Cloud Search API v2.0 을 설명합니다.
+NHN Cloud Search에서 제공하는 Cloud Search API v2.0을 설명합니다.
 
 ## 공통
 
