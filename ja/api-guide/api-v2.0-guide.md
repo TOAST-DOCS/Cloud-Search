@@ -19,7 +19,7 @@ Cloud Searchで提供するCloud Search API v2.0を説明します。
 | appKey    | コンソールで発行されたアプリケーションキー |
 | serviceId | ユーザーの任意の名前   |
 
-## 認証及び権限
+### 認証及び権限
 
 Cloud Search APIを使用するには、Appkeyが必要です。Appkeyは、API呼び出し時にリクエストURLに含めて特定のリソースを指定し、識別するために使用されます。
 Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。
