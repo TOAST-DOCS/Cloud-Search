@@ -1,17 +1,24 @@
-## Search > Cloud Search > API v2.0 Guide
+<!-- pre-align:aligned sig=4d379b3fcba7 -->
+
+<a id="search-cloud-search-api-v20-guide"></a>
+## Search > Cloud Search > API v2.0 Guide { #search-cloud-search-api-v20-guide }
 
 This document describes the Cloud Search API v2.0 provided by Cloud Search.
 
-## Common
+<a id="common"></a>
+## Common { #common }
 
-### API Endpoint
+<a id="api-endpoint"></a>
+### API Endpoint { #api-endpoint }
 
+<a id="api-endpoint-uri-information"></a>
 #### URI Information
 
 | Environment | URI                                        |
 | ---- | ------------------------------------------ |
 | REAL | https://kr1-search.api.nhncloudservice.com |
 
+<a id="api-endpoint-path-parameter-information"></a>
 #### Path Parameter Information
 
 | Name      | Description                    |
@@ -19,19 +26,22 @@ This document describes the Cloud Search API v2.0 provided by Cloud Search.
 | appKey    | Appkey issued from the console |
 | serviceId | A random name for the user    |
 
-### Authentication and Authorization
+<a id="authentication-and-authorization"></a>
+### Authentication and Authorization { #authentication-and-authorization }
 
 Appkey is required to use Cloud Search API. The Appkey is included in the request URL to identify and specify a particular resource when making API calls.
 For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey).
 
 
-## Full indexing
+<a id="full-indexing"></a>
+## Full indexing { #full-indexing }
 
 If you run full indexing, previously indexed files will disappear.
 
 You must proceed in the start-index-end order.
 
-### 1. Start
+<a id="start"></a>
+### 1. Start { #start }
 
 **[Request]**
 
@@ -49,7 +59,8 @@ Response Body
 {}
 ```
 
-### 2. Indexing
+<a id="indexing"></a>
+### 2. Indexing { #indexing }
 
 **[Request]**
 
@@ -83,7 +94,8 @@ Response body (example)
 }
 ```
 
-### 3. End
+<a id="end"></a>
+### 3. End { #end }
 
 **[Request]**
 
@@ -101,7 +113,8 @@ Response Body
 {}
 ```
 
-### 4. Cancel
+<a id="cancel"></a>
+### 4. Cancel { #cancel }
 
 **[Request]**
 
@@ -119,11 +132,13 @@ Response Body
 {}
 ```
 
-## Additional Indexing
+<a id="additional-indexing"></a>
+## Additional Indexing { #additional-indexing }
 
 The index is updated if an existing ID exists, or added if it does not.
 
-### 1. Additional Indexing
+<a id="additional-indexing-2"></a>
+### 1. Additional Indexing { #additional-indexing-2 }
 
 **[Request]**
 
@@ -157,11 +172,13 @@ Response body (example)
 }
 ```
 
-## Index log
+<a id="index-log"></a>
+## Index log { #index-log }
 
 Displays the index results.
 
-### 1. View the index log
+<a id="view-the-index-log"></a>
+### 1. View the index log { #view-the-index-log }
 
 **[Request]**
 
@@ -192,11 +209,13 @@ Response body (example)
 }
 ```
 
-## Search
+<a id="search"></a>
+## Search { #search }
 
 You can use the index to search for fields.
 
-### 1. Search
+<a id="search-2"></a>
+### 1. Search { #search-2 }
 
 **[Request]**
 
@@ -263,11 +282,13 @@ Response body (example)
 }
 ```
 
-## Statistics
+<a id="statistics"></a>
+## Statistics { #statistics }
 
 Statistics show the number of total queries and queries without results by date.
 
-### 1. View stat
+<a id="view-stat"></a>
+### 1. View stat { #view-stat }
 
 **[Request]**
 

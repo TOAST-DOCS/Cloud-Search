@@ -1,10 +1,15 @@
-## Search > Cloud Search > Console User Guide
+<!-- pre-align:aligned sig=a079688e33d5 -->
 
-## Prerequisites
+<a id="search-cloud-search-console-user-guide"></a>
+## Search > Cloud Search > Console User Guide { #search-cloud-search-console-user-guide }
+
+<a id="prerequisites"></a>
+## Prerequisites { #prerequisites }
 
 - The appkey, 'CwSx6kv99g0QuNtM', is different for each user.
 
-## Getting Started
+<a id="getting-started"></a>
+## Getting Started { #getting-started }
 
 First, enable the Cloud Search Service.
 
@@ -22,9 +27,11 @@ Do as follows to check if service is enabled:
 
 ![img](http://static.toastoven.net/prod_search/product-use-03-en-20210506.jpg)
 
-## Basic Usage
+<a id="basic-usage"></a>
+## Basic Usage { #basic-usage }
 
-### 1. Creating Services
+<a id="creating-services"></a>
+### 1. Creating Services { #creating-services }
 
  Services can be created as follows:
 
@@ -46,7 +53,8 @@ Check the result of service creation.
 
 ![img](http://static.toastoven.net/prod_search/domain_create_result-en-20210506.jpg)
 
-### 2. Setting Fields
+<a id="setting-fields"></a>
+### 2. Setting Fields { #setting-fields }
 
 Fields can be added as follows:
 
@@ -76,7 +84,8 @@ Fields can be added as follows:
 
 ![img](http://static.toastoven.net/prod_search/field_create_procedure-en-20230831.jpg)
 
-### 3. Indexing
+<a id="indexing"></a>
+### 3. Indexing { #indexing }
 
 Do as follows to create and index files.
 
@@ -209,7 +218,8 @@ REST APIs are available like below:
             - 5: Failed
             - 6: Canceled
 
-### 4. Search
+<a id="search"></a>
+### 4. Search { #search }
 
 Do as follows to search:
 
@@ -297,7 +307,8 @@ Use REST APIs as below:
     }
 	```
 
-### 5. Statistics
+<a id="statistics"></a>
+### 5. Statistics { #statistics }
 
 Do as follows to check statistics:
 
@@ -339,7 +350,8 @@ Do as follows to check statistics:
     ````
     - Query more than 3 counts only.
 
-### 6. ACL
+<a id="acl"></a>
+### 6. ACL { #acl }
 
 IPs may be restricted for equipment which may call index and search REST APIs.
 
@@ -362,9 +374,11 @@ The example regards to setting which allows indexing only when the IP address is
 
 ![img](http://static.toastoven.net/prod_search/acl_procedure-en-20200304.jpg)
 
-## Feature Details
+<a id="feature-details"></a>
+## Feature Details { #feature-details }
 
-### Deleting Fields
+<a id="deleting-fields"></a>
+### Deleting Fields { #deleting-fields }
 
 Do as follows to delete fields:
 
@@ -382,12 +396,14 @@ Do as follows to delete fields:
 ![img](http://static.toastoven.net/prod_search/field_delete-2-en-20230831.jpg)
 ![img](http://static.toastoven.net/prod_search/field_delete-3-en-20230831.jpg)
 
-### Editing Fields
+<a id="editing-fields"></a>
+### Editing Fields { #editing-fields }
 
 - Editing is not supported. To edit, delete a field and add again.
 - To use the same field name when editing fields, proceed with reindex after deleting and setting up fields.
 
-### Filtering
+<a id="filtering"></a>
+### Filtering { #filtering }
 
 **Set Fields**
 
@@ -473,7 +489,8 @@ Enter filtering values like below:
     - filter_or='(category=1&brand=2)|(category=3&brand=4)'
         - (category == 1 and brand == 2) or (category == 3 and brand == 4)
 
-### Geolocation Filtering
+<a id="geolocation-filtering"></a>
+### Geolocation Filtering { #geolocation-filtering }
 
 **Set Fields**
 
@@ -536,7 +553,8 @@ To test, index data as below:
 
 ![img](http://static.toastoven.net/prod_search/geolocation-search-polygon-en-20230831.jpg)
 
-### Sorting
+<a id="sorting"></a>
+### Sorting { #sorting }
 
 **Set Fields**
 
@@ -613,7 +631,8 @@ To test, index data as below:
 
 - You can select one sorting field.
 
-### Summary
+<a id="summary"></a>
+### Summary { #summary }
 
 **Set Fields**
 
@@ -679,7 +698,8 @@ To test, index data as below:
 - Available Types
     - Summary is not available for text and geo_point types.
 
-### Boolean Query
+<a id="boolean-query"></a>
+### Boolean Query { #boolean-query }
 
 **Set Fields**
 
@@ -737,7 +757,8 @@ To test, index data as below:
         - "Popular Shoes Nike in Sales"
             - Due to wrong order of "Nike" and "Shoes"  
 
-### Specify field weight
+<a id="specify-field-weight"></a>
+### Specify field weight { #specify-field-weight }
 
 **Search**
 
@@ -784,7 +805,8 @@ To test, index data as below:
 
 - You can customize the order in which search results are displayed by adjusting the search weight and document ranking.
 
-### Specifying Document Ranks
+<a id="specifying-document-ranks"></a>
+### Specifying Document Ranks { #specifying-document-ranks }
 
 **Set Fields**
 
@@ -848,7 +870,8 @@ To test, index data as below:
 - The "id-2" document specified as 1 for "ranking" comes first on the search result.
 - In case of documents in the same "ranking", such document that has the highest similarity level as user-input search word shows first on the list.
 
-### Downloading/Uploading Field Setting
+<a id="downloadinguploading-field-setting"></a>
+### Downloading/Uploading Field Setting { #downloadinguploading-field-setting }
 
 **Download Setting**
 
@@ -864,7 +887,8 @@ To test, index data as below:
 
 - Only when there is no field setting, the **Upload Setting** button shows.
 
-### Re-indexing Entire Data
+<a id="re-indexing-entire-data"></a>
+### Re-indexing Entire Data { #re-indexing-entire-data }
 
 To re-index the entire data, use Full Indexing API.
 
@@ -890,7 +914,8 @@ To re-index the entire data, use Full Indexing API.
     ```
     - Service becomes inoperable while indexing is underway.
 
-### Synonyms Dictionary
+<a id="synonyms-dictionary"></a>
+### Synonyms Dictionary { #synonyms-dictionary }
 
 **URL**
 
@@ -1050,7 +1075,8 @@ To re-index the entire data, use Full Indexing API.
 	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus/reset'
 	```
 
-### Unused Terms Dictionary
+<a id="unused-terms-dictionary"></a>
+### Unused Terms Dictionary { #unused-terms-dictionary }
 
 **URL**
 
@@ -1189,9 +1215,11 @@ To re-index the entire data, use Full Indexing API.
 	```
 
 
-## Guide Details
+<a id="guide-details"></a>
+## Guide Details { #guide-details }
 
-### Field Type
+<a id="field-type"></a>
+### Field Type { #field-type }
 
 Field type can be selected like below.
 
@@ -1243,7 +1271,8 @@ Field type can be selected like below.
     - [1.0, 2.0]
     - ["2017-09-22T15:39:28", "2017-09-22T15:39:29"]
 
-### Morpheme Analysis
+<a id="morpheme-analysis"></a>
+### Morpheme Analysis { #morpheme-analysis }
 
 Morpheme analyzer can be selected as below:
 
@@ -1268,7 +1297,8 @@ Morpheme analyzer can be selected as below:
     - Separate words by 1 letter.
         - Example) "Stansmith" -> "S" "t" "a" "n" "s" "m" "i" "t" "h"
 
-### ACL
+<a id="guide-details-acl"></a>
+### ACL { #guide-details-acl }
 
 ACL can be set on the below page:  
 
@@ -1286,11 +1316,13 @@ ACL can be set on the below page:
 - Denied, if applied both to Allow and Deny.
 - Denied, if not applied both to Allow and Deny
 
-## Client Example Codes
+<a id="client-example-codes"></a>
+## Client Example Codes { #client-example-codes }
 
 Following shows the file-uploading type index example codes.
 
-### Java
+<a id="java"></a>
+### Java { #java }
 
 - dependency
 
@@ -1376,7 +1408,8 @@ public class IndexingClient {
 }
 ```
 
-### PHP
+<a id="php"></a>
+### PHP { #php }
 
 - Index (by file uploading)
 

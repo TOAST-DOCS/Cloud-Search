@@ -1,10 +1,15 @@
-## Search > Cloud Search > 콘솔 사용 가이드
+<!-- pre-align:aligned sig=a079688e33d5 -->
 
-## 알아두기
+<a id="search-cloud-search-console-user-guide"></a>
+## Search > Cloud Search > 콘솔 사용 가이드 { #search-cloud-search-console-user-guide }
+
+<a id="prerequisites"></a>
+## 알아두기 { #prerequisites }
 
 - 문서 내의 앱키 'CwSx6kv99g0QuNtM'는 사용자별로 다릅니다.
 
-## 시작하기
+<a id="getting-started"></a>
+## 시작하기 { #getting-started }
 
 먼저 Cloud Search 서비스를 활성화합니다.
 
@@ -22,9 +27,11 @@
 
 ![img](http://static.toastoven.net/prod_search/product-use-03-ko-20210506.jpg)
 
-## 기본 사용법
+<a id="basic-usage"></a>
+## 기본 사용법 { #basic-usage }
 
-### 1. 서비스 생성
+<a id="creating-services"></a>
+### 1. 서비스 생성 { #creating-services }
 
 서비스를 생성하는 방법은 다음과 같습니다.
 
@@ -46,7 +53,8 @@
 
 ![img](http://static.toastoven.net/prod_search/domain_create_result-ko-20210506.jpg)
 
-### 2. 필드 설정
+<a id="setting-fields"></a>
+### 2. 필드 설정 { #setting-fields }
 
 필드를 추가하는 방법은 다음과 같습니다.
 
@@ -76,7 +84,8 @@
 
 ![img](http://static.toastoven.net/prod_search/field_create_procedure-ko-20230831.jpg)
 
-### 3. 색인
+<a id="indexing"></a>
+### 3. 색인 { #indexing }
 
 색인할 파일을 생성하고 색인하는 방법은 다음과 같습니다.
 
@@ -209,7 +218,8 @@
 		- 5: 실패
 		- 6: 취소
 
-### 4. 검색
+<a id="search"></a>
+### 4. 검색 { #search }
 
 검색 방법은 다음과 같습니다.
 
@@ -297,7 +307,8 @@
     }
     ```
 
-### 5. 통계
+<a id="statistics"></a>
+### 5. 통계 { #statistics }
 
 통계를 확인하는 방법은 다음과 같습니다.
 
@@ -339,7 +350,8 @@
 	```
     - 쿼리수 3 이상만 조회됩니다.
 
-### 6. ACL
+<a id="acl"></a>
+### 6. ACL { #acl }
 
 색인 및 검색 REST API를 호출할 수 있는 장비의 IP를 제한할 수 있습니다.
 
@@ -362,9 +374,11 @@
 
 ![img](http://static.toastoven.net/prod_search/acl_procedure-ko-20200304.jpg)
 
-## 기능 상세 설명
+<a id="feature-details"></a>
+## 기능 상세 설명 { #feature-details }
 
-### 필드 삭제
+<a id="deleting-fields"></a>
+### 필드 삭제 { #deleting-fields }
 
 필드를 삭제하는 방법은 다음과 같습니다.
 
@@ -382,12 +396,14 @@
 ![img](http://static.toastoven.net/prod_search/field_delete-2-ko-20230831.jpg)
 ![img](http://static.toastoven.net/prod_search/field_delete-3-ko-20230831.jpg)
 
-### 필드 수정
+<a id="editing-fields"></a>
+### 필드 수정 { #editing-fields }
 
 - 필드 수정은 지원하지 않습니다. 삭제 후 다시 추가해야 합니다.
 - 필드 수정 시 동일한 필드명을 사용하려면 삭제 및 추가 설정 후 재색인을 진행해야 합니다.
 
-### 필터링
+<a id="filtering"></a>
+### 필터링 { #filtering }
 
 **필드 설정**
 
@@ -473,7 +489,8 @@
     - filter_or='(category=1&brand=2)|(category=3&brand=4)'
         - (category == 1 and brand == 2) or (category == 3 and brand == 4)
 
-### 위경도(geolocation) 필터링
+<a id="geolocation-filtering"></a>
+### 위경도(geolocation) 필터링 { #geolocation-filtering }
 
 **필드 설정**
 
@@ -536,7 +553,8 @@
 
 ![img](http://static.toastoven.net/prod_search/geolocation-search-polygon-ko-20230831.jpg)
 
-### 정렬
+<a id="sorting"></a>
+### 정렬 { #sorting }
 
 **필드 설정**
 
@@ -613,7 +631,8 @@
 
 - 1개의 정렬 필드만 선택 가능합니다.
 
-### 요약
+<a id="summary"></a>
+### 요약 { #summary }
 
 **필드 설정**
 
@@ -679,7 +698,8 @@
 - 요약 가능한 타입
 	- 'text' 및 'geo_point' 타입은 요약 기능을 사용할 수 없습니다.
 
-### 불리언 쿼리
+<a id="boolean-query"></a>
+### 불리언 쿼리 { #boolean-query }
 
 **필드 설정**
 
@@ -737,7 +757,8 @@
 		- "인기 신발 나이키 할인"
 			- "나이키"와 "신발"의 순서가 다르기 때문임
 
-### 필드 가중치 지정
+<a id="specify-field-weight"></a>
+### 필드 가중치 지정 { #specify-field-weight }
 
 **검색**
 
@@ -784,7 +805,8 @@
 
 - 검색 가중치와 문서 랭킹을 조정해서 검색 결과 출력 순서를 커스터마이징할 수 있습니다.
 
-### 문서 랭킹 지정
+<a id="specifying-document-ranks"></a>
+### 문서 랭킹 지정 { #specifying-document-ranks }
 
 **필드 설정**
 
@@ -848,7 +870,8 @@
 - "ranking"을 1로 지정한 "id-2" 문서가 검색 결과 1등으로 노출됩니다.
 - "ranking"을 동일하게 지정한 경우 사용자가 입력한 검색어와 유사도가 높은 문서가 먼저 노출됩니다.
 
-### 필드 설정 다운로드/업로드
+<a id="downloadinguploading-field-setting"></a>
+### 필드 설정 다운로드/업로드 { #downloadinguploading-field-setting }
 
 **설정 다운로드**
 
@@ -864,7 +887,8 @@
 
 - 설정된 필드가 하나도 없을 때만 **설정 업로드** 버튼이 나타납니다.
 
-### 전체 데이터 다시 색인
+<a id="re-indexing-entire-data"></a>
+### 전체 데이터 다시 색인 { #re-indexing-entire-data }
 
 전체 데이터를 다시 색인할 때는 Full indexing API를 사용합니다.
 
@@ -890,7 +914,8 @@
 	```
 	- 색인이 진행 중일 때는 동작하지 않습니다.
 
-### 동의어 사전
+<a id="synonyms-dictionary"></a>
+### 동의어 사전 { #synonyms-dictionary }
 
 **URL**
 
@@ -1050,7 +1075,8 @@
 	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus/reset'
 	```
 
-### 불용어 사전
+<a id="unused-terms-dictionary"></a>
+### 불용어 사전 { #unused-terms-dictionary }
 
 **URL**
 
@@ -1189,9 +1215,11 @@
 	```
 
 	
-## 상세 가이드
+<a id="guide-details"></a>
+## 상세 가이드 { #guide-details }
 
-### 필드 타입
+<a id="field-type"></a>
+### 필드 타입 { #field-type }
 
 필드 타입 선택 화면은 다음과 같습니다.
 
@@ -1243,7 +1271,8 @@
 	- [1.0, 2.0]
 	- ["2017-09-22T15:39:28", "2017-09-22T15:39:29"]
 
-### 형태소 분석
+<a id="morpheme-analysis"></a>
+### 형태소 분석 { #morpheme-analysis }
 
 형태소 분석기 선택 화면은 다음과 같습니다.
 
@@ -1268,7 +1297,8 @@
 	- 1글자씩 단어를 분리합니다.
 		- 예제) "스탠스미스" -> "스" "탠" "스" "미" "스"
 
-### ACL
+<a id="guide-details-acl"></a>
+### ACL { #guide-details-acl }
 
 ACL 설정 화면은 다음과 같습니다.
 
@@ -1286,11 +1316,13 @@ ACL 설정 화면은 다음과 같습니다.
 - 허용, 거부 둘 다에 해당되면 거부됩니다.
 - 허용, 거부 둘 다에 해당되지 않으면 거부됩니다.
 
-## 클라이언트 예제 코드
+<a id="client-example-codes"></a>
+## 클라이언트 예제 코드 { #client-example-codes }
 
 다음은 파일 업로드 방식의 색인 예제 코드입니다.
 
-### java
+<a id="java"></a>
+### java { #java }
 
 - dependency
 
@@ -1376,7 +1408,8 @@ public class IndexingClient {
 }
 ```
 
-### php
+<a id="php"></a>
+### php { #php }
 
 - 색인(파일 업로드 방식)
 

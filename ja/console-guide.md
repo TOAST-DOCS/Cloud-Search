@@ -1,10 +1,15 @@
-## Search > Cloud Search > コンソール使用ガイド
+<!-- pre-align:aligned sig=a079688e33d5 -->
 
-## 注意
+<a id="search-cloud-search-console-user-guide"></a>
+## Search > Cloud Search > コンソール使用ガイド { #search-cloud-search-console-user-guide }
+
+<a id="prerequisites"></a>
+## 注意 { #prerequisites }
 
 - 文書内のアプリケーションキー「CwSx6kv99g0QuNtM」は、ユーザーごとに異なります。
 
-## 始める
+<a id="getting-started"></a>
+## 始める { #getting-started }
 
 まずCloud Searchサービスを有効化します。
 
@@ -22,9 +27,11 @@
 
 ![img](http://static.toastoven.net/prod_search/product-use-03-ja-20210506.jpg)
 
-## 基本使用方法
+<a id="basic-usage"></a>
+## 基本使用方法 { #basic-usage }
 
-### 1. サービスの作成
+<a id="creating-services"></a>
+### 1. サービスの作成 { #creating-services }
 
 サービスを作成する方法は次のとおりです。
 
@@ -46,7 +53,8 @@
 
 ![img](http://static.toastoven.net/prod_search/domain_create_result-ja-20210506.jpg)
 
-### 2. フィールド設定
+<a id="setting-fields"></a>
+### 2. フィールド設定 { #setting-fields }
 
 フィールドを追加する方法は次のとおりです。
 
@@ -76,7 +84,8 @@
 
 ![img](http://static.toastoven.net/prod_search/field_create_procedure-ja-20230831.jpg)
 
-### 3. インデックス
+<a id="indexing"></a>
+### 3. インデックス { #indexing }
 
 インデックスするファイルを作成してインデックスする方法は次のとおりです。
 
@@ -209,7 +218,8 @@
 	    - 5 :失敗
 	    - 6 :キャンセル
 
-### 4. 検索
+<a id="search"></a>
+### 4. 検索 { #search }
 
 検索方法は次のとおりです。
 
@@ -297,7 +307,8 @@
   }
   ```
 
-### 5. 統計
+<a id="statistics"></a>
+### 5. 統計 { #statistics }
 
 統計を確認する方法は次のとおりです。
 
@@ -339,7 +350,8 @@
     ```
     - クエリー数3以上のみ照会されます。
 
-### 6. ACL
+<a id="acl"></a>
+### 6. ACL { #acl }
 
 インデックスおよび検索REST APIを呼び出すことができる端末のIPを制限できます。
 
@@ -362,9 +374,11 @@
 
 ![img](http://static.toastoven.net/prod_search/acl_procedure-ja-20200304.jpg)
 
-## 機能詳細説明
+<a id="feature-details"></a>
+## 機能詳細説明 { #feature-details }
 
-### フィールドの削除
+<a id="deleting-fields"></a>
+### フィールドの削除 { #deleting-fields }
 
 フィールドを削除する方法は次のとおりです。
 
@@ -382,12 +396,14 @@
 ![img](http://static.toastoven.net/prod_search/field_delete-2-ja-20230831.jpg)
 ![img](http://static.toastoven.net/prod_search/field_delete-3-ja-20230831.jpg)
 
-### フィールドの修正
+<a id="editing-fields"></a>
+### フィールドの修正 { #editing-fields }
 
 - フィールドの修正はサポートしていません。削除後に再度追加する必要があります。
 - フィールドの修正時に同じフィールド名を使用するには、削除および追加設定後、再インデックスを行う必要があります。
 
-### フィルタリング
+<a id="filtering"></a>
+### フィルタリング { #filtering }
 
 **フィールド設定**
 
@@ -473,7 +489,8 @@
     - filter_or='(category=1&brand=2)|(category=3&brand=4)'
  	    - (category == 1 and brand == 2) or (category == 3 and brand == 4)
 
-### 経緯度(geolocation)フィルタリング
+<a id="geolocation-filtering"></a>
+### 経緯度(geolocation)フィルタリング { #geolocation-filtering }
 
 **フィールド設定**
 
@@ -536,7 +553,8 @@
 
 ![img](http://static.toastoven.net/prod_search/geolocation-search-polygon-ja-20230831.jpg)
 
-### ソート
+<a id="sorting"></a>
+### ソート { #sorting }
 
 **フィールド設定**
 
@@ -613,7 +631,8 @@
 
 - 1つのソートフィールドのみ選択可能です。
 
-### 要約
+<a id="summary"></a>
+### 要約 { #summary }
 
 **フィールド設定**
 
@@ -679,7 +698,8 @@
 - 要約可能なタイプ
     - 「text」および「geo_point」タイプは要約機能を使用できません。
 
-### ブーリアンクエリー
+<a id="boolean-query"></a>
+### ブーリアンクエリー { #boolean-query }
 
 **フィールド設定**
 
@@ -737,7 +757,8 @@
         - 「人気 靴 ナイキ 割引」
             - 「ナイキ」と「靴」の順序が異なるため 
 
-### フィールドの重み指定
+<a id="specify-field-weight"></a>
+### フィールドの重み指定 { #specify-field-weight }
 
 **検索**
 
@@ -784,7 +805,8 @@
 
 - 検索の重みと文書ランキングを調節して、検索結果出力順序をカスタマイズできます。
 
-### 文書ランキング指定
+<a id="specifying-document-ranks"></a>
+### 文書ランキング指定 { #specifying-document-ranks }
 
 **フィールド設定**
 
@@ -848,7 +870,8 @@
 - 「ranking」を1に指定した「id-2」文書が検索結果1位に表示されます。
 - 「ranking」を同じように指定した場合、ユーザーが入力した検索ワードと類似度が高い文書が先に表示されます。
 
-### フィールド設定のダウンロード/アップロード
+<a id="downloadinguploading-field-setting"></a>
+### フィールド設定のダウンロード/アップロード { #downloadinguploading-field-setting }
 
 **設定のダウンロード**
 
@@ -864,7 +887,8 @@
 
 - 設定されたフィールドが1つもない時は**設定アップロード**ボタンが表示されます。
 
-### 全データの再インデックス
+<a id="re-indexing-entire-data"></a>
+### 全データの再インデックス { #re-indexing-entire-data }
 
 全データを再インデックスする時はFull indexing APIを使用します。
 
@@ -890,7 +914,8 @@
     ```
     - インデックスが進行中の時は動作しません。
 
-### 同義語辞典
+<a id="synonyms-dictionary"></a>
+### 同義語辞典 { #synonyms-dictionary }
 
 **URL**
 
@@ -1050,7 +1075,8 @@
 	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/thesaurus/reset'
 	```
 
-### 不用語辞書
+<a id="unused-terms-dictionary"></a>
+### 不用語辞書 { #unused-terms-dictionary }
 
 **URL**
 
@@ -1188,9 +1214,11 @@
 	curl -i -XPOST 'https://kr1-search.api.nhncloudservice.com/dictionary/v2.0/appkeys/CwSx6kv99g0QuNtM/serviceids/test/dictionary/stopwords/reset'
 	```
 
-## 詳細ガイド
+<a id="guide-details"></a>
+## 詳細ガイド { #guide-details }
 
-### フィールドタイプ
+<a id="field-type"></a>
+### フィールドタイプ { #field-type }
 
 フィールドタイプ選択画面は次のとおりです。
 
@@ -1242,7 +1270,8 @@
     - [1.0, 2.0]
     - ["2017-09-22T15:39:28", "2017-09-22T15:39:29"]
 
-### 形態素解析
+<a id="morpheme-analysis"></a>
+### 形態素解析 { #morpheme-analysis }
 
 形態素解析の選択画面は次のとおりです。
 
@@ -1267,7 +1296,8 @@
     - 1文字ずつ単語を分離します。
         - 例) 「スタンスミス」 → 「ス」 「タ」 「ン」 「ス」 「ミ」 「ス」
 
-### ACL
+<a id="guide-details-acl"></a>
+### ACL { #guide-details-acl }
 
 ACL設定画面は次のとおりです。
 
@@ -1285,11 +1315,13 @@ ACL設定画面は次のとおりです。
 - 許可、拒否のどちらにも該当する場合、拒否されます。
 - 許可、拒否のどちらにも該当しない場合、拒否されます。
 
-## クライアントサンプルコード
+<a id="client-example-codes"></a>
+## クライアントサンプルコード { #client-example-codes }
 
 次はファイルアップロード方式のインデックスのサンプルコードです。
 
-### java
+<a id="java"></a>
+### java { #java }
 
 - dependency
 
@@ -1375,7 +1407,8 @@ public class IndexingClient {
 }
 ```
 
-### php
+<a id="php"></a>
+### php { #php }
 
 - インデックス(ファイルアップロード方式)
 
