@@ -1,17 +1,24 @@
-## Search > Cloud Search > API v2.0 가이드
+<!-- pre-align:aligned sig=4d379b3fcba7 -->
+
+<a id="search-cloud-search-api-v20-guide"></a>
+## Search > Cloud Search > API v2.0 가이드 { #search-cloud-search-api-v20-guide }
 
 Cloud Search에서 제공하는 Cloud Search API v2.0을 설명합니다.
 
-## 공통
+<a id="common"></a>
+## 공통 { #common }
 
-### API 엔드포인트
+<a id="api-endpoint"></a>
+### API 엔드포인트 { #api-endpoint }
 
+<a id="api-endpoint-uri-information"></a>
 #### URI 정보
 
 | 환경 | URI                                        |
 | ---- | ------------------------------------------ |
 | REAL | https://kr1-search.api.nhncloudservice.com |
 
+<a id="api-endpoint-path-parameter-information"></a>
 #### Path 파라미터 정보
 
 | 이름      | 설명                    |
@@ -19,18 +26,21 @@ Cloud Search에서 제공하는 Cloud Search API v2.0을 설명합니다.
 | appKey    | 콘솔에서 발급 받은 앱키 |
 | serviceId | 사용자의 임의의 이름    |
 
-### 인증 및 권한
+<a id="authentication-and-authorization"></a>
+### 인증 및 권한 { #authentication-and-authorization }
 
 Cloud Search API를 사용하려면 Appkey가 필요합니다. Appkey는 API 호출 시 요청 URL에 포함하여 특정 리소스를 가리키고 식별하는 데 사용됩니다.
 Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/public-api/appkey)를 참고하세요.
 
-## 전체 색인
+<a id="full-indexing"></a>
+## 전체 색인 { #full-indexing }
 
 전체 색인을 실행하면 기존에 색인했던 파일은 사라집니다.
 
 반드시 시작-색인-끝의 순서로 진행해야 합니다.
 
-### 1. 시작
+<a id="start"></a>
+### 1. 시작 { #start }
 
 **[요청]**
 
@@ -48,7 +58,8 @@ URI 정보
 {}
 ```
 
-### 2. 색인
+<a id="indexing"></a>
+### 2. 색인 { #indexing }
 
 **[요청]**
 
@@ -82,7 +93,8 @@ BODY 정보(예시)
 }
 ```
 
-### 3. 끝
+<a id="end"></a>
+### 3. 끝 { #end }
 
 **[요청]**
 
@@ -100,7 +112,8 @@ URI 정보
 {}
 ```
 
-### 4. 취소
+<a id="cancel"></a>
+### 4. 취소 { #cancel }
 
 **[요청]**
 
@@ -118,11 +131,13 @@ URI 정보
 {}
 ```
 
-## 추가 색인
+<a id="additional-indexing"></a>
+## 추가 색인 { #additional-indexing }
 
 색인은 기존 ID가 있을 경우 업데이트되며, ID가 없는 경우에 추가됩니다.
 
-### 1. 추가 색인
+<a id="additional-indexing-2"></a>
+### 1. 추가 색인 { #additional-indexing-2 }
 
 **[요청]**
 
@@ -156,11 +171,13 @@ BODY 정보(예시)
 }
 ```
 
-## 색인 로그
+<a id="index-log"></a>
+## 색인 로그 { #index-log }
 
 색인 결과를 표시합니다.
 
-### 1. 색인 로그 조회
+<a id="view-the-index-log"></a>
+### 1. 색인 로그 조회 { #view-the-index-log }
 
 **[요청]**
 
@@ -191,11 +208,13 @@ URI 정보
 }
 ```
 
-## 검색
+<a id="search"></a>
+## 검색 { #search }
 
 색인을 이용해 필드를 검색할 수 있습니다.
 
-### 1. 검색
+<a id="search-2"></a>
+### 1. 검색 { #search-2 }
 
 **[요청]**
 
@@ -262,11 +281,13 @@ URI 정보(예시)
 }
 ```
 
-## 통계
+<a id="statistics"></a>
+## 통계 { #statistics }
 
 통계는 전체 쿼리와 결과 없는 쿼리의 수를 날짜(일)별로 표시합니다.
 
-### 1. stat 조회
+<a id="view-stat"></a>
+### 1. stat 조회 { #view-stat }
 
 **[요청]**
 

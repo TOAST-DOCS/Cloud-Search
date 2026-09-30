@@ -1,11 +1,15 @@
-## Search > Cloud Search > Overview
+<!-- pre-align:aligned sig=51287bc99a9c -->
+
+<a id="search-cloud-search-overview"></a>
+## Search > Cloud Search > Overview { #search-cloud-search-overview }
 
 Search service can be implemented with no additional infrastructure or search solution.
 
 - Enter data to search by using Index REST API.
 - Get search results by using Search REST API. to get search results.
 
-### Developing Search Service
+<a id="developing-search-service"></a>
+### Developing Search Service { #developing-search-service }
 
 **Service Configuration**
 

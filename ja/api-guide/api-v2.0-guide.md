@@ -1,17 +1,24 @@
-## Search > Cloud Search > API v2.0ガイド
+<!-- pre-align:aligned sig=4d379b3fcba7 -->
+
+<a id="search-cloud-search-api-v20-guide"></a>
+## Search > Cloud Search > API v2.0ガイド { #search-cloud-search-api-v20-guide }
 
 Cloud Searchで提供するCloud Search API v2.0を説明します。
 
-## 共通
+<a id="common"></a>
+## 共通 { #common }
 
-### APIエンドポイント
+<a id="api-endpoint"></a>
+### APIエンドポイント { #api-endpoint }
 
+<a id="api-endpoint-uri-information"></a>
 #### URI情報
 
 | 環境 | URI                                        |
 | ---- | ------------------------------------------ |
 | REAL | https://kr1-search.api.nhncloudservice.com |
 
+<a id="api-endpoint-path-parameter-information"></a>
 #### Pathパラメータ情報
 
 | 名前     | 説明                   |
@@ -19,19 +26,22 @@ Cloud Searchで提供するCloud Search API v2.0を説明します。
 | appKey    | コンソールで発行されたアプリケーションキー |
 | serviceId | ユーザーの任意の名前   |
 
-### 認証及び権限
+<a id="authentication-and-authorization"></a>
+### 認証及び権限 { #authentication-and-authorization }
 
 Cloud Search APIを使用するには、Appkeyが必要です。Appkeyは、API呼び出し時にリクエストURLに含めて特定のリソースを指定し、識別するために使用されます。
 Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。
 
 
-## 全体インデックス
+<a id="full-indexing"></a>
+## 全体インデックス { #full-indexing }
 
 全体インデックスを実行すると、以前にインデックスしたファイルは消えます。
 
 必ず開始-インデックス-終了の順番で実行する必要があります。
 
-### 1. 開始
+<a id="start"></a>
+### 1. 開始 { #start }
 
 **[リクエスト]**
 
@@ -49,7 +59,8 @@ URI情報
 {}
 ```
 
-### 2. インデックス
+<a id="indexing"></a>
+### 2. インデックス { #indexing }
 
 **[リクエスト]**
 
@@ -83,7 +94,8 @@ BODY情報(例)
 }
 ```
 
-### 3. 終了
+<a id="end"></a>
+### 3. 終了 { #end }
 
 **[リクエスト]**
 
@@ -101,7 +113,8 @@ URI情報
 {}
 ```
 
-### 4. キャンセル
+<a id="cancel"></a>
+### 4. キャンセル { #cancel }
 
 **[リクエスト]**
 
@@ -119,11 +132,13 @@ URI情報
 {}
 ```
 
-## 追加インデックス
+<a id="additional-indexing"></a>
+## 追加インデックス { #additional-indexing }
 
 インデックスは既存のIDがある場合はアップデートされ、IDがない場合は追加されます。
 
-### 1. 追加インデックス
+<a id="additional-indexing-2"></a>
+### 1. 追加インデックス { #additional-indexing-2 }
 
 **[リクエスト]**
 
@@ -157,11 +172,13 @@ BODY情報(例)
 }
 ```
 
-## インデックスログ
+<a id="index-log"></a>
+## インデックスログ { #index-log }
 
 インデックス結果を表示します。
 
-### 1. インデックスログ照会
+<a id="view-the-index-log"></a>
+### 1. インデックスログ照会 { #view-the-index-log }
 
 **[リクエスト]**
 
@@ -192,11 +209,13 @@ URI情報
 }
 ```
 
-## 検索
+<a id="search"></a>
+## 検索 { #search }
 
 インデックスを利用してフィールドを検索できます。
 
-### 1. 検索
+<a id="search-2"></a>
+### 1. 検索 { #search-2 }
 
 **[リクエスト]**
 
@@ -263,11 +282,13 @@ URI情報(例)
 }
 ```
 
-## 統計
+<a id="statistics"></a>
+## 統計 { #statistics }
 
 統計は全体クエリと結果がないクエリの数を日付(日)別に表示します。
 
-### 1. stat照会
+<a id="view-stat"></a>
+### 1. stat照会 { #view-stat }
 
 **[リクエスト]**
 

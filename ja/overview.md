@@ -1,11 +1,15 @@
-## Search > Cloud Search > 概要
+<!-- pre-align:aligned sig=51287bc99a9c -->
+
+<a id="search-cloud-search-overview"></a>
+## Search > Cloud Search > 概要 { #search-cloud-search-overview }
 
 別途インフラおよび検索ソリューションをインストールしなくても、簡単に検索サービスを構築できます。
 
 - インデックスREST APIを利用して検索するデータを入力します。
 - 検索REST APIを利用して検索結果を取得します。
 
-### 検索サービス開発プロセス
+<a id="developing-search-service"></a>
+### 検索サービス開発プロセス { #developing-search-service }
 
 **サービス構成図**
 
